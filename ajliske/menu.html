@@ -11,6 +11,8 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
 integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -24,7 +26,7 @@ integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7T
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>CIS 255 : Andrew Liske</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -67,7 +69,7 @@ integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7T
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
-      </div>
+      </div><!--/.container-collapse -->
     </nav>
 
     <div class="container">
@@ -77,27 +79,56 @@ integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7T
       <div class="container">
         <h1>Andrew Liske</h1>
         <p>This is My CIS 255 main menu.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Resources
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a tabindex="-1" href="http://www.w3schools.com/default.asp">W3Schools</a></li>
+      <li><a tabindex="-1" href="https://www.codecademy.com/learn">Codecademy</a></li>
+	  <li><a tabindex="-1" href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a></li>
+	  <li><a tabindex="-1" href="http://getbootstrap.com/getting-started/">getbootstrap : getting started</a></li>
+      <li>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+  $('.dropdown a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>
+
       </div>
     </div>
 
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <h2>Wixsite</h2>
           <p>My Wixsite Resume'</p>
           <p><a class="btn btn-default" href="http://ajliske.wixsite.com/resume" role="button">View Wixsite &raquo;</a></p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <h2>Weebly</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p>My Weebly Resume'</p>
           <p><a class="btn btn-default" href="http://ajliske.weebly.com/" role="button">View Weebly Site &raquo;</a></p>
        </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <h2>Bootstrap</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p>My Bootstrap Resume'</p>
           <p><a class="btn btn-default" href="#" role="button">View Bootstrap Site &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+          <h2>Github Repo</h2>
+          <p>CIS 255 Github Repository</p>
+          <p><a class="btn btn-default" href="https://github.com/cis255/cis255" role="button">View Github Repo &raquo;</a></p>
         </div>
       </div>
 
@@ -112,16 +143,17 @@ integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7T
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="../../dist/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+	</div><!-- /.container -->
   </body>
 </html>
 
 
-    </div><!-- /.container -->
+    
 
 
    
