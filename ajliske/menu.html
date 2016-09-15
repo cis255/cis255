@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta charset="utf-8">
+		<meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -62,21 +62,31 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">CIS 255 : Andrew Liske</a>
+                   <a target="_blank" href="https://www.youtube.com/watch?v=frdj1zb9sMY" class="navbar-brand"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Rebel_Alliance_logo.svg/1000px-Rebel_Alliance_logo.svg.png" width="20px"></a> <a class="navbar-brand" href="#">CIS 255 : Andrew Liske</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
+                        <li class="active"><a href="http://csis.svsu.edu/~ajliske/cis255/ajliske/menu.html#">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News and Entertainment<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a tabindex="-1" target="_blank" href="http://www.ign.com/">IGN</a></li>
+                                <li><a tabindex="-1" target="_blank" href="http://www.imdb.com/">IMDB</a></li>
+                                <li><a tabindex="-1" target="_blank" href="https://www.nerdist.com/">Nerdist</a></li>
+                                <li><a tabindex="-1" target="_blank" href="http://www.espn.com/">ESPN</a></li>
+                                <li><a tabindex="-1" target="_blank" href="https://www.bbc.com/">BBC</a></li>
+								<li><a tabindex="-1" target="_blank" href="https://www.wired.com/">Wired</a></li>
+                            </ul>
+                        </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a tabindex="-1" href="http://www.w3schools.com/default.asp">W3Schools</a></li>
-                                <li><a tabindex="-1" href="https://www.codecademy.com/learn">Codecademy</a></li>
-                                <li><a tabindex="-1" href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a></li>
-                                <li><a tabindex="-1" href="http://getbootstrap.com/getting-started/">Getbootstrap : Getting started</a></li>
-                                <li><a tabindex="-1" href="https://www.udemy.com/">Udemy</a></li>
+                                <li><a tabindex="-1" target="_blank" href="http://www.w3schools.com/default.asp">W3Schools</a></li>
+                                <li><a tabindex="-1" target="_blank" href="https://www.codecademy.com/learn">Codecademy</a></li>
+                                <li><a tabindex="-1" target="_blank" href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a></li>
+                                <li><a tabindex="-1" target="_blank" href="http://getbootstrap.com/getting-started/">Getbootstrap : Getting started</a></li>
+                                <li><a tabindex="-1" target="_blank" href="https://www.udemy.com/">Udemy</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -84,7 +94,7 @@
             </div>
         </nav>
 
-        <script>
+        <script><!--jquery script -->
             $(document).ready(function () {
                 $('.dropdown a.test').on("click", function (e) {
                     $(this).next('ul').toggle();
@@ -115,22 +125,22 @@
             <div class="col-md-3">
                 <h2>Wixsite</h2>
                 <p>My Wixsite Resume'</p>
-                <p><a class="btn btn-default" href="http://ajliske.wixsite.com/resume" role="button">View Wixsite &raquo;</a></p>
+                <p><a class="btn btn-default" target="_blank" href="http://ajliske.wixsite.com/resume" role="button">View Wixsite &raquo;</a></p>
             </div>
             <div class="col-md-3">
                 <h2>Weebly</h2>
                 <p>My Weebly Resume'</p>
-                <p><a class="btn btn-default" href="http://ajliske.weebly.com/" role="button">View Weebly Site &raquo;</a></p>
+                <p><a class="btn btn-default" target="_blank" href="http://ajliske.weebly.com/" role="button">View Weebly Site &raquo;</a></p>
             </div>
             <div class="col-md-3">
                 <h2>Bootstrap</h2>
                 <p>My Bootstrap Website</p>
-                <p><a class="btn btn-default" href="#" role="button">View Bootstrap Site &raquo;</a></p>
+                <p><a class="btn btn-default" target="_blank" href="http://csis.svsu.edu/~ajliske/cis255/ajliske/Program01%20/program01.html" role="button">View Bootstrap Site &raquo;</a></p>
             </div>
             <div class="col-md-3">
                 <h2>Github</h2>
                 <p>CIS 255 Github Repository</p>
-                <p><a class="btn btn-default" href="https://github.com/cis255/cis255" role="button">View Github Repo &raquo;</a></p>
+                <p><a class="btn btn-default" target="_blank" href="https://github.com/cis255/cis255" role="button">View Github Repo &raquo;</a></p>
             </div>
         </div>
 
