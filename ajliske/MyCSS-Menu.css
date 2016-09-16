@@ -1,19 +1,31 @@
 .jumbotron {
     background-color:#4dd2ff !important; 
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
+.containerNew{
+	padding-top: 40px;
+	padding-bottom: 40px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
 
-.containerNew {
+.containerGray {
   background-color: #333333;
   color: #999999;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
   padding-left: 0px;
   padding-right: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .btn{
-	border-radius: 0;
+	border-radius: 8px;
 	background:#333333;
 	color:#4dd2ff;
 	text-shadow: none;
@@ -42,11 +54,9 @@
 	text-shadow: none;
 }
 
-#footer{
-	
-}
 
 hr.style{
 	background-color: #fff;
-	border-top: 4px solid #000000;
+	border-top: 3px solid #000000;
 }
+
