@@ -1,0 +1,52 @@
+.jumbotron {
+    background-color:#4dd2ff !important; 
+}
+
+
+.containerNew {
+  background-color: #333333;
+  color: #999999;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.btn{
+	border-radius: 0;
+	background:#333333;
+	color:#4dd2ff;
+	text-shadow: none;
+}
+
+
+.btn:hover {
+  background:#595959 ;
+  color:#4dd2ff;
+}
+
+.btn:active, .btn:focus, .btn:active:focus{
+	background:#333333;
+	color:#4dd2ff;
+}
+
+
+.navbar-collapse .navbar-nav > li > a:hover {
+	color:#4dd2ff;
+	text-shadow: none;
+}
+
+.navbar-header .navbar-nav > li > a:hover {
+	webkit-filter: invert(100%);
+    filter: invert(100%);
+	text-shadow: none;
+}
+
+#footer{
+	
+}
+
+hr.style{
+	background-color: #fff;
+	border-top: 4px solid #000000;
+}
