@@ -2,7 +2,7 @@
 
 	<head>
 
-		<title> Hello World! </title>
+		<title> Paul Travis </title>
 
 		<link rel="stylesheet" type="text/css" href="mss.css" />
 		<script src="toggle.js"></script>
@@ -12,16 +12,23 @@
 
 	<body>
 
-		<h2>Paul Travis</h2>
-		<hr />
-		<p id="blue" onClick="toggleHidden('menu')">Show Menu</p>
+		<hr id="header" />
 
-		<div id="menu" style="display:none">
-			<p><a href="#"><b>.</b></a></p>
-			<p><a href="http://www.cis255.com"><b>..</b></a></p>
-			<p><a href="http://electracion.wixsite.com/mysite">WIX Site</a>
-			<p><a href="http://siteformyclass.weebly.com">Weebly Site</a>
-		</div>
+		<h2 id="lefty">Paul Travis</h2>
+		
+		<p id="righty"><img src="button.png" onClick="toggleHidden('menu')" id="imgborder" /></p>
+		
+
+		<div id="menu">
+		<div id="border">
+			<p class="msvr" onclick="location.href='http://www.cis255.com';" ><b>..</b></p>
+			<p class="msvr" onclick="location.href='http://electracion.wixsite.com/mysite';">WIX Site</p>
+			<p class="msvr" onclick="location.href='http://siteformyclass.weebly.com';">Weebly Site</p>
+			<p class="msvr" onclick="location.href='http://csis.svsu.edu/~patravis/cis255/patravis/orbit/orbit-v1.0/';">Bootstrap WIP</p>
+		</div> <!-- border div -->
+		</div> <!-- menu div -->
+
+		<hr class="bottomfoot" />
 
 	</body>
 
