@@ -56,8 +56,8 @@ p {
   position: absolute;
   right: 0;
   width: 240px;
-  height: 120%;
-  min-height: 800px;
+  height: 140%;
+  min-height: 1000px;
   color: #fff;
 }
 .sidebar-wrapper a {
