@@ -1,2 +1,14 @@
-p 		 {font-size: 18px}
-#blue	 {color: blue; text-decoration:underline}
+body	    {background: snow;}
+h1 h2 h3    {font-family: Arial, Sans-Serif; border: 1px solid white; margin-top: 3px; position: relative;}
+p	    {font-size: 18px; font-family: Courier, monospace; margin: .3em; position: relative;}
+hr	    {border-style: solid; border-width: 3px; clear: both; position: relative; width: 99%; z-index: -1; color: darkgrey;}
+a:visited   {color: blue;}
+#imgborder  {border-style: outset; float: right; background: white;}
+#menu       {display:none;}
+#border     {border-style: double; height: 200px; width: 150px; padding: 0px 5px auto 5px; float: right; position: relative; z-index: 1; background: SeaShell;}
+.msvr	    {text-decoration: underline;}
+.msvr:hover {background: blue; color: white;}
+#lefty	    {float: left; margin-top: 8px; margin-bottom: .1em;}
+#righty	    {float: right;}
+#header     {margin-right: 0.5em; border-width: 20px;}
+.bottomfoot {position: absolute; left: 0px; top: 12%;}
