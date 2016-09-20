@@ -1,0 +1,15 @@
+/* external css */
+h1 {
+	color: yellow;
+	font-size: 36 pt;
+	background-color: pink;
+	min-height: 100 px;
+}
+
+p span {font-size: 200%;}
+
+span {font-size: 50%;}
+
+h4, span, a {color: brown;}
+
+.col-xs-4 {color: red;}
