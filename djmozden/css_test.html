@@ -1,4 +1,23 @@
 <!doctype html>
+<!-- 
+FileName: 	css_test.html
+Author: 	Derek mozden
+Data:    	09/19/16
+Description: This program demonstrates CSS
+design: 	<head>
+				title
+				link to bootstrap and java script
+				internal css
+				links to external css 9css_test.css)
+			<body>
+				h1 title, 
+				2 paragraphs
+				h2 title
+				2 paragraphs
+				h2 title
+				2 columns with words
+			<end>
+-->
 <html>
 	<head>
 		<title>CSS TEST.</title>
@@ -9,13 +28,47 @@
 		h1 {color: blue;}
 	</style>
 	<body>
-		<h1>Welcome</h1>
-		<!-- internal CSS -->
-		<p style="color: blue;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<div class="container">
+			<h1><span>W</span>elcome</h1>
+			<!-- internal CSS -->
+			<p style="color: blue;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-		<h2>Second Title</h2>
-		<!-- inline CSS -->
-		<p style="color: blue;"><font color="red">Lorem ipsum dolor sit amet,</font> consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		<p style="color: blue;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<h2>Second Title</h2>
+			<!-- inline CSS -->
+			<p style="color: blue;"><font color="red"><span>L</span>orem ipsum dolor sit amet,</font>
+			consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+			et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+			exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+			dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+			proident, sunt in culpa qui officia deserunt mollit anim id
+			est laborum.</p>
+			<p style="color: blue;">Lorem ipsum dolor sit amet,
+			consectetur adipisicing elit, sed do eiusmod tempor 
+			incididunt ut labore et dolore magna aliqua. Ut enim
+			ad minim veniam, quis nostrud exercitation ullamco 
+			laboris nisi ut aliquip ex ea commodo consequat. Duis 
+			aute irure dolor in reprehenderit in voluptate velit esse 
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint
+			occaecat cupidatat non proident, sunt in culpa qui officia
+			deserunt mollit anim id est laborum.</p>
+		
+			<h2> two Columns </h2>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+				ant <br />
+				bear<br />
+				cat<br />
+				dog<br />
+				elephant<br />
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"
+			style="text-align: right;">
+				ant <br />
+				bear<br />
+				cat<br />
+				dog<br />
+				elephant<br />
+			</div>
+		</div><!-- end container-->
 	</body>
 </html>
