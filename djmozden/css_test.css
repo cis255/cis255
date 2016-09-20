@@ -1,0 +1,9 @@
+/* external css */
+h2 {
+	color: green;
+	font-size: 35pts;
+	background-color: orange;
+	min-height; 500px;
+	}
+p span {font-size:500%;}
+span {font-size: 50%;}
