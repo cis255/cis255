@@ -1,5 +1,6 @@
 .jumbotron {
-    background-color:#4dd2ff !important; 
+    background-color:#262626;
+	color:#b3b3b3;
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
@@ -13,7 +14,7 @@
 
 .containerGray {
   background-color: #333333;
-  color: #999999;
+  color: #b3b3b3;
   margin-right: auto;
   margin-left: auto;
   margin-top: 0px;
@@ -25,26 +26,28 @@
 }
 
 .btn{
-	border-radius: 8px;
+	border-radius: 10px;
 	background:#333333;
-	color:#4dd2ff;
+	color:#33bbff;
 	text-shadow: none;
+	 padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
 .btn:hover {
   background:#595959 ;
-  color:#4dd2ff;
+  color:#33bbff;
 }
 
 .btn:active, .btn:focus, .btn:active:focus{
 	background:#333333;
-	color:#4dd2ff;
+	color:#33bbff;
 }
 
 
-.navbar-collapse .navbar-nav > li > a:hover {
-	color:#4dd2ff;
+.navbar-collapse .navbar-nav > li > a {
+	color:#33bbff;
 	text-shadow: none;
 }
 
