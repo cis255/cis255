@@ -1,0 +1,19 @@
+/* external css */
+h2 {
+	color: green;
+	font-size: 36pt;
+	background-color: hotpink;
+	min-height: 1px;
+}
+p span {
+	font-size: 200%;
+	color: brown;
+	}
+span {font-size: 50%;}
+h4, span, a {color: green;}
+.fred {color: hotpink;}
+.col-xs-4 {color: yellow;}
+.col-sm-4 {color: purple;}
+.col-md-4 {color: blue;}
+.col-lg-4 {color: red;}
+#zippydee {background-color: purple;}
