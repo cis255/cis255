@@ -1,0 +1,29 @@
+{
+  "name": "GitHub Activity Stream",
+  "main": "github-activity.js",
+  "version": "0.1.4",
+  "homepage":"https://github.com/ampetric?tab=overview&from=2016-08-01&to=2016-08-31&utf8=%E2%9C%93",
+  "authors": [
+    "Andrew Petricevic <andrewpetricevic@gmail.com>"
+  ],
+  "description": "A widget for displaying GitHub activity for a user.",
+  "keywords": [
+    "github"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "octicons": "~2.1.0",
+    "mustache": "~0.8.2"
+  },
+  "devDependencies": {
+    "grunt": "0.4.5"
+  }
+}

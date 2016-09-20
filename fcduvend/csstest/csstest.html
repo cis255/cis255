@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+FILE  : csstest.html
+AUTHOR: Frank Duvendack
+DATE  : 2016.09.19
+DESC  : This page demonstrates CSS.
+DESGIN:
+        <head>
+          Bootstrap stuff
+          title
+        <body>
+          h1 title
+          lorem ipsum
+          2 columns
+-->
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+                           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+                           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="csstest.css"/>
+    <title>CSS Test</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="lime">CSS <span>T</span>est</h1>
+      <hr class="white"/>
+      <p class="red">
+        <i>
+          <span>"L</span>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </i>
+        - Some old guy
+      </p>
+
+      <h2 class="lime">Four Columns (2x2)</h2>
+
+      <div class="white col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <h3>Bears</h3>
+        <ul>
+          <li>Black Bear</li>
+          <li>Grizzly</li>
+          <li id="favoritebear">Panda</li>
+          <li>Polar</li>
+        <ul>
+      </div>
+
+      <div class="white col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align: right;">
+        <h3>Dogs</h3>
+        <ul>
+          <li id="favoritedog">Corgi</li>
+          <li>French Bulldog</li>
+          <li>Golden Retriever</li>
+          <li>Pug</li>
+        <ul>
+      </div>
+
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Grosser_Panda.JPG" style="width: 500px;">
+      </div>
+
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="text-align: right;">
+        <img src="http://cdn3-www.dogtime.com/assets/uploads/gallery/pembroke-welsh-corgi-dog-breed-pictures/prance-8.jpg" style="width: 500px;">
+      </div>
+    </div>
+  </body>
+</html>
