@@ -1,0 +1,185 @@
+<!--
+Filename:	  resume.html
+Author:		  Tyler Miller
+Description:  This is the main index file for my bootstrap resume site.
+Website: http://csis.svsu.edu/~tlmille4/cis255/tlmille4/orbit/orbit-v1.0/resume.html
+
+Program Flow (design):
+	<head>: browser tab title
+			favicon initialized
+			Defining metatags 
+			Linking our CSS pages for page design
+	<body>:
+			All page elements are contained in a wrapper class
+			Sidebar Container holds everything on the right side of the site including
+				-Profile Picture and Name
+				-Site Navigation
+				Contact Info
+			Main Wrapper contains info on the main/center area of screen which including
+				-Section Summary tag for Work/Career Info
+				-Section Summary tag for School/College Info
+			Footer contains contributation to original developer
+			Javascript tags for site and Phonegap at end of file
+-->
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> 
+<html lang="en"> <!--<![endif]-->  
+	<head>
+		<title>Career/Resume - Tyler Miller </title>
+		<!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Hello! I'm Tyler Miller and this is my online resume">
+		<meta name="author" content="Tyler Miller">    
+		<link rel="shortcut icon" href="favicon.ico">  
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+		<!-- Global CSS -->
+		<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+		<!-- Plugins CSS -->
+		<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+		<!-- Theme CSS -->  
+		<link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->	
+	</head> 
+
+	<body>
+		<div class="wrapper">
+			<div class="sidebar-wrapper">
+				<div class="profile-container">
+					<img class="profile" src="assets/images/tyler.jpg" alt="Hello! I'm Tyler Miller" />
+					<h1 class="name">Tyler Miller</h1>
+					<h3 class="tagline">IT/ Software Developer</h3>
+				</div><!--//profile-container-->
+				
+				
+				<div class="navigation-container container-block"> <!--Navigation Menu Start -->
+					<div class="home_nav">
+						<span class="fa-stack fa-lg">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<a href="index.html"><i class="fa fa-home fa-stack-1x"></i></a> 
+						</span>
+						<a href="index.html">Home</a>
+					</div>
+					<div class="resume_nav">
+						<span class="fa-stack fa-lg">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<a href="resume.html"><i class="fa fa-user fa-stack-1x"></i></a> 
+						</span>
+						<a href="resume.html">Career/Resume</a>
+					</div>
+					<div class="social_nav">
+						<span class="fa-stack fa-lg">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<a href="social.html"><i class="fa fa-globe fa-stack-1x"></i></a> 
+						</span>
+						<a href="social.html">Social/Interests</a>
+					</div>
+					
+					<div class="academic_nav">
+						<span class="fa-stack fa-lg">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<a href="academic.html"><i class="fa fa-archive fa-stack-1x"></i></a> 
+						</span>
+						<a href="academic.html">Projects/Skills</a>
+					</div>
+				</div><!--//End navigation Menu-->
+				
+
+				
+				<div class="contact-container container-block">
+				<h2 class="container-block-title">Contact</h2>
+					<ul class="list-unstyled contact-list">
+						<li class="email"><i class="fa fa-envelope"></i><a href="mailto: tlmille4@svsu.edu">tlmille4@svsu.edu</a></li>
+						<li class="phone"><i class="fa fa-phone"></i><a href="tel:989 285 5808">(989) 285-5808</a></li>
+						<li class="website"><i class="fa fa-globe"></i><a href="http://tlmille4.noip.me" target="_blank">Personal Server</a></li>
+						<li class="linkedin"><i class="fa fa-linkedin"></i><a href="http://www.linkedin.com/in/tlmille4" target="_blank">LinkedIn Profile</a></li>
+						<li class="github"><i class="fa fa-github"></i><a href="http://www.github.com/tlmille4" target="_blank">Github Repository</a></li>
+					</ul>
+				</div><!--//contact-container-->             
+			</div><!--//sidebar-wrapper-->
+			
+			<div class="main-wrapper">
+				
+				<section class="section summary-section">
+					<h1 class="section-title"><i class="fa fa-briefcase"></i>Career</h1>
+					<div class="item">
+						<div class="meta">
+							<div class="upper-row">
+								<h3 class="job-title">Manager</h3>
+								<div class="time">2007 - Present</div>
+							</div><!--//upper-row-->
+							<div class="company"><a href="http://www.framedartbytilliams.com" target="_blank">Framed Art by Tilliams</a></div>
+						</div><!--//meta-->
+						<div class="details">
+							<p>This position help a wide variety of duties including:</p>
+							<ul>
+								<li>Installing and maintaining new computers, printers, and shipping software</li>
+								<li>Graphics editing and printing using professional-grade equipment and software</li>
+								<li>Using HTML/CSS and XML coding languages for invoicing customer data</li>
+								<li>Inventorying and ordering products using Microsoft Excel</li>
+								<li>Preparing and distributing artwork, satisfying industry standards</li>
+								<li>Printing and sorting incoming orders and ensuring shipments will arrive on time</li>
+							</ul>
+						</div><!--//details-->
+					</div><!--//item-->
+
+				</section><!--//section-->
+				
+				
+				<section class="section summary-section">
+					<h1 class="section-title"><i class="fa fa-archive"></i>Education</h1>
+					<div class="item">
+						<div class="meta">
+							<div class="upper-row">
+								<h3 class="job-title">Bachelor of Science in Computer Science</h3>
+								<div class="time">2012 - Present</div>
+							</div><!--//upper-row-->
+							<div class="company"><a href="http://www.svsu.edu" target="_blank">Saginaw Valley State University</a></div>
+						</div><!--//meta-->
+					</div><!--//item-->
+					
+					<div class="item">
+						<div class="meta">
+							<div class="upper-row">
+								<h3 class="job-title">General Studies and MACRAO</h3>
+								<div class="time">2010 - 2012</div>
+							</div><!--//upper-row-->
+							<div class="company"><a href="http://www.midmich.edu" target="_blank">Mid Michigan Community College</a></div>
+						</div><!--//meta-->
+						<div class="details">
+							<ul>Member of Phi Theta Kappa</ul>
+						</div><!--//details-->
+					</div><!--//item-->					
+				</section><!--//section-->
+				
+				<section class="section resume-section">
+				<h1 class="section-title"><i class="fa fa-archive"></i>Resume</h1>
+					<div class="summary">
+						<p><b>To download a full copy of my resume, <a href="assets/files/Resume-8-23-2015.pdf" target="_blank">click here</a></b></p>
+					</div><!--//summary-->
+				</section><!-- resume section-->
+			</div><!--//main-body-->
+		</div>
+	 
+		<footer class="footer">
+			<div class="text-center">
+					<!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+					<small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+			</div><!--//container-->
+		</footer><!--//footer-->
+	 
+		<!-- Javascript -->          
+		<script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
+		<!-- custom js -->
+		<script type="text/javascript" src="assets/js/main.js"></script>            
+	</body>
+</html> 
+
