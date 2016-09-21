@@ -1,0 +1,9 @@
+/* external css */
+h1 {color: blue;
+	background-color: green;
+   }
+h2 {color: green;
+	background-color: blue;
+   }
+p span {font-size: 200%;}
+span {font-size: 50%;}
