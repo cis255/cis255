@@ -35,3 +35,12 @@ h1, h2, h3, span {
 #favoritedog {
   color: aqua
 }
+
+#beardiv {
+  border: dotted;
+}
+
+#dogdiv {
+  text-align: right;
+  border: dotted;
+}
