@@ -1,0 +1,195 @@
+<!--
+Filename:	  academic.html
+Author:		  Tyler Miller
+Description:  This is the main index file for my bootstrap resume site.
+Website: http://csis.svsu.edu/~tlmille4/cis255/tlmille4/orbit/orbit-v1.0/social.html
+
+Program Flow (design):
+	<head>: browser tab title
+			favicon initialized
+			Defining metatags 
+			Linking our CSS pages for page design
+	<body>:
+			All page elements are contained in a wrapper class
+			Sidebar Container holds everything on the right side of the site including
+				-Profile Picture and Name
+				-Site Navigation
+				Contact Info
+			Main Wrapper contains info on the main/center area of screen which including
+				-Projects Section which includes various projects I've worked on
+				-Skills Section which shows a graph of my various skillset levels
+			Footer contains contributation to original developer
+			Javascript tags for site and Phonegap at end of file
+-->
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> 
+<html lang="en"> <!--<![endif]-->  
+	<head>
+		<title>Projects/Skills - Tyler Miller </title>
+		<!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Hello! I'm Tyler Miller and this is my online resume">
+		<meta name="author" content="Tyler Miller">    
+		<link rel="shortcut icon" href="favicon.ico">  
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+		<!-- Global CSS -->
+		<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+		<!-- Plugins CSS -->
+		<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+		
+		<!-- Theme CSS -->  
+		<link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->	
+	</head> 
+
+	<body>
+		<div class="wrapper">
+			<div class="sidebar-wrapper">
+				<div class="profile-container">
+					<img class="profile" src="assets/images/tyler.jpg" alt="Hello! I'm Tyler Miller" />
+					<h1 class="name">Tyler Miller</h1>
+					<h3 class="tagline">IT/ Software Developer</h3>
+				</div><!--//profile-container-->
+				
+				
+				<div class="navigation-container container-block"> <!--Navigation Menu Start -->
+					<div class="home_nav">
+						<span class="fa-stack fa-lg">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<a href="index.html"><i class="fa fa-home fa-stack-1x"></i></a> 
+						</span>
+						<a href="index.html">Home</a>
+					</div>
+					<div class="resume_nav">
+						<span class="fa-stack fa-lg">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<a href="resume.html"><i class="fa fa-user fa-stack-1x"></i></a> 
+						</span>
+						<a href="resume.html">Career/Resume</a>
+					</div>
+					<div class="social_nav">
+						<span class="fa-stack fa-lg">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<a href="social.html"><i class="fa fa-globe fa-stack-1x"></i></a> 
+						</span>
+						<a href="social.html">Social/Interests</a>
+					</div>
+					
+					<div class="academic_nav">
+						<span class="fa-stack fa-lg">
+							<i class="fa fa-square-o fa-stack-2x"></i>
+							<a href="academic.html"><i class="fa fa-archive fa-stack-1x"></i></a> 
+						</span>
+						<a href="academic.html">Projects/Skills</a>
+					</div>
+				</div><!--//End navigation Menu-->
+				
+				<div class="contact-container container-block">
+				<h2 class="container-block-title">Contact</h2>
+					<ul class="list-unstyled contact-list">
+						<li class="email"><i class="fa fa-envelope"></i><a href="mailto: tlmille4@svsu.edu">tlmille4@svsu.edu</a></li>
+						<li class="phone"><i class="fa fa-phone"></i><a href="tel:989 285 5808">(989) 285-5808</a></li>
+						<li class="website"><i class="fa fa-globe"></i><a href="http://tlmille4.noip.me" target="_blank">Personal Server</a></li>
+						<li class="linkedin"><i class="fa fa-linkedin"></i><a href="http://www.linkedin.com/in/tlmille4" target="_blank">LinkedIn Profile</a></li>
+						<li class="github"><i class="fa fa-github"></i><a href="http://www.github.com/tlmille4" target="_blank">Github Repository</a></li>
+					</ul>
+				</div><!--//contact-container-->            
+			</div><!--//sidebar-wrapper-->
+			
+			<div class="main-wrapper">	
+				<section class="section projects-section">
+					<h1 class="section-title"><i class="fa fa-archive"></i>Projects</h1>
+					<div class="intro">
+						<p>Listed below are some projects I have worked on in the past. <br> You can also browse my GitHub repository via the link in the Contact section.</p>
+					</div><!--//intro-->
+					<div class="item">
+						<span class="project-title"><a href="http://tlmille4.noip.me">tlmille4 Site</a></span> - <span class="project-tagline">A simple website created on a home server, primarily allowing for easy access to local files on the network.</span>
+						
+					</div><!--//item-->
+					<div class="item">
+						<span class="project-title"><a href="http://tlmille4.noip.me/timetracker" target="_blank">Time Tracker</a></span> - 
+						<span class="project-tagline">An implemented website template designed to allow employees to clock in and out of work in order to keep track of their employee time records." </span>
+					</div><!--//item-->
+					<div class="item">
+						<span class="project-title"><a href="assets/files/mdiCalc.pdf" target="_blank">MDI Calculator</a></span> - <span class="project-tagline">Sourcecode for a simple conversion calculator developed in VB.NET</span>
+					</div><!--//item-->
+				</section><!--//projects section-->
+				
+				<section class="section skills-section">
+					<h2 class="section-title"><i class="fa fa-rocket"></i>Skills &amp; Proficiency</h2>
+					<div class="skillset">        
+						<div class="item">
+							<h3 class="level-title">C++</h3>
+							<div class="level-bar">
+								<div class="level-bar-inner" data-level="90%">
+								</div>                                      
+							</div><!--//level-bar-->                                 
+						</div><!--//item-->
+						
+						<div class="item">
+							<h3 class="level-title">VB.NET</h3>
+							<div class="level-bar">
+								<div class="level-bar-inner" data-level="96%">
+								</div>                                      
+							</div><!--//level-bar-->                                 
+						</div><!--//item-->
+						
+						<div class="item">
+							<h3 class="level-title">Java</h3>
+							<div class="level-bar">
+								<div class="level-bar-inner" data-level="50%">
+								</div>                                      
+							</div><!--//level-bar-->                                 
+						</div><!--//item-->
+						
+						<div class="item">
+							<h3 class="level-title">HTML5 &amp; CSS</h3>
+							<div class="level-bar">
+								<div class="level-bar-inner" data-level="85%">
+								</div>                                      
+							</div><!--//level-bar-->                                 
+						</div><!--//item-->
+						
+						<div class="item">
+							<h3 class="level-title">UNIX</h3>
+							<div class="level-bar">
+								<div class="level-bar-inner" data-level="85%">
+								</div>                                      
+							</div><!--//level-bar-->                                 
+						</div><!--//item-->
+						
+						<div class="item">
+							<h3 class="level-title">Sketch &amp; Photoshop</h3>
+							<div class="level-bar">
+								<div class="level-bar-inner" data-level="98%">
+								</div>                                      
+							</div><!--//level-bar-->                                 
+						</div><!--//item--> 
+					</div><!--//skillset-bar-->  
+				</section><!--//skills section-->
+			</div><!--//main-body-->
+		</div>
+	 
+		<footer class="footer">
+			<div class="text-center">
+					<!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+					<small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+			</div><!--//container-->
+		</footer><!--//footer-->
+	 
+		<!-- Javascript -->          
+		<script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
+		<!-- custom js -->
+		<script type="text/javascript" src="assets/js/main.js"></script>            
+	</body>
+</html> 
+
