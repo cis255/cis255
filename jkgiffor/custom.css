@@ -1,0 +1,30 @@
+.color { 
+background: linear-gradient(216deg, #339179, #b7d6ce);
+ background-size: 400% 400%;
+ color: white;
+-webkit-animation: AnimationName 60s ease infinite;
+
+
+-moz-animation: AnimationName 60s ease infinite;
+
+animation: AnimationName 60s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+     0%{background-position:0% 51%}
+     50%{background-position:100% 50%}
+     100%{background-position:0% 51%}
+ }
+
+
+@-moz-keyframes AnimationName {
+     0%{background-position:0% 51%}
+     50%{background-position:100% 50%}
+     100%{background-position:0% 51%}
+ }
+
+@keyframes AnimationName { 
+     0%{background-position:0% 51%}
+     50%{background-position:100% 50%}
+     100%{background-position:0% 51%}
+ }

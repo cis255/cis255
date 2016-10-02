@@ -1,0 +1,18 @@
+/* external css  */
+h2 {	color: green;
+	font-size: 36pt;
+	background-color: lightblue;
+	min-height: 100px;
+	}
+p span {
+	font-size: 200%;
+	color: brown;
+}
+span {
+	font-size: 50%;
+}
+h4, span, a {color: green;}
+.col-xs-6 { color: yellow;}
+.col-sm-6 { color: purple;}
+*.col-md-6 { color: red;}
+.col-lg-6{ color: blue;}

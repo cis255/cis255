@@ -3,6 +3,7 @@
 	color:#b3b3b3;
 	margin-top: 0px;
 	margin-bottom: 0px;
+	padding-left: 2%;
 }
 
 .containerNew{
@@ -12,8 +13,12 @@
 	margin-bottom: 0px;
 }
 
+.containerNav{
+	
+}
+
 .containerGray {
-  background-color: #333333;
+  background-color: #262626;
   color: #b3b3b3;
   margin-right: auto;
   margin-left: auto;
@@ -27,11 +32,11 @@
 
 .btn{
 	border-radius: 10px;
-	background:#333333;
+	background:#262626;
 	color:#33bbff;
 	text-shadow: none;
-	 padding-top: 10px;
-  padding-bottom: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 
@@ -41,7 +46,7 @@
 }
 
 .btn:active, .btn:focus, .btn:active:focus{
-	background:#333333;
+	background:#262626;
 	color:#33bbff;
 }
 
