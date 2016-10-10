@@ -1,0 +1,29 @@
+{
+  "name": "github-activity",
+  "version": "0.1.4",
+  "description": "A widget for displaying GitHub activity for a user.",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-uglify": "~0.5.1",
+    "grunt-contrib-cssmin": "~0.10.0",
+    "grunt-contrib-clean": "~0.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ampetric?tab=overview&from=2016-08-01&to=2016-08-31&utf8=%E2%9C%93"
+  },
+  "keywords": [
+    "github"
+  ],
+  "author": "Andrew Petricevic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ampetric?tab=overview&from=2016-08-01&to=2016-08-31&utf8=%E2%9C%93"
+  },
+  "homepage": "https://github.com/ampetric?tab=overview&from=2016-08-01&to=2016-08-31&utf8=%E2%9C%93"
+}

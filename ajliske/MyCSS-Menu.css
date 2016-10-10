@@ -1,52 +1,59 @@
+
+
 .jumbotron {
-    background-color:#4dd2ff !important; 
-	margin-top: 0px;
+    background-color:#262626;
+	color:#b3b3b3;
+	margin-top: -8%;
 	margin-bottom: 0px;
+	padding-left: 2%;
 }
 
-.containerNew{
-	padding-top: 40px;
-	padding-bottom: 40px;
-	margin-top: 0px;
-	margin-bottom: 0px;
+.containerNav{
+	padding-left: 15px;
+	padding-right: 15px;
+	
 }
 
 .containerGray {
-  background-color: #333333;
-  color: #999999;
+  background-color: #262626;
+  color: #b3b3b3;
   margin-right: auto;
   margin-left: auto;
   margin-top: 0px;
   margin-bottom: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: auto;
+  padding-right: auto;
+  padding-top: 5%;
+  padding-bottom: 2%;
 }
 
 .btn{
-	border-radius: 8px;
-	background:#333333;
-	color:#4dd2ff;
+	border-radius: 10px;
+	background:#262626;
+	color:#33bbff;
 	text-shadow: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 
 .btn:hover {
   background:#595959 ;
-  color:#4dd2ff;
+  color:#33bbff;
 }
 
 .btn:active, .btn:focus, .btn:active:focus{
-	background:#333333;
-	color:#4dd2ff;
+	background:#262626;
+	color:#33bbff;
 }
 
 
-.navbar-collapse .navbar-nav > li > a:hover {
-	color:#4dd2ff;
+.navbar-collapse .navbar-nav > li > a {
+	color:#33bbff;
 	text-shadow: none;
 }
+
+
 
 .navbar-header .navbar-nav > li > a:hover {
 	webkit-filter: invert(100%);
@@ -54,9 +61,18 @@
 	text-shadow: none;
 }
 
+.navbar{
+	margin-bottom: 0px;
+	
+}
 
 hr.style{
 	background-color: #fff;
 	border-top: 3px solid #000000;
 }
 
+
+html, body {
+  width: auto;
+  overflow-x: hidden;
+}

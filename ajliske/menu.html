@@ -1,7 +1,17 @@
 <!DOCTYPE html>
+
+<!-- 
+filename:
+author:
+date:
+description:
+design: <head>
+		<body>
+-->
+
 <html lang="en">
     <head>
-		<meta charset="utf-8">
+        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -38,7 +48,7 @@
         <!-- Custom styles for this template -->
         <link href="starter-template.css" rel="stylesheet">
         <link href="jumbotron.css" rel="stylesheet">
-		<link href="MyCSS-Menu.css" rel="stylesheet">
+        <link href="MyCSS-Menu.css" rel="stylesheet">
 
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
         <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -50,55 +60,58 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
+	
 
     <body id="page-top">
 
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-					
-					<ul class="nav navbar-nav">
-						 <li><a target="_blank" href="https://www.youtube.com/watch?v=frdj1zb9sMY" class="navbar-brand"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Rebel_Alliance_logo.svg/1000px-Rebel_Alliance_logo.svg.png" width="20px"></a></li>
-					</ul>
-				   
+        <nav class="navbar navbar-inverse navbar-static-top">
+            
+                <div class="col-md-12 col-sm-12 col-lg-12 ">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <ul class="nav navbar-nav">
+                            <li><a target="_blank" href="https://www.youtube.com/watch?v=frdj1zb9sMY" class="navbar-brand"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Rebel_Alliance_logo.svg/1000px-Rebel_Alliance_logo.svg.png" width="20" alt="CLICK HUR"></a></li>
+                        </ul>
+
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">CIS 255 : Andrew Liske</a></li>
+                            <li><a href="#page-top">Home</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News and Entertainment<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" target="_blank" href="http://www.ign.com/">IGN</a></li>
+                                    <li><a tabindex="-1" target="_blank" href="http://www.imdb.com/">IMDB</a></li>
+                                    <li><a tabindex="-1" target="_blank" href="https://www.nerdist.com/">Nerdist</a></li>
+                                    <li><a tabindex="-1" target="_blank" href="http://www.espn.com/">ESPN</a></li>
+                                    <li><a tabindex="-1" target="_blank" href="https://www.bbc.com/">BBC</a></li>
+                                    <li><a tabindex="-1" target="_blank" href="https://www.wired.com/">Wired</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" target="_blank" href="http://www.w3schools.com/default.asp">W3Schools</a></li>
+                                    <li><a tabindex="-1" target="_blank" href="https://www.codecademy.com/learn">Codecademy</a></li>
+                                    <li><a tabindex="-1" target="_blank" href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a></li>
+                                    <li><a tabindex="-1" target="_blank" href="http://getbootstrap.com/getting-started/">Getbootstrap : Getting started</a></li>
+                                    <li><a tabindex="-1" target="_blank" href="https://www.udemy.com/">Udemy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
-				
-                    <ul class="nav navbar-nav">
-						<li><a class="navbar-brand" href="#">CIS 255 : Andrew Liske</a></li>
-                        <li><a href="#page-top">Home</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News and Entertainment<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a tabindex="-1" target="_blank" href="http://www.ign.com/">IGN</a></li>
-                                <li><a tabindex="-1" target="_blank" href="http://www.imdb.com/">IMDB</a></li>
-                                <li><a tabindex="-1" target="_blank" href="https://www.nerdist.com/">Nerdist</a></li>
-                                <li><a tabindex="-1" target="_blank" href="http://www.espn.com/">ESPN</a></li>
-                                <li><a tabindex="-1" target="_blank" href="https://www.bbc.com/">BBC</a></li>
-								<li><a tabindex="-1" target="_blank" href="https://www.wired.com/">Wired</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a tabindex="-1" target="_blank" href="http://www.w3schools.com/default.asp">W3Schools</a></li>
-                                <li><a tabindex="-1" target="_blank" href="https://www.codecademy.com/learn">Codecademy</a></li>
-                                <li><a tabindex="-1" target="_blank" href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a></li>
-                                <li><a tabindex="-1" target="_blank" href="http://getbootstrap.com/getting-started/">Getbootstrap : Getting started</a></li>
-                                <li><a tabindex="-1" target="_blank" href="https://www.udemy.com/">Udemy</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div>
         </nav>
 
         <script><!--jquery script -->
@@ -110,89 +123,88 @@
                 });
             });
         </script>
-		
-		
-			<div class="jumbotron">
-				<!-- Main jumbotron for a primary marketing message or call to action -->
-                <div class="container">
-                    <h3>Updates:</h3>
-					<h5>--Update 9/15 : Added Custom CSS  </h5>
-                    <h5>--Update 9/14 : Wixsite, Weebly and Github linked  </h5>
-                    <h5>--Update 9/14 : Several websites added to Resources tab  </h5>
+
+
+        <div class="jumbotron">
+		 <div class="containerGray">
+            <!-- Main jumbotron for a primary marketing message or call to action -->
+            <h3>Updates:</h3>
+            <h5>--Update 9/15 : Added Custom CSS  </h5>
+            <h5>--Update 9/14 : Wixsite, Weebly and Github linked  </h5>
+            <h5>--Update 9/14 : Several websites added to Resources tab  </h5>
+        
+		</div>
+		</div>
+
+
+        <section id="projects">
+            <div class="container" style="padding-top: 40px; padding-bottom: 40px;">
+                <div class="col-md-12  col-sm-12 col-lg-12  text-center">
+                    <hr class="style" style="width:12%">
+                    <h2 class="section-heading">--Projects--</h2>
+                    <hr class="style" style="width:12%">
                 </div>
 				
-				
-			</div>
-			
 
-    <section id="projects">
-    <div class="containerNew">
-			<div class="col-md-12  text-center">
-					<hr class="style" style="width:12%">
-                    <h2 class="section-heading">--Projects--</h2>
-					<hr class="style" style="width:12%">
-			</div>
+                <!-- Example row of columns -->
+                    
+                        <div class="col-md-3 col-sm-3 col-lg-3 text-center">
+                            <h2>Wixsite</h2>
+                            <p>--Resume'--</p>
+                            <p><a class="btn btn-default" target="_blank" href="http://ajliske.wixsite.com/resume" role="button">View Wixsite &raquo;</a></p>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-lg-3 text-center">
+                            <h2>Weebly</h2>
+                            <p>--Resume'--</p>
+                            <p><a class="btn btn-default" target="_blank" href="http://ajliske.weebly.com/" role="button">View Weebly &raquo;</a></p>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-lg-3 text-center">
+                            <h2>Bootstrap</h2>
+                            <p>--Website--</p>
+                            <p><a class="btn btn-default" target="_blank" href="http://csis.svsu.edu/~ajliske/cis255/ajliske/Program01%20/program01.html" role="button">View Bootstrap &raquo;</a></p>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-lg-3 text-center">
+                            <h2>Github</h2>
+                            <p>--Repository--</p>
+                            <p><a class="btn btn-default" target="_blank" href="https://github.com/cis255/cis255" role="button">View Github &raquo;</a></p>
+                        </div>
+                
+            </div> <!-- /container -->
 			
-        <!-- Example row of columns -->
-        <div class="row">
-		 <div class="span12">
-            <div class="col-md-3 col-sm-6 text-center">
-                <h2>Wixsite</h2>
-                <p>--Resume'--</p>
-                <p><a class="btn btn-default" target="_blank" href="http://ajliske.wixsite.com/resume" role="button">View Wixsite &raquo;</a></p>
-            </div>
-            <div class="col-md-3 col-sm-6 text-center">
-                <h2>Weebly</h2>
-                <p>--Resume'--</p>
-                <p><a class="btn btn-default" target="_blank" href="http://ajliske.weebly.com/" role="button">View Weebly &raquo;</a></p>
-            </div>
-            <div class="col-md-3 col-sm-6 text-center">
-                <h2>Bootstrap</h2>
-                <p>--Website--</p>
-                <p><a class="btn btn-default" target="_blank" href="http://csis.svsu.edu/~ajliske/cis255/ajliske/Program01%20/program01.html" role="button">View Bootstrap &raquo;</a></p>
-            </div>
-            <div class="col-md-3 col-sm-6 text-center">
-                <h2>Github</h2>
-                <p>--Repository--</p>
-                <p><a class="btn btn-default" target="_blank" href="https://github.com/cis255/cis255" role="button">View Github &raquo;</a></p>
-            </div>
+        </section>
+
+
+        <div class="containerGray">
+            
+                <div class="col-md-12  col-sm-12 col-lg-12 text-center">
+                    <h2>...</h2>
+                    <h2>Content Here</h2>
+                    <h2>...</h2>
+                    <h2>Content Here</h2>
+                    <h2>...</h2>
+                    <h2>Content Here</h2>
+                    <h2>...</h2>
+                </div>
+            
         </div>
-		 
-		</div>
-     </div> <!-- /container -->
-	</section>
+
+        <div class="containerGray">
+            <footer>
+                <p>&copy; 2016 harkslau</p>
+            </footer>
+        </div>
+
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+        <script src="../../dist/js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    </body>
 	
-	
-		<div class="containerGray">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<h2>...</h2>
-					<h2>Content Here</h2>
-					<h2>...</h2>
-					<h2>Content Here</h2>
-					<h2>...</h2>
-					<h2>Content Here</h2>
-					<h2>...</h2>
-				</div>
-			</div>
-		</div>
-		
-		<div class="containerGray">
-		<footer>
-			<p7>&copy; 2016 harkslau</p7>
-		</footer>
-		</div>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-</body>
 </html>
 
     

@@ -1,0 +1,75 @@
+<!doctype html>
+<!--
+filename: css_test.html
+author: Ryan Thomas
+date: 09/19/2016
+description: This program demonstrates CSS
+design:		<head>
+				title
+				links to bootstrap css/javascript
+				internal csslink to external css (css_test.css)
+			<body>
+				h1 title
+				2 paragraphs
+				h2 title
+				paragraphs
+-->
+
+<html>
+	<head>
+		<title>CSS Test</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<!--External CSS-->
+		<link rel="stylesheet" type="text/css" href = "css_test.css"/>
+		<!--Internal CSS-->
+		<style>
+			h1 {color: blue;}	
+		</style>
+
+	</head>
+	
+	<body>
+		<h1>CSS <span>T</span>est Page</h1>
+		<!--Inline CSS-->
+		<p style="color: red;"><span>L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id egestas urna. Nam facilisis lectus dui, non lacinia quam sollicitudin suscipit. Aliquam luctus risus vel facilisis blandit. Nulla facilisi. Aenean nisl sem, imperdiet in ligula vitae, ornare tincidunt nibh. Nullam dignissim velit placerat, consequat mauris in, suscipit felis. Suspendisse convallis dignissim lacus, sit amet efficitur ante tincidunt non. Donec maximus, arcu sit amet rhoncus elementum, odio justo lacinia est, ac pellentesque leo mi in orci. Aliquam sit amet sapien et lacus sodales scelerisque id et arcu. Donec lobortis, nunc luctus posuere consectetur, lectus felis egestas mauris, at fermentum felis turpis eget libero. Donec eu nunc non nulla luctus accumsan. In rutrum nulla efficitur tincidunt congue. Integer mollis ligula risus, eget placerat sapien bibendum sed. Nam dignissim eget velit sit amet sagittis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse vehicula lectus id dui sagittis euismod.</p>
+		<h2>Second Title</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id egestas urna. Nam facilisis lectus dui, non lacinia quam sollicitudin suscipit. Aliquam luctus risus vel facilisis blandit. Nulla facilisi. Aenean nisl sem, imperdiet in ligula vitae, ornare tincidunt nibh. Nullam dignissim velit placerat, consequat mauris in, suscipit felis. Suspendisse convallis dignissim lacus, sit amet efficitur ante tincidunt non. Donec maximus, arcu sit amet rhoncus elementum, odio justo lacinia est, ac pellentesque leo mi in orci. Aliquam sit amet sapien et lacus sodales scelerisque id et arcu. Donec lobortis, nunc luctus posuere consectetur, lectus felis egestas mauris, at fermentum felis turpis eget libero. Donec eu nunc non nulla luctus accumsan. In rutrum nulla efficitur tincidunt congue. Integer mollis ligula risus, eget placerat sapien bibendum sed. Nam dignissim eget velit sit amet sagittis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse vehicula lectus id dui sagittis euismod.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id egestas urna. Nam facilisis lectus dui, non lacinia quam sollicitudin suscipit. Aliquam luctus risus vel facilisis blandit. Nulla facilisi. Aenean nisl sem, imperdiet in ligula vitae, ornare tincidunt nibh. Nullam dignissim velit placerat, consequat mauris in, suscipit felis. Suspendisse convallis dignissim lacus, sit amet efficitur ante tincidunt non. Donec maximus, arcu sit amet rhoncus elementum, odio justo lacinia est, ac pellentesque leo mi in orci. Aliquam sit amet sapien et lacus sodales scelerisque id et arcu. Donec lobortis, nunc luctus posuere consectetur, lectus felis egestas mauris, at fermentum felis turpis eget libero. Donec eu nunc non nulla luctus accumsan. In rutrum nulla efficitur tincidunt congue. Integer mollis ligula risus, eget placerat sapien bibendum sed. Nam dignissim eget velit sit amet sagittis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse vehicula lectus id dui sagittis euismod.</p>
+		
+		<h2>Two columns</h2>
+		<div class = "container">
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id egestas urna. Nam facilisis lectus dui, non lacinia quam sollicitudin suscipit. Aliquam luctus risus vel facilisis blandit. Nulla facilisi. Aenean nisl sem, imperdiet in ligula vitae, ornare tincidunt nibh. Nullam dignissim velit placerat, consequat mauris in, suscipit felis. Suspendisse convallis dignissim lacus, sit amet efficitur ante tincidunt non. Donec maximus, arcu sit amet rhoncus elementum, odio justo lacinia est, ac pellentesque leo mi in orci. Aliquam sit amet sapien et lacus sodales scelerisque id et arcu. Donec lobortis, nunc luctus posuere consectetur, lectus felis egestas mauris, at fermentum felis turpis eget libero. Donec eu nunc non nulla luctus accumsan. In rutrum nulla efficitur tincidunt congue. Integer mollis ligula risus, eget placerat sapien bibendum sed. Nam dignissim eget velit sit amet sagittis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse vehicula lectus id dui sagittis euismod.</p>
+				Ant <br />
+				Bear <br />
+				Cat <br />
+				Dog <br />
+				Elephant <br />
+			</div>
+			
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" id="zippydee">
+			<img src="https://www.petdrugsonline.co.uk/images/page-headers/cats-master-header" />
+			</div>
+			
+			<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="text-align: right;">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id egestas urna. Nam facilisis lectus dui, non lacinia quam sollicitudin suscipit. Aliquam luctus risus vel facilisis blandit. Nulla facilisi. Aenean nisl sem, imperdiet in ligula vitae, ornare tincidunt nibh. Nullam dignissim velit placerat, consequat mauris in, suscipit felis. Suspendisse convallis dignissim lacus, sit amet efficitur ante tincidunt non. Donec maximus, arcu sit amet rhoncus elementum, odio justo lacinia est, ac pellentesque leo mi in orci. Aliquam sit amet sapien et lacus sodales scelerisque id et arcu. Donec lobortis, nunc luctus posuere consectetur, lectus felis egestas mauris, at fermentum felis turpis eget libero. Donec eu nunc non nulla luctus accumsan. In rutrum nulla efficitur tincidunt congue. Integer mollis ligula risus, eget placerat sapien bibendum sed. Nam dignissim eget velit sit amet sagittis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse vehicula lectus id dui sagittis euismod.</p>
+				Ant <br />
+				Bear <br />
+				Cat <br />
+				Dog <br />
+				Elephant <br />
+				<a href="#">Nowhere</a>
+				<h3><span>testspan</span></h3>
+				<h4>werwerwer</h4>
+			</div>
+		</div>
+	</body>
+</html>

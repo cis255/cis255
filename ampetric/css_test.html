@@ -1,0 +1,71 @@
+<!doctype html>
+<!--
+filename: css_test.html
+author:   andrew petricevic
+date:     09/19/2016
+description: This program demonstrates CSS
+design:   <head>
+				title
+				links to bootstrap css/javascript
+				internal css
+				link to external css (css_test.css)
+		  <body>
+			    h1 title 
+				2 paragraphs
+				h2 title
+				paragraph
+-->
+<html>
+	<head>
+		
+		<title>CSS Test</title>
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
+		<!-- external CSS -->
+		<link rel="stylesheet" type="text/css" href="css_test.css" />
+		
+		<!-- internal CSS -->
+		<style>
+			h1 {color: blue; font-family: Courier;}
+		</style>
+		
+	</head>
+	<div class="container">
+	<body>
+		<h1>CSS Test Page</h1>
+		<!-- inline CSS -->
+		<p style="color:red;"> 
+			<span>L</span>orem ipsum dolor sit amet, pellentesque dolor est venenatis aliquam amet est, convallis amet libero sed. Est illo vivamus, et eu ut. At aliquam et amet ipsum. Faucibus sed wisi tristique lacinia, quis mauris suspendisse molestie ultricies mi, interdum risus pretium vel quis varius, arcu ut eget vitae, nulla neque. Tortor mauris, arcu senectus leo adipiscing amet. Nullam ligula nibh, nulla sit arcu ligula nunc nullam vestibulum, sed dapibus accumsan lectus. Arcu eu sed eleifend sed eu sem, interdum ullamcorper dui arcu vestibulum vel hendrerit, ligula interdum volutpat nunc mauris quisque, felis ante fermentum nullam, eleifend proin at malesuada erat. Integer fringilla feugiat lobortis, ut eget alias senectus pulvinar id. Sed justo diam gravida conubia leo, alias tellus justo, arcu ad vel amet in odio, lectus sollicitudin integer nec orci augue, lobortis dapibus urna sem placerat adipiscing in. A accumsan, penatibus mattis amet eu, amet amet vestibulum velit consectetuer feugiat, in sed elementum magna vitae nunc sagittis, pulvinar sed. Proin posuere donec justo platea.
+			Eros velit donec rhoncus, amet cursus et aliquam montes per nullam, maecenas cursus lorem nulla ullamcorper vitae sed, integer eleifend ut. Amet duis, ut eget nec sed elit. Eros curabitur non vehicula. Praesent ipsum non, integer erat orci maecenas placerat proin. Eget lectus enim diam dui nibh.
+		</p>
+		
+		<h2>Two columns</h2>
+		
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			Ant <br />
+			Bear<br />
+			Cat<br />
+			Dog<br />
+			Elephant<br />
+		
+		
+		</div>
+		
+		<div class="xs-col-4 sm-col-4 md-col-4 lg-col-4" style="text-align: right;">
+			Ant <br />
+			Bear<br />
+			Cat<br />
+			Dog<br />
+			Elephant<br />
+		</div>
+	</div>	
+	</body>
+</html>

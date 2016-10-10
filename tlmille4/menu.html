@@ -1,15 +1,105 @@
+<!DOCTYPE html>
+<!-- 
+filename  : menu.html
+author    : Tyler Miller
+date      : 2016-09-19
+email     : tlmille4@svsu.edu
+course    : CIS-255
+link      : http://csis.svsu.edu/~tlmille4/cis255/tlmille4/menu.html
+purpose   : This file is the menu for CIS255 the course, 
+			CIS-255: Client Side Web Development, 
+			at Saginaw Valley State University (SVSU)   
+external code used in this file: 
+			Basic styling cues and codes taken from W3Schools.com
+external code references (links) in this file: 
+			Tyler Miller
+program structure (design):
+	<head>: 
+		STYLE CSS for Design and Formatting
+	<body>: 
+		DIVCLASS-FlexTable: 
+			NavClass: Usefull Links Navigation
+			ArticleClass: Assignments
+			Footer: Copyright to Credit External Code Use
+-->
+<!DOCTYPE html>
 <html>
 	<head>
-	</head>
-	<body>
-		<h1>Tyler Miller</h1>
-		<h2>CIS-255: Client Side Web Development</h2>
-		<ul>
-			<li><a href="https://github.com/cis255/cis255">CIS255 GitHub Repo</a></li>
-			<li><a href="http://tlmille41.wixsite.com/mysite">Wix Resume</a></li>
-			<li><a href="http://tlmille4.weebly.com/">Weebly Resume</a></li>
-			<li><a href="http://csis.svsu.edu/~tlmille4/cis255/tlmille4/orbit/orbit-v1.0/">Bootstrap Resume</a></li>
-		</ul>
+		<style>
+			.flex-container {
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-flow: row wrap;
+				flex-flow: row wrap;
+				text-align: center;
+			}
 
-	</body>
+			.flex-container > * {
+				padding: 15px;
+				-webkit-flex: 1 100%;
+				flex: 1 100%;
+			}
+
+			.article {
+				text-align: left;
+			}
+
+			header {background: black;color:white;font-family:Courier New;font-weight: Bold;}
+			footer {background: #aaa;color:white;}
+			.nav {background:#eee;}
+
+			.nav ul {
+				list-style-type: disk;
+				padding: 10;
+			}
+			   
+			.nav ul a {
+			 text-decoration: none;
+			}
+
+			@media all and (min-width: 768px) {
+				.nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
+				.article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
+				footer {-webkit-order:3;order:3;}
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="flex-container">
+			<header>
+			  <h1>Tyler Miller</h1>
+			  <h2>CIS255: Client Side Web Development</h2>
+			</header>
+			
+			<nav class="nav">
+				<h2>Useful Links:</h2>
+				<ul>				
+					<li><a href="http://www.cis255.com">CIS255 Homepage</a></li>
+					<li><a href="https://github.com/cis255/cis255">CIS255 GitHub Repo</a></li>
+					<li><a href="http://tlmille41.wixsite.com/mysite">Wix Resume</a></li>
+					<li><a href="http://tlmille4.weebly.com/">Weebly Resume</a></li>
+				</ul>
+				<h2>Class Activities:</h2>
+				<ul>
+					<li><a href="http://csis.svsu.edu/~tlmille4/cis255/tlmille4/html_test.html">HTML Test</a></li>
+					<li><a href="http://csis.svsu.edu/~tlmille4/cis255/tlmille4/html_3col.html">HTML 3-Column Test</a></li>
+					<li><a href="http://csis.svsu.edu/~tlmille4/cis255/tlmille4/css_test.html">CSS Test</a></li>
+					<li><a href="http://csis.svsu.edu/~tlmille4/cis255/tlmille4/html_form.html">HTML Forms Example</a></li>
+				</ul>
+			</nav>
+
+			<article class="article">
+				<h1>Assignments:</h1>
+				<p>
+					<strong><a href="http://csis.svsu.edu/~tlmille4/cis255/tlmille4/orbit/orbit-v1.0/">Assignment 1: Bootstrap Resume</a></strong>
+					<br /> 
+					Due on 9-19-2016 | It is a Bootsrap Resume which includes different informative pages
+				</p>
+				<!-- Future Assignment Links Here -->
+			</article>
+
+			<footer>Copyright &copy; W3Schools.com</footer>
+		</div><!-- endFlexContainer div container class -->
+	</body><!--end Body tag -->
 </html>

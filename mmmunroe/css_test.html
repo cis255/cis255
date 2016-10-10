@@ -1,0 +1,89 @@
+<!doctype html>
+
+<!--
+filename: css_test.html
+author: Megan Munroe
+date: 9/19/2016
+description: this program demonstrates CSS
+design:  <head>
+			title
+			links to bootstrap CSS and JavaScript
+			internal CSS
+			links to external CSS (css_test.css)
+		<body>
+			h1 title
+			paragraph
+			h2 title
+			paragraph 
+-->
+
+<html>
+
+	<div class="container">
+	<head>
+		<title>CSS Test</title>
+		
+		<!-- Latest compiled and minified CSS -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->	
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
+		<!-- internal CSS-->
+		<style>
+			h1 {color: blue;}
+		</style>
+		<link rel="stylesheet" type ="text/css" href="css_test.css" />
+		
+	</head>
+	<body>
+		<h1>CSS <span>T</span>est Page</h1>
+		<!-- inline CSS-->
+		<p style="color: red;"> <span>
+		L </span>orem ipsum dolor sit amet, consectetur adipiscing elit. 
+		Suspendisse laoreet nunc ac nulla gravida 
+		fringilla. Praesent nibh risus, ornare sit amet tempus 
+		mollis, feugiat a massa. Fusce iaculis, felis nec 
+		scelerisque aliquet, dolor tellus hendrerit mi, suscipit volutpat nisl risus sed elit. 
+		Mauris vel mauris in lectus euismod convallis in a ipsum. Nullam feugiat 
+		gravida mauris nec dignissim. </p>
+		<h2> Second Title </h2>
+		<p>
+		Nullam in dolor eu sapien imperdiet 
+		condimentum id vitae leo. Morbi sollicitudin erat non lacus euismod, 
+		at pulvinar sem consectetur. Curabitur id pellentesque velit. Vestibulum vel turpis et urna egestas 
+		elementum non ac massa. Donec mollis lacus risus, a gravida nulla mollis id. 
+		Nulla suscipit suscipit lectus convallis dictum. 
+		</p>
+		
+		<h3>Two columns</h3>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			Ant <br />
+			Dog <br />
+			Mouse <br />
+			Cat <br />
+			Frog <br />
+			Bird <br />
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+			<img src="http://2.bp.blogspot.com/-pATX0YgNSFs/VP-82AQKcuI/AAAAAAAALSU/Vet9e7Qsjjw/s1600/Cat-hd-wallpapers.jpg" 
+					width = "200" height = "200" alt=""/>
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"
+			style="text-align: right;">
+			Ant <br />
+			Dog <br />
+			Mouse <br />
+			Cat <br />
+			Frog <br />
+			Bird <br />
+			<a href="#">Nowhere</a>
+			<h3><span>Testspan</span></h3>
+			<h4>Testing</h4>
+		</div>
+	</body>
+	</div>
+</html>
