@@ -1,19 +1,16 @@
+
+
 .jumbotron {
     background-color:#262626;
 	color:#b3b3b3;
-	margin-top: 0px;
+	margin-top: -8%;
 	margin-bottom: 0px;
 	padding-left: 2%;
 }
 
-.containerNew{
-	padding-top: 40px;
-	padding-bottom: 40px;
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
-
 .containerNav{
+	padding-left: 15px;
+	padding-right: 15px;
 	
 }
 
@@ -24,10 +21,10 @@
   margin-left: auto;
   margin-top: 0px;
   margin-bottom: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: auto;
+  padding-right: auto;
+  padding-top: 5%;
+  padding-bottom: 2%;
 }
 
 .btn{
@@ -56,15 +53,26 @@
 	text-shadow: none;
 }
 
+
+
 .navbar-header .navbar-nav > li > a:hover {
 	webkit-filter: invert(100%);
     filter: invert(100%);
 	text-shadow: none;
 }
 
+.navbar{
+	margin-bottom: 0px;
+	
+}
 
 hr.style{
 	background-color: #fff;
 	border-top: 3px solid #000000;
 }
 
+
+html, body {
+  width: auto;
+  overflow-x: hidden;
+}
