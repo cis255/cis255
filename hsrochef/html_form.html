@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!-- This code copied from w3schools
 http://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_submit
@@ -7,14 +8,15 @@ http://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_submit
 
 		<form action="http://api.svsu.edu/courses">
 			prefix:<br />
-			<select name="prefix">
+			<input type="text" name="prefix" placeholder="CIS" list="prefixes"/>
+			<datalist id="prefixes">
 				<option>CS</option>
 				<option>CIS</option>
-				<option selected>MATH</option>
+				<option>MATH</option>
 				<option>PHIL</option>
 				<option>ART</option>
 				<option>ENGL</option>
-			</select>
+			</datalist>
 			<br />
 			courseNumber:<br />
 			<input type="text" name="courseNumber" placeholder="255" />
@@ -22,27 +24,7 @@ http://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_submit
 			<input type="submit" value="Submit" />
 		</form>
 
-		<p>If you click the "Submit" button, the form-data will be sent to a page called https://api.svsu.edu/courses to list class searched for.</p>
-		
-		
-		<form action="html_form.php">
-			First name:<br>
-			<input type="text" name="firstname" placeholder="First Name">
-			<br>
-			Last name:<br>
-			<input type="text" name="lastname" placeholder="LastName">
-			<br><br>
-			<input type="submit" value="Submit">
-		</form> 
-
 		<p>If you click the "Submit" button, the form-data will be sent to a page called "html_form.php".</p>
-		
-		
-		
-		
-		
-		
-		
 
 	</body>
 </html>

@@ -1,0 +1,15 @@
+/* External CSS */
+
+h1  {
+	color: green;
+	font-size:  28pt;
+	background-color: hotpink;
+	min-height: 100px;
+}
+/* the p makes sure to limit the span for a single letter within the paragraph */
+p span {font-size: 200%;}
+span{font-color: red;}
+table {
+	border: black;
+	background-color: lightblue;
+}
