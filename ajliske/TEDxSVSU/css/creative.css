@@ -173,13 +173,13 @@ header .header-content .header-content-inner h1 {
   font-size: 45px;
 }
 header .header-content .header-content-inner hr {
-  margin: 30px auto;
+  margin: 25px auto;
 }
 header .header-content .header-content-inner p {
   font-weight: 350;
   color: #b30000;
   font-size: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 @media (min-width: 768px) {
   header {
@@ -208,12 +208,12 @@ header .header-content .header-content-inner p {
   }
   
   header .header-content .header-content-inner hr {
-  margin: 0px auto;
+  margin: 50px auto;
 }
   
   header .header-content .header-content-inner p {
 	  color: #b30000;
-    font-size: 28px;
+    font-size: 14px;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -248,7 +248,7 @@ header .header-content .header-content-inner p {
   color: white;
   opacity: 0;
   display: block;
-  background: rgba(179, 0, 0, .8);
+  background: rgba(179, 0, 0, .85);
   position: absolute;
   bottom: 0;
   text-align: center;
