@@ -162,11 +162,11 @@ header {
 header .header-content {
   position: relative;
   text-align: center;
-  padding: 100px 15px 100px;
+  padding: 150px 25px;
   width: 100%;
 }
 header .header-content .header-content-inner h1 {
-  font-weight: 700;
+  font-weight: 350;
   text-transform: none;
   margin-top: 0;
   margin-bottom: 0;
@@ -177,7 +177,7 @@ header .header-content .header-content-inner hr {
 }
 header .header-content .header-content-inner p {
   font-weight: 350;
-  color: #b3b3b3;
+  color: #b30000;
   font-size: 20px;
   margin-bottom: 50px;
 }
@@ -199,7 +199,7 @@ header .header-content .header-content-inner p {
     margin-right: auto;
   }
   header .header-content .header-content-inner h1 {
-    font-size: 150px;
+    font-size: 130px;
   }
   
   header .header-content .header-content-inner h2 {
@@ -207,8 +207,13 @@ header .header-content .header-content-inner p {
 	color: #b30000;
   }
   
+  header .header-content .header-content-inner hr {
+  margin: 0px auto;
+}
+  
   header .header-content .header-content-inner p {
-    font-size: 22px;
+	  color: #b30000;
+    font-size: 28px;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -229,17 +234,21 @@ header .header-content .header-content-inner p {
 .service-box p {
   margin-bottom: 0;
 }
+
+
+
 .portfolio-box {
   position: relative;
   display: block;
   max-width: 650px;
+
   margin: 0 auto;
 }
 .portfolio-box .portfolio-box-caption {
   color: white;
   opacity: 0;
   display: block;
-  background: rgba(240, 95, 64, 0.9);
+  background: rgba(179, 0, 0, .8);
   position: absolute;
   bottom: 0;
   text-align: center;
