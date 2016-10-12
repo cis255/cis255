@@ -243,14 +243,17 @@ header .header-content .header-content-inner p {
   position: relative;
   display: block;
   max-width: 650px;
-
   margin: 0 auto;
+  color: white;
+  
+  
 }
 .portfolio-box .portfolio-box-caption {
   color: white;
-  opacity: 0;
+  background: none;
+  opacity: 1;
   display: block;
-  background: rgba(179, 0, 0, .85);
+  background: rgba(0, 0, 0, .7);
   position: absolute;
   bottom: 0;
   text-align: center;
@@ -281,6 +284,7 @@ header .header-content .header-content-inner p {
   font-size: 18px;
 }
 .portfolio-box:hover .portfolio-box-caption {
+  background: rgba(179, 0, 0, .7);
   opacity: 1;
 }
 .portfolio-box:focus {
