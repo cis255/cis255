@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<h1>Zachary Hadd<br/>Exercise 02<br/>JS Control Statements<br/><br/></h1>
+	</head>
+	<body>
+		<script>
+			x = 2; 
+			y = true;
+			animal = "Fish";
+		
+// 1. If/else		
+			document.write("If/Else Statement:<br/><br/>");
+			document.write("(With ==)<br/>");
+			if(x == y) document.write("x equals y<br/>");
+			else document.write("x does not equal y<br/>");
+			document.write("(With ===)<br/>");
+			if(x === y) document.write("x equals y and x, y of same data type<br/>");
+			else document.write("x does nto equal y or x and y are not same data type<br/>");
+
+						
+// 2. switch case using numbers
+			document.write("<br/>Switch Statement Using Numbers:<br/>");
+			switch(x){
+				case 1: 
+					document.write("x equals 1<br/>");
+					break;
+				case 2: 
+					document.write("x equals 2<br/>");
+					break;
+				default: document.write("x equals number other than 1 or 2<br/>");
+			}
+			
+// 3. switch case using strings
+			document.write("<br/>Switch Statement Using Strings:<br/>");
+			switch(animal){
+				case "Dog": 
+					document.write("animal is Canine<br/>");
+					break;
+				case "Cat": 
+					document.write("animal is Feline<br/>");
+					break;
+				default: document.write("animal is not Canine or Feline<br/>");
+			}
+			
+			
+		</script>
+	</body>
+</html>

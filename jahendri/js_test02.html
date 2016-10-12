@@ -1,0 +1,47 @@
+<!-- Exercise 2: JS control statements -->
+<!-- Programer: Jacob Hendricks -->
+<html>
+	
+	<body>
+		<p id="loopy"></p>
+
+		<script>
+			// test control statements, 
+			// 1. if/else using boolean operations 
+			// 2. switch case using numbers 
+			// 3. switch case using strings 
+			
+			// 1. if/else using boolean operations
+			x = 1; 
+			y = true;
+			if (x == y) document.write("x equals y, ");
+			else document.write("x does not equal y,");
+			if (x === y) document.write("x equals y and x, y of same data type");
+			else document.write("x does not equal y or x and y are not same data type");
+			
+			// 2. Switch with numbers
+			var n = 3;
+			switch (n) {
+			case 1:
+				document.write("<br /> n is 1.");
+				break;
+			case 2:
+				document.write("<br /> n is 2.");
+				break;
+			case 3:
+				document.write("<br /> n is 3.");
+				break;
+			default: document.write("I can't count that high.")
+			}
+			
+			//3. Switch using strings
+			var string = "Baseball"
+			switch(string){
+			
+			case "Baseball":
+				document.write("<br /> Changed Baseball to Football."); 
+				break;			
+			}			
+		</script>		
+	</body>
+</html>

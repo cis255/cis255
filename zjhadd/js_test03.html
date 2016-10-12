@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<h1>Zachary Hadd<br/>Exercise 03<br/>JS Loop Statements<br/><br/></h1>
+	</head>
+	<body>
+		<script>
+// 1. for loop to print hello, world 10 times
+			document.write("Hello world Loop 10 times<br/>");
+			for (var i=0; i<10; i++) {
+				document.write((i+1) + ". hello, world.<br />");
+			}
+			document.write("<br/>");
+			
+// 2. while loop to print sum of the digits of the number 1234567890 (use mod operator (%))
+			document.write("<br/>While loop to print sum of digits in 1234567890<br/>");
+			var sum =0;
+			var x = 1234567890;
+			var counter = 0;
+			while (counter != 10) {
+				sum += counter % x;
+				counter++;			
+			}
+			document.write(sum,"<br/>");			
+
+			
+// 3. do loop to print letters in the word "zippy" (string) one letter per line
+			document.write("<br/>Do while loop to print each character of 'zippy'<br/>");			
+			var zippy = "zippy";
+			var i = 0;
+			do
+			{
+			document.write(zippy[i]);
+			document.write("<br />")
+			i = i+1;
+			}
+			while(i < zippy.length)
+			document.write("<br/>");
+
+
+		</script>
+	</body>
+</html>
