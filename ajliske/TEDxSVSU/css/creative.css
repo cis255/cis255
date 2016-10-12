@@ -46,7 +46,7 @@ p {
   background-color: #b30000;
 }
 .bg-dark {
-  background-color: #222222;
+  background-color: black;
   color: white;
 }
 .text-faded {
@@ -208,11 +208,11 @@ header .header-content .header-content-inner p {
   }
   
   header .header-content .header-content-inner hr {
-  margin: 50px auto;
+  margin: 30px auto;
 }
   
   header .header-content .header-content-inner p {
-	  color: #b30000;
+	color: #b30000;
     font-size: 14px;
     max-width: 80%;
     margin-left: auto;
@@ -235,7 +235,9 @@ header .header-content .header-content-inner p {
   margin-bottom: 0;
 }
 
-
+.service-box h3 {
+  color: #b30000;
+}
 
 .portfolio-box {
   position: relative;
@@ -286,10 +288,10 @@ header .header-content .header-content-inner p {
 }
 @media (min-width: 768px) {
   .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
-    font-size: 16px;
+    font-size: 14px;
   }
   .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
-    font-size: 22px;
+    font-size: 24px;
   }
 }
 .call-to-action h2 {
