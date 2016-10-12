@@ -1,5 +1,6 @@
 <html>
 	<head>
+		
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -10,6 +11,24 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</head>
 		<body>
+		
+		<style>
+			table, th, td, tr{border: solid 2pt black;}
+			th, td {padding: 20px;	text-align: left;}
+			caption {text-align: center;font-size: 300%;}
+			#tableGood {background-color: LightSkyBlue}
+			#tableNeutral {background-color: LightSlateGray}
+			#tableEvil {background-color: Tomato}
+			td {font-size: 200%;}
+			td img{ display: block;
+					margin-left: auto;
+					margin-right: auto;}
+			
+			
+			
+			
+		</style>
+			
 			<div class="container">
 			<h1>John Lake</h1>
 			<h2>CIS-255: Client Side Web Development</h2>
@@ -18,32 +37,34 @@
 				<li><a href="https://jplake1.wixsite.com/website">Wix Resume</a></li>
 				<li><a href="https://jplake1.weebly.com">Weebly Resume</a></li>
 				<li><a href="http://csis.svsu.edu/~jplake1/cis255/jplake1/orbit-v1.0/resume.html">Bootstrap Resume</a></li>
+				<li><a href="http://csis.svsu.edu/~jplake1/cis255/jplake1/js_test01.html">JavaScript Variable Example</a></li>
+				<li><a href="http://csis.svsu.edu/~jplake1/cis255/jplake1/js_test02.html">JavaScript Control Example</a></li>
+				<li><a href="http://csis.svsu.edu/~jplake1/cis255/jplake1/js_test03.html">JavaScript Loop Example</a></li>
 			</ul>
-			<div class="col-md-3">
-			one
-			</div>
-			<div class="col-md-3">
-			two
-			</div>
-			<div class="col-md-3">
-			three
-			</div>
-			<div class="col-md-3">
-			four
-			</div>
-						
+					
 			</div> <!-- end: Class="container" -->
 			
-			<table border ="1">
-				<tr>
-					<td>upper left</td>
-					<td>upper right</td>
+			<table>
+				<caption>RPG Alignment Chart</caption>
+				<tr id = "tableGood">
+					<td>Lawful Good:  <img src = "http://www.avatarsdb.com/avatars/superman_logo.jpg"/> </td>
+					<td>Neutral Good: <img src = "http://l-userpic.livejournal.com/106878872/31856224"</td>
+					<td>Chaotic Good: <img src = "http://images2.fanpop.com/images/photos/5400000/V-For-Vendetta-Icons-v-for-vendetta-5419056-100-100.gif"</td>
 				</tr>
-				<tr>
-					<td>lower left</td>
-					<td>lower right</td>
+				<tr id = "tableNeutral">
+					<td>Lawful Neutral:  <img src = "http://images2.fanpop.com/image/photos/10600000/Captain-Picard-jean-luc-picard-10661363-100-100.jpg" </td>
+					<td>True Neutral:    <img src = "https://yt3.ggpht.com/pT-GC7mtENwTfePAmIjimG5f841B-LCFkAJSBJu5t2kVCivWhk6AbtPyT4bWdMPJG5pcgM1jjto9PwZ82g=s100-nd-c-c0xffffffff-rj-k-no"</td>
+					<td>Choatic Neutral: <img src = "http://www.avatarsdb.com/avatars/Jack_Sparrow_smile.jpg"</td>
+				</tr>
+				<tr id = "tableEvil">
+					<td>Lawful Evil:   <img src = "http://stuffpoint.com/darth-vader/image/381761-darth-vader-vader-icon.jpg" </td>
+					<td>Neutral Evil:  <img src = "https://yt3.ggpht.com/-r7ad7Txq6ew/AAAAAAAAAAI/AAAAAAAAAAA/9whUapKhYrg/s100-c-k-no-mo-rj-c0xffffff/photo.jpg" </td>
+					<td>Choatic Evil:  <img src = "http://images4.fanpop.com/image/photos/23400000/Joker-the-joker-23477894-100-100.png" </td>
 				</tr>
 			</table>
+			
+			
+			
 		</body>
 
 </html>

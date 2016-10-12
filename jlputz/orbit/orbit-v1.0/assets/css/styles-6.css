@@ -132,7 +132,7 @@ p {
   margin-bottom: 0px;
 }
 .sidebar-wrapper .languages-container .lang-desc {
-  color: rgb(77, 166, 255);
+  color: rgba(255, 255, 255, 0.6);
 }
 .sidebar-wrapper .languages-list {
   margin-bottom: 0;
@@ -238,11 +238,11 @@ p {
 }
 .skillset .level-bar {
   height: 12px;
-  background: #6c92a3;
+  background: #d5dae0;
 }
 .skillset .level-bar-inner {
   height: 12px;
-  background: #000066;
+  background: #4b6a78;
 }
 .footer {
   padding: 30px;
