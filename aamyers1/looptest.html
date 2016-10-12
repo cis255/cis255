@@ -1,0 +1,31 @@
+<DOCTYPE!html>
+<html>
+	<head>
+	</head>
+	<body>
+		<script>
+			//test loops
+			//1.for loop to print hello world 10 times
+				for(var i = 0; i<10; i++) {
+					document.write("<br />" + (i+1) +". Hello World!");
+				}
+			//2.while loop to print sum digits of a number - 12456789 
+				var x = 123456789;
+				var sum = 0;
+				while(x>=1){
+					sum+=(x%10);
+					x-=(x%10);
+					x= x/10;
+				}
+				document.write("<br /> Sum of digits of 123456789 is: " + sum);
+			//3. do loop to print letters of a string on seperate lines - zippy 
+				var word = 'zippy'
+				var i = 0
+				do {
+					document.write("<br />"+ word.charAt(i));
+					i++;
+					
+				}while(i < word.length);
+		</script>
+	</body>
+</html>
