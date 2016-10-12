@@ -45,6 +45,12 @@ p {
 .bg-primary {
   background-color: #b30000;
 }
+
+.bg-primary p {
+ font-size: 22px;
+ font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
 .bg-dark {
   background-color: black;
   color: white;
@@ -284,7 +290,10 @@ header .header-content .header-content-inner p {
   font-size: 18px;
 }
 .portfolio-box:hover .portfolio-box-caption {
-  background: rgba(179, 0, 0, .7);
+  background: rgba(179, 0, 0, .8);
+  opacity: 1;
+}
+.portfolio-box:hover .portfolio-box-caption .portfolio-box-caption-content{ //not being used for picture link possibilities
   opacity: 1;
 }
 .portfolio-box:focus {
