@@ -26,6 +26,10 @@ hr.black {
   border-color: black;
 }
 
+hr.gray {
+  border-color: #b3b3b3;
+}
+
 a {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
@@ -54,7 +58,7 @@ p {
 }
 
 .bg-primary span {
- font-size: 22px;
+ font-size: 23px;
  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -85,6 +89,11 @@ p {
 
 .bg-dark a {
   color: white;
+}
+
+.bg-dark a:hover  {
+  color: #ff3333;
+  text-decoration: none;
 }
 
 .text-faded {
@@ -220,8 +229,8 @@ header .header-content .header-content-inner p {
   margin-bottom: 10px;
 }
 
- header  .header-content .header-content-inner a p:hover, .header-content .header-content-inner a:hover  {
-  color: #e60000;
+ header  .header-content a:hover  {
+  color: #ff3333;
   text-decoration: none;
   font-weight: 250;
 }
@@ -265,10 +274,17 @@ header .header-content .header-content-inner p {
     margin-right: auto;
   }
   
-  header .header-content .header-content-inner a:hover, header .header-content .header-content-inner a p:hover {
+  header .header-content  a:hover, .header-content  a p:hover {
   color: #e60000;
   text-decoration: none;
   font-weight: 250;
+}
+
+header .header-content  a p:hover {
+  color: #e60000;
+  text-decoration: none;
+  font-weight: 250;
+}
 }
 
 .section-heading {
@@ -299,13 +315,14 @@ header .header-content .header-content-inner p {
   color: white;
   
   
+  
 }
 .portfolio-box .portfolio-box-caption {
   color: white;
   background: none;
   opacity: 1;
   display: block;
-  background: rgba(0, 0, 0, .7);
+  background: rgba(0, 0, 0, .65);
   position: absolute;
   bottom: 0;
   text-align: center;
@@ -321,11 +338,13 @@ header .header-content .header-content-inner p {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  
 }
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   padding: 0 15px;
+  
 }
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
   text-transform: uppercase;
@@ -333,14 +352,14 @@ header .header-content .header-content-inner p {
   font-size: 14px;
 }
 .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
-  font-size: 18px;
+  font-size: 32px;
 }
 .portfolio-box:hover .portfolio-box-caption {
   background: rgba(179, 0, 0, .8);
   opacity: 1;
 }
 .portfolio-box:hover .portfolio-box-caption .portfolio-box-caption-content{ //not being used for picture link possibilities
-  opacity: 1;
+  opacity: 0;
 }
 .portfolio-box:focus {
   outline: none;
@@ -350,7 +369,7 @@ header .header-content .header-content-inner p {
     font-size: 14px;
   }
   .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
-    font-size: 24px;
+    font-size: 32px;
   }
 }
 .call-to-action h2 {
