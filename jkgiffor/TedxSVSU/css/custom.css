@@ -1,0 +1,63 @@
+.color { 
+background: linear-gradient(216deg, #EF776F, #E62B1E);
+ background-size: 4000% 4000%;
+ color: white;
+-webkit-animation: AnimationName 15s ease infinite;
+
+
+-moz-animation: AnimationName 15s ease infinite;
+
+animation: AnimationName 15s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+     0%{background-position:0% 51%}
+     50%{background-position:100% 50%}
+     100%{background-position:0% 51%}
+ }
+
+
+@-moz-keyframes AnimationName {
+     0%{background-position:0% 51%}
+     50%{background-position:100% 50%}
+     100%{background-position:0% 51%}
+ }
+
+@keyframes AnimationName { 
+     0%{background-position:0% 51%}
+     50%{background-position:100% 50%}
+     100%{background-position:0% 51%}
+ }
+.red-text{
+	color: #EF776F;
+}
+.brand{
+	font-size: 5vmin;
+	font-weight: bold;
+}
+
+
+.overlay {
+    background-color: rgba(0, 0, 255, 0.5);
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    right:0;
+    top:0;
+    z-index: 1;
+}
+
+.slider-text{
+	text-align: left;
+	color: white;
+	font-size: 5vmin;
+	font-weight: bold;
+	bottom:0;
+	left:10%;
+	position:absolute;
+	right:30%;
+	top:0;
+	z-index: 1;
+}
+hr 
