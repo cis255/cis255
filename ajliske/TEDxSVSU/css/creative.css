@@ -11,14 +11,21 @@ body {
 body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
+
 hr {
   border-color: #b30000;
   border-width: 4px;
   max-width: 80px;
 }
+
 hr.light {
   border-color: white;
 }
+
+hr.black {
+  border-color: black;
+}
+
 a {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
@@ -46,15 +53,34 @@ p {
   background-color: #b30000;
 }
 
-.bg-primary p {
+.bg-primary span {
  font-size: 22px;
  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.bg-primary a {
+  color: white;
+}
+
+.bg-white a {
+	color: black;
+}
+
+.bg-white span {
+	font-size: 22px;
+ font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  
 }
 
 .bg-dark {
   background-color: black;
   color: white;
 }
+
+.bg-dark a {
+  color: white;
+}
+
 .text-faded {
   color: rgba(255, 255, 255, 0.7);
 }
