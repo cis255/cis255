@@ -1,0 +1,39 @@
+<!doctype html>
+<!--file: cis_js_test05.html-->
+<html>
+	<body>
+		<script>
+			// build your own more elaborate functions
+			
+			// write your own function
+			function writeHi()
+			{
+				document.write("Hi");
+			}		
+			
+			writeHi();
+			document.write("<hr />")
+			
+			// write your own function that accepts nction as a parameter
+			function returnGoodbye()
+			{
+				return "Goodbye";
+			}
+			function writeFunctionReturn(Function)
+			{
+				document.write(Function());
+			}
+			
+			writeFunctionReturn(returnGoodbye);
+			document.write("<hr />");
+			
+			// write your own IIFE
+			(function TheIIFE(Phrase)
+			{
+				document.write(Phrase);
+			})("This is an IIFE");
+			
+			
+		</script>
+	</body>
+</html>
