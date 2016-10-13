@@ -212,8 +212,15 @@ header .header-content {
   padding: 150px 25px;
   width: 100%;
 }
+header .header-content .header-content-inner {
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+	font-weight: 700;
+  }
 header .header-content .header-content-inner h1 {
-  font-weight: 350;
+  font-weight: 700;
   text-transform: none;
   margin-top: 0;
   margin-bottom: 0;
@@ -222,15 +229,15 @@ header .header-content .header-content-inner h1 {
 header .header-content .header-content-inner hr {
   margin: 25px auto;
 }
-header .header-content .header-content-inner p {
-  font-weight: 350;
+header .header-content .header-content-inner a {
+  font-weight: 700;
   color: #b30000;
   font-size: 20px;
   margin-bottom: 10px;
 }
 
  header  .header-content a:hover  {
-  color: #ff3333;
+  color: #ff8080;
   text-decoration: none;
   font-weight: 250;
 }
@@ -252,8 +259,10 @@ header .header-content .header-content-inner p {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+	font-weight: 700;
   }
   header .header-content .header-content-inner h1 {
+	
     font-size: 130px;
   }
   
@@ -266,7 +275,7 @@ header .header-content .header-content-inner p {
   margin: 30px auto;
 }
   
-  header .header-content .header-content-inner p {
+  header .header-content .header-content-inner a {
 	color: #b30000;
     font-size: 18px;
     max-width: 80%;
@@ -274,14 +283,14 @@ header .header-content .header-content-inner p {
     margin-right: auto;
   }
   
-  header .header-content  a:hover, .header-content  a p:hover {
-  color: #e60000;
+  header .header-content  a:hover {
+  color: #ff8080;
   text-decoration: none;
   font-weight: 250;
 }
 
-header .header-content  a p:hover {
-  color: #e60000;
+header .header-content  p:hover {
+  color: #ff8080;
   text-decoration: none;
   font-weight: 250;
 }
