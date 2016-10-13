@@ -1,0 +1,40 @@
+<html>
+	<body>
+		<script>
+			x = 1;
+			y = true;
+			if(x==y) document.write("x equals y<br/>");
+			else document.write("x does not equal y<br/>");
+			if (x===y) document.write("x equals y and x is the same datatype as y<br/>");
+			else document.write("x does not equal y or x is not the same data type as y or both<br/>");
+			
+			y = Math.ceil(Math.random() * 3);
+			switch(y){
+				case 1:
+					document.write("<br/>Its 1 this time!");
+					break;
+				case 2:
+					document.write("<br/>Its 2 this time!");
+					break;
+				case 3:
+					document.write("<br/>Its 3 this time!");
+					break;
+				default:
+					document.write("<br/>Oops!");
+			
+			}
+			
+			z = "Hello";
+			switch(z){
+				case "Hello":
+					document.write("<br/>It was Hello!");
+					break;
+				case "Goodbye":
+					document.write("<br/>It was not Hello!");
+					break;
+				default:
+					document.write("<br/>How are you here...?");
+			}
+		</script>
+	</body>
+</html>
