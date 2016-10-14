@@ -96,6 +96,19 @@ p {
   text-decoration: none;
 }
 
+.bg-background{
+	position: relative;
+  width: 100%;
+  min-height: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-image: url('../img/cards.jpg');
+  text-align: center;
+}
+
 .text-faded {
   color: rgba(255, 255, 255, 0.7);
 }
@@ -310,10 +323,12 @@ header .header-content  p:hover {
 }
 .service-box p {
   margin-bottom: 0;
+  color: #b30000;
 }
 
 .service-box h3 {
-  color: #b30000;
+  color: #000000;
+  font-weight: 900;
 }
 
 .portfolio-box {
