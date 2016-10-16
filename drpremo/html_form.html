@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+	This code copied from W3schools 
+	http://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_submit
+-->
+<html>
+	<body>
+
+		<form action="http://api.svsu.edu/courses">
+			Prefix:<br/>
+			<input type="text" name="prefix" placeholder="CIS"/>
+			<select name="prefix">
+				<option>CS</option>
+				<option>CIS</option>
+				<option selected>MATH</option>
+				<option>PHIL</option>
+				<option>ART</option>
+				<option>ENGL</option>
+			</select>
+			<br/>
+			Course Number:<br/>
+			<input type="text" name="courseNumber" placeholder="255"/>
+			<br/>
+			<!--Secret code:<br/>
+			<input type="password" name="lastname" placeholder="Hamilton"/>
+			<br/>
+			Date:<br/>
+			<input type="date" name="lastname" placeholder="Hamilton"/>
+			<br/>-->
+			<br/>
+			<input type="submit" value="Submit"/>
+		</form>
+
+		<p>If you click the "Submit" button, the form-data will be sent to a page called "html_form.php".</p>
+
+	</body>
+</html>
