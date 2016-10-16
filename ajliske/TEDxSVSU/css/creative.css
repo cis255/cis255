@@ -320,10 +320,17 @@ header .header-content  p:hover {
   .service-box {
     margin: 20px auto 0;
   }
-}
+
 .service-box p {
   margin-bottom: 0;
   color: #b30000;
+  font-weight: 900;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.service-box a:hover {
+  text-decoration: none;
+  opacity: 0.5;
 }
 
 .service-box h3 {
@@ -337,9 +344,7 @@ header .header-content  p:hover {
   max-width: 650px;
   margin: 0 auto;
   color: white;
-  
-  
-  
+}
 }
 .portfolio-box .portfolio-box-caption {
   color: white;
