@@ -397,7 +397,7 @@ header .header-content  p:hover {
   background: rgba(179, 0, 0, .8);
   opacity: 1;
 }
-.portfolio-box:hover .portfolio-box-caption .portfolio-box-caption-content{ //not being used for picture link possibilities
+.portfolio-box:hover .portfolio-box-caption .portfolio-box-caption-content{ /* not being used --- for picture link possibilities */
   opacity: 0;
 }
 .portfolio-box:focus {
