@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript - Example 2</title>
+	</head>
+
+	<body>
+		<h2>JS Control Statments</h2>
+		<script>
+			function isNumber(n) 
+			{
+				return !isNaN(parseFloat(n)) && isFinite(n);
+			}
+			var blnIsNumber = true;
+			var aprompt1 = prompt("Enter a number between 1 and 5: ");
+
+			if(isNumber(aprompt1))
+				blnIsNumber = true;	
+			else
+				blnIsNumber = false;
+			
+			document.write("Was the entry a number? " + blnIsNumber + "<br/>")
+
+			switch(Number(aprompt1))
+			{
+				case 1:
+					document.write("Your number was 1");
+					break;
+				case 2:
+					document.write("Your number was 2");
+					break;
+				case 3:
+					document.write("Your number was 3");
+					break;
+				case 4:
+					document.write("Your number was 4");
+					break;
+				case 5:
+					document.write("Your number was 5");
+					break;
+				default:
+					document.write("Your number wasn't in the designated range!");
+					break;
+			}
+			
+			var aprompt2 = prompt("Enter what day it is today: ", "Saturday");
+			document.write("<br/>")
+						
+			switch(aprompt2.toUpperCase())
+			{
+				case "MONDAY":
+				case "TUESDAY":
+				case "WEDNESDAY":
+				case "THURSDAY":
+				case "FRIDAY":
+					document.write("Since it's " + aprompt2 + ", it's a weekday");
+					break;
+				case "SATURDAY":
+				case "SUNDAY":
+					document.write("Since it's " + aprompt2 + ", it's the weekend!");
+					break;
+				default:
+					document.write("Whoops! Please enter the full name of a day of the week (Sunday-Saturday)");
+					break;
+			}
+			
+		</script>
+	</body>
+</html>

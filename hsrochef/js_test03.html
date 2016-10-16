@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+
+		<h1>Javascript Test3</h1>
+		<p><h3>Writing JS code to print contents of loops.</h3></p>
+		<script>
+			//LOOPS!
+			//For loop to print hello world 10 times
+			for(var i=0; i<10; i++)
+			{
+			document.write((i+1) + " hello world<br />");
+			}
+			// while loop to print sum of the digits of the 
+			// number 1234567890 (use mod operator (%))
+			var x = 1234567890;
+			var sum = 0;
+			var counter = 9;
+			while(counter != 0)
+			{
+			sum += counter % x;
+			counter= counter -1;
+			}
+			document.write("<br /> The total sum of the individual digits of 1234567890 is: <br/>");
+			document.write(sum);
+			//do loop to print letters in the 
+			//word "zippy" (string) one letter per line
+			document.write("<br /><br />The word: zippy, one letter at a time.<br />")
+			var zippy = "zippy";
+			var i = 0;
+			do
+			{
+			document.write(zippy[i]);
+			document.write("<br />")
+			i = i+1;
+			}
+			while(i < zippy.length)
+
+
+
+		</script>
+
+	</body>
+</html>

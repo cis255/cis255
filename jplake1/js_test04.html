@@ -1,0 +1,89 @@
+<html>
+	
+	<body>
+	
+	<p id = "zippy" onClick="myAlert();">
+	Click for an Alert!
+	</p>
+	
+	<p onClick="myConfirm();">
+	Click for confirm
+	</p>
+	
+	<p onClick = "myPrompt();">
+	Click for prompt
+	</p>
+	
+	</body>
+	
+	<script>
+		
+		// test built-in functions including alert(), confirm(), prompt()
+		// test Math functions, including inNAN(), Math.abs(), Math.ceil(),
+		// Math.floor(), Math.max(), Math.min(), Math.pow(), Math.round(), Math.sqrt()
+		
+		var x = 5;
+		
+		document.write(typeof(x) + "<br>");
+		
+		console.log(x);
+	
+		var pi = Math.pi;
+		console.log(pi);
+		console.log(Math.pi);
+		
+		// alert()
+		function myAlert(){
+		alert("This is just an alert");
+		}
+		
+		// confirm();
+		function myConfirm(){
+		confirm("Or is it?");
+		}
+		
+		// prompt
+		function myPrompt(){
+		prompt("Cake or Death?");
+		}
+		
+		// Math functions:
+		var X = prompt("Please enter a numerical value for X")
+		
+		document.write("<br>This is the variable X<br>");
+		document.write("<br>It equals " + X + "<br>");
+		
+		// inNAN();
+		document.write("<br>X is a number: " + !Number.isNaN(x) + "<br>");
+		
+		// Math.abs()
+		document.write("<br>The absolute value of X is : " + Math.abs(X) + "<br>");
+		
+		// Math.ceil()
+		document.write("<br>The ceiling of X is : " + Math.ceil(X) + "<br>");
+		
+		// Math.floor()
+		document.write("<br>The floor of X is : " + Math.floor(X) + "<br>");
+		
+		//Math.min()
+		document.write("<br>The min of X is : " + Math.min(X) + "<br>");
+		
+		//Math.max()
+		document.write("<br>The max of X is : " + Math.max(X) + "<br>");
+		
+		//Math.pow()
+		document.write("<br>X to the Xth power is : " + Math.pow(X,X) + "<br>");
+		
+		//Math.round()
+		document.write("<br>X rounded to the nearest integer is : " + Math.round(X) + "<br>");
+		
+		//Math.sqrt()
+		document.write("<br>The square root of X is : " + Math.sqrt(X) + "<br>");
+		
+
+		
+		
+	
+	</script>
+
+</html>

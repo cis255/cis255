@@ -1,0 +1,67 @@
+<html>
+ 
+  <body>
+    
+      <p id="zippy"></p>	
+   
+     <script>
+	    // test sontrol statements. if/else, switch using boolean for if else and numbers and strings for switch
+	   //document.write("Hello World");
+	   //document.getElementByID("zippy").innerHTML = "zoopy"; 
+	   
+	   // if/ else 
+	   document.write("<br /> if - else statement" )
+	   x = 5;
+	   y = 6; 
+	   
+	   if (x == y) document.write("x equals y");
+	   else document.write( "<br /> x  does not equal y");
+	   if (x === y) document.write("x equals y and x, y of same datatype");
+	   else document.write("<br />x does not equal y or x and y are not the same datatype"); 
+	   
+	   // switch case: numbers
+       document.write("<br /> switch case numbers")	   
+	   var day;
+	   var x = 5;
+	   switch (x)
+	   {case 0:
+	     day = "sunday";
+		 break;
+		 case 1:
+	     day = "monday";
+		 break;
+		 case 2:
+	     day = "tuesday";
+		 break;
+		 case 3:
+	     day = "wednesday";
+		 break;
+		 case 4:
+	     day = "thursday";
+		 break;
+		 case 5:
+	     day = "friday";
+		 break;
+		 case 6:
+	     day = "saturday";
+		 break;} 
+		 document.write("<br />" + day)
+		 
+		 // switch case: strings
+		 document.write("<br /> switch case: string")
+		 var $t = String;
+          switch ($t) {
+           case Number:
+            document.write("<br />Object is a Number.");
+            break;
+           case String:
+            document.write("<br />Object is a String.");
+            break;
+           default:
+            document.write("<br />Object is unknown.");
+			}
+			
+	   
+	 </script>  
+  </body>
+</html>

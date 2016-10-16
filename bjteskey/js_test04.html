@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html>
+	<body>
+		<p id="zippy" onClick="myAlert()">this is a paragraph</p>
+		<script>
+			
+			// Test built in functions, esp. alert()
+			// confirm(), prompt()
+			// Test math functions: isNaN(), Math.abs(),
+			// Math.ceil(), Math.floor(), Math.max(), Math.min(),
+			// Math.round(), Math.abs(), Math.sqrt()
+			
+			// alert()
+			function myAlert() {
+				
+				alert("This is an alert.");
+				
+			}
+			
+			// Math.abs()
+			var a = -25;
+			var b = 25;
+			var c = 5.2;
+			
+			if (Math.abs(a) == Math.abs(b)) 
+				document.write("a and b have same absolute value");
+			document.write("<hr />");
+			document.write(confirm("Are you a taco?"));
+			document.write("<hr />");
+			document.write(prompt("Are you a tuna fish?", "Yes, tuna fish"));
+			document.write("<hr />");
+			if (isNaN(a) == false) document.write("a is a number");
+			document.write("<hr />");
+			document.write(Math.ceil(c));
+			document.write("<hr />");
+			document.write(Math.floor(c));
+			document.write("<hr />");
+			document.write("The max value of a, b, c is " + Math.max(a, b, c));
+			document.write("<hr />");
+			document.write("The min value of a, b, c is " + Math.min(a, b, c));
+			document.write("<hr />");
+			document.write(Math.round(c));
+			document.write("<hr />");
+			document.write(Math.sqrt(b));
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+	<body>
+		<p id="ex"></p>
+		
+		<script>
+		//test control statements , if/else and switch case using boolean operations for if else and both numbers and strings for switch case
+		var x = 0;
+		var y = false;
+		if(x == y) document.write("x equals y");
+		else document.write("x does not equal y");
+		if (x===y) document.write("<br / >x equals y and x, y of same data type");
+		else document.write("<br /> x does not equal y or x and y are not the same data type");
+		
+		//switch case: numeric
+		var z = 3;
+		switch(z) {
+		case 1: 
+			document.write("<br  /> z = 1 ");
+			break;
+		case 2: 
+			document.write("<br  /> z = 2 ");
+			break;
+		case 3: 
+			document.write("<br  /> z = 3 ");
+			break;
+		}
+		//switch case: string 
+		var test = 'yes';
+		switch(test) {
+			case 'yes':
+				document.write("<br / > answer was yes");
+				break;
+			case 'no':
+				document.write("<br /> answer was no");
+				break; 
+			default:
+				document.write("invalid answer");
+		}
+		
+		</script>
+	</body>
+</html>
