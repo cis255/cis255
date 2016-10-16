@@ -1,0 +1,52 @@
+<!-- Author : Deepak, Original Template: Dr. George Corser>
+
+<!doctype html>
+<!-- file: js_test05.html
+-->
+<html>
+	
+	<body>
+
+    <p id="calculations"></p>
+    
+		<script>
+		
+			// build your own more elaborate functions
+			
+			// 1. write your own function
+			// 2. write your own function that accepts a function as a parameter and runs it. 
+			// 3. write your own IIFE
+			
+			function calculations (p1, p2) {
+        document.write("p1: " + p1 + "  p2: " + p2);
+				document.write("</br>p1 + p2: " + (p1 + p2));
+				document.write("<br />p1 - p2: " + (p1 - p2));
+				document.write("<br />p1 * p2: " + (p1 * p2));
+				document.write("<br />p1 / p2: " + (p1 / p2));
+			}
+      document.getElementById("calculations").innerHTML = calculations(8, 2);
+			
+			
+			
+			
+			// IIFE: Immediately Invoked Function Expression
+			
+			var greet2 = (function(zippy) {
+				return "<br />Hello, " + zippy;
+			})("Rapunzel"); 
+			console.log(greet2);
+			document.write(greet2);
+			
+		</script>
+		
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+
