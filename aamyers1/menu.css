@@ -1,0 +1,69 @@
+
+body{
+	background-color:454445;
+	/* image from http://bg.siteorigin.com/ */
+	background-image:url(back2.png);
+	background-repeat:repeat ;
+	font-family: 'Roboto Slab', serif;
+	font-weight:300;
+
+}
+.container {
+	background-color: rgb(245,243,220);
+	width:60%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5%;
+	margin-top: 5%;
+	padding:5%;
+	border:5px solid #009393;
+	border-radius:20px;
+
+
+}
+h1, ul, h2 {
+	text-align:center;
+}
+h1{
+	font-weight:400;
+	font-size:36pt;
+	color:#FF5828;
+	margin-left:30%;
+	margin-right:30%;
+}
+h2 {
+	font-size:30pt;
+	font-weight:100;
+	color:00585F;
+}
+ul, li {
+	list-style-type:none;
+	padding:10px;
+	margin-left:20%;
+	margin-right:20%;
+
+}
+ul li:nth-child(odd) {
+	background-color: rgba(0, 147,147, .5);
+}
+
+footer{
+	text-align:center;
+	color:A1A1A1;
+	font-weight:100;
+	font-size:15pt;
+}
+
+hr {
+	border:3px solid #FF5828;
+	border-radius:3px;
+	color: #FF5828;
+	height:3px;
+}
+a:link{
+	color:00585F;
+	text-decoration:none;
+}
+a:hover{
+	color:FF5828;
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<body>
+		<script>
+			//The purpose of this script is to test loops.
+			
+			//#1 - For loop to print hello world 10 times.
+			for (var i = 0; i < 10; i++)
+			{
+				document.write((i+1) + " Hello World <br />");
+			}
+			
+			//Line break for exercises.
+			document.write("<br /><br /><br />")
+			
+			//#2 - While loop to print sum of digits of the number 123456789. (Use mod op]erator)
+			var NumberForSum = 1234567890;	//Number being summed
+			var Sum = 0;					//Sum accumulator
+			var DigitIterator = 1;			//Value to use for mods in isolating digits, see below for explanation of mod usage:
+			while ((NumberForSum % DigitIterator) != NumberForSum) //If the mod returns the full number, the loop has iterated through every digit in that number 
+			{
+				//To accumulate digits, we take the mod of a digit's place * 10 minus the mod of the digit's place, and divide by that digit's place.
+				//To give a better description, and example:
+				//To get "3" from the tenths place in "1234"
+				//We take mod 100 to isolate 34, subtract mod 10 (value: 4) to get 30, and divide by 10 to get 3.
+				var ValueToAdd = ((NumberForSum % (DigitIterator * 10)) - (NumberForSum % DigitIterator)) / DigitIterator;
+				Sum += ValueToAdd;
+				
+				//Go to the next digit's "place"
+				DigitIterator *= 10;
+			}			
+			document.write(Sum);
+			
+			//Line break for exercises.
+			document.write("<br /><br /><br />")
+	
+			
+			//#3 - Do loop to print letters in a string one letter per line.
+			var TestString = "zippy";
+			var StringPos = 0;
+			do
+			{
+				document.write(TestString[StringPos] + " ");
+				StringPos++;
+			} while(TestString[StringPos] != undefined) //If there is valid data in String[Position], continue looping.
+			
+		</script>
+	</body>
+</html>

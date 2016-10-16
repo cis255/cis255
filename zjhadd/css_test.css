@@ -1,0 +1,10 @@
+/* external css */
+h2 {
+	color: green;
+	font-size: 36pt;
+	background-color: hotpink;
+	min-height: 1px;
+}
+p span {font-size: 200%;}
+span {font-size: 50%;}
+h4, span, a {color: green;}
