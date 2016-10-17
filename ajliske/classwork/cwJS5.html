@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	
+	<body>
+		
+		<script>
+		// build functions
+		
+		function myFunc(p1,p2,p3,p4){
+		document.write("p1: " + typeof(p1) + "<br /> ");
+		document.write("p2: " + typeof(p2) + "<br /> ");
+		document.write("p3: " + typeof(p3) + "<br /> ");
+		document.write("p4: " + typeof(p4) + "<br /> ");
+		document.write( "<hr /> ");
+		}
+		
+		myFunc();
+		myFunc(null, null,"good");
+		myFunc(1,2,3,"good");
+		
+		var f = function() {return "good good good";};
+		document.write("<br /> " + f);
+		document.write("<br /> " + f());
+		
+		//can pass a function as a variable to another function
+		//f(myFunc);
+		//myFunc(f(),f)
+		
+		var who = function(){return "Andrew";};
+		document.write("<br /> " + who);
+		document.write("<br /> " + who());
+		
+		var whoDat = function(func){return" It's " + func(); };
+		document.write("<br /> " + whoDat);
+		document.write("<br /> " + whoDat(who));
+		
+		console.log("good");
+		</script>
+			
+	</body>
+	
+</html>
