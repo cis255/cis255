@@ -1,0 +1,98 @@
+<html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- JQuery -->
+		<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+	<body class= "color">
+		<div class="container">
+			<h1>JS Test 05 - Jerome Gifford</h1>
+			<script>
+			/*
+			function myFun (p1, p2, p3, p4){
+				document.write("p1: " + p1);
+				document.write("<br>p2: " + p2);
+				document.write("<br>p3: " + p3);
+				document.write("<br>p4: " + p4);
+			}
+			
+				myFun();
+				document.write("<hr>");
+				myFun(1, 2, 3, "Fred");
+				document.write("<hr>");
+				myFun(1, 2, 3, "Fred", 5, 6,7);
+				
+				var f = function () {return "FFF";}
+				document.write("<br>" + f);
+				document.write("<br>" + f());
+				document.write("<hr>");
+				
+				myFun(f, f(), "gggggggg", 5);
+				document.write("<hr>");
+				myFun(myFun());
+				
+				var person = function (){
+				return "Jerome";
+				}
+				
+				var greet = function(user) {
+				return "Hello, " + user;
+				}
+				
+				document.write("<hr>");
+				document.write(person);
+				document.write("<hr>");
+				document.write(person());
+				document.write("<hr>");
+				
+				//IIFE : Immediate;y Invoked Function Expression
+				var greet2 = (function(user) {
+				return "Hello, " + user;
+				})("Rapunzel");
+				document.write("<br>" + greet2);
+			*/
+				//1. write own function
+				//2. write function that accepts a function as a parameter and runs italic
+				//3. write a IIFE
+				document.write("<h4>1. Own function</h4>")
+ 				function myFunc(){
+				document.write("This is a custom function that does random stuff");
+				document.write("<br>");
+				a = 100;
+				b = 20;
+				c = 40;
+				return (Math.pow(a, 2) + Math.pow(b, 2) + Math.pow(c, 2));
+				}
+				
+				var person = function(){
+					return prompt("Enter you name", "First Name");
+				}
+				
+				var greet = function(user){
+				return "Hello, " + user;
+				}
+				
+				document.write(myFunc());
+				document.write("<br>");
+				document.write("<h4>2.function accepts function</h4>")
+				document.write(greet(person()));
+				
+				var run = (function(num){
+				return ("This is your number: " + num);
+				})(7169280);
+				document.write("<h4>3. IIFE Function</h4>")
+				document.write(run);
+				
+				
+			</script>
+		</div> <!-- Close container -->
+	</body>
+</html>

@@ -15,30 +15,49 @@
 	</head>
 	<body class= "color">
 		<div class="container">
-			<h1>JS Test 03 - Jerome Gifford</h1>
+			<h1>JS Test 06 - Jerome Gifford</h1>
 			<script>
-			document.write("<h4>1. For Loop</h4>")
-			for (i = 0; i < 10; i++) { 
-				document.write("Hello, World <br>");
-			}
-			document.write("<br>");
-			document.write("<h4>2. While Loop</h4>")
-			var num = 1234567890;
-			sum = 0;
-			while(num > 0){
-				sum += num % 10;
-				num = Math.floor(num/10);
-			}
-			document.write(sum + "<br>");
-			document.write("<h4>3. Do Loop</h4>")
-			word = "zippy";
-			var i = 0;
-			do{
-				document.write(word[i]+"<br>");
-				i++;
-			}
-			while(i < 5);
+
+			var one;
 			
+			(function () {
+				var two = 2, one = "uno";
+				console.log(two); // displays 2
+				console.log(one); // displays uno
+				//console.log(three); //error
+				three = "tres";
+			})();
+			
+			console.log(one); // displays undefined
+			// console.log(two); //error
+			console.log(three); //tres
+			
+			function red(){
+				var result = "";
+				
+				var magenta = function (length){
+					result += "/";
+					for (var i=0; i<length; i++){
+						result = result + "m";
+					}
+				}
+				
+				var burgundy = function (length){
+					result += "/";
+					for (var i=0; i<length; i++){
+						result = result + "b";
+					}
+				}
+				
+				magenta(5);
+				burgundy(10);
+				magenta(5);
+				burgundy(10);
+				
+				return result;
+			}
+			
+			console.log(red());
 			</script>
 		</div> <!-- Close container -->
 	</body>
