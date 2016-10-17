@@ -93,8 +93,8 @@ header .intro-text .skills {
 }
 @media (min-width: 768px) {
   header .container {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 200px;
+    padding-bottom: 20px;
   }
   header .intro-text .name {
     font-size: 4.75em;
@@ -104,29 +104,29 @@ header .intro-text .skills {
   }
 }
 .navbar-custom {
-  background: #2C3E50;
+  background: white;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  border: none;
+  border: 5px;
 }
 .navbar-custom a:focus {
   outline: none;
 }
 .navbar-custom .navbar-brand {
-  color: white;
+  color: black;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
 .navbar-custom .navbar-brand.active {
-  color: white;
+  color: black;
 }
 .navbar-custom .navbar-nav {
   letter-spacing: 1px;
 }
 .navbar-custom .navbar-nav li a {
-  color: white;
+  color: black;
 }
 .navbar-custom .navbar-nav li a:hover {
   color: #18BC9C;
@@ -134,20 +134,20 @@ header .intro-text .skills {
 }
 .navbar-custom .navbar-nav li a:focus,
 .navbar-custom .navbar-nav li a:active {
-  color: white;
+  color: black;
 }
 .navbar-custom .navbar-nav li.active a {
-  color: white;
+  color: black;
   background: #18BC9C;
 }
 .navbar-custom .navbar-nav li.active a:hover,
 .navbar-custom .navbar-nav li.active a:focus,
 .navbar-custom .navbar-nav li.active a:active {
-  color: white;
-  background: #18BC9C;
+  color: black;
+  background: red;
 }
 .navbar-custom .navbar-toggle {
-  color: white;
+  color: black;
   text-transform: uppercase;
   font-size: 10px;
   border-color: white;
@@ -155,7 +155,7 @@ header .intro-text .skills {
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
   background-color: #18BC9C;
-  color: white;
+  color: black;
   border-color: #18BC9C;
 }
 @media (min-width: 768px) {
@@ -328,7 +328,7 @@ footer .footer-below {
   border: solid 2px white;
 }
 .btn-primary {
-  color: white;
+  color: black;
   background-color: #2C3E50;
   border-color: #2C3E50;
   font-weight: 700;

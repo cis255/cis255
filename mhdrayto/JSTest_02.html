@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	
+	<head><title>JStest_02</title></head>
+
+	<body>
+			<form>
+					<button onClick="truthCheck(0);">True</button><br>
+					<button onClick="truthCheck(1);"> False</button><br>
+					<!--<button onClick="radioCheck();">Submit</button>-->
+			</form>
+			
+			<script>
+				var radioButton = true;
+				var radioValue;
+				
+					
+					function setRadioValue(radioValue)
+						{
+							if(radioValue == 1)
+								radioButton = false;
+							else
+								radioButton = true;
+						}
+					
+					function truthCheck(radioValue)
+					{
+						if(radioValue == 0)
+							document.write("True!");
+						else
+							document.write("False!");
+					}
+					
+					console.log(radioButton);
+			</script>
+			
+	</body>
+</html>
+				
+				

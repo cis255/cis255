@@ -320,10 +320,17 @@ header .header-content  p:hover {
   .service-box {
     margin: 20px auto 0;
   }
-}
+
 .service-box p {
   margin-bottom: 0;
   color: #b30000;
+  font-weight: 900;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.service-box a:hover {
+  text-decoration: none;
+  opacity: 0.5;
 }
 
 .service-box h3 {
@@ -337,9 +344,17 @@ header .header-content  p:hover {
   max-width: 650px;
   margin: 0 auto;
   color: white;
-  
-  
-  
+}
+}
+
+.portfolio-box .span {
+	color: white;
+	color: white; 
+   font: bold 24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px; 
 }
 .portfolio-box .portfolio-box-caption {
   color: white;
@@ -382,7 +397,7 @@ header .header-content  p:hover {
   background: rgba(179, 0, 0, .8);
   opacity: 1;
 }
-.portfolio-box:hover .portfolio-box-caption .portfolio-box-caption-content{ //not being used for picture link possibilities
+.portfolio-box:hover .portfolio-box-caption .portfolio-box-caption-content{ /* not being used --- for picture link possibilities */
   opacity: 0;
 }
 .portfolio-box:focus {

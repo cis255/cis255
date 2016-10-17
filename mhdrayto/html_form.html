@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<!-- code was copied from http://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_submit -->
+
+<html>
+	<body>
+
+		<form action="http://api.svsu.edu/courses">
+			  Prefix:<br />
+			  <input type="text" name="prefix" placeholder="CIS" list="prefix"/>
+			  <datalist id="prefix">
+					<option>CS</option>
+					<option>CIS</option>
+					<option>MTH</option>
+					<option>ENGL</option>
+					<option>PHIL</option>
+					<option>ART</option>
+				</datalist>
+			  <br />
+			  Last name:<br />
+			  <input type="text" name="courseNumber" placeholder="255" />
+			  <br /><br />
+			  <input type="submit" value="Submit" />
+		</form> 
+
+		<p>If you click the "Submit" button, the form-data will be sent to a page called "action_page.php".</p>
+
+	</body>
+</html>
