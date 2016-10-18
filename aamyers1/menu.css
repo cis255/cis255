@@ -1,3 +1,4 @@
+
 body{
 	background-color:454445;
 	/* image from http://bg.siteorigin.com/ */
@@ -9,13 +10,14 @@ body{
 }
 .container {
 	background-color: rgb(245,243,220);
-	margin-left: 10%;
-	margin-right: 10%;
+	width:60%;
+	margin-left: auto;
+	margin-right: auto;
 	margin-bottom: 5%;
 	margin-top: 5%;
 	padding:5%;
 	border:5px solid #009393;
-	border-radius:40px;
+	border-radius:20px;
 
 
 }
@@ -25,8 +27,7 @@ h1, ul, h2 {
 h1{
 	font-weight:400;
 	font-size:36pt;
-	color:FF5828;
-	border:3px dotted #454445;
+	color:#FF5828;
 	margin-left:30%;
 	margin-right:30%;
 }
@@ -54,7 +55,10 @@ footer{
 }
 
 hr {
-	color:FF5828;
+	border:3px solid #FF5828;
+	border-radius:3px;
+	color: #FF5828;
+	height:3px;
 }
 a:link{
 	color:00585F;

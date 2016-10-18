@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- JQuery -->
+		<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+	<body class= "color">
+		<div class="container">
+			<h1>JS Test 06 - Jerome Gifford</h1>
+			<script>
+
+			var one;
+			
+			(function () {
+				var two = 2, one = "uno";
+				console.log(two); // displays 2
+				console.log(one); // displays uno
+				//console.log(three); //error
+				three = "tres";
+			})();
+			
+			console.log(one); // displays undefined
+			// console.log(two); //error
+			console.log(three); //tres
+			
+			function red(){
+				var result = "";
+				
+				var magenta = function (length){
+					result += "/";
+					for (var i=0; i<length; i++){
+						result = result + "m";
+					}
+				}
+				
+				var burgundy = function (length){
+					result += "/";
+					for (var i=0; i<length; i++){
+						result = result + "b";
+					}
+				}
+				
+				magenta(5);
+				burgundy(10);
+				magenta(5);
+				burgundy(10);
+				
+				return result;
+			}
+			
+			console.log(red());
+			</script>
+		</div> <!-- Close container -->
+	</body>
+</html>

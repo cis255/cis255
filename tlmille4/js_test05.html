@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript - Example 5</title>
+	</head>
+
+	<body>
+		<h2>Exercise 05 - JS Functions and IIFEs</h2>
+		<p id = "while">Click the following button to add two numbers:</p>
+		<button onclick="getNumbers()">Enter Two Numbers</button>
+		<p id = "result"></p>
+		<script>
+	
+	
+			function getNumbers()
+			{
+				var input1 = prompt("Please enter any number:");
+				var input2 = prompt("Please enter a second number:");
+				addNumbers(input1, input2);
+			}
+			function addNumbers(input1, input2)
+			{
+				var total = 0;
+				if(isNumber(input1) && isNumber(input2))
+				{
+					total = parseFloat(input1) + parseFloat(input2);
+					document.getElementById('result').innerHTML += "<br/>" + input1 + " + " + input2 + " = " + total;
+					if((function(){return input1 == input2;})())
+						document.getElementById('result').innerHTML += "<br/>Both input values equal";
+					else
+						document.getElementById('result').innerHTML += "<br/>Input values do not equal";
+	
+				}
+				else
+					document.getElementById('result').innerHTML += "<br/>" + "The input was invalid!";
+
+			}
+			function isNumber(n)
+			{
+				return !isNaN(parseFloat(n)) && isFinite(n);
+			}
+			
+		</script>
+	</body>
+</html>
