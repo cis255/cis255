@@ -41,8 +41,8 @@
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript Tests <span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li class="active"><a href="js_test01.html">Test 1: Data Types</a></li>
-					<li><a href="js_test02.html">Test 2: Control Statements</a></li>
+					<li><a href="js_test01.html">Test 1: Data Types</a></li>
+					<li class="active"><a href="js_test02.html">Test 2: Control Statements</a></li>
 					<li><a href="js_test03.html">Test 3: Loops</a></li>
 					<li role="separator" class="divider"></li>
 					<li><a href="js_test04.html">Test 4: Built-in Functions</a></li>
@@ -57,32 +57,58 @@
     <div class="container">
 
 		<div class="starter-template">
-			<h3>Test 1: Data Types</h3>
+			<h3>Test 2: Control Statements</h3>
 			<p>
-				<script type="text/javascript">
+				<script>
 				
-					// String
-					var name = "michael";
+					// 1
+					var loggedIn = true;
 					
-					// Number
-					var age = 30;
+					if (!loggedIn) {
 					
-					// Boolean
-					var student = true;
+						// Send to log-in page
+						
+					} else {
 					
-					// Null
-					var work_experience = null;
+						// 
+						document.write("Welcome!<br />");
+						
+					}
 					
-					// Undefined
-					var job_title;
+					
+					// 2
+					var text;
+					
+					switch (new Date().getDay()) {
+						case 1:
+							text = "See you in class.";
+							break; 
+						case 3:
+							text = "See you in class.";
+							break; 
+						default: 
+							text = "Have a good day";
+					}
+					
+					document.write(text + "<br />");
 					
 					
-					// Test output
-					document.write("<b>First Name:</b> " + name + "<br />");
-					document.write("<b>Age:</b> " + age + "<br />");
-					document.write("<b>Student:</b> " + student + "<br />");
-					document.write("<b>Work Experience:</b> " + work_experience + "<br />");
-					document.write("<b>Job Title:</b> " + job_title + "<br />");
+					// 3
+					var major = "CS";
+					
+					switch (major) {
+						case "CS":
+							text = "Computer Science";
+							break;
+						case "CIS":
+							text = "Computer Information Systems";
+							break;
+					}
+					
+					document.write(text + "<br />")
+					
+					
+					
 					
 				</script>
 			</p>
@@ -97,6 +123,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
   </body>
 </html>
