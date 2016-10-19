@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- JQuery -->
+		<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>JS Test 08 - Jerome Gifford</h1>
+			<input type="number" id="in01" onkeyup="loopThruArrayOfFunctions()">
+			<p id="out01">Output goes here</p>
+			
+			<script>
+			/*
+				var a = new Array("1", 2, "three");
+				var b = ["1", 2, "three"];
+				b[3] = 17;
+				
+				function myArrayFun(){
+					var elem = document.getElementById("out01");
+					var i = 0; 
+					//populate array
+					while (i < 10) a[i] = i++;
+					//print in reverse
+					for (i = a.length - 1; i >=0; i--){
+						var tn = a[i];
+						elem.appendChild(document.createElement("br"));
+						elem.appendChild(document.createTextNode(tn));
+					}
+					
+					a = delArray(a);
+					for (i = a.length - 1; i >=0; i--){
+						var tn = a[i];
+						elem.appendChild(document.createElement("br"));
+						elem.appendChild(document.createTextNode(tn));
+					}
+				}
+				
+				//replace array, a, with only its elements 0-3 and 8-9
+				
+				function delArray(a) {
+					a.splice(4, 4);
+					return a;
+				}
+				*/
+				
+				// create an array that contains 5 functions, add2(), subtract4(), mod5(), power3(), toString()
+				// write a function to loop through the array of functions and append text nodes to a paragraph in the DOM
+				// which conatins the output of a perameter
+				
+				function loopThruArrayOfFunctions() {
+					var z = document.getElementById("in01").value;
+					var y = document.getElementById("out01");
+					var x = new Array(add2(z), subtract4(z), mod5(z), power3(z), toString(z));
+					for (i = x.length - 1; i >= 0; i--){
+						var tn = x[i];
+						y.appendChild(document.createElement("br"));
+						y.appendChild(document.createTextNode(tn));
+					}
+				}
+				
+				function add2(i){
+					return ("Add2: " + (Number(i) + 2));
+				}
+				
+				function subtract4(i){
+				 return ("Subtract4: " + (i - 4));
+				}
+				
+				function mod5(i){
+					return ("Mod5: " + (i % 5));
+				}
+				
+				function power3(i){
+					return ("Power3: " + Math.pow(i, 3));
+				}
+				
+				function toString(i){
+					return ("toString: " + i.toString());
+				}
+			</script>
+		</div> <!-- Close container -->
+	</body>
+</html>
