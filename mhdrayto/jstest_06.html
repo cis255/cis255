@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>jsTest_06</title>
+	</head>
+	
+	<body>
+	
+		<script>
+			var one;
+			
+			(function ()
+			{
+				var two = 2, one = "uno";
+				
+				console.log(two);
+				console.log(one);
+				//console.log(three);
+				
+				three = "tres";
+				
+				
+			}) () ;
+			
+			console.log(one);
+			console.log(three);
+			
+			function red()
+			{
+				var result = "";
+				
+				var magenta = function(length)
+				{
+					result += "/";
+					for (var i = 0; i < length; i++)
+					{
+						result = result + "m";
+					}
+				}
+				
+				var burgundy = function(length)
+				{
+					result += "/";
+						for (var i = 0; i < length; i++)
+						{
+							result = result + "b";
+						}
+				}
+				
+				magenta(4);
+				burgundy(2);
+				magenta(10);
+				burgundy(15);
+				
+				return result;
+			}
+			
+			console.log(red());
+			
+		</script>
+		
+	</body>
+	
+</html>
+			

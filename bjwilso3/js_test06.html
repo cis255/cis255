@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<script>
+				//Demonstrate global functions available to all functions, local variables available to onlt one function, nested scope, available to fucntions within functions. Include declarations using var and not using var
+				
+				//Include comments that show which is which
+				
+				var one;
+				
+				(function() {
+					var two = 2, one = "uno";
+					console.log(two); //2
+					console.log(one); //"uno"
+					//console.log(three); //error
+					three = "tres";
+				})();
+				
+				console.log(one); //undefined
+				//console.log(two); //error
+				console.log(three); //"tres"
+				
+				function red(){
+					var result = "";
+					var magenta = function (length){
+						result += "/";
+						for (var i = 0; i < length; i++){
+							result = result+"m";
+						};
+						
+
+					};
+					var burgendy = function (length){
+						result += "/";
+						for (var i = 0; i < length; i++){
+							result = result+"b";
+						};
+					};
+					magenta(5);
+					burgendy(10);
+					magenta(5);
+					burgendy(10);
+					
+					return result;
+				}
+				
+				console.log(red());
+		</script>
+	</body>
+</html>

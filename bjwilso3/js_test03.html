@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<script>
+			//Testing loops
+			//1. For loop to print hello, world 10 times
+			//2. While loop to print sum digits of the number 1234567890 (use mod operator)
+			//3. Do loop to print letter in the word "Zippy" (string) one letter per line
+			
+			//1. For loop to print hello, world 10 times
+			document.write("<br/ > <b>Loops: For</b> <br />");
+			for(var i = 0; i < 10; i++){
+				document.write((i+1) +". hello, world.<br />")
+			}
+			//2. While loop to print sum digits of the number 1234567890 (use mod operator)
+			document.write("<br/ > <b>Loops: While</b> <br />");
+			num = 1234567890;
+			sum = 0;
+			while(num > 0){
+				sum = sum + num%10;
+				num = Math.floor (num/10);
+			}
+			document.write(sum+"<br />");
+			//3. Do loop to print letter in the word "Zippy" (string) one letter per line
+			document.write("<br/ > <b>Loops: Do/While</b> <br />");
+			word = "Zippy";
+			i = 0;
+			do{
+				document.write(word[i]+"<br />");
+				i++;
+				
+			}
+			while (word[i] != undefined);
+		</script>
+	</body>
+</html>

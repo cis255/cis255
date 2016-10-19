@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript - Example 4</title>
+	</head>
+
+	<body>
+		<h2>Exercise 04 - JS Functions</h2>
+		<p id = "hello" onClick="myAlert()">Click this paragraph to trigger the myAlert function</p>
+		<p id = "while">Click the following button to test a number:</p>
+		<button onclick="getNumber()">Test a Number</button>
+		<p id = "doStats">Click the following button to perform stats on the tested number:</p>
+		<button onclick="performStats()">Perform Stats</button>
+		<p id = "result"></p>
+		<script>
+			//using typeof function to see what datatype intNumber is
+			var intNumber = 15;
+			var intInputNumber = 0;
+			
+			//using confirm function
+			confirm("JavaScript Exercise 04 has now loaded");
+			
+			//using the alert function
+			alert("Testing the Alert Function");
+			
+			function getNumber()
+			{
+				var input = prompt("Please enter a number between 1 and 10");
+				
+				if (isNumber(input))
+				{
+					if(input > 0 && input < 11)
+						document.getElementById('while').innerHTML += " <b>The value you entered was a number between 1 and 10</b>";
+					else
+						document.getElementById('while').innerHTML += " <b>The value you entered was a number, but not in the valid range</b>";
+				
+					
+				}
+				else
+					document.getElementById('while').innerHTML += " <b>The value you entered was NOT a number</b>";
+					
+				intInputNumber = input;
+			}
+			
+			
+			function performStats()
+			{
+				if(isNumber(intInputNumber))
+				{
+					document.getElementById('result').innerHTML += "<br/>====================== STATISTICS SUMMARY ======================";
+					var pi = Math.PI;
+					//abs value test
+					if(Math.abs(pi) == Math.abs(intInputNumber))
+						document.getElementById('result').innerHTML += "<br/>Values PI and " + intInputNumber + " have the same absolute value";
+					else
+						document.getElementById('result').innerHTML += "<br/>Values PI and " + intInputNumber + " do not have the same absolute value";
+						
+					if (Math.ceil(pi) > intInputNumber)
+						document.getElementById('result').innerHTML += "<br/>The ceiling of PI is greater than " + intInputNumber;
+					else
+						document.getElementById('result').innerHTML += "<br/>The ceiling of PI is not greater than " + intInputNumber;
+					
+					document.getElementById('result').innerHTML += "<br/>The square root of  " + intInputNumber + " is: " + Math.sqrt(intInputNumber);
+					
+					document.getElementById('result').innerHTML += "<br/>" + intInputNumber + " squared is: " + Math.pow(intInputNumber,2);
+					document.getElementById('result').innerHTML += "<br/>" + "The max of the two numbers is: " + Math.max(intInputNumber, pi);
+					document.getElementById('result').innerHTML += "<br/>" + "The min of the two numbers is: " + Math.min(intInputNumber, pi);
+					document.getElementById('result').innerHTML += "<br/>" + "PI rounded is: " + Math.round(pi);
+				}
+				else
+					document.getElementById('result').innerHTML += "<br/>" + intInputNumber + " is not a valid number. Cannot perform statistics";
+			}
+			
+			function isNumber(n)
+			{
+				return !isNaN(parseFloat(n)) && isFinite(n);
+			}
+			
+			function myAlert()
+			{
+				alert("Testing the Alert Function by using myAlert");
+			}
+			
+		</script>
+	</body>
+</html>

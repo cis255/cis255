@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<script>
+			//Test control statements 
+			//1. if/else and switch case using boolean operations
+			//2. switch case using numbers 
+			//3. switch case using strings
+			
+			//1. if/else and switch case using boolean operations
+			document.write("<br/ > <b>Control Statement: If/Else</b> <br />");
+			x = 5;
+			y = 6;
+			if (x==y) document.write("x equals y.<br />");
+			else document.write("x does not equal y.<br />");
+			
+			//2. switch case using numbers 
+			document.write("<br/ > <b>Control Statement: Numeric Switch Case</b> <br />");
+			boot = 10;
+			switch(boot) {
+			case 9:
+			document.write("Boot is a size too small.<br />");
+			break;
+			case 10:
+			document.write("Boot is a perfect fit.<br />");
+			break;
+			case 11:
+			document.write("Boot is a size too big.<br />");
+			break;
+			default:
+			document.write("Not a relevant sized boot.<br />");
+			}
+			
+			//3. switch case using strings
+			document.write("<br/ > <b>Control Statement: String Switch Case</b> <br />");
+			Medal = "gold";
+			switch(Medal) {
+			case "gold":
+			document.write("Congrats on first place.<br />");
+			break;
+			case "silver":
+			document.write("Congrats on second place.<br />");
+			break;
+			case "bronze":
+			document.write("congrats on third place.<br />");
+			break;
+			default:
+			document.write("Did not place.<br />");
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<!-- file: cis255_jstest04.html-->
+<html>
+	<body>
+	
+		<p id = "zippy" onClick="myAlert();">Click here to make an alert pop up!</p>
+		<hr />
+		
+		<script>
+		// test built-in functions, onClick()*, esp. alert()*, confirm()*, prompt()*
+		// test Math functoins, including isNaN(), Math.abs(), Math.ceiling, Math.floor, Math.max, Math.min, Math.pow, Math.round, Math.sqrt()
+		
+		//typeof
+		var x = 5;
+		document.write("x is a variable, whose value is: " + x + " and whose type is: " + typeof(x));
+		
+		document.write("<hr />");
+		
+		//console.log
+		document.write("Check the console for a message");
+		console.log("This is a console message - The value of x is: " + x);
+		document.write("<hr />");
+		
+		//Math.PI
+		var pi = Math.PI;
+		document.write("Here's pi written using a variable assigned Math.PI, and using Math.PI directly");
+		document.write("<br />" + pi);
+		document.write("<br />" + Math.PI);
+		
+		document.write("<hr />");
+		
+		// alert()
+		function myAlert()
+		{
+			alert("This is just an alert.");
+		}
+
+		//confirm()
+		if (confirm("Press OK!"))
+		{
+			document.write("You pressed OK!")
+		}
+		else
+		{
+			document.write("You didn't press OK!")
+		}
+		document.write("<hr />");
+		
+		//prompt()
+		var PromptReturn = prompt("Write something!")
+		if (PromptReturn == null)
+			document.write("You didn't write anything in the prompt!");
+		else
+			document.write("This is what you wrote in the prompt: " + PromptReturn);
+		
+		document.write("<hr />");
+		
+		//Math.abs
+		var a = -25;
+		var b = 25;
+		document.write("a is: " + a + " b is: " + b);
+		if (Math.abs(a) == Math.abs(b))
+			document.write("<br /><br />values a and b have the same absolute value");
+		
+		document.write("<hr />");
+		
+		//Math.ceil
+		var c = 4.5;
+		document.write("c is: " + c);
+		document.write("<br /><br /> c rounded up is: " + Math.ceil(c));
+		
+		//Math.foor
+		document.write("<br /><br /> c rounded down is: " + Math.floor(c));
+		
+		document.write("<hr />");
+		
+		//Math.max
+		var d = 5;
+		var e = 10;
+		document.write("d is: " + d + " c is: " + e);
+		document.write("<br /><br /> the higher value of d and e is: " + Math.max(d, e));
+		
+		//Math.min
+		document.write("<br /><br /> the lower value of d and e is: " + Math.min(d, e));
+		
+		//Math.pow
+		document.write("<br /><br /> d^e is: " + Math.pow(d, e));
+		
+		document.write("<hr />");
+		
+		//Math.round
+		var f = 9.6;
+		document.write("f is: " + f);
+		document.write("<br /><br /> f rounded to the nearest int is: " + Math.round(f));
+		
+		document.write("<hr />");
+		
+		//Math.sqrt
+		var g = 16;
+		document.write("g is: " + g)
+		document.write("<br /><br /> the square root of g is: " + Math.sqrt(g));
+		
+		</script>
+	</body>
+</html>
