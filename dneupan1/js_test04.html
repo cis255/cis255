@@ -1,0 +1,91 @@
+<!-- Author : Deepak, Original Template: Dr. George Corser>
+
+<!doctype html>
+<!-- file: js_test04.html
+-->
+<html>
+	
+	<body>
+	
+		<p id="zippy" onClick="myAlert();">Click here for an alert.</p>
+    <p id="example1" onclick="myConfirm();">Click here for a confirmation alert</p>
+    <p id="example2" onclick="myPrompt();">Click here for a prompt</p>
+
+    
+    <hr/> 
+    <p>The rounded numbers of 4.4 and 4.7 are:
+    <p id="round1"></p>
+    <p id="round2"></p>
+    <p>The result of 8 squared is: </p>
+    <p id = "power"></p>
+    <p>The result of squareroot of 36 is: </p>
+    <p id = "sqrt"></p>
+    <p>The result of ceiling and floor of 4.4 are: </p>
+    <p id = "ceil"></p>
+    <p id = "floor"></p>
+    <p>The result of minimum and maximum of (0, 150, 30, 20, -8, -200) are: </p>
+    <p id = "min"></p>
+    <p id = "max"></p>
+    <p>The result of isNaN() for 4.34 and four are: </p>
+    <p id = "isnan1"></p>
+    <p id = "isnan2"></p>
+    
+		<script>
+		
+			
+			// this is an example of alert()
+			function myAlert() {
+				alert("This is an alert.");
+			}
+      
+      //example of confirm
+      function myConfirm() {
+        confirm("Are you sure?");
+      }
+      
+      //example of prompt
+      function myPrompt() {
+        prompt("You must enter a valid data!");
+      }
+			
+			//Example of Math.abs()
+			var a = -25;
+			var b = 25;
+			if (Math.abs(a) == Math.abs(b)) 
+				document.write("<br />Values a and b have same absolute value.");
+
+      //this is an example of Math.round()
+      document.getElementById("round1").innerHTML = Math.round(4.4);
+      document.getElementById("round2").innerHTML = Math.round(4.7);
+      
+      //this is an example of Math.pow()
+      document.getElementById("power").innerHTML = Math.pow(8,2);
+      
+      //this is an example of math.sqrt function
+      document.getElementById("sqrt").innerHTML = Math.sqrt(36);
+      
+      //example of ceil and floor
+      document.getElementById("ceil").innerHTML = Math.ceil(4.4);
+      document.getElementById("floor").innerHTML = Math.floor(4.4);
+      
+      //example of maximum and minimum value
+      document.getElementById("min").innerHTML = Math.min(0, 150, 30, 20, -8, -200);
+      document.getElementById("max").innerHTML = Math.max(0, 150, 30, 20, -8, -200);
+      
+      //example of inNan() functions 
+      document.getElementById("isnan1").innerHTML = isNaN(4.34);
+      document.getElementById("isnan2").innerHTML = isNaN('four6g');
+      
+		</script>
+		
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+

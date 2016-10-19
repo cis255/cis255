@@ -1,0 +1,60 @@
+<html>
+	
+	<body>
+
+		<script>
+			// test control statements, 
+			// 1. if/else using boolean operations 
+			// 2. switch case using numbers 
+			// 3. switch case using strings 
+			
+			// 1. if/else using boolean operations
+			x = 1; 
+			y = true;
+			if (x == y) document.write("x equals y<br/>");
+			else document.write("x does not equal y<br/>");
+			if (x === y) document.write("x equals y and x, y of same data type <br/>");
+			else document.write("x does not equal y or x and y are not same data type</br>");
+			document.write("<hr/>");
+			
+			// 2. switch case using numbers
+			var text;
+			var fruits = 3;
+
+			 switch(fruits) {
+				case 1:
+					text = "Banana";
+					break;
+				case 2:
+					text = "Orange";
+					break;
+				case 3:
+					text = "Apples";
+					break;
+				default:
+					text = "I have never heard of that fruit...";
+				}
+				document.write( text);
+				document.write("<hr/>");
+				
+			// 3. switch case using strings 
+			var price;
+			var fruits = "banana";
+
+			 switch(fruits) {
+				case "banana":
+					price = 1.59;
+					break;
+				case "apple":
+					price = 2.59;
+					break;
+				case "orange":
+					price = 3.69;
+					break;
+				default:
+					price = "I have never heard of that fruit...";
+				}
+				document.write("$ " + price);
+		</script>
+	</body>
+</html>
