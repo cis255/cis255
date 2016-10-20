@@ -30,6 +30,14 @@ hr.gray {
   border-color: #b3b3b3;
 }
 
+hr.dash {
+  
+  color: white;
+  border-top:6px dashed ;
+  height: 1px;
+  max-width: 85%;
+}
+
 a {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
@@ -38,7 +46,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: ##b30000;
+  color: #b30000;
 }
 h1,
 h2,
@@ -53,7 +61,17 @@ p {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+
+.invert{
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
 .bg-primary {
+	height: 100%;
   background-color: #b30000;
 }
 
@@ -72,29 +90,60 @@ p {
   text-decoration: none;
 }
 
-.bg-white a {
-	color: black;
+.bg-white  {
+	background: white;
+	height:100%;
+	margin: 0px;
+	padding-top:15%;
+	padding-bottom:5%;
+	
 }
 
-.bg-white span {
-	font-size: 22px;
+.bg-white a {
+  color: black;
+}
+.bg-white a:hover  {
+  color: #808080;
+  text-decoration: none;
+}
+
+.bg-white p{
+ font-size: 100%;
+ font-weight: 900;
  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-  
+ 
+}
+
+@media (min-width: 768px) {
+.bg-white  {
+	height:100%;
+	margin: 0px;
+	padding-top: 6%;
+}
 }
 
 .bg-dark {
+  margin: 0;
+  height:100%;
   background-color: black;
   color: white;
 }
+
 
 .bg-dark a {
   color: white;
 }
 
 .bg-dark a:hover  {
+
   color: #ff3333;
   text-decoration: none;
 }
+.bg-dark img {
+  webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
 
 .bg-background{
 	position: relative;
@@ -209,6 +258,7 @@ aside {
 header {
   position: relative;
   width: 100%;
+  height: 100%;
   min-height: auto;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -309,19 +359,23 @@ header .header-content  p:hover {
 }
 }
 
+.service-box {
+  max-width: 100%;
+  margin: 0px auto 0;
+  padding-top: 6%;
+}
 .section-heading {
   margin-top: 0;
+  font-weight: 900;
 }
-.service-box {
-  max-width: 400px;
-  margin: 50px auto 0;
+.service-box img{
+  width: 50px;
+  margin: 0px auto 0;
+  padding-top: 6%;
 }
-@media (min-width: 992px) {
-  .service-box {
-    margin: 20px auto 0;
-  }
-
 .service-box p {
+	font-size: 10x;
+  margin: 20px auto 0;
   margin-bottom: 0;
   color: #b30000;
   font-weight: 900;
@@ -334,7 +388,48 @@ header .header-content  p:hover {
 }
 
 .service-box h3 {
-  color: #000000;
+  font-size: 16px;
+  color: #b30000;
+  font-weight: 900;
+}
+
+.portfolio-box {
+  position: relative;
+  display: block;
+  max-width: 650px;
+  margin: 0 auto;
+  color: white;
+}
+@media (min-width: 992px) {
+	
+  .service-box {
+  max-width: 100%;
+  margin: 0px auto 0;
+  padding-top: 6%;
+}
+.service-box img{
+  width: 80px;
+  margin: 0px auto 0;
+  padding-top: 6%;
+}
+
+.service-box p {
+	font-size: 16 px;
+  margin: 8px auto 0;
+  margin-bottom: 20px;
+  color: #b30000;
+  font-weight: 900;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.service-box a:hover {
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.service-box h3 {
+	font-size: 24px;
+  color: #b30000;
   font-weight: 900;
 }
 
@@ -349,7 +444,7 @@ header .header-content  p:hover {
 
 .portfolio-box .span {
 	color: white;
-	color: white; 
+	
    font: bold 24px/45px Helvetica, Sans-Serif; 
    letter-spacing: -1px;  
    background: rgb(0, 0, 0); /* fallback color */
@@ -358,7 +453,6 @@ header .header-content  p:hover {
 }
 .portfolio-box .portfolio-box-caption {
   color: white;
-  background: none;
   opacity: 1;
   display: block;
   background: rgba(0, 0, 0, .65);
@@ -394,12 +488,11 @@ header .header-content  p:hover {
   font-size: 32px;
 }
 .portfolio-box:hover .portfolio-box-caption {
+  color: white;
   background: rgba(179, 0, 0, .8);
   opacity: 1;
 }
-.portfolio-box:hover .portfolio-box-caption .portfolio-box-caption-content{ /* not being used --- for picture link possibilities */
-  opacity: 0;
-}
+
 .portfolio-box:focus {
   outline: none;
 }
@@ -410,6 +503,10 @@ header .header-content  p:hover {
   .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
     font-size: 32px;
   }
+  
+  .portfolio-box:hover .portfolio-box-caption .portfolio-box-caption-content .project-name{ 
+  opacity: 1;
+}
 }
 .call-to-action h2 {
   margin: 0 auto 20px;
@@ -541,10 +638,11 @@ img::selection {
   color: white;
   background: transparent;
 }
-img::-moz-selection {
+iimg::-moz-selection {
   color: white;
   background: transparent;
 }
 body {
   webkit-tap-highlight-color: #222222;
 }
+
