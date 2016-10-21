@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- JQuery -->
+		<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+	<body class= "color">
+		<div class="container">
+			<h1>JS Test 02 - Jerome Gifford</h1>
+			<script>
+			document.write("<h4>1. If/else using boolean operations</h4>")
+			var x = 1;
+			var y = true;
+			if (x == y) document.write("x equals y<br>");
+			else document.write("x does not equal y<br>");
+			if (x === y) document.write("x equals y and x, y of same data type<br>");
+			else document.write("x does not equal y , or x and y are not the same data type<br>")
+			document.write("<h4>2. Switch Case using Numbers</h4>")
+			var day = ""
+			switch (new Date().getDay()) {
+			case 0:
+				day = "Sunday";
+				break;
+			case 1:
+				day = "Monday";
+				break;
+			case 2:
+				day = "Tuesday";
+				break;
+			case 3:
+				day = "Wednesday";
+				break;
+			case 4:
+				day = "Thursday";
+				break;
+			case 5:
+				day = "Friday";
+				break;
+			case 6:
+				day = "Saturday";
+			}
+			document.write(day + "<br>");
+			document.write("<h4>3. Switch Case using Strings</h4>")
+			var course = "CIS255"
+			switch (course) {
+			case "CS116":
+				document.write("Take this course Freshman Year!; Before CS116");
+				break;
+			case "CS216":
+				document.write("Take this course Sophomore Year!");
+				break;
+			case "CIS255":
+				document.write("Take this course Sophomore Year; Before CIS355!");
+				break;
+			case "CIS355":
+				document.write("Take this course Sophomore/Junior Year!");
+			}
+			</script>
+		</div> <!-- Close container -->
+	</body>
+</html>

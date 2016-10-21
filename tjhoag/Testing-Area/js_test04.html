@@ -1,0 +1,220 @@
+
+<!doctype html>
+<!-- file: js_test04.html
+-->
+
+<!-- Help From W3 SChools
+-->
+<html>
+	
+	<body>
+	
+		<p id="zippy" onClick="myAlert();">this is a paragraph.</p>
+		
+		
+		
+        <button type="button" onclick="myAlert()"> Alert Button </button>   
+		<button type="button" onclick="myconfirm()">Confirm Pop-Up Button </button>
+		<button type="button" onclick="myprompt()">Prompt Button</button>
+		
+		<button type="button" onclick="NAN()"> "Not-a-Number" </button> 		 
+		<button type="button" onclick="myFunctionceil()">Ceil() Method </button>
+		<button type="button" onclick="myFunctionFloor()">Math.floor()</button>
+		<button type="button" onclick="myFunctionMax()"> Math.max() </button>   
+		<button type="button" onclick="myFunctionMin()">Math.min()</button>
+		<button type="button" onclick="myFunctionPow()">Math.pow()</button>
+		<button type="button" onclick="myFunctionRound()">Math.round()</button>
+		<button type="button" onclick="myFunctionSqrt()">Math.sqrt()</button>
+		
+	    <p>"Confirm Button Output" </p>
+		<p id="confirmbtn" ></p>
+		
+		
+		<p id="person" ></p>
+		
+		
+		<p>The isNaN() function returns true if the value is NaN (Not-a-Number), and false if not.</p>
+
+        <p>Click the button to check whether a number is an illegal number.</p>
+		<p id="notnumber" ></p>
+		
+		
+		<p>Click the button to round the number 1.4 upward to its nearest integer.</p>
+		<p id="ceils"></p>
+		
+		<p>Click the button to round the number 1.6 downward to its nearest integer.</p>
+		<p id="floors"></p>
+		
+		Click the button to return the highest number of 5 and 10.
+		<p id="maxs"></p>
+		
+		<p>Click the button to return the lowest number of 5 and 10.</p>
+		<p id="mins"></p>
+		
+		
+		<p>Click the button to demontrate the pow() method on different numbers.</p>
+		<p id="pows"></p>
+		
+		<p>Click the button to round different numbers to the nearest integer.</p>
+		<p id="rounds"></p>
+		
+		<p>Click the button to display the square root of different numbers.</p>
+		<p id="sqrts"></p>
+	
+		
+		
+		
+		
+		<script>
+		
+			// test built-in functions, esp. alert(), confirm(), prompt()
+			
+			// test Math functions, including inNaN(), Math.abs(), Math.ceil(), Math.floor(), Math.max(), Math.min(), Math.pow(), Math.round(), Math.abs(), Math.sqrt()
+			
+			// alert()
+			function myAlert() {
+		    alert("this is just an alert.");
+				
+			}
+			
+			
+			// confirm()
+			function myconfirm() {
+            var x;
+            if (confirm("Press a button!") == true) {
+            x = "You pressed OK!";
+            } 
+			else {
+            x = "You pressed Cancel!";
+            }
+             document.getElementById("confirmbtn").innerHTML = x;		
+			}
+			
+			// prompt()
+			function myprompt() {
+		   var person = prompt("Please enter your name", "Harry Potter");
+
+           if (person != null) {
+           document.getElementById("person").innerHTML =
+           "Hello " + person + "! How are you today?";
+             }
+				
+			}
+			
+			
+			var x = 5;
+			document.write(typeof(x));
+			console.log(x);
+			
+			var pi = Math.PI;
+			console.log(pi);
+			console.log(Math.PI);
+			
+			// Math.abs()
+			var a = -25;
+			var b = 25;
+			if (Math.abs(a) == Math.abs(b)) 
+				document.write("<br />values a and b have same absolute value");
+				
+			//inNaN()
+			function NAN() {
+            var res = "";
+            res = res + isNaN(123) + ": 123<br>";
+            res = res + isNaN(-1.23) + ": -1.23<br>";
+            res = res + isNaN(5-2) + ": 5-2<br>";
+			res = res + isNaN(0) + ": 0<br>";
+			res = res + isNaN('123') + ": '123'<br>";
+			res = res + isNaN('Hello') + ": 'Hello'<br>";
+			res = res + isNaN('2005/12/12') + ": '2005/12/12'<br>";
+			res = res + isNaN('') + ": ''<br>";
+			res = res + isNaN(true) + ": true<br>";
+			res = res + isNaN(undefined) + ": undefined<br>";
+			res = res + isNaN('NaN') + ": 'NaN'<br>";
+			res = res + isNaN(NaN) + ": NaN<br>";
+			res = res + isNaN(0 / 0) + ": 0 / 0<br>";
+
+            document.getElementById("notnumber").innerHTML = res;
+            }
+
+			//Math.ceil()
+
+			function myFunctionceil() {
+		    var a = Math.ceil(0.60);
+			var b = Math.ceil(0.40);
+			var c = Math.ceil(5);
+			var d = Math.ceil(5.1);
+			var e = Math.ceil(-5.1);
+			var f = Math.ceil(-5.9);
+
+			var x = a + "<br>" + b + "<br>" + c + "<br>" + d + "<br>" + e + "<br>" + f;
+			document.getElementById("ceils").innerHTML = x;
+			
+			
+			//Math.floor()
+			function myFunctionFloor() {
+            document.getElementById("floors").innerHTML = Math.floor(1.6);
+            }
+			
+			//Math.max()
+			function myFuntionMax() {
+            document.getElementById("maxs").innerHTML = Math.max(5, 10);
+            }
+			
+
+			//Math.min()
+			function myFunctionMin() {
+			document.getElementById("mins").innerHTML = Math.min(5, 10);
+			}
+			
+			//Math.pow()
+			function myFunctionPow() {
+			var a = Math.pow(0, 1);
+				var b = Math.pow(1, 1);
+				var c = Math.pow(1, 10);
+				var d = Math.pow(3, 3);
+				var e = Math.pow(-3, 3);
+				var f = Math.pow(2, 4);
+
+				var x = a + "<br>" + b + "<br>" + c + "<br>" + d + "<br>" + e + "<br>" + f;
+				document.getElementById("pows").innerHTML = x;
+			}
+			
+			
+			//Math.round()
+			function myFunctionRound() {
+			var a = Math.round(2.60);
+			var b = Math.round(2.50);
+			var c = Math.round(2.49);
+			var d = Math.round(-2.60);
+			var e = Math.round(-2.50);
+			var f = Math.round(-2.49);
+
+			var x = a + "<br>" + b + "<br>" + c + "<br>" + d + "<br>" + e + "<br>" + f;
+			document.getElementById("rounds").innerHTML = x;
+            }
+			
+			//Math.sqrt()	
+		  function myFunctionSqrt() {
+          var a = Math.sqrt(0);
+         var b = Math.sqrt(1);
+        var c = Math.sqrt(9);
+       var d = Math.sqrt(64);
+       var e = Math.sqrt(-9);
+
+    var x = a + "<br>" + b + "<br>" + c + "<br>" + d + "<br>" + e;
+    document.getElementById("sqrts").innerHTML = x;
+}	
+				
+
+		</script>
+
+
+		
+	</body>
+	
+</html>
+
+
+
+
+</html>

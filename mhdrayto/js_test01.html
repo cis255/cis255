@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	<head>
+		<title>JStest_01</title>
+	</head>
+	
+	<body>
+
+		<h1>In-Class Java Exercise</h1>
+		
+		<!-- <script>
+			
+		</script> -->
+		
+		<div id="button1"><button onClick="change(1)">Number.</button>   </div>
+		<div id="button2"><button onClick="change(2)">Word.</button>     </div>
+		<div id="button3"><button  onClick="change(3)">Undefined.</button></div>
+		<div id="button4"><button  onClick="change(4)">Empty.</button>    </div>
+		<div id="button5"><button  onClick="change(5)">Untrue.</button>   </div>
+		 
+		<script type="text/javascript">
+			var number = 22.6;
+			var word = "Actually a string.";
+			var undefined;
+			var empty = null;
+			var untrue = true;
+			var buttonNum;
+			
+			function change(buttonNum)
+				{
+					//var buttonChange = document.getElementByID();
+					
+					switch(buttonNum)
+						{
+							case 1:
+								document.getElementById("button1").innerHTML = number;
+								break;
+							case 2:
+								document.getElementById("button2").innerHTML = word;
+								break;
+							case 3:
+								document.getElementById("button3").innerHTML = undefined;
+								break;
+							case 4:
+								if (typeof(empty) == typeof(null))
+									document.getElementById("button4").innerHTML = "Variable stored here has value null.";
+								break;
+							case 5:
+								document.getElementById("button5").innerHTML = untrue;
+								break;
+						}
+						
+				}
+		</script>
+	</body>
+</html> 
+

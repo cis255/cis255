@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<!-- 
+Name: Michael Drayton
+Class: CIS 255
+Assignment: Program 1
+Description: a simple, bootstrapped resume using a downloaded template
+				  contains mostly colorful filler information and placeholders!
+Design:
+			head - contains necessary assets for the imported theme to work
+			body - main body has a few descriptive paragraphs with embedded links
+					  also contains a sidebar with contact information and links to
+					  external sites.
+			foot - contained within body, contains copyright and designer information
+					and a link back to my menu.html.
+
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>Responsive Resume/CV Template for Developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive HTML5 Resume/CV Template for Developers">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="Starbound Icon.png">  <!--Icon borrowed from Chucklefish, no infringement intended-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head> 
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar-wrapper">
+            <div class="profile-container">
+				<img width  = "50%" height = "50%" class="profile" src="assets/images/madsmadsenAlbertEinstein3.jpeg" alt="" /> <!--Placeholder image -->
+                <h1 class="name">Michael Drayton</h1>
+                <h3 class="tagline">Game Developer and Writer</h3>
+            </div><!--//profile-container-->
+            
+            <div class="contact-container container-block">
+                <ul class="list-unstyled contact-list">
+                    <li class="email"><i class="fa fa-envelope"></i><a href="mailto: mike.h.drayton@gmail.com">mike.h.drayton@gmail.com</a></li>
+                    <li class="phone"><i class="fa fa-phone"></i><a href="tel:955 492 2329">955 492 2329</a></li>
+                    <li class="github"><i class="fa fa-github"></i><a href="https://github.com/cis255/cis255/tree/master/mhdrayto" target="_blank">My Github Repositry</a></li>
+                </ul>
+            </div><!--//contact-container-->
+            <div class="education-container container-block">
+                <h2 class="container-block-title">Education</h2>
+                <div class="item">
+                    <h4 class="degree">BSc in Computer Science</h4>
+                    <h5 class="meta"> <a href = "http://www.svsu.edu/computerscience/">Saginaw Valley State University</a></h5>
+                    <div class="time">2007 - 2011</div>
+                </div><!--//item-->
+            </div><!--//education-container-->
+            
+            <div class="languages-container container-block">
+                <h2 class="container-block-title">Some Rough Examples of My Work</h2>
+                <ul class="list-unstyled interests-list">
+                    <li><a href = "http://mhdraytoncis255project-1.weebly.com/"><b>Some Weird Weebly Thing</b></a></li>
+                    <li><a href = "http://mikehdrayton.wixsite.com/cis255project-1"><b>A Simple Wix Site!</b></a></li>
+                </ul>
+            </div><!--//interests-->
+            
+            <div class="interests-container container-block">
+                <h2 class="container-block-title">Interests</h2>
+                <ul class="list-unstyled interests-list">
+                    <li>Writing</li>
+                    <li>Gaming</li>
+                    <li>Swordplay</li>
+					<li>Film, television, and reading</li>
+                </ul>
+            </div><!--//interests-->
+            
+        </div><!--//sidebar-wrapper-->
+        
+        <div class="main-wrapper">
+            
+            <section class="section summary-section">
+                <h2 class="section-title"><i class="fa fa-user"></i>Career Profile</h2>
+                <div class="summary">
+                    <p>I have worked with various independent game development studios as a game designer and story writer. These studios include Chucklefish in London, UK and Yacht Club Games in Los Angeles, CA, US. I have also helped with story development on an unrevealed title by Blizzard Entertainment, a major game development studio located in Irvine, CA, US! </p>
+                </div><!--//summary-->
+            </section><!--//section-->
+            
+            <section class="section experiences-section">
+                <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
+                
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">Battle System Designer</h3>
+                            <div class="time">2022 - Present</div>
+                        </div><!--//upper-row-->
+                        <div class="company">Eternal Suns, Chicago</div>
+                    </div><!--//meta-->
+                    <div class="details">
+                        <p>I work with a small team of people who are building the combat system of a turn-based RPG. My specific job is to implement various steps into the battle mechanics that add complexity, such as unique abilities for specific characters and the addition of status effects that can change the flow of combat.</p>  
+                    </div><!--//details-->
+                </div><!--//item-->
+                
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">Senior Story Consultant</h3>
+                            <div class="time">2018 - 2021</div>
+                        </div><!--//upper-row-->
+                        <div class="company"><a href = "http://blog.chucklefish.org/team/"> <strong>Chucklefish</strong></a>, London</div>
+                    </div><!--//meta-->
+                    <div class="details">
+                        <p>I worked with studio Chucklefish as a consultant for the story for their highly popular sequel to the space exploration RPG <a href = "http://playstarbound.com/"><strong>Starbound!</strong></a> My main duty was to take the ideas from the other writers and help to unify them into a single, cohesive unit.</p>  
+                    </div><!--//details-->
+                </div><!--//item-->
+                
+                <div class="item">
+                    <div class="meta">
+                        <div class="upper-row">
+                            <h3 class="job-title">Worldbuilding</h3>
+                            <div class="time">2017 - 2018</div>
+                        </div><!--//upper-row-->
+                        <div class="company"><a href = "http://yachtclubgames.com/about/"> <b>Yacht Club Games</b></a>, Los Angeles</div>
+                    </div><!--//meta-->
+                    <div class="details">
+                        <p>My duty while working with YCG was to help construct the world of their new platforming game Tower's Fall. In addition to helping write out story-based reasons for things found in gameplay, I also aided in the mapping-out and planning of the game world and mechanics.</p>  
+                    </div><!--//details-->
+                </div><!--//item-->
+                
+            </section><!--//section-->
+            
+            <section class="section projects-section">
+                <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
+                <div class="intro">
+                    <p>Some other projects that I am currently working on:</p>
+                </div><!--//intro-->
+                <div class="item">
+                    <span class="project-title">Blizzard</span> - 
+					<span class="project-tagline">Working with <a href = http://us.blizzard.com/en-us/company/about/"><b>Blizzard Entertainment</b></a> as a writing consultant focused on unifying story-based concepts for an unrevealed title.</span>
+                </div><!--//item-->
+                <div class="item">
+                    <span class="project-title">Eternal Suns Platformer</span> - 
+					<span class="project-tagline">In addition to the turn-based RPG being developed by Eternal Suns Games, I am also taking part in conceptualization of a second platform-based game for the studio.</span>
+                </div><!--//item-->
+                <div class="item">
+                    <span class="project-title">Personal project</span> - 
+					<span class="project-tagline">In addition to the projects listed above, I am also writing the novelizaiton of some fo the story for Eternal Suns' RPG. </span>
+                </div><!--//item-->
+            </section><!--//section-->
+            
+            <section class="skills-section section">
+                <h2 class="section-title"><i class="fa fa-rocket"></i>Skills &amp; Proficiency</h2>
+                <div class="skillset">        
+                    <div class="item">
+                        <h3 class="level-title">C++</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="98%">
+                            </div>                                      
+                        </div><!--//level-bar-->                                 
+                    </div><!--//item-->
+                    
+                    <div class="item">
+                        <h3 class="level-title">Javascript &amp; jQuery</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="95%">
+                            </div>                                      
+                        </div><!--//level-bar-->                                 
+                    </div><!--//item-->
+                    
+                    <div class="item">
+                        <h3 class="level-title">Java</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="93%">
+                            </div>                                      
+                        </div><!--//level-bar-->                                 
+                    </div><!--//item-->
+                    
+                    <div class="item">
+                        <h3 class="level-title">HTML5 &amp; CSS</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="92%">
+                            </div>                                      
+                        </div><!--//level-bar-->                                 
+                    </div><!--//item-->
+                    
+                    <div class="item">
+                        <h3 class="level-title">Writing &amp; Worldbuilding (literary skills)</h3>
+                        <div class="level-bar">
+                            <div class="level-bar-inner" data-level="91%">
+                            </div>                                      
+                        </div><!--//level-bar-->                                 
+                    </div><!--//item-->
+                    
+                </div>  
+            </section><!--//skills-section-->
+            
+        </div><!--//main-body-->
+    </div>
+ 
+    <footer class="footer">
+        <div class="text-center">
+                <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+                <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers | <b><a href = "http://csis.svsu.edu/~mhdrayto/cis255/mhdrayto/menu.html">Return to menu.html.</b></a></small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+ 
+    <!-- Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
+    <!-- custom js -->
+    <script type="text/javascript" src="assets/js/main.js"></script>            
+</body>
+</html> 
+

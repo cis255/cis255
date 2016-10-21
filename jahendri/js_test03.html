@@ -1,0 +1,41 @@
+<!-- Exercise 3: JS Loops -->
+<!-- Programer: Jacob Hendricks -->
+<html>
+	<body>
+		<h1>1. Loop for Hello World</h1>
+			<script>
+				// Loop for "hello world", 10 times
+				var i;
+				for(i=0; i<10; i++) {
+					document.write((i+1) + ". hello world <br/>");
+				}
+			</script>
+		<h2>2.While loop to print sum of digits</h2>
+			<script>
+				//while loop printing sum of number using mod
+				//You cant add using mod? only devison remainder
+				
+				var x = 1234567890;
+				var counter = 0;
+				var sum =0;
+				while (counter != 10) {
+					sum += counter % x;
+					counter++;			
+				}
+				document.write("sum = " + sum);
+			</script>
+		<h3>3. Do loop reading string</h3>
+			<script>
+				//Prints each charictor out in order
+				var loopy = "loopy";
+				var i = 0;
+				do {
+					document.write(loopy[i]);
+					document.write("<br />")
+					i = i+1;
+				}
+				while(i < loopy.length)
+					document.write("<br/>");
+			</script>
+	</body>
+</html>

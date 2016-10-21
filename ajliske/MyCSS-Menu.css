@@ -1,33 +1,30 @@
+
+
 .jumbotron {
     background-color:#262626;
 	color:#b3b3b3;
-	margin-top: 0px;
+	margin-top: -4%;
 	margin-bottom: 0px;
 	padding-left: 2%;
 }
 
-.containerNew{
-	padding-top: 40px;
-	padding-bottom: 40px;
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
-
 .containerNav{
+	padding-left: 15px;
+	padding-right: 15px;
 	
 }
 
-.containerGray {
+.classwork {
   background-color: #262626;
-  color: #b3b3b3;
+  color: #ffffff;
   margin-right: auto;
   margin-left: auto;
   margin-top: 0px;
   margin-bottom: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: auto;
+  padding-right: auto;
+  padding-top: 5%;
+  padding-bottom: 2%;
 }
 
 .btn{
@@ -39,7 +36,6 @@
 	padding-bottom: 10px;
 }
 
-
 .btn:hover {
   background:#595959 ;
   color:#33bbff;
@@ -50,6 +46,25 @@
 	color:#33bbff;
 }
 
+.btn-gray{
+	border-radius: 10px;
+	border-color:#737373;
+	background:#ffffff;
+	color:#262626;
+	text-shadow: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.btn-gray:hover {
+	background:#33bbff;
+	color:#262626;
+}
+
+.btn-gray:active, .btn-gray:focus, .btn-gray:active:focus{
+	background:#ffffff;
+	color:#262626;
+}
 
 .navbar-collapse .navbar-nav > li > a {
 	color:#33bbff;
@@ -62,9 +77,22 @@
 	text-shadow: none;
 }
 
+.navbar{
+	margin-bottom: 0px;
+	
+}
 
 hr.style{
 	background-color: #fff;
 	border-top: 3px solid #000000;
 }
 
+hr.gray{
+	background-color: #b3b3b3;
+	border-top: 3px solid #ffffff;;
+}
+
+html, body {
+  width: auto;
+  overflow-x: hidden;
+}

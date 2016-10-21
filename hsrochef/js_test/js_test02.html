@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+
+		<h1>Javascript Test2</h1>
+		<p><h3>Writing JS code to print contents of If Else Statements, Switch Case with Numbers Or Strings.</h3></p>
+		<script>
+			//If else Operations
+			document.write("If Else Operations:<br /><br />");
+			x = 5;
+			y = 6;
+			if(x == y) document.write("x equals y<br />");
+			else document.write("x does not equal y<br />");
+			if(x === y) document.write("x equals y and x, y of same data type<br />");
+			else document.write("x does nto equal y or x and y are not same data type<br />");
+			//Case Operations Using Number
+			document.write("<br />Case Operations Using Number:<br />");
+			switch(x+y) {
+				case x:
+					document.write("You've reached the x block");
+					break;
+				case y:
+					document.write("You've reached the y block");
+					break;
+				default:
+					document.write("You've reached the default block");
+					  }
+			//Case Operations Using String
+			document.write("<br /><br />Case Operations Using String:<br />");
+			switch("Hello World") {
+				case "Hello World":
+					document.write("You've reached the 'Hello World' block");
+					break;
+				case "hello world":
+					document.write("You've reached the 'hello world' block");
+					break;
+				default:
+					document.write("You've reached the default block");
+								  }
+
+		</script>
+
+	</body>
+</html>

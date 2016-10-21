@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- JQuery -->
+		<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+	</head>
+	<body class= "color">
+		<div class="container">
+			<h1>JS Test 03 - Jerome Gifford</h1>
+			<script>
+			document.write("<h4>1. For Loop</h4>")
+			for (i = 0; i < 10; i++) { 
+				document.write("Hello, World <br>");
+			}
+			document.write("<br>");
+			document.write("<h4>2. While Loop</h4>")
+			var num = 1234567890;
+			sum = 0;
+			while(num > 0){
+				sum += num % 10;
+				num = Math.floor(num/10);
+			}
+			document.write(sum + "<br>");
+			document.write("<h4>3. Do Loop</h4>")
+			word = "zippy";
+			var i = 0;
+			do{
+				document.write(word[i]+"<br>");
+				i++;
+			}
+			while(i < 5);
+			
+			</script>
+		</div> <!-- Close container -->
+	</body>
+</html>
