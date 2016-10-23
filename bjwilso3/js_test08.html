@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+	
+	<body>
+	<label>Enter a number, the click the button to do math</label>
+		<input type = "text" id = "in01" onkeyup = "checkParam();" />
+		<input type = "button" value = "Click me to do math!" onclick = "loopThru();"/>
+		<br />
+		
+		<p id = "out01"> Output goes here</p>
+		
+		<script>
+			var param = document.getElementById("in01").value;
+			var a = new Array("1", 2, "three");
+			var b = ["1", 2, "three"];
+			b[3] = 17;
+			
+			function myArrayFun(){
+			var elem = document.getElementById("out01");
+				var i = 0;
+				//populate the array a
+				while(i < 10) a[i] = i++;
+				//print backwards 
+				for(i = a.length-1; i >= 0; i--){
+				var tn = a[i];
+					elem.appendChild(document.createElement("br"));
+					elem.appendChild(document.createTextNode(tn));
+
+				}
+				deleteArray();
+				for(i = a.length-1; i >= 0; i--){
+				var tn = a[i];
+					elem.appendChild(document.createElement("br"));
+					elem.appendChild(document.createTextNode(tn));
+
+				}
+			}
+			
+			// replace array a, with only its elements 0-3 and 8-9. That is make it so a contains only a[0], a[1], a[2], a[3], a[8], a[9]
+			function deleteArray(){
+				//changes array a to include only [a[0], a[1], a[2], a[3], a[8], a[9]];
+				a.splice(4, 4);
+			}
+			
+			// for 3 extra credit points create an array containing 5 functions, add2(), subtract4(), mod5(), power3(), toString()
+			// write a function to loop through the array of functions and append text nodes to a <p> in the DOM which contains the output of a parameter
+			function add2(param){
+				var i = 2 + parseInt(param);
+
+				return param +" + 2: " + i;
+			}
+			function subtract4(param){
+				var i = parseInt(param) - 4;
+				return param +" - 4: " + i;
+			}
+			function mod5(param){
+				var i = parseInt(param) % 5;
+				return param +" % 5: " + i;
+			}
+			function power3(param){
+				var i = Math.pow(param, 3);
+				return param +" ^ 3: " + i;
+			}
+			function makeString(param){
+				return "as a string: " + param;
+			}
+
+						function checkParam(){
+									var param = document.getElementById("in01").value;
+						if(!isNaN(param)) document.getElementById("out01").innerHTML = param + " is your number.";
+						else document.getElementById("out01").innerHTML = "Not a Number";
+						}
+			console.log(param);
+			
+			function loopThru(){
+			var param = document.getElementById("in01").value;
+			console.log(param);
+			var funcArray = [ add2(param), subtract4(param), mod5(param), power3(param), makeString(param)];
+			var elem = document.getElementById("out01");
+				for(i = 0; i <5; i++){	
+					var tn = funcArray[i];
+					elem.appendChild(document.createElement("br"));
+					elem.appendChild(document.createTextNode(tn));
+
+				
+				}
+			}
+			
+		</script>
+		
+	</body>
+	
+</html>
+

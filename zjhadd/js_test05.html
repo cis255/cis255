@@ -1,0 +1,55 @@
+
+<!doctype html>
+<!-- file: js_test05.html
+-->
+<html>
+	
+	<body>
+
+		<script>
+			// build your own more elaborate functions
+			
+			// 1. write your own function
+			// 2. write your own function that accepts a function as a parameter and runs it. 
+			// 3. write your own IIFE
+			
+			function add (p1, p2) 
+			{
+				return p1 + p2;
+			}
+		
+			document.write("<hr/>This is the result of myFunc(1,2) : ",add(1,2));
+			document.write("<hr/>This is the result of myFunc(895,0) : ",add(895,0));
+			
+			function mySandwich(param1, param2, callback) {
+				('Started eating my sandwich.\n\nIt has: ' + param1 + ', ' + param2);
+				callback();
+			}
+
+			mySandwich('ham', 'cheese', function() {
+				alert('Finished eating my sandwich.');
+			});
+			
+			function multiply (callback,p1,p2,m)
+			{
+				var num,i = 0;
+				for (i=0;i<m;i++;)
+					num = num + callback(p1,p2);
+				return num;
+			}
+			document.write("<hr/>Callback function: " + multiply(fuction(add),1,1,5));
+			
+			
+		</script>
+		
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+<!doctype html>
+<!-- file: js_test09.html 
+Objects -->
+<html>
+	
+	<body>
+		<!-- from page 276 of textbook -->
+		<form action="login.php" method="post" id="loginform">
+			<input type="text" name="username" id="username" />
+			<input type="password" name="password" id="password" />
+			<input type="button"></input>
+		</form>
+		<script>
+			function myObjectFun() {
+				var car = "fiat";
+			
+				//JSON 
+				var car1 = {
+					type:"Fiat",
+					model:"500",
+					color:"white"
+					odometer: function(x) {console.log(x);}
+				};
+				
+				var car2 = {
+					type:"Fiat",
+					model:"500",
+					color:"white"
+				};
+				
+				var cars = [];
+				cars[0] = car1;
+				cars[1] = car2;
+				cars[2] = {
+					type:"Buick",
+					model:"LeSabre",
+					color:"black"
+					odometer: function(x) {console.log(x + 2);}
+				};
+				cars[3] = {
+					type:"Lotus",
+					model:"Elise",
+					color:"black"
+				};
+				for (var i=0; i<cars.length; i ++) {
+					document.write(cars[i].type + "/" + 
+					cars[i].model + "<br />");
+				}
+				car1.odometer(123);
+				cars[0].odometer(456);
+				car2.odometer(123);
+				cars[1].odometer(456);
+			}
+			
+		</script>
+		
+	</body>
+	
+</html>
+

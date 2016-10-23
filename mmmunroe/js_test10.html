@@ -1,0 +1,45 @@
+<!doctype html>
+<!-- file: js_test09.html 
+Objects -->
+<html>
+	
+	<body>
+		<!-- from page 276 of textbook -->
+		<form action="#""login.php" method="post" id="loginform">
+			<label>Username: </label>
+			<br />
+			<input type="text" name="username" id="username" />
+			<label>Password: </label>
+			<br />
+			<input type="password" name="password" id="password" />
+			<br />
+			<input type="submit" value="Submit" id="submit2" />
+		</form>
+		<script>
+			var x = document.getElementById("submit2");
+			x.value = "Submit";
+			x.style = "color: red;";
+			x.onclick = alert('hey there');
+			x.onmouseover = function() {
+				var d = new Date();
+				console.log("date: " + d);
+				var f = document.getElementById("loginform");
+				f.submit();
+			};
+			
+			var d1 = Math.floor(1 + 6 * Math.random());
+			var d2 = Math.floor(1 + 6 * Math.random());
+			var d3 = Math.floor(1 + 6 * Math.random());
+			var d4 = Math.floor(1 + 6 * Math.random());
+			var d5 = Math.floor(1 + 6 * Math.random());
+			
+			document.write(d1 + " " + d2 + " " + d3 + " " + d4 + " " + d5);
+			if (d1 == d2 && d1 == d3 && d1 == d4 && d1 == d5)
+				document.write("<br /> YAHTZEE!");
+			else
+				document.write("<br /> Try again!")
+		</script>
+		
+	</body>
+	
+</html>
