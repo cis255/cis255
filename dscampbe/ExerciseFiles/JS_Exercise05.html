@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS_Exercise05</title>
+</head>
+
+<body >
+<script>
+		
+	// build your own more elaborate functions
+
+	// 1. write your own function
+	// 2. write your own function that accepts a function as a parameter and runs it. 
+	// 3. write your own IIFE
+
+	function messWithCorser(){
+		var isAnA = false;
+		while(isAnA == false){
+			isAnA = confirm("So i get an A right?")
+		}
+		alert("Good, Thats what i thought!");
+		
+		document.write("Remember, you agreed to an ''A'', Not an ''A-''")
+	}
+	function isGoodToGo(){
+		return true;
+	}
+	function LoadedPage(pageReady){
+		messWithCorser();
+	}
+	
+	var WhatsYourName = (function(){
+		return "<br/>Hello, "+(prompt("whats your name"));
+	})();
+	
+	
+	LoadedPage(isGoodToGo());
+	document.write(WhatsYourName);
+			
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CIS-255 - Program 2</title>
+
+<!-- Bootstrap -->
+<link href="Content/Prog2-boot.css" rel="stylesheet">
+<link href="Content/Prog2.css" rel="stylesheet">
+
+<style type="text/css"></style>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+ <h1>Program 2 - Devin Campbell</h1>
+ <hr>
+	<fieldset>
+		<table class="Menu col-md-6 col-lg-6">
+			<tr>
+				<td><label>SVSU Major:</label></td>
+				<td>
+					<select name="Major" id="Major" onChange="ListMajors()" >
+						<option>Choose an Option</option>
+						<option value="cs">Computer Science</option>
+						<option value="cis">Computer Information Technology</option>
+					</select>
+					<button onClick="ListMajors()">test</button>
+				</td>
+			</tr>
+			<tr>
+				<td><label>Courses Completed:</label></td>
+				<td>
+					<select type="list" Name="MajorCompleted" id="ListOfMajors" >
+					</select>
+				<button onclick="AddCourse('Major')">Add Course</button>
+				</td>
+			</tr>
+			<tr>
+				<td><label>Non-Major Courses Taken:</label></td>
+				<td>
+					<input type="text" id="Non-Majors" placeholder="[Prefix]-[Course Number]" />
+					<button onclick="AddCourse('NonMajor')">Add Course</button>
+				</td>
+			</tr>
+		</table>       
+
+		<div class="CompleteClasses col-md-3 col-lg-3">
+			<p align="center">Major Classes Taken</p><hr>
+            <div id="MajorList">
+
+            </div>
+			<!--<p><input type="checkbox" Id="Major-cs-255"> CS-255</p>-->
+		</div>
+		<div class="CompleteClasses col-md-3 col-lg-3" >
+			<p align="center">Non-Major Classes Taken</p><hr>
+            <div id="NonMajorList">
+
+            </div>
+			<!--<p><input type="checkbox" Id="Major-acct-213> ACCT-213</p>-->
+		</div>
+
+	</fieldset>
+	<button onClick="RemoveSelections" style="float:right;" >Remove Selected</button>
+</body>
+</html>
+<footer>
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="Scripts/jquery-1.11.3.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed --> 
+	<script src="Scripts/bootstrap.js"></script>
+	<script src="Scripts/Prog2.js"></script>
+	
+</footer>
+
