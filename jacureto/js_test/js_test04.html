@@ -1,0 +1,100 @@
+<!doctype html>
+<!-- file: js_test04.html
+-->
+<html>
+	<body>
+		<h2>Exercise 4 - JavaScript Functions (built-in and math)</h2>
+		<h3>use the template js_test04.html to:</h3>
+			<li>write code to test built-in functions, esp. alert(), confirm(), prompt()</li>
+			<li>write code to test Math functions, including inNaN(), Math.abs(), Math.ceil(), Math.floor(), 
+			Math.max(), Math.min(), Math.pow(), Math.round(), Math.abs(), Math.sqrt()</li>
+			<br />
+			
+		<p id="alert_test" onClick="myAlert();">Click here to test alert.</p>
+		
+		<p id="confirm_test" onClick="myConfirm();">Click here to test confirm.</p>
+
+		<p id="prompt_test" onClick="myPrompt();">Click here to test prompt.</p>
+		
+		<script>
+		
+			// test built-in functions, esp. alert(), confirm(), prompt()
+
+			// alert()
+			function myAlert() 
+			{
+				alert("this is just an alert.");
+			}
+			
+			// confirm()
+			function myConfirm()
+			{
+				var message;
+				var result = confirm("You are testing confirm. Please press OK or Cancel.");
+				if (result == true) 
+				{
+					message = "Thank you for pressing OK.";
+				} 
+				
+				else 
+				{
+					message = "Thank you for pressing Cancel.";
+				}
+				
+				document.write(message);
+			}
+			
+			// prompt()
+			function myPrompt()
+			{
+				prompt("Enter a number.");
+			}
+
+			// test Math functions, including isNaN(), Math.abs(), Math.ceil(), Math.floor(), 
+					// Math.max(), Math.min(), Math.pow(), Math.round(), Math.abs(), Math.sqrt()
+									
+			document.write("<br />Testing Math functions");
+			
+			// Math.abs()
+			var a = -25;
+			var b = 25;
+			if (Math.abs(a) == Math.abs(b)) 
+				document.write("<br />values a and b have same absolute value <br />");
+				
+			// Math.isNaN()
+			string_test = "this isn't a number";
+			if(isNaN(string_test))
+				document.write("<br />isNaN() has confirmed that strings are not numbers.");
+			else document.write("<br />Your code thinks strings are numbers now, so maybe you should fix that.");
+			
+			// Math.ceil()
+			var x = 23.3;
+			document.write("<br />Math.ceil() of " +x +" is " +Math.ceil(x));
+			
+			// Math.floor()
+			document.write("<br />Math.floor() of " +x +" is " +Math.floor(x));
+			
+			// Math.max()
+			document.write("<br />Math.max() of " +x +" is " +Math.max(x));
+			
+			// Math.min()
+			document.write("<br />Math.min() of " +x +" is " +Math.max(x));
+			
+			// Math.pow()
+			var y = 3;
+			document.write("<br />Math.pow() of " +y +" is " +Math.pow(y,y));
+			
+			//Math.round()
+			document.write("<br />Math.round() of" +x +" is " +Math.round(x));
+			
+			//Math.abs()
+			var z = -31.7;
+			document.write("<br /> Math.abs() of " +z +" is " +Math.abs(z));
+			
+			//Math.sqrt()
+			document.write("<br /> Math.sqrt() of " +b +" is " +Math.sqrt(b));
+			
+		</script>
+	</body>
+</html>
+
