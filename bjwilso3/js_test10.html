@@ -1,0 +1,92 @@
+
+<!doctype html>
+<!-- file: js_test10.html 
+Events + Yahtzee
+some of this code was copied from 
+http://www.w3schools.com/js/js_events.asp
+-->
+<html>
+	
+	<body>
+		<input type = "button" id = "in01"  value = "Play" onclick = "doYahtzee();"/>
+        <input type = "button" id = "in02"  value = "Reroll" onclick = "yahtzeeReroll();"/>
+        Die 1: <input type="radio" id="die1">
+        Die 2: <input type="radio" id="die2">
+        Die 3: <input type="radio" id="die3">
+        Die 4: <input type="radio" id="die4">
+        Die 5: <input type="radio" id="die5">
+		<br />
+		
+		<p id = "out01"> Output goes here</p>
+
+		<script>
+		/*
+			var x = document.getElementById("submit2");
+			x.value = "Zippydee"; 
+			x.style = "color: red;";
+			var b = document.getElementById("button02");
+			b.onclick = alert('Dude');
+			b.onmouseover = function (){
+				var d = new Date();
+				console.log("date: " + d);	
+				var f = document.getElementById("loginform");
+				f.submit();
+			};
+		*/	
+			
+			var d1 = Math.floor(1 + 6 * Math.random());
+			var d2 = Math.floor(1 + 6 * Math.random());
+			var d3 = Math.floor(1 + 6 * Math.random());
+			var d4 = Math.floor(1 + 6 * Math.random());
+			var d5 = Math.floor(1 + 6 * Math.random());
+			var elem = document.getElementById("out01");
+			function doYahtzee(){
+				elem.innerHTML = "Die 1: " + d1 + "<br />";
+				elem.innerHTML = elem.innerHTML + "Die 2: " + d2 + "<br />";
+				elem.innerHTML = elem.innerHTML + "Die 3: " + d3 + "<br />";
+				elem.innerHTML = elem.innerHTML + "Die 4: " + d4 + "<br />";
+				elem.innerHTML = elem.innerHTML + "Die 5: " + d5 + "<br />";
+				if(d1 == d2 && d1 == d3 && d1 == d4 && d1 == d5)
+					elem.innerHTML = elem.innerHTML + "<br /> YAHTZEE";
+				else
+					elem.innerHTML = elem.innerHTML + "<br /> Try Again";
+			}
+            function yahtzeeReroll(){
+                var radio = document.getElementById("die1");
+                if(radio.checked === true){
+                    d1 = Math.floor(1 + 6 * Math.random());
+                    radio.checked = false;
+                    }
+                radio = document.getElementById("die2");
+                if(radio.checked === true){
+                    d2 = Math.floor(1 + 6 * Math.random());
+                    radio.checked = false;
+                }
+                radio = document.getElementById("die3");
+                if(radio.checked === true){
+                    d3 = Math.floor(1 + 6 * Math.random());
+                    radio.checked = false;
+                }
+                radio = document.getElementById("die4");
+                if(radio.checked === true){
+                    d4 = Math.floor(1 + 6 * Math.random());
+                    radio.checked = false;
+                }
+                radio = document.getElementById("die5");
+                if(radio.checked === true){
+                    d5 = Math.floor(1 + 6 * Math.random());
+                    radio.checked = false;
+                }
+                doYahtzee();
+            }
+			//Your mission is to let the user choose which dice to re-throw
+            
+		</script>
+		
+	</body>
+	
+</html>
+
+
+
+

@@ -46,7 +46,6 @@
 			// write a function to loop through the array of functions and append text nodes to a <p> in the DOM which contains the output of a parameter
 			function add2(param){
 				var i = 2 + parseInt(param);
-
 				return param +" + 2: " + i;
 			}
 			function subtract4(param){
@@ -65,18 +64,17 @@
 				return "as a string: " + param;
 			}
 
-						function checkParam(){
-									var param = document.getElementById("in01").value;
-						if(!isNaN(param)) document.getElementById("out01").innerHTML = param + " is your number.";
-						else document.getElementById("out01").innerHTML = "Not a Number";
-						}
-			console.log(param);
+			function checkParam(){
+				var param = document.getElementById("in01").value;
+				if(!isNaN(param)) document.getElementById("out01").innerHTML = param + " is your number.";
+				else document.getElementById("out01").innerHTML = "Not a Number";
+				if(param == "") document.getElementById("out01").innerHTML = "Output goes here";
+			}
 			
 			function loopThru(){
-			var param = document.getElementById("in01").value;
-			console.log(param);
-			var funcArray = [ add2(param), subtract4(param), mod5(param), power3(param), makeString(param)];
-			var elem = document.getElementById("out01");
+				var param = document.getElementById("in01").value;
+				var funcArray = [ add2(param), subtract4(param), mod5(param), power3(param), makeString(param)];
+				var elem = document.getElementById("out01");
 				for(i = 0; i <5; i++){	
 					var tn = funcArray[i];
 					elem.appendChild(document.createElement("br"));
