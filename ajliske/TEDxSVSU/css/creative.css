@@ -31,8 +31,7 @@ hr.gray {
 }
 
 hr.dash {
-  
-  color: white;
+  color: black;
   border-top:6px dashed ;
   height: 1px;
   max-width: 85%;
@@ -57,23 +56,11 @@ h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 p {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
-  font-weight: 900;
   line-height: 1.5;
   margin-bottom: 20px;
 }
-
-.invert{
-	height: 100%;
-	margin: 0px;
-	padding: 0px;
-	webkit-filter: invert(100%);
-    filter: invert(100%);
-}
-
 .bg-primary {
-	height: 100%;
   background-color: #b30000;
 }
 
@@ -93,59 +80,51 @@ p {
 }
 
 .bg-white  {
-	background: white;
-	height:100%;
-	margin: 0px;
-	padding-top:15%;
-	padding-bottom:5%;
 	
+	margin: 0px;
+	padding-top:5%;
 }
 
+.bg-white p {
+	font-size: 90%;
+}
 .bg-white a {
-  color: black;
+	color: black;
 }
 .bg-white a:hover  {
-  color: #808080;
+  color: #b30000;
   text-decoration: none;
 }
 
 .bg-white p{
- font-size: 100%;
- font-weight: 900;
+	font-weight: 900;
  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
  
 }
 
 @media (min-width: 768px) {
 .bg-white  {
-	height:100%;
+	
 	margin: 0px;
 	padding-top: 6%;
 }
 }
 
+
+
 .bg-dark {
-  margin: 0;
-  height:100%;
   background-color: black;
   color: white;
 }
-
 
 .bg-dark a {
   color: white;
 }
 
 .bg-dark a:hover  {
-
   color: #ff3333;
   text-decoration: none;
 }
-.bg-dark img {
-  webkit-filter: invert(100%);
-    filter: invert(100%);
-}
-
 
 .bg-background{
 	position: relative;
@@ -360,23 +339,25 @@ header .header-content  p:hover {
   font-weight: 250;
 }
 }
-
 .service-box {
-  max-width: 100%;
+  max-width: 80%;
   margin: 0px auto 0;
   padding-top: 6%;
 }
+
 .section-heading {
   margin-top: 0;
   font-weight: 900;
 }
 .service-box img{
-  width: 50px;
+  width: 50%;
   margin: 0px auto 0;
   padding-top: 6%;
+	min-width:80px;
+	max-width:200px;
 }
+
 .service-box p {
-	font-size: 10x;
   margin: 20px auto 0;
   margin-bottom: 0;
   color: #b30000;
@@ -390,8 +371,8 @@ header .header-content  p:hover {
 }
 
 .service-box h3 {
-  font-size: 16px;
-  color: #b30000;
+  font-size: 12px;
+  color: #000000;
   font-weight: 900;
 }
 
@@ -409,14 +390,7 @@ header .header-content  p:hover {
   margin: 0px auto 0;
   padding-top: 6%;
 }
-.service-box img{
-  width: 80px;
-  margin: 0px auto 0;
-  padding-top: 6%;
-}
-
 .service-box p {
-	font-size: 16 px;
   margin: 8px auto 0;
   margin-bottom: 20px;
   color: #b30000;
@@ -431,7 +405,7 @@ header .header-content  p:hover {
 
 .service-box h3 {
 	font-size: 24px;
-  color: #b30000;
+  color: #000000;
   font-weight: 900;
 }
 
@@ -640,11 +614,20 @@ img::selection {
   color: white;
   background: transparent;
 }
-iimg::-moz-selection {
+img::-moz-selection {
   color: white;
   background: transparent;
 }
 body {
   webkit-tap-highlight-color: #222222;
 }
-
+.Schedule_Container{
+	border-bottom: 1px dashed black;
+	display: block;
+}
+.Schedule_Container div date {
+	font-size:30px;
+	right:20px;
+	
+}
+}
