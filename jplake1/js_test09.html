@@ -1,0 +1,40 @@
+<html>
+
+	<body>
+	
+	</body>
+	
+	<script>
+		var car1 = {type: "Truck",
+				   model: "Silverado",
+				   year: "2008" ,
+				   color: "Metalic Blue",
+				   odometer: function (){console.log(12345);},
+				   print: function (){document.write(this.type + " : " + this.year + " : " + this.model + " : " + this.color + "<br>");}
+				   };
+				
+		var cars = [];
+		cars[0] = car1;
+		cars[1] = {type: "Truck",
+				   model: "Cheyenne",
+				   year: "2004",
+				   color: "Burgendy",
+				   print: function (){document.write(this.type + " : " + this.year + " : " + this.model + " : " + this.color + "<br>");}
+					};
+		cars[2] = {type: "SUV",
+				   model: "Tahoe",
+				   year: "2019",
+				   color: "Hunter Green",
+				   print: function (){document.write(this.type + " : " + this.year + " : " + this.model + " : " + this.color + "<br>");}
+					};
+					
+		for(var i=0; i<cars.length;i++){
+			cars[i].print();
+		}
+		
+		// create an object with the prefixes and courseNumbers of 10 cs and cis classes and write two functions;
+		// one to alphabetize the courses (second level sort is courseNumber) and the other to put in numerical order
+		// (second level sort is prefix)
+	</script>
+	
+</html>
