@@ -41,12 +41,23 @@
 			//	document.write("test");
 			//}
 				
-			}			
+			//}			
 			
 			//write a function to test if legit province of Canada
 			//Output should be "Province", or "Not a province."
 			function isProvince(){
-			
+			var x = document.getElementById("in01").value;
+				var provinces = ["Nunavut", "Quebec", "Northwest Territories", "Ontario", "British Columbia", "Alberta", "Saskatchewan", "Manitoba", "Yukon", "Newfoundland and Labrador", "New Brunswick", "Nova Scotia", "Prince Edward Island"];
+				for(var i =0; i<provinces.length; i++) {
+				
+					if(provinces[i].toLowerCase()==x.toLowerCase()){
+						document.getElementById("out01").innerHTML = "Province";
+						break;
+					}
+					else{
+						document.getElementById("out01").innerHTML = "Not a Province";
+					}
+				}
 			
 			}
 			
