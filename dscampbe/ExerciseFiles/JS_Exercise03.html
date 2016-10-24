@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS_Exercise03</title>
+</head>
+<body>
+	
+</body>
+<footer>
+	<script>
+		var hello = "Hello, World";
+		for(var i = 0; i<10;i++){
+			document.write(i+1+": "+hello + "<br/>");
+		}
+		document.write("<br/>");
+		var lineOfNumbers = 1234567890;
+		var sumOfNumbers = 0;
+		while(lineOfNumbers != 0){
+			sumOfNumbers += lineOfNumbers % 10;
+			lineOfNumbers = lineOfNumbers /10;			
+		}
+		document.write(sumOfNumbers);
+		document.write("<br/><br/>");
+		var zips = "zippy";
+		for(var i = 0; i<5; i++){
+			document.write(zips.substring(0,1));
+			//if(zips.length > 0){
+				zips = zips.substring(1);
+			//}
+			document.write("<br/>");
+		}
+	</script>
+</footer>
+</html>
