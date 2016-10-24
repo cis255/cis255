@@ -1,0 +1,67 @@
+<html>
+	<body>
+	
+	
+		<script>
+		
+			//1. Write your own function
+			//2. Write your own function that accepts a function as a parameter and runs it.
+			
+		
+			//build your own more elaborate functions
+			
+			function myFun (p1, p2, p3, p4) {
+				document.write("<br />p1: " + p1);
+				document.write("<br />p2: " + p2);
+				document.write("<br />p3: " + p3);
+				document.write("<br />p4: " + p4);
+			}
+			
+			myFun();
+			document.write("<hr />");
+			myFun(1,2,3,"fred");
+			document.write("<hr />");
+			myFun(1,2,3,4,5);
+			document.write("<hr />");
+			
+			var f = function () {return "fff";}
+			document.write("<br />" + f);
+			document.write("<br />" + f());
+			
+			document.write("<hr />");
+			
+			myFun(f, f(), "ggggggg", 5);
+			
+			// test out passing functions to functions
+			
+			//...
+			/*
+			var greet = function (name) {
+				return "George";
+			}
+			document.write("<hr />");
+			document.write("<br />" + greet());;
+			
+			function sayGoodbye (name) {
+				return "Goodbye, " + name;
+			}
+			function sayGoodbye2 (name) {
+				return "Goodbye, " + name();
+			}
+			
+			console.log(sayGoodbye(greet()));
+			console.log(sayGoodbye2(greet));
+			
+			*/
+			
+			// IIFE: Immediately Invoked Function Expression
+			var greet2 = (function (name) {
+				return name;
+			}) ("Rapunzel");
+			
+			console.log(greet2);
+			
+	
+		</script>
+	</body>
+</html>

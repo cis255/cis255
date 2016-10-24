@@ -1,0 +1,90 @@
+<html>
+	<body>
+	
+		<p id="a" onClick="myAlert();">Click here for an alert.</p><br />
+		<p id="b" onClick="myConfirm();">Click here to confirm.</p><br />
+		<p id="c" onClick="myPrompt();">Click here for a prompt.</p><br />
+	
+		<script>
+		
+		
+			//test built in functions, esp. Math functions, including alert(), confirm(), prompt(), onClick()
+			
+			//test Math functions, including isNaN(), Math.abs(), Math.ceil(), Math.floor(), Math.max(), Math.min(), Math.pow(), Math.round(), Math.sqrt()
+			var x = 5;
+			document.write(typeof(x));
+			console.log(x);
+			
+			var pi = Math.PI;
+			console.log(pi);
+			console.log(Math.PI);
+			
+			//alert
+			function myAlert() {
+				alert("this is just an alert");
+			}
+			
+			//confirm
+			function myConfirm() {
+				confirm("Confirmed!");
+			}
+			
+			//prompt
+			function myPrompt() {
+				var person = prompt("Please enter your name", "First Last");
+				if (person != null) {
+					document.getElementById("c").innerHTML =
+					"Hello " + person + "! How are you today?";
+				}
+			}
+			
+			// Math.abs()
+			var a = -25;
+			var b = 25;
+			if (Math.abs(a) == Math.abs(b))
+				document.write("<br />values a and b have the same absolute value<br />");
+			
+			// isNaN()
+			var N = 0;
+			if(isNaN(N)){
+				document.write(N + "  is not a number<br />");
+			}
+			else{document.write(N + " is a number<br />");}
+			
+			// Math.floor
+			function sumTheDigits(number){
+				var number;
+				var sum = 0;
+				while (number > 0){
+					sum = sum + (number % 10);
+					number = Math.floor(number / 10);
+				}
+				document.write(sum);
+			}
+			
+			document.write("The sum of the digits of the number 2468 is ");
+			sumTheDigits(2468);
+			
+			// Math.ceil()
+			document.write("<br />" +  Math.ceil(24.23555));
+			
+			//Math.max , Math.min
+			var max = Math.max(1,2,3,3.4,5,80);
+			var min = Math.min(1,2,3,3.4,5,80);
+			document.write("<br />Numbers are 1,2,3,3.4,5,80<br />");
+			document.write("The max number is " + max + "<br />");
+			document.write("The min number is " + min + "<br />");
+			
+			//Math.pow()
+			document.write(Math.pow(2, 8) + "<br />");
+			
+			// Math.round()
+			document.write(Math.round(500.49) + "<br />");
+			
+			//Math.sqrt()
+			document.write("The square root of 256 is " + Math.sqrt(256) + "<br />");
+			
+			
+		</script>
+	</body>
+</html>
