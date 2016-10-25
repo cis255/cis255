@@ -8,34 +8,39 @@
 	<body>
 
     <p id="calculations"></p>
+    <p id="iife"></p>
     
 		<script>
-		
-			// build your own more elaborate functions
-			
-			// 1. write your own function
-			// 2. write your own function that accepts a function as a parameter and runs it. 
-			// 3. write your own IIFE
-			
+   
+			document.write("<hr />");
+      //1. The function below has two variables which performs mathematical operations
 			function calculations (p1, p2) {
-        document.write("p1: " + p1 + "  p2: " + p2);
+        document.write("p1: " + p1 + " p2: " + p2);
 				document.write("</br>p1 + p2: " + (p1 + p2));
 				document.write("<br />p1 - p2: " + (p1 - p2));
 				document.write("<br />p1 * p2: " + (p1 * p2));
 				document.write("<br />p1 / p2: " + (p1 / p2));
 			}
       document.getElementById("calculations").innerHTML = calculations(8, 2);
-			
-			
-			
-			
-			// IIFE: Immediately Invoked Function Expression
-			
-			var greet2 = (function(zippy) {
-				return "<br />Hello, " + zippy;
-			})("Rapunzel"); 
-			console.log(greet2);
-			document.write(greet2);
+			 document.write("<hr />");
+         
+      // 2. write your own function that accepts a function as a parameter and runs it. 
+         function myFun (p1, p2, p3, p4) {
+    				document.write("p1: " + p1);
+    				document.write("<br />p2: " + p2);
+    				document.write("<br />p3: " + p3);
+    				document.write("<br />p4: " + p4);
+    				return 1;
+    			}
+          
+          var f = function () {return "fff";};
+          document.write("</hr>");
+          myFun(f, f(), "ggggggg", 5); //here f and f() are passed as string and function as well
+          
+			//3. IIFE: Immediately Invoked Function Expression
+      (function () {
+          document.getElementById("iife").innerHTML = "This is output of a self-invoking function</br>";
+       })();
 			
 		</script>
 		

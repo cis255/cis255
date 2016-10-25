@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<body>
+	
+		
+		<button type="button" onclick="myObjectFun();">Print list of cars</button>
+		<br />
+		
+		<script>
+			function myObjectFun(){
+				var car = "Fiat";
+				//JSON - JavaScript Object Notation
+				var car1 = {
+					type:"Fiat",
+					model:"500",
+					color:"white",
+					odometer: function (x){console.log(x);}
+				};
+				var car2 = {
+					type:"Chevy",
+					model:"Malibu",
+					color:"red",
+					odometer: function (x){console.log(2 + x);}
+				};
+				var cars = [];
+				cars[0] = car1;
+				cars[1] = car2;
+				cars[2] = {
+					type:"Buick",
+					model:"LeSabre",
+					color:"black"
+				};
+				cars[3] = {
+					type:"Lotus",
+					model:"Elise",
+					color:"black"
+				};
+				for(var i = 0; i < cars.length; i++){
+					document.write(cars[i].type + "/" + cars[i].model + "<br />");
+				}
+				
+				car1.odometer(123);
+				car2.odometer(123);
+				
+				var a = "hello";
+				var b = 5;
+				var c = true;
+				
+				
+				
+			}
+			
+			//create an object with the prefixes and courseNumbers
+			//of 10 cs and cis courses and write two functions;
+			//one to alphabetize the courses (second level sort is courseNumber)
+			//and the other to put in numerical order (second level sort is prefix)
+			
+			
+		</script>
+	</body>
+</html>
