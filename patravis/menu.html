@@ -1,13 +1,12 @@
+
 <html>
 
 	<head>
 
 		<title> Paul Travis </title>
 
-		<link rel="stylesheet" type="text/css" href="mss.css" />
+		<!-- <link rel="stylesheet" type="text/css" href="mss.css" /> -->
 		<script src="toggle.js"></script>
-
-
 	</head>
 
 	<body>
@@ -25,6 +24,7 @@
 			<p class="msvr" onclick="location.href='http://electracion.wixsite.com/mysite';">WIX Site</p>
 			<p class="msvr" onclick="location.href='http://siteformyclass.weebly.com';">Weebly Site</p>
 			<p class="msvr" onclick="location.href='http://csis.svsu.edu/~patravis/cis255/patravis/strap/';">Bootstrap</p>
+			<p class="msvr" onclick="location.href='./prog3/index.html';">TEDxSVSU</p>
 		</div> <!-- border div -->
 		</div> <!-- menu div -->
 
@@ -39,12 +39,23 @@
 				<p><a href="./JSassgnmt/js_test01.html">JS Assgnmt 1</a></p>
 				<p><a href="./JSassgnmt/js_test02.html">JS Assgnmt 2</a></p>
 				<p><a href="./JSassgnmt/js_test03.html">JS Assgnmt 3</a></p>
-		
+				<p id="changeme"></p>
 			</div>
 
 		<!-- </div> -->		
 
 
 	</body>
+
+	<script type="text/javascript">
+		if (screen.width < 1000) {
+			document.write('<link rel="stylesheet" type="text/css" href="lrmss.css" />');
+			document.getElementById('changeme').innerHTML="Small Screen";
+		} else {
+			document.write('<link rel="stylesheet" type="text/css" href="mss.css" />');
+		}
+	</script>
+
+
 
 </html>
