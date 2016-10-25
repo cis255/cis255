@@ -1,0 +1,89 @@
+<!doctype html>
+<!-- file: js_test04.html
+-->
+<html>
+	
+	<body>
+	
+		<p id="zippy" >This is a paragraph. Isn't it a nice paragraph? I can just keep on talking about how wonderful this paragraph is and make it look even more wonderful! If you are actually reading this I can tell you right now that you are wasting your time. I am only writing this to make this paragraph look nice. So, you can stop reading now. Seriously, stop I already told you; it's a waste of time. Wow, you are still reading this. Well congratulations, you've read this paragraph and have successfully wasted your time."</p>
+
+		<script>
+		
+// ----- test built-in functions, esp. alert(), confirm(), prompt()------
+			// alert()
+				alert("Hey! Here is the alert you ordered!");	
+			
+			//prompt()
+				var msg = prompt("and this is the prompt. Say hi or something!")
+			
+			// confirm()
+			if (msg == "")	
+				confirm("Wow, you're boring... you could have put literally anything...");
+			else
+				confirm("Thanks for your response!");
+				
+// --- test Math functions, including Math.abs(), Math.ceil(), Math.floor(), Math.max(), Math.min(), Math.pow(), Math.round(), Math.sqrt() ----
+
+			var a = -25.3;
+			var b = 25.3;
+			var x = 5;
+			var y = 9;
+			document.write("<br />Variable a: ",a,"<br />Variable b: ",b,"<br />Variable x: ",x,"<br />Variable y: ",y);
+			
+			
+			// Math.abs()
+			if (Math.abs(a) == Math.abs(b)) 
+				document.write("<br />values a and b have same absolute value<br/>");
+			
+			// math.ceil()
+			function ceiling (x){
+				var c =Math.ceil(x);
+				document.write("<br />I'm selling b, lets round up.<br/>b is: $",c);
+				return 1;
+			}
+			ceiling(b);
+			
+			// math.floor()
+			function floored (x){
+				var f = Math.floor(x);
+				document.write("<br />I'm buying b, lets round down.<br/>b is: $",f);
+				return 1;
+			}
+			floored(b);
+			
+			// math.max()
+			var max = Math.max(a,b,x,y);
+			document.write("<br />Which variable is greatest?<br/>", max);
+			
+			// math.min()
+			var min = Math.min(a,b,x,y);
+			document.write("<br />Which variable is smallest?<br/>", min);	
+			
+			// math.pow()
+			var power = Math.pow(x,2);
+			document.write("<br />What is x squared?<br/>", power);	
+			
+			// math.sqrt()
+			var sqRoot = Math.sqrt(y);
+			document.write("<br />What is the square root of y?<br/>", sqRoot);	
+			
+			// math.round()
+			var rounded = Math.round(b);
+			document.write("<br />What is b rounded?<br/>", rounded);	
+			
+			document.write("<br/>What type of variable is x?<br/>",typeof(x));
+			console.log(x);
+			
+			var pi = Math.PI;
+			console.log(pi);
+			console.log(Math.PI);
+			
+			
+
+		</script>
+		
+	</body>
+	
+</html>
+
+

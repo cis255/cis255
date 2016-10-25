@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript - Example 3</title>
+	</head>
+
+	<body>
+		<h2>JS Loops</h2>
+		<p id = "hello"></p>
+		<p id = "while"></p>
+		<p id = "do"></p>
+		<script>
+			//variable declarations
+			var strOutput = "";
+			var intCount = 0;
+			var intTotal = 0;
+			var zippy = "zippy"
+			
+			//1
+			for (i = 0; i < 10; i++) 
+			{ 
+				strOutput += "<br/> Hello World";
+				//document.write("Hello World <br/>");
+				document.getElementById("hello").innerHTML = strOutput;
+			}
+			
+			//2
+			while(intCount < 10)
+			{
+				intTotal += intCount;
+				intCount++;
+			}
+			document.getElementById("while").innerHTML = "The sum of 0123456789 is: " + intTotal;
+			
+			//3
+			strOutput = "";
+			intCount = 0;
+			do 
+			{
+				strOutput += zippy.charAt(intCount) + "<br/>"
+				intCount++;
+			}
+			while(intCount < zippy.length)
+			document.getElementById("do").innerHTML = strOutput;
+			
+		</script>
+	</body>
+</html>

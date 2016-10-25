@@ -1,0 +1,39 @@
+<html>
+
+	<body>
+	
+		<script>
+		// For Loop: Print "Hello World!" x 10 times
+		
+		for(var i = 0; i < 10; i++){
+		document.write("Hellow World! <br>");
+		}
+		document.write("<br>")
+		
+		// While loop to print sum of the digits of the number 1234567890 (use mod operator %)
+		var a = 10;
+		var b = 1234567890;
+		var c = 0;
+		while(a > 0){
+			c += b%10;
+			b = Math.trunc(b/10);
+			a--;
+		}
+		document.write(c);
+		document.write("<br> <br>")
+	
+		
+		// do loop to print letters in the word "zippy" (string) one letter per line
+		var d = "zippy";
+		i = 0;
+		do{
+		document.write(d.charAt(i));
+		i++
+		}
+		while (i < 5);
+		
+ 		</script>
+
+	</body>
+	
+</html>

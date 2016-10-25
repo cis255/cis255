@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+
+		<h1>Javascript Test6</h1>
+		<p>Global Variables and more!</p>
+
+		<script>
+			//Global Variables, local, nested scope
+			//include comments that exmplain which is which
+			
+			var one;
+			
+			(function(){
+				var two = 2,one = "uno";
+				console.log(two);
+				console.log(one);
+				//console.log(three);
+				three = "tres";
+
+
+			})();
+			
+			console.log(one);
+			//console.log(two);
+			console.log(three);
+			
+		
+			function red () {
+				var result=""h;
+				var magenta = function (length){
+					result += "/";
+					for (var i=0; i<length; i++){
+						result = result + "m";
+					};
+				};
+				var burgundy = function (length){
+					result += "/";
+					for (var i=0; i<length; i++){
+						result = result + "b";
+					};
+				};
+				magenta(5);
+				burgundy(10);
+				magenta(5);
+				burgundy(10);
+				
+				return result;
+			}
+			
+			console.log(red());
+
+			
+		</script>
+
+	</body>
+</html>

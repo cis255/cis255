@@ -14,6 +14,7 @@
 
 #wrapper {
     padding-left: 0;
+	width:100%;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -21,14 +22,14 @@
 }
 
 #wrapper.toggled {
-    padding-left: 250px;
+    padding-left: 0px;
 }
 
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
     left: 250px;
-    width: 0;
+    width: 250px;
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
@@ -40,18 +41,24 @@
 }
 
 #wrapper.toggled #sidebar-wrapper {
-    width: 250px;
+    width: 0;
 }
 
 #page-content-wrapper {
-    width: 100%;
+    width: auto;
     position: absolute;
     padding: 15px;
+	margin-left: 250px;
+	max-width:800px;
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
-    margin-right: -250px;
+    margin-left: 0px;
 }
 
 /* Sidebar Styles */
@@ -106,7 +113,7 @@
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 250px;
+        padding-left: 0px;
     }
 
     #wrapper.toggled {
@@ -130,4 +137,10 @@
         position: relative;
         margin-right: 0;
     }
+}
+#SubListing.toggled{
+	display:none;
+}
+#iframe-clear.toggled{
+	display:none;
 }

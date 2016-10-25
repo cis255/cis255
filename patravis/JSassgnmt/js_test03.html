@@ -1,0 +1,63 @@
+<html>
+<head>
+
+</head>
+<body>
+
+	<div id="container"><p>Hello, If you can see this it may be necessary to turn on javascript script parsing to render the intended content.</p></div>
+
+</body>
+	<script>
+
+		for (i = 0; i < 10; i++) {
+
+			console.log('hello world');
+
+		}
+
+		var x;
+		var stack = [];
+		var y;
+		var z;
+		x = 1234567890;
+		y = 0;
+		var i = 0;
+
+		z = x.toString();		
+
+		while (i < 10) {
+
+			y += Number(z.charAt(i));	
+			++i
+		}	
+
+//		while (tenvar > 0) {
+		
+//			stack.push( x % 10 );
+//			x = x / 10;
+//			--tenvar;
+//		}
+
+//		tenvar = 10;		
+
+//		while (tenvar > 0) {
+
+//			y += stack.pop();	
+		
+//			--tenvar;
+
+//		}
+		
+		document.getElementById('container').innerHTML = "<h3>Digit Summation</h3> <p>The Sum of the Digits in 1234567890 is " + y + "</p>";
+		
+		var zip = "zippy";
+		i = 0;
+		do {
+		
+			console.log(zip.charAt(i));
+			++i;
+
+		} while ( i < 5);
+
+	</script>
+</html>

@@ -1,0 +1,52 @@
+<html>
+	<body>
+		<p>
+		Variable [ <a id = "one.var"><a/> ] is a variable of the type [ <a id = "one.type" ><a/> ] with the value : <a id = "one.value" ><a/>
+		</p>
+		
+		<p>
+		Variable [ <a id = "two.var" ><a/> ] is a variable of the type [ <a id = "two.type" ><a/> ] with the value : <a id = "two.value"><a/>
+		</p>
+		
+		<p>
+		Variable [ <a id = "three.var" ><a/> ] is a variable of the type [ <a id = "three.type" ><a/> ] with the value : <a id = "three.value" ><a/>
+		</p>
+		
+		<p>
+		Variable [ <a id = "four.var" ><a/> ] is a variable of the type [ <a id = "four.type" ><a/> ] with the value : <a id = "four.value" ><a/>
+		</p>
+		
+		<p>
+		Variable [ <a id = "five.var" ><a/> ] is a variable of the type [ <a id = "five.type" ><a/> ] with the value : <a id = "five.value" ><a/>
+		</p>
+	
+		<script>
+		
+		var a2 = 42;
+		document.getElementById("one.var").innerHTML = "a2";
+		document.getElementById("one.type").innerHTML = typeof a2;
+		document.getElementById("one.value").innerHTML = a2;
+		
+		var b$ = "some junk" ;
+		document.getElementById("two.var").innerHTML = "b$";
+		document.getElementById("two.type").innerHTML = typeof b$;
+		document.getElementById("two.value").innerHTML = b$;
+		
+		var c_ = false ;
+		document.getElementById("three.var").innerHTML = "c_";
+		document.getElementById("three.type").innerHTML = typeof c_;
+		document.getElementById("three.value").innerHTML = c_;
+		
+		var \u0CA0\u005f\u0CA0 = null ;
+		document.getElementById("four.var").innerHTML = "\u0CA0\u005f\u0CA0";
+		document.getElementById("four.type").innerHTML = typeof \u0CA0\u005f\u0CA0;
+		document.getElementById("four.value").innerHTML = \u0CA0\u005f\u0CA0 + " ";
+		
+		var dD;
+		document.getElementById("five.var").innerHTML = "dD";
+		document.getElementById("five.type").innerHTML = typeof dD;
+		document.getElementById("five.value").innerHTML = dD;
+		
+		</script>
+	</body>
+</html>
