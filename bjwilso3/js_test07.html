@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	
+	<body>
+	<label>Enter a Province Abbreviation</label>
+		<input type = "text" id = "in01" onkeyup = "isProvince();"/>
+		<br />
+		
+		<p id = "out01"> Output goes here</p>
+		
+		<script>
+			//demonstrates error checking
+			function testFunction3(){
+				document.write ("test");
+			}
+			//check if input is a number
+			function isNumber(){
+				var x = document.getElementById("in01").value;
+				if(!isNaN(x)) document.getElementById("out01").innerHTML = "Number";
+				else document.getElementById("out01").innerHTML = "Not a Number";
+				
+				/*
+				try{
+					testFunction();
+					}
+				catch(err){
+					alert("Function does not exist: testFunction() \n" + err);
+					}
+				try{
+					var x = -1;
+					if (x < 0) throw "tooSmallError";
+					}
+				catch(err){
+					alert (err + " was thrown");
+					}
+				*/
+			
+			}
+			//Write a function to test whether or not the input is a legit province of CANADA. Output should be "province" or "not a province"
+			function isProvince(){
+				var provinceArray = ["AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PE", "QC", "SK", "YT"];
+				var x = document.getElementById("in01").value;
+
+				var y = x.toUpperCase();
+				var province;
+				for(i = 0; i < provinceArray.length; i++){
+
+					if(y == provinceArray[i]) province = true;
+				}
+				if(province == true) document.getElementById("out01").innerHTML = "Is a Province";
+				else document.getElementById("out01").innerHTML = "Not a Province";
+			}
+		</script>
+		
+	</body>
+	
+</html>
+

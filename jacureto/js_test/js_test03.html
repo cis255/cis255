@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>Exercise 3 - JavaScript Loops</h2>
+		<h3>Test loops:</h3>
+			<li>for loop to print "hello, world" 10 times</li>
+			<li>while loop to print sum of the digits of the number 1234567890 (using the mod operator)</li>
+			<li>do loop to print letters in the word "zippy" (string) one letter per line</li>
+		<br />
+		
+		<h3>For loop to print "hello, world" 10 times:</h3>
+		<script>
+			for(var i = 1; i <= 10; i++)
+			{
+				document.write("hello, world <br />");
+			}
+		</script>
+		
+		<h3>While loop to print sum of the digits of the number 1234567890 using mod:</h3>
+		<script>
+			var test_int = 1234567890;
+			var sum = 0;
+			var counter = 9;
+			
+			while(counter > 0)
+			{
+				sum = sum + (counter % test_int);
+				counter--;
+			}
+			
+			document.write("Sum: " +sum);
+		</script>
+		<br />
+		
+		<h3>Do loop to print the letters of the word "zippy", one letter per line:</h3>
+		<script>
+			js_test_string = "zippy";
+			var i = 0;
+			do{
+				document.write(js_test_string[i] +"<br />");
+				i++;
+			} while(i < js_test_string.length)
+			
+		</script>
+	</body>
+</html>

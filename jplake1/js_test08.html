@@ -1,0 +1,44 @@
+<html>
+
+	<body>
+	
+		<p id="paragraph1"> Input of 20 yields = 
+		</p>
+		
+	</body>
+	
+	<script>
+		var x = 20;
+		
+		function add2 (number) {
+			return number + 2;
+		}
+		
+		function subtract4 (number) {
+			return number - 4;
+		}
+		
+		function mod5 (number) {
+			return number%5;
+		}
+		
+		function power3 (number)	{
+			return number * number * number;
+		}
+		
+		function toString (number) {
+			return String(number);
+		}
+		
+		var arrayOfFunctions = [add2,subtract4,mod5,power3,toString];
+		
+		for (var i = 0; i < arrayOfFunctions.length; i++){
+			x = arrayOfFunctions[i](x);
+			document.getElementById("paragraph1").innerHTML += "<br>";
+			document.getElementById("paragraph1").innerHTML += x;
+		}
+		
+		
+	</script>
+	
+</html>

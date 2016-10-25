@@ -1,0 +1,256 @@
+<!--
+Filename:	  exhibits.html
+Author:		  Tyler Miller
+Description:  This is the main index file for my bootstrap SVSU TEDxSVSU2017 site.
+Website: http://csis.svsu.edu/~tlmille4/cis255/tlmille4/tedxsvsu/website/
+
+Program Flow (design):
+	<head>: browser tab title
+			favicon initialized
+			Defining metatags 
+			Linking our CSS pages for page design
+	<body>:
+			Navigation Container holds everything for navigation on the site to
+				-Home, About Speakers, Tickets, Contact, and Exhibits
+				-Also contains TEDxSVSU logo
+			PageTop section contains exhibit info
+			Footer contains footer/social media links
+			
+			Javascript tags for site at end of file
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Past Exhibits | TEDxSVSU 2017</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/freelancer.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="page-top" class="index">
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+
+			<img src="img/ted.png"/>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="page-scroll">
+                        <a href="index.html#page-top">Home</a>
+                    </li>
+					<li class="page-scroll">
+                        <a href="index.html#about">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html#portfolio">2017 Speakers</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html#tickets">Tickets</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="index.html#contact">Contact</a>
+                    </li>
+					<li class="page-scroll">
+                        <a href="#page-top">Exhibits</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                    <div class="intro-text">
+					<br/>
+                    <span class="name">Past TEDxSVSU Exhibits</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+	
+	<!-- PAST EXHIBITS SECTION -->
+	<section class="red" id="page-top">
+		<div class="container">
+
+		<div class="row">	
+			<div class="col-lg-6">
+				<h2 class="wsite-content-title" style="text-align:left;">What are exhibits?</h2>
+				<p>Exhibits are booth-style displays of novel local technology, entertainment and design implementations. Exhibitors can include sponsoring corporations, students or local technologists or artisans.&nbsp;<span style="">The purpose of exhibits is to give the audience a chance to see and experience things that they would not normally have exposure to either in daily life or even in college classes.&nbsp;</span></p>
+			</div>
+			<div class="col-lg-6">
+				<h2 class="wsite-content-title" style="text-align:left;">Which exhibits were at TEDxSVSU?</h2>
+				<br/>
+				<p>The following exhibits have been confirmed so far.<br /><ul style=""><li><span style="line-height: 1; background-color: initial;">Arduino-controlled robotic cars</span></li><li style=""><span style="">Pixy camera<br /></span></li><li style=""><span style="">Makey Makey</span></li><li style=""><span style="">Oculus Rift</span><br /></li><li style=""><span style="">Google Cardboard</span></li><li style=""><span style="">Raspberry Pi</span><br /></li><li style=""><span style="">Wifi Pineapple</span><br /></li><li style=""><span style="">Bitcoin Miner</span></li><li style="">Glockenspiel and oscilloscope</li></ul></p>
+			</div>
+		</div>
+		<p><br/></p>
+		<h2 class="wsite-content-title" style="text-align:left;">Makey Makey</h2>
+		<div class="row">
+			<div class="col-lg-6">
+				<a href='http://www.slj.com/wp-content/uploads/2015/04/SLJ1504-TK-Makey_Bannanas.jpg' target='_blank'>
+				<img src="http://www.slj.com/wp-content/uploads/2015/04/SLJ1504-TK-Makey_Bannanas.jpg" alt="Picture" style="width:400px; height:250px; border:5px solid black" />
+				</a>
+			</div>
+			<div class="col-lg-6">
+				<p>Out of the box, the MaKey MaKey creates highly interactive, 3-D models of circuits that help kids map the flow of electricity and test materials&rsquo; conductivity in really concrete ways. It&rsquo;s a very user-friendly and intuitive inquiry tool for budding materials scientists. More than that, it&rsquo;s an invitation to extend learning across content areas and to help kids get interested in the kinds of industrial design that make computer interfaces accessible, attractive, and effective for their users. <br/>(Source: School Library Journal)</p>
+			</div>
+		</div>
+		<p><br/></p>
+		<h2 class="wsite-content-title" style="text-align:left;">Pixy Camera</h2>
+		<div class="row">
+			<div class="col-lg-6">
+				<br/>
+				<p>The camera follows an object by pointing toward its color.<br/>See Aaron Hooper's demonstration here </p>
+			</div>
+			<div class="col-lg-6">
+				<iframe width="465" height="292" src="https://www.youtube.com/embed/rj9mmzh-4Ik" frameborder="0" allowfullscreen></iframe>
+			</div>
+		</div>
+		
+		
+		<h2 class="wsite-content-title" style="text-align:left;">Oculus Rift</h2>
+		<div class="row">
+			<div class="col-lg-6">
+				<a href="http://www.geek.com/wp-content/uploads/2013/06/oculus_rift_UE4.jpg" target='_blank'>
+				<img src="http://www.geek.com/wp-content/uploads/2013/06/oculus_rift_UE4.jpg" alt="Picture" style="width:400px; height: 250px; border: 5px solid black" />
+				</a>
+				<div style="display:block;font-size:90%">Oculus Rift. Image source: geek.com</div>
+			</div>
+			<div class="col-lg-6">
+				<br/>
+				<p>Oculus Rift is a virtual reality headset. Thanks to Brian Cobb for lending his device and expertise.&nbsp;</p>
+			</div>
+		</div>
+		<br/>
+		<h2 class="wsite-content-title" style="text-align:left;">Raspberry Pi</h2>
+		<div class="row">
+			<div class="col-lg-6">
+				<br/>
+				<p>The Raspberry Pi is a series of credit card&ndash;sized single-board computers developed in the UK by the Raspberry Pi Foundation with the intention of promoting the teaching of basic computer science in schools. (Source: <a href="https://en.wikipedia.org/wiki/Raspberry_Pi" target="_blank" title="">Wikipedia</a>. Image source: <a href="http://precollegeblog.flatironschool.com/post/117789603630/skydiving-bears-raspberry-pi-and-learning-to" target="_blank">flatironschool.com</a>)</p>
+			</div>
+			<div class="col-lg-6">
+				<a href="http://media.apcmag.com/wp-content/uploads/sites/20/2012/12/apcnews2012raspberry-pi-logo_mainImage8.jpg8.jpg" target='_blank'>
+				<img src="http://media.apcmag.com/wp-content/uploads/sites/20/2012/12/apcnews2012raspberry-pi-logo_mainImage8.jpg8.jpg" alt="Picture" style="width:400px; height: 250px; border: 5px solid black" />
+				</a>
+			</div>
+		</div>
+		
+		<h2 class="wsite-content-title" style="text-align:left;">Arduino</h2>
+		<iframe width="465" height="292" src="https://www.youtube.com/embed/CqrQmQqpHXc" frameborder="0" allowfullscreen></iframe>
+	</section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Location</h3>
+                        <p>Saginaw Valley State University <br/>
+						   Curtiss Hall, 7400 Bay Road <br/>
+                           University Center, MI 48710</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Around the Web</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="https://www.facebook.com/tedxsvsu" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/results?search_query=tedxsvsu" class="btn-social btn-outline"><i class="fa fa-fw fa-youtube"></i></a>
+                            </li>
+                            <li>
+                                <a href="http://www.twitter.com/tedxsvsu" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://instagram.com/tedxsvsu" class="btn-social btn-outline"><i class="fa fa-fw fa-instagram"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Sponsored By</h3>
+                        <p>
+							<a href="http://www.covenanthealthcare.com/Main/Home.aspx" target="none"><img src="img/cov.png"style="width: 50%"/></a>
+							<br/><br/>
+							<a href="http://www.svsu.edu" target="none"><img src="http://www.svsu.edu/media/SVSU%20LOGO%20LINEAR%20-%20white%20and%20red.png" style="width: 80%" /></a>
+						</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; TEDxSVSU 2016
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/freelancer.min.js"></script>
+
+
+</body>
+
+</html>

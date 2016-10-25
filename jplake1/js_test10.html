@@ -1,0 +1,48 @@
+<html>
+
+	<body>
+	
+		<!-- from page 276 of textbook -->
+		<form action="#" method="post" id="loginform">
+			<label>Username</lable>
+			<br />
+			<input type="text" name="username" id="username" />
+			<br />
+			<label>Password</label>
+			<br />
+			<input type="password" name="password" id="password" />
+			<br />
+			<input type="submit" value="Submit" id="submit"/>
+			<button onclick= "alert('You asked for it');" value = "Doom" id = "doom">Doom</button>
+			<br />
+			<button onmouseover= "yahtzee()" value = "Roll the Dice!" id="yahtzeeButton">Roll the Dice!</button>
+			
+			<div id = "pageText"></div>
+	
+	</body>
+	
+	<script>
+		var x = document.getElementById("doom");
+		x.value = "Doom";
+		x.style = "color: black";
+		x.style = "background-color: red";
+		x.onmouseover = function () {
+			var d = new Date();
+			console.log("date :" + d);
+				}
+		
+		
+		// Yahtzee
+		function yahtzee(){
+			var d1 = (Math.floor(Math.random() * 6 + 1));
+			var d2 = (Math.floor(Math.random() * 6 + 1));
+			var d3 = (Math.floor(Math.random() * 6 + 1));
+			var d4 = (Math.floor(Math.random() * 6 + 1));
+			var d5 = (Math.floor(Math.random() * 6 + 1));
+			var c = document.getElementById("pageText");
+			c.innerHTML = ("Your die are : " + d1 + " , " + d2 + " , " + d3 + " , " + d4 + " , " + d5);
+					}
+		
+	</script>
+	
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<body>
+	
+		<label>Enter a number</label>
+		<input type="text" id="in01" onkeyup="myArrayFun();"/>
+		<br />
+		
+		<p id="out01">Output goes here</p>
+		
+		<script>
+			var a = new Array("1",2,"three");
+			var b = ["1",2,"three"];
+			b[3] = 17;
+			
+			function myArrayFun(){
+				var elem = document.getElementById("out01");
+				var i = 0;
+				//populate array, a
+				while (i < 10) a[i] = i++;
+				//print backwards one element per line
+				a[5] = "zippydee";
+				for(i = a.length - 1; i >= 0; i--) {
+					var tn = a[i] + " - ";
+					elem.appendChild(document.createElement("br"));
+					elem.appendChild(document.createTextNode(tn));
+				}
+				delArray();
+				for(i = a.length - 1; i >= 0; i--) {
+					var tn = a[i] + " - ";
+					elem.appendChild(document.createElement("br"));
+					elem.appendChild(document.createTextNode(tn));
+				}
+			}
+			
+			//replace array, a , with only its elements 0-3 and 8-9.
+			//that is, make it so it contains only a[0], a[1], a[2], 
+			//a[3], a[8], and a[9]
+			
+			function delArray() {
+				a.splice(4, 4);
+			}
+			
+			//for 2 extra credit points create an array that contains 5 functions:
+			//add2(), subtract4(), mod5(), power3(), toString().
+			//write function to loop through the array of functions and append text nodes to a <p> in the DOM
+			//which contains the output of a parameter
+			
+			function loopThruArrayOfFuntions (param) {
+			}
+			
+			
+			
+			
+		</script>
+	</body>
+</html>
