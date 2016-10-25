@@ -111,6 +111,16 @@ p {
 }
 
 
+.service-box img
+{
+	width:140px;
+}
+
+
+
+
+
+
 
 .bg-dark {
   background-color: black;
@@ -350,11 +360,10 @@ header .header-content  p:hover {
   font-weight: 900;
 }
 .service-box img{
-  width: 50%;
+  width:80px;
   margin: 0px auto 0;
   padding-top: 6%;
-	min-width:80px;
-	max-width:200px;
+	
 }
 
 .service-box p {
@@ -383,12 +392,26 @@ header .header-content  p:hover {
   margin: 0 auto;
   color: white;
 }
+.speaker_p{
+	display:none;
+}
+@media(min-width:600px){
+	.speaker_p{
+		display:block;
+	}
+}
 @media (min-width: 992px) {
 	
   .service-box {
   max-width: 100%;
   margin: 0px auto 0;
   padding-top: 6%;
+}
+.service-box img{
+  width:140px;
+  margin: 0px auto 0;
+  padding-top: 6%;
+	
 }
 .service-box p {
   margin: 8px auto 0;
@@ -631,3 +654,4 @@ body {
 	
 }
 }
+ 
