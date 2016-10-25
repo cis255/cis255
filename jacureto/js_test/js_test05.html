@@ -1,0 +1,69 @@
+<!doctype html>
+<!-- file: js_test05.html
+-->
+<html>
+	
+	<body>
+		<h2>Exercise 5 - JavaScript Functions and IIFEs</h2>
+		<h3>Use the template js_test05.html to build your own more elaborate functions.</h3>
+			<li>// 1. write your own function</li>
+			<li>// 2. write your own function that accepts a function as a parameter and runs it. </li>
+			<li>// 3. write your own IIFE</li>
+		<br />
+			
+		<p id = "functionTest" onClick="PromptFun();">Click here to test the standalone function.</p>
+		
+		<p id = "FunctionPassingTest" onClick="FunFun(AddFun);">Click here to run the third function, which passes the second as a parameter.</p>
+		
+		<script>
+			// 1. write your own function
+			var p1;
+			
+			function PromptFun(p1)
+			{
+				p1 = prompt("Enter an integer.");
+				document.write(p1*2);
+			}
+
+			// 2. write your own function that accepts a function as a parameter and runs it.
+			
+			var p2 = 4;
+			var p3 = 5;
+			
+			function AddFun(x, y)
+			{
+				//This function just adds two variables.
+				return (x + y);
+			}
+			
+			function FunFun(AddFun)
+			{
+				//This function takes AddFun() and manipulates it slightly.
+				document.write("<br />" +(AddFun(p2, p3) *2))
+				document.write("<br />" +(AddFun(p2, p3) + 1))
+			}
+			
+			// 3. write your own IIFE: Immediately Invoked Function Expression
+			
+			var iife_test = (function(x){
+				//This function squares the original.
+				document.write("Testing IIFE: <br /> Original number: " +x);
+				return(Math.pow(x,2));				
+			})(4);
+			
+			console.log(iife_test);
+			document.write("<br />New number:" +iife_test);
+			
+		</script>
+		
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+

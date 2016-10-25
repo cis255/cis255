@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+<script>
+	for (var i = 0; i < 10; i++){
+
+		document.write("hello, world");
+		document.write("</br>");
+	}
+
+	var num = 1234567890;
+	var sum = 0;
+
+	while (num != 0){
+		
+		sum += num % 10;
+		num /= 10;
+		num = Math.floor(num);
+		
+	}
+
+	document.write("The sum is " + sum + "</br>");
+
+	var zippy = "zippy";
+	var zippyChar = "";
+	
+	do {
+		
+		zippyChar = zippy.substring(0, 1);
+		zippy = zippy.substring(1);
+		document.write(zippyChar + "</br>");
+		
+	} while (zippy != "")
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- JQuery -->
+		<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+	<body class= "color">
+		<div class="container">
+			<h1>JS Test 04 - Jerome Gifford</h1>
+			<p onClick="myAlert()"> Alert paragraph.</p>
+			<p onClick="myPrompt()"> Prompt paragraph.</p>
+			<p onClick="myConfirm()"> Confirm paragraph.</p>
+			<script>
+			/*
+				var x = 5;
+				document.write(typeof(x));
+				console.log(x);
+				
+				var pi = Math.PI;
+				console.log(pi);
+				console.log(Math.PI);
+				
+				// Test built-in functions, esp. alert(), confirm(), prompt()
+				//test Math functions, including inNaN(), Math.abs(), Math.ceil(), 
+				// Math.floor(), Math.max(), Math.min(), Math.pow(), Math.round(), Math.sqrt()
+				function myAlert(){
+					alert("This is an ALERT!!");
+				}
+				
+				var a = -25;
+				var b = 25;
+				if (Math.abs(a) == Math.abs(b))
+					document.write("A & B have the same absolute value");
+			*/
+
+				function myAlert(){
+					alert("This is a JS alert");
+				}
+				
+				function myPrompt(){
+					prompt("Please enter you name", "FirstName LastName");
+				}
+				
+				function myConfirm(){
+					confirm("Press the button");
+				}
+				
+				function useMath (){
+					var  c = -1.84
+					document.write("<br>");
+					document.write(c);
+					document.write("<br>");
+					document.write(isNaN(c));
+					document.write("<br>");
+					document.write(Math.abs(c));
+					document.write("<br>");
+					document.write(Math.ceil(c));
+					document.write("<br>");
+					document.write(Math.floor(c));
+					document.write("<br>");
+					document.write(Math.max(c));
+					document.write("<br>");
+					document.write(Math.min(c));
+					document.write("<br>");
+					document.write(Math.pow(c, 3));
+					document.write("<br>");
+					document.write(Math.round(c));
+					document.write("<br>");
+					document.write(Math.sqrt(c));
+					}
+					
+				useMath();
+			</script>
+		</div> <!-- Close container -->
+	</body>
+</html>

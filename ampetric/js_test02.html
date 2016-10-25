@@ -1,0 +1,61 @@
+<html>
+	<body>
+		
+		<script>
+			// test control statements, if/else and switch case using boolean
+			// operations for if else and both numbers and strings for switch case
+			
+			// if/else statement using boolean operations
+			
+			// if/else
+			var x = 1;
+			var y = true;
+	
+			if( x == y)
+				document.write("x equals y" + "<br />");
+			else 
+				document.write("x does not equal y" + "<br />"); 
+			
+			if(x === y) 
+				document.write("x equals y, and x and y have the same data type" + "<br />"); 
+			else 
+				document.write("x does not equal y, or x and y are not the same data type" + "<br />");
+			
+			
+			// switchcase using numbers
+			var score = 85;
+			switch(true){
+				case (score >= 70 && score < 80):
+					document.write("C, Passing");
+					break;
+				case (score >= 80 && score < 90):
+					document.write("B, Not bad<br />");
+					break;
+				case (score >= 90 && score < 100):
+					document.write("A, Good Job");
+					break;
+				default:
+					document.write("no grade");
+					break;
+			}
+			
+			// switchcase using strings
+			var grade = 'A';
+			switch(grade){
+				case 'A':
+					document.write("Good Job");
+					break;
+				case 'B':
+					document.write("Not Bad");
+					break;
+				case 'C':
+					document.write("Passing");
+					break;
+				default:
+					document.write("Failed");
+					break;
+			}
+			
+		</script>
+	</body>
+</html>

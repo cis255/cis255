@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- JQuery -->
+		<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>JS Test 07 - Jerome Gifford</h1>
+			<label>Enter a Number</label>
+			<input type="text" id="in01" onkeyup="isNumber()">
+			<p id="out01">Output goes here</p>
+			
+			<label>Enter a Province of CANADA</label>
+			<input type="text" id="in02" onkeyup="isProvince()">
+			<p id="out02">Output goes here</p>
+			<script>
+
+				function isNumber() {
+					var x = document.getElementById("in01").value;
+					if(!isNaN(x))
+					document.getElementById("out01").innerHTML = "Number";
+					else
+					document.getElementById("out01").innerHTML = "Not a Number";
+					
+					/*
+					try{
+					testFun();
+					}
+					catch (err){
+						alert("function does not exist: testFun()\n" + err);
+					}
+					
+					try{
+						var y = -1;
+						if (y < 0) throw "tooSmallError";
+					}
+					catch (err){
+						alert(err + " was thrown");
+					}
+					*/
+				}
+				
+				function testFun3() {
+					document.write("test");
+				}
+				
+				// write a function to test whether or not the input is a legit province of CANADA. 
+				// Output should be "Province" or "Not a Province"
+				function isProvince(){
+					var y = document.getElementById("in02").value.toLowerCase();
+					if(y == "nunavut" || y =="quebec" || y == "northwest territories" || y == "british columbia"
+					|| y == "ontario" || y == "alberta" || y == "saskatchewan" || y == "manitoba" || y == "yukon"
+					|| y == "newfoundland and labrador" || y == "new brunswick" || y == "nova scotia" || y == "prince edward island")
+					document.getElementById("out02").innerHTML = "Province";
+					else
+					document.getElementById("out02").innerHTML = "Not a Province";
+					
+				}
+				
+			</script>
+		</div> <!-- Close container -->
+	</body>
+</html>
