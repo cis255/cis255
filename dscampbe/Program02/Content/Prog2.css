@@ -1,0 +1,13 @@
+table.Menu tr td:nth-child(1){
+	width: 150px;
+	align: right;
+	padding-right: 10px;	
+}
+table.UserList tr th{
+	align:center;
+}
+.CompleteClasses{
+	Border:dashed 1px;
+	border-color: black;
+}
+	

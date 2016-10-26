@@ -1,0 +1,23 @@
+
+body	    {background: snow;}
+h1 h2 h3    {font-family: Arial, Sans-Serif; border: 1px solid white; margin-top: 3px; position: relative;}
+p	    {font-size: 18px; font-family: Courier, monospace; margin: .3em; position: relative;}
+hr	    {border-style: solid; border-width: 3px; clear: both; position: relative; width: 99%; z-index: -1; color: darkgrey;}
+a:visited   {color: blue;}
+
+/* Start ID's  */
+#imgborder  {border-style: outset; float: right; background: white;}
+#menu       {display:none;}
+#border     {border-style: double; height: 200px; width: 150px; padding: 0px 5px auto 5px; float: right; position: relative; z-index: 1; background: SeaShell;}
+#header     {margin-right: 0.5em; border-width: 8px;}
+
+/* Start Classes */
+.msvr	    {text-decoration: underline;}
+.msvr:hover {background: blue; color: white;}
+.lefty	    {float: left; margin-top: 8px; margin-bottom: .1em;}
+.bottomfoot {position: absolute; left: 0%; top: 12%;}
+.righty	    {float: right;}
+.top-margin-5 {margin-top: 15%; margin-left: .05%;}
+
+
+

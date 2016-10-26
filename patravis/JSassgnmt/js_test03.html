@@ -1,6 +1,12 @@
 <html>
 <head>
 
+</head>
+<body>
+
+	<div id="container"><p>Hello, If you can see this it may be necessary to turn on javascript script parsing to render the intended content.</p></div>
+
+</body>
 	<script>
 
 		for (i = 0; i < 10; i++) {
@@ -42,7 +48,7 @@
 
 //		}
 		
-		document.write("<p>The sum of the digits in 1234567890 is " +  y + "</p>");
+		document.getElementById('container').innerHTML = "<h3>Digit Summation</h3> <p>The Sum of the Digits in 1234567890 is " + y + "</p>";
 		
 		var zip = "zippy";
 		i = 0;
@@ -54,11 +60,4 @@
 		} while ( i < 5);
 
 	</script>
-
-</head>
-<body>
-
-
-
-</body>
 </html>

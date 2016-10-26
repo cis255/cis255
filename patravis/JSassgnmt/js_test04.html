@@ -1,0 +1,69 @@
+<html>
+
+<head>
+
+	<script>
+
+		var yon = confirm("Do You Wish to See Less Annoying Popups?");
+		var result  = prompt("Have you had enough yet?");
+
+	</script>
+
+</head>
+
+<body>
+
+	<input type="textbox" id="input" />
+	<button id="submiter">Submit</button>
+	<div id="container"><p>If You Can See This, You May Wish to  Enable Javascript</p></div>
+	
+
+</body>
+
+	<script>
+	
+		document.getElementById('container').innerHTML = "<p>---------------------------------</p>";
+		document.getElementById('submiter').addEventListener("click", maths);
+
+		function maths() {
+
+			var contain;
+			var num;
+			var text;
+			var data;
+			
+			contain = document.getElementById('container');
+			text = document.getElementById('input');
+
+			data = text.value;
+			
+			if (isNumeric(data)) {	
+			contain.innerHTML = "<h3>Statistics on Your Number</h3>";
+			contain.innerHTML += "<p>Is A Number      : " + !isNaN(data) + " </p>";
+			contain.innerHTML += "<p>Absolute Value of: " + Math.abs(data) + " </p>";
+			contain.innerHTML += "<p>Number Rounded up: " + Math.ceil(data) + " </p>";
+			contain.innerHTML += "<p>Rounded Down     : " + Math.floor(data) + " </p>";
+			contain.innerHTML += "<p>Sqare Root of    : " + Math.sqrt(data) + " </p>";
+			contain.innerHTML += "<p>Number Rounded   : " + Math.round(data) + " </p>";
+			contain.innerHTML += "<p>Number Sqared    : " + Math.pow(data, 2) + " </p>";
+			contain.innerHTML += "<h4>Number Compared to 200, 100, 50, 25, 10</h4>";
+			contain.innerHTML += "<p>Smallest Of list : " + Math.min(data, 200, 100, 50, 25, 10) + " </p>";
+			contain.innerHTML += "<p>Larger Of list   : " + Math.max(data, 200, 100, 50, 25, 10) + " </p>";	
+			} else {
+
+				alert("Please input a valid number");
+				contain.innerHTML = "<p>Invalid Input</p>";
+
+			}
+
+		}	
+
+		function isNumeric(num) {
+
+			return (num > 0 || num === 0 || num === '0' || num < 0) && num !== true && isFinite(num);
+
+		}
+	
+	</script>
+
+</html>

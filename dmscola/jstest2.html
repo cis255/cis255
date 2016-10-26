@@ -1,0 +1,62 @@
+
+<html>
+	
+	<body>
+		<p id="zippy"></p>
+		<p id="demo"></p>
+		<p id="test"></p>
+
+		<script>
+			// test control statements, 
+			// 1. if/else using boolean operations 
+			// 2. switch case using numbers 
+			// 3. switch case using strings 
+			
+			// 1. if/else using boolean operations
+			x = 1; 
+			y = 2;
+			if (x == y) document.write("x equals y ");
+			else document.write("x does not equal y");
+			if (x === y) document.write(" x equals y and x, y of same data type");
+			else document.write(" x does not equal y or x and y are not same data type");
+			
+			// 2. switch case using numbers
+			
+
+			var a =2;
+			var text;
+				switch(a)
+				{
+				case 1:
+				text = "You reach this case if the value of a is 1";
+				break;
+				case 2: 
+				text = "You reach this case if the value of a is 2";
+				break;
+				default: 
+				text = "You reach this default case if the value of a is anything else";
+				}
+				
+				document.getElementById("demo").innerHTML = text;
+				
+				// switch using strings
+				var a = "dog";
+			var text;
+				switch(a)
+				{
+				case "dog":
+				text = "You reach this case if the value of a is dog";
+				break;
+				case "cat": 
+				text = "You reach this case if the value of a is cat";
+				break;
+				default: 
+				text = "You reach this default case if the value of a is anything else";
+				}
+				
+				document.getElementById("test").innerHTML = text;
+
+			
+		</script>
+	</body>
+</html>

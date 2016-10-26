@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	
+	<head><title>js_test02</title></head>
+
+	<body>
+		<div>
+			<button onClick="randomizer(0,1); truthStatement();">Submit</button><br />
+			<p id="ifElseButton">Checking for truth...</p>
+		</div>
+		<div>
+			<button onClick="randomizer(1, 30); caseNum();">Click me.</button><br />
+				<p id="caseSwitchNum">Place is held.</p>
+		</div>
+		<div>
+			<input id="inputBox" type="text" value="Place some text here"><br />
+			<button value="Submit" onClick="caseString();">Submit</button><br />
+			<p id="caseString">Say yes or no.</p>
+		</div>
+		
+			<script>
+			
+				var statement;
+				var min;
+				var max;
+				var randomValue;
+					
+				function randomizer(min, max)
+					{
+					randomValue = Math.floor(Math.random() * (max - min + 1) + min);
+					}
+				
+				function truthStatement()
+					{
+					//randomValue = randomizer();
+					console.log(randomValue);
+						if(randomValue == 1)
+							statement = "This statement is true.";
+						
+						else
+							statement = "This statement is false";
+						
+						document.getElementById("ifElseButton").innerHTML = statement;
+					}
+					
+				function caseNum()
+					{
+						console.log(randomValue);
+						switch(randomValue)
+						{
+							case 1: 
+								document.getElementById("caseSwitchNum").innerHTML = "You get " + randomValue;
+								break;                                                          
+							case 2:                                                             
+								document.getElementById("caseSwitchNum").innerHTML = "You get " + randomValue;
+								break;                                                          
+							case 3:                                                             
+								document.getElementById("caseSwitchNum").innerHTML = "You get " + randomValue;
+								break;                                                          
+							case 4:                                                             
+								document.getElementById("caseSwitchNum").innerHTML = "You get " + randomValue;
+								break;
+							case 5:
+								document.getElementById("caseSwitchNum").innerHTML = "You get " + randomValue;
+								break;
+							default:
+								document.getElementById("caseSwitchNum").innerHTML = "You get " + randomValue;
+								break;
+						}
+							
+					}
+					
+				function caseString()
+				{
+					var input = null;
+					
+					input = document.getElementById("inputBox").value;
+					
+					console.log(input);
+					console.log(typeof(input));
+					
+					if(input.toUpperCase() =="YES")
+						input = "yes";
+					else if(input.toUpperCase() == "NO")
+						input = "no";
+						
+					if(input == "")
+						input = "Nothing";
+					else if(input == " ")
+						input = "Emtpy space";
+					
+					switch(input)
+					{
+						case "yes":
+							document.getElementById("caseString").innerHTML = "You said " + input;
+							break;
+						case "no":
+							document.getElementById("caseString").innerHTML = "But why?";
+							break;
+						default:
+							
+							document.getElementById("caseString").innerHTML = input + " isn't a choice! You must choose yes or no!";
+							break;
+					}
+				}
+		</script>
+		
+	</body>
+</html>
+				
+				
