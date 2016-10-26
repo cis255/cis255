@@ -41,8 +41,25 @@
 			}
 	
 			// write a function to test whether or not the input is a legit province of CANADA. Output should be "Province" or "Not a Province"
+			//write a funciton to test whether or not the input is a province of Canada Output should be "Province" or "Not a Province"
 			
+			function isProvince() {
+				var x = document.getElementById("in01").value;
+				var provinces = ["Nunavut", "Quebec", "Northwest Territories", "Ontario", "British Columbia", "Alberta", "Saskatchewan", "Manitoba", "Yukon", "Newfoundland and Labrador", "New Brunswick", "Nova Scotia", "Prince Edward Island"];
+				for(var i =0; i<provinces.length; i++) {
+				
+					if(provinces[i].toLowerCase()==x.toLowerCase()){
+						document.getElementById("out01").innerHTML = "Province";
+						break;
+					}
+					else{
+						document.getElementById("out01").innerHTML = "Not a Province";
+					}
+				}
+			}
+
 			function inProvince() {
+				var P = document.getElementById("innu1") value;
 			}
 
 			
