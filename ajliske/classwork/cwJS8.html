@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <p>Push Button to Enter a Number</p>
+
+        <button onclick="myFunction()">Enter Number</button>
+
+        <p id="demo"></p>
+
+        <script>
+            var x;
+            var h;
+            var t;
+
+
+            var array_of_functions = [
+                function () {
+                    return  x + 2
+                },
+                function () {
+                    return x - 4
+                },
+                function () {
+                    return x % 5
+                },
+                function () {
+                    return Math.pow(x, 3)
+                },
+                function () {
+                    toString('a string')
+                }
+            ]
+
+
+            function myFunction() {
+                x = parseFloat(prompt("Please enter a number", 6));
+                h = document.createElement("P");
+                for (i = 0; i < array_of_functions.length; i++) {
+                    t = document.createTextNode(array_of_functions[i]());
+
+                    h.appendChild(t);
+                    h.appendChild(document.createElement("br"));
+                    document.body.appendChild(h);
+                }
+
+
+            }
+
+
+        </script>
+
+    </body>
+
+</html>
