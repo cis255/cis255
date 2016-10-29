@@ -1,0 +1,69 @@
+<DOCTYPE!html>
+<!--javascript functions test-->
+<html>
+	<head>
+	</head>
+	<body>
+		<p id="zippy" onClick="myAlert();">A cool paragraph</p>
+		<script>
+			//test built in functions including alert(), confirm(), prompt(), onClick()
+			//test math functions including isNaN(), Math.abs(), Math.ceiling(), Math.floor(), Math.max(), Math.Min(), Math.pow(), Math.round(),Math.sqrt()
+			var x = 5;
+			document.write(typeof(x));
+			console.log(x);
+			var pi = Math.PI;
+			console.log(pi);
+			
+			//alert()
+			function myAlert() {
+				alert("A very special message");
+			}
+			
+			//confirm()
+			confirm("Confirm this box");
+			
+			//prompt()
+			var y = prompt("Please enter a number ");
+			document.write("<br / >your number :" + y);
+			
+			//math.abs()
+			var a = -25;
+			var b = 25;
+			if(Math.abs(a) == Math.abs(b)){
+				document.write("<br />values a and b have the same absolute value");
+				}
+			else {
+				document.write("br /> the values a and b do not have the same absoluete value.");
+			}
+				
+			//isNan()
+			var s = "string";
+			if(isNaN(s)) {
+				document.write("<br />s is not a number");
+				}
+			else {
+				document.write("<br /> s is a number");
+				}
+			
+			//Math.ceil
+			x = 3.6; 
+			document.write("<br /> ceiling round 3.6: " + Math.ceil(x));
+			
+			//math.floor
+			document.write("<br /> floor round 3.6: " + Math.floor(x));
+			
+			//math.round
+			document.write("<br /> math.round 3.6: " + Math.round(x));
+			document.write("<br /> math.round 3.4: " + Math.round(3.4));
+			
+			//Math.max
+			document.write("<br /> the maximum number of the list is: " + Math.max(3,3,7,9,3,6,7,5,25,74,1));
+			document.write("<br /> the minimum number in the list is: " + Math.min(3,3,7,9,3,6,7,5,25,74,1));
+			
+			//math.pow
+			document.write("<br /> 7 to the third power is:" + Math.pow(7,3));
+			
+			
+		</script>
+	</body>
+</html>
