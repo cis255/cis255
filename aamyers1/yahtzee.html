@@ -1,0 +1,99 @@
+<DOCTYPE!html>
+<html>
+	<head>
+	</head>
+	<body>
+		<form id="myForm">
+			<input type="button" onclick="roll();" value="Roll" id="rollone" > <br>
+			<p id="out">  </p>
+			<input type="checkbox" name="dice" id="d1" >Keep 1<br>
+			<input type="checkbox" name="dice" id="d2" >Keep 2<br>
+			<input type="checkbox" name="dice" id="d3">Keep 3<br>
+			<input type="checkbox" name="dice" id="d4">Keep 4<br>
+			<input type="checkbox" name="dice" id="d5">Keep 5<br>
+			<input type="button" value="Submit" id="sub2" onclick="reroll()">
+		</form>
+		
+		<script>
+			document.getElementById("sub2").disabled = true;
+			var elem = document.getElementById('out');
+			var d1, d2, d3, d4, d5, tn;
+			var oneRoll = function() {
+				 return Math.floor(1 +(6* Math.random()));
+				}
+			var roll = function() {
+				document.getElementById("rollone").disabled = true;
+				document.getElementById("sub2").disabled = false;
+				d1 = oneRoll();
+				d2 = oneRoll();
+				d3 = oneRoll();
+				d4 = oneRoll();
+				d5 = oneRoll();
+				tn = "d1: " + d1;
+				elem.appendChild(document.createTextNode(tn));
+				elem.appendChild(document.createElement("br"));
+				tn = "d2: " + d2;
+				elem.appendChild(document.createTextNode(tn));
+				elem.appendChild(document.createElement("br"));
+				tn = "d3: " + d3;
+				elem.appendChild(document.createTextNode(tn));
+				elem.appendChild(document.createElement("br"));
+				tn = "d4: " + d4;
+				elem.appendChild(document.createTextNode(tn));
+				elem.appendChild(document.createElement("br"));
+				tn = "d5: " + d5;
+				elem.appendChild(document.createTextNode(tn));
+				elem.appendChild(document.createElement("br"));
+				
+				if(d1 == d2 && d1 == d3 && d1 == d4 && d1 == d5) {
+					elem.appendChild(document.createTextNode("YAHTZEE"));
+					elem.appendChild(document.createElement("br"));
+				}
+				else{
+					elem.appendChild(document.createTextNode("select which you would like to keep and try again"));
+					elem.appendChild(document.createElement("br"));
+				}
+			}
+			var reroll = function() {
+				if (document.getElementById("d1").checked == false) {
+					d1 = oneRoll();
+				}
+				if (document.getElementById("d2").checked == false) {
+					d2 = oneRoll();
+				}
+				if (document.getElementById("d3").checked == false) {
+					d3 = oneRoll();
+				}
+				if (document.getElementById("d4").checked == false) {
+					d4 = oneRoll();
+				}
+				if (document.getElementById("d5").checked == false) {
+					d5 = oneRoll();
+				}
+				document.getElementById("sub2").disabled = true;
+				tn = "d1: " + d1;
+				elem.appendChild(document.createTextNode(tn));
+				elem.appendChild(document.createElement("br"));
+				tn = "d2: " + d2;
+				elem.appendChild(document.createTextNode(tn));
+				elem.appendChild(document.createElement("br"));
+				tn = "d3: " + d3;
+				elem.appendChild(document.createTextNode(tn));
+				elem.appendChild(document.createElement("br"));
+				tn = "d4: " + d4;
+				elem.appendChild(document.createTextNode(tn));
+				elem.appendChild(document.createElement("br"));
+				tn = "d5: " + d5;
+				elem.appendChild(document.createTextNode(tn));
+				elem.appendChild(document.createElement("br"));
+				if(d1 == d2 && d1 == d3 && d1 == d4 && d1 == d5) {
+					elem.appendChild(document.createTextNode("YAHTZEE"));
+				}
+				else{
+					elem.appendChild(document.createTextNode("no yahtzee. refresh page to try again"));
+				}
+	
+			}
+		</script>
+	</body>
+</html>

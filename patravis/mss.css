@@ -16,4 +16,5 @@ a:visited   {color: blue;}
 .lefty	    {float: left; margin-top: 8px; margin-bottom: .1em;}
 .bottomfoot {position: absolute; left: 0px; top: 12%;}
 .righty	    {float: right;}
+
 .top-margin-5 {margin-top: 3.5%; margin-left: .05%;}

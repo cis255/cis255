@@ -1,0 +1,115 @@
+<DOCTYPE!html>
+<html>
+	<body>
+		<button type="button" onclick="sortPrefix();">Print List</button>
+
+		<script>
+		
+		function myFun() {
+			var car = {
+				type: "default1",
+				model: "default1",
+				color: "red",
+				odometer:function(){console.log(124534)}};
+			var car2 = {
+				type: "wow",
+				model: "wowee",
+				color:"blue",
+				odometer:function(){console.log(352345)}};
+			document.write(car.type);
+			var cars = [];
+			cars[0] = car;
+			cars[1] = car2;
+			cars[2] = {
+				type:"buick",
+				model:"LeSabre",
+				color:"black",
+				odometer:function(){console.log(253456)}};
+			cars[3] = {
+				type:"aaaaaa",
+				model:"fasd",
+				color:"green",
+				odometer:function(){console.log(2346543)}};
+			for(var i = 0; i<cars.length;i++) {
+				document.write("<br /> " + cars[i].type + "/" + cars[i].model);
+				cars[i].odometer();
+			}
+			cars[0].odometer();
+		}
+		// create an object with the prefixes and courseNumbers of cs , math, phil and cis classes (10)and write two functions; one to alphabetize the courses - by prefixes and then by number
+		var courses = [];
+		courses[0] = {
+			prefix: "CS",
+			courseNumber: 116
+			}
+		courses[1] = {
+			prefix:"CS",
+			courseNumber:216
+		}
+		courses[2] = {
+			prefix:"MATH",
+			courseNumber:300
+		}
+		courses[3] = {
+			prefix:"MATH",
+			courseNumber:245
+		}
+		courses[4] = {
+			prefix:"CIS",
+			courseNumber:255
+		}
+		courses[5] = {
+			prefix:"CIS",
+			courseNumber:355
+		}
+		courses[6] = {
+			prefix:"CS",
+			courseNumber:105
+		}
+		courses[7] = {
+			prefix:"CIS",
+			courseNumber:400
+		}
+		courses[8] = {
+			prefix:"PHIL",
+			courseNumber:105
+		}
+		courses[9] = {
+			prefix:"CS",
+			courseNumber:316
+		}		
+		function sortPrefix() {
+		//var m;
+		//var n;
+		//for(var i = 0; i<10;i++) {
+		//var sortString = function (a, b) {
+		//		var nameA = a.prefix.toUpperCase(); // ignore upper and lowercase
+		//		var nameB = b.prefix.toUpperCase(); // ignore upper and lowercase
+		//		if (nameA < nameB) {
+		//			return -1;
+		//		}
+		//		if (nameA > nameB) {
+		//			return 1;
+		//		}
+		//		
+		//		// names must be equal
+		//		return 0;
+		//		
+		//	};
+		//
+		//		m = sortString(courses[i], courses[i+1]);
+		//		if(m != 0) {
+		//	
+		//		n = courses[i+m];
+		//		courses[i+m] = courses [i];
+		//		courses[i] = n;
+		//		i = -1; 
+		//	}
+		//	}
+			for(var i; i < 10; i++){
+				document.write(courses[i].prefix);
+			}
+		}
+		</script>
+	</body>
+</html>

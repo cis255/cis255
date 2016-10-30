@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--Name: Michael Drayton
+	  Program: js_test03
+	  Description: program is a javascript testing program that manipulates variables 
+	  and output with loops-->
+
+
+<html>
+	<header>
+	<title>js_test03</title>
+	</header>
+	
+	<body>
+		
+		<script>
+			
+			var number = 1234567890;
+			var zippy = "zippy";
+			var sum = 0;
+			
+			// For loop to print hello world ten times
+			for(var c = 0; c < 10; c++)
+				{
+					document.write((c+1) + ". Hello world!<br />");
+				}
+				
+			document.write("<br />");
+			
+			// while loop parses number and makes a sum using the individual numbers within it.
+			while(number > 0)
+			{
+				sum = sum + number%10;
+				number = Math.floor(number/10);
+			}
+			
+			// resets number back to original value for output
+			number = 1234567890;
+			document.write("Sum of individual digits in " + number + " is: " + sum + "<br />");
+			
+			// To show what zippy contains
+			document.write("<br />" + zippy + "<br />");
+			var c = 0;		// counter variable for following do loop
+			
+			do
+				{
+				var letter = zippy.charAt(c);		// uses c to find proper location, set to letter variable
+				document.write((letter) + "<br />");	// so I can print out the singular letters
+				c++
+				}
+			while(c < zippy.length);		// Continues going until end-of-string
+			
+		</script>
+	</body>
+</html>

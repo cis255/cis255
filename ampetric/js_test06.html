@@ -1,0 +1,51 @@
+<html>
+	<body>
+	
+	
+		<script>
+		
+		//demonstrate global
+		
+		var one;
+		
+		(function () {
+			var two = 2, one = "uno";
+			console.log(two); // 2
+			console.log(one); // uno
+			//console.log(three); // error
+			three = "tres";
+		}) ();
+		
+		console.log(one); // undefined
+		//console.log(two); // error
+		console.log(three); // tres
+		
+		function red() {
+			var result = "";
+			var magenta = function(length) {
+				result += "/";
+				for (var i=0; i<length; i++;){
+					result = result + "m";
+				};
+			};
+			var burgundy = function(length) {
+				result += "/";
+				for (var i=0; i<length; i++;){
+					result = result + "b";
+				};
+			};
+			magenta(5);
+			burgundy(10);
+			magenta(7);
+			burgundy(11);
+			
+			return result;
+		
+		};
+		
+		console.log(red());
+		
+			
+		</script>
+	</body>
+</html>

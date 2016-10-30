@@ -1,0 +1,32 @@
+p {
+	text-align:left; 
+	font-size:120%;
+
+}
+.row {
+    overflow: hidden; 
+}
+
+.row [class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+ .row{
+	 padding:20px;
+ }
+ .map {
+	 display:block;
+	 width:80%;
+	 margin:auto;
+ }
+ .boxlink {
+	 display:block;
+	 width: 60%;
+	 margin:auto;
+	 text-align:center;
+
+ }
+ .buy {
+	 background-color:#dbdbdb;
+	 
+ }

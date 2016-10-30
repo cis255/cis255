@@ -1,0 +1,73 @@
+<DOCTYPE!html>
+<html>
+	<body>
+		<script>
+			
+			//build your own more elaborate functions
+			
+			function myFun(p1, p2, p3, p4){
+				document.write("p1: " + p1 + "<br />p2: " + p2 +"<br />p3: " + p3 +"<br />p4: " + p4 );
+			}
+			
+			myFun();
+			document.write("<hr />");
+			myFun(1,2,3,4);
+			document.write("<hr />");
+			myFun(1,2,3,4,5,6);
+			document.write("<hr />");
+			
+			var f = function () {return "fff";}
+			document.write("<br />" + f());
+			document.write("<br />" + f);
+			document.write("<hr />");
+			
+			myFun(f, f(), "String", myFun());
+			
+			document.write("<hr />");
+			
+			var zzz = function (zzz) {
+				return "My Guy";
+			}
+			var greet = function (zzz) {
+				return "hello, " + zzz;
+			}
+			document.write(greet);
+			document.write("<hr />");
+			document.write(greet());
+			document.write("<hr />");
+			
+			
+			function sayGoodbye (zzz) {
+				return "Goodbye, " + zzz;
+			}
+			
+			
+			document.write("<br />" + sayGoodbye(greet(zzz)));
+			document.write("<br />" + sayGoodbye(greet(zzz())));
+			document.write("<br />" + sayGoodbye(zzz));
+			document.write("<br />" + sayGoodbye(zzz()));
+			
+			//write own function
+			function testFunction(x, y) {
+				return x*y;
+			}
+			
+			document.write("<hr /> <br /> " + testFunction(3,4));
+			//write your own function that accepts a function as param
+			var xyz = function (xyz) {
+				return 4;
+			}
+			document.write("<br />"+ xyz);
+			document.write("<br />"  + xyz());
+			var abc = function (xyz) {
+				return  (5+ xyz);
+			}
+			document.write("<br />" + abc(xyz()));
+			//write your own IIFE
+			(function wow() {
+			document.write("<br /> IIFE TEST WR");
+			})();
+			
+		</script>
+	</body>
+</html>
