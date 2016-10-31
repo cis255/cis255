@@ -1,0 +1,68 @@
+<DOCTYPE!html>
+<html>
+	<body>
+		<form action="login.php" method="post" id="loginform">
+			<label>Username</label>
+			<input type="text" name="username" id="username" />
+			<br />
+			<label>Password</label>
+			<input type="password" name="password" id="password" />
+			<br />
+			<input type="submit" value="Submit" id="submit" />	
+		</form>
+		<button type="button" id="roll" onclick="roll();">roll</button>
+
+		<script>
+			
+			var x = document.getElementById("submit");
+			x.value= "PUSH THE BUTTON";
+			x.style ="color:red;";
+			x.onclick = "alert('alert')";
+			var d1, d2, d3,d4, d5;
+			function roll () {
+			d1 = Math.floor(1 + (6*Math.random()));
+			d2 = Math.floor(1 + (6*Math.random()));
+			d3 = Math.floor(1 + (6*Math.random()));
+			d4 = Math.floor(1 + (6*Math.random()));
+			d5 = Math.floor(1 + (6*Math.random()));
+			document.write("<br /> 1. " + d1);
+			document.write("<br /> 2. " + d2);
+			document.write("<br /> 3. " + d3);
+			document.write("<br /> 4. " + d4);
+			document.write("<br /> 5. " + d5);
+			if(d1 == d2 && d1 ==d3 && d1==d4 && d1 == d5) {
+			document.write("<br /> yahtzee <br />");
+			}
+			else {
+			document.write("<br /> Aw no yahtzee <br />");
+			}
+			var btn = document.createElement('button'); // button element
+			var t = document.createTextNode("FINISH GAME");
+			btn.appendChild(t);
+			btn.onclick = reroll;
+			document.body.appendChild(btn);
+			function createNewCheckboxt(name, id){
+				var checkbox = document.createElement('input'); 
+				checkbox.type= 'checkbox';
+				checkbox.name = name;
+				checkbox.id = id;
+				return checkbox;
+			}
+			function createLabel(text) {
+				var lbl = document.createElement('label');
+				return lbl; 
+			}
+			
+			document.body.appendChild(createNewCheckboxt('d1', 'd1'));
+			document.body.appendChild
+				function reroll () {
+					
+				}
+			};
+			
+			
+			//let the user choose which dice to re-roll to retry for yahtzee JUST ONE RETHROW
+			
+		</script>
+	</body>
+</html>

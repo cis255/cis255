@@ -1,0 +1,145 @@
+body{
+	
+	/*  image source: http://bg.siteorigin.com/  */
+	background-image:url(images/redback.png);
+	background-repeat:repeat;
+}
+.container{
+	background-color:white;
+}
+nav{
+	background-color:#990000;
+}
+.topbanner img{ 
+	width:100%;
+}
+
+a:link {
+	color:white;
+}
+a:visited {
+	color:white;
+	
+}
+.navbar ul li a:hover {
+	background-color:#800000;
+}
+.navbar ul li {
+	width:120px;
+	text-align:center;
+	font-family:'Raleway',arial,sans-serif;
+	font-size:18px;
+}
+.navbar-brand {
+	font-family:'Raleway',arial,sans-serif;
+	font-size:24px;
+	font-weight:600;
+}
+.icon-bar {
+	width:2%;
+	height:auto;
+	background-color:white;
+}
+.mainbody{
+	text-align:center;
+	color:black;
+	margin-bottom:20px;
+}
+.boxlink {
+	border:1px solid #990000;
+	background-color:#990000;
+	padding:10px;
+	border-radius:10px;
+}
+h1, h2, h3 {
+	font-family:'roboto slab',arial,sans-serif;
+}
+p{
+	font-family:'raleway',arial,sans-serif;
+	padding:20px;
+}
+h1 {
+	font-size:30px;
+	color:#990000;
+	font-weight:700;
+	margin:0;
+}
+h2 {
+	font-size:400%;
+	color:white;
+	text-align:left;
+	padding-left:50px;
+}
+h3{
+	font-size:22px;
+	font-style:italic;
+	font-weight:100;
+}
+hr{
+	padding:20px;
+}
+footer {
+	color:#c3cee0;
+}
+.sponsorimage {
+	height:20%;
+	width:auto;
+	margin:30px;
+}
+
+.speaker {
+	text-align:left;
+
+	
+}
+.profilepic{
+	height:180px;
+	display:block;
+	margin:auto;
+	padding-top:20px;
+	padding-bottom:20px;
+	
+}
+.mainbodyimage {
+	height:200px;
+	width:auto;
+}
+.icon {
+
+	height:50px;
+	width:auto;
+	margin-bottom:10%;
+}
+.iconbar {
+	margin-top:30px;;
+}
+.tedlogo {
+	height:60px;
+	width:auto;
+}
+a.learnmore:link{
+	color:#990000;
+}
+a.learnmore:visited{
+	color:#990000;
+}
+li.learnmore  {
+	list-style-type:none;
+	font-size:13pt;
+	text-align:left;
+}
+ul.learnmore{
+	
+	margin-left:20%;
+}
+h1.learnmore {
+	color:black;
+}
+.row {
+    overflow: hidden; 
+}
+.row [class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+

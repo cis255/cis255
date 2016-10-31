@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--Name: Michael Drayton
+	  Program: js_test05
+	  Description: program is a javascript testing program that deals with some custom functions-->
+
+<html>
+
+	<head>
+		<title>js_test05</title>	<!--Title of the program-->
+	</head>
+	
+	<body>
+	
+	<!--First function is tied to this button-->
+	<button onClick="randomNumGen();">Click!</button>
+	<p id="numberGen">Numbers will appear here.</p>
+	
+	<!--For funsies, second part is tied to clicking a paragraph. Just because.-->
+	<p id="differentNumGen" onClick="secondNumGenPrint(secondNumGen);">Numbers will appear if you click me, too</p>
+	
+	<!--This will display the value of a variable that is an IIFE-->
+	<p id="IIFEPrint"></p>
+		
+		<script>
+			
+			// Function generates a random number between 1 and 5
+			function randomNumGen()
+			{
+				// preset values, number is initialized just to avoid any potential issues.
+				var number = 0;
+				var max = 5;
+				var min = 1;
+				
+				// number is set to an integer number generated in the range of min to max, Math.floor() used to prevent rounding errors.
+				number = Math.floor(Math.random() * (max - min + 1) + min);
+				
+				// Prints the preset min and max as well as the generated number.
+				document.getElementById("numberGen").innerHTML = "A number was generated between " + min + " and " + max + " it was: " + number + "<br />";
+			}
+			
+			// Another random number generator. I use these frequently if I'm left to my own devices.
+			function secondNumGen()
+				{
+					return(Math.floor(Math.random() * 10));
+				}
+			
+			// Function has second random number generator as a parameter!
+			function secondNumGenPrint(secondNumGen)
+			{
+				// variable used to hold returned value from function execution.
+				var aNum = secondNumGen();
+				document.getElementById("differentNumGen").innerHTML = "Randomly generated number: " + aNum;
+			}
+			
+			// iife example. I went simple here because I'm still a bit shakey on doing this.
+			var iife = function() {return "This string was an iife"}
+			
+			// Prints the iife definition
+			document.getElementById("IIFEPrint").innerHTML = iife;
+
+		</script>
+		
+	</body>
+	
+</html>
+			

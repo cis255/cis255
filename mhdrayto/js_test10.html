@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+	<body>
+	
+	<p id="yahtzee" />
+	
+		<form action="#" method="post" id ="loginform">
+			<label>Username:</label> <br />
+			<input type="text" name="username" id="username" /> <br />
+			<label>Password:</label> <br />
+			<input type="password name="password" id="password" /><br />
+			<input type="submit" id="submit" value="Submit" /> <br />
+			<button id="message">A Button</button>
+		</form>
+		
+		<script>
+			var x = document.getElementById("submit");
+			var v = document.getElementById("message");
+			x.value = "Click me."
+			x.style = "color: red;";
+			//v.onclick = alert('You clicked.');
+			/*v.onmouseover = function () {
+				var date = new Date();
+				console.log("Date: " + date);
+			};*/
+			
+			var d5 = [];
+			
+			for(var c = 0; c < 5; c++)
+			{
+				d5[c] = (Math.floor(Math.random() * 6 + 1));
+				console.log(d5[c]);
+			}
+			
+		</script>
+	</body>
+</html>

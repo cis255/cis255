@@ -1,0 +1,182 @@
+<DOCTYPE!html>
+<!--
+-FileName: Schedule.html
+-Author:   Alissa Myers
+-Class:    CIS 255
+-
+- Details:  Organization
+-           TopBanner
+-		    Navbar
+-		    Mainbody
+-				Schedule Table
+-				Location Button
+-		        Social bar and TEDxinfo
+-		    Footer
+-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- js for navbar-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
+		<!-- fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Raleway:200,200i,300,300i,400,700|Roboto+Slab:100,300,400,700" rel="stylesheet">
+		
+		<!--main site styles -->
+		<link rel="stylesheet" type="text/css" href="A.css">
+		
+		<!-- page specific styles -->
+		<link rel="stylesheet" type="text/css" href="sch.css">
+	</head>
+	
+	<body>
+	
+		<!-- begin div main -->
+		<div class="container id="main">
+		
+			<!-- begin div for banner -->
+			<div class="topbanner">
+				&nbsp
+				<img src="images/schedulebanner.png" />
+			</div>
+			<!-- end div for banner -->
+			
+			<!--begin navbar -->
+			<div class="navbar">
+				 <nav class="navbar ">
+					<div class="container-fluid">
+						<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="home.html">TEDxSVSU</a>
+						</div>
+						<div class="collapse navbar-collapse" id="myNavbar">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="home.html">Home</a></li>
+							<li><a href="tickets.html">Tickets</a></li>
+							<li><a href="speakers.html">Speakers</a></li>
+							<li><a href="Schedule.html">Schedule</a></li>
+							<li><a href="Contact.html">Contact</a></li>
+						</ul>
+						
+						</div>
+	
+					</div>
+				</nav>
+			</div>
+			<!-- end navbar -->
+			
+			<!-- begin div mainbody -->
+			<div class="mainbody">
+				<h1>Schedule of Speakers</h1>
+				<p class="pinfo">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				
+				<!-- begin div for schedule -->
+				<div class="schedule">
+					<table>
+							<tr>
+								<td class="headtext time">Time</td>
+								<td class="headtext event">Event</td>
+							</tr>
+							
+							<!-- copy a table row <tr> entirely for a new entry-->
+							<tr>
+								<td class="time">00:00</td>
+								<td class="event"><span class="sName">SpeakerName-</span>  Their presentation title</td>
+							</tr>
+							<tr>
+								<td class="time">00:00</td>
+								<td class="event"><span class="sName">SpeakerName-</span>  Their presentation title</td>
+							</tr>						
+							<tr>
+								<td class="time">00:00</td>
+								<td class="event"><span class="sName">SpeakerName-</span>  Their presentation title</td>
+							</tr>					
+							<tr>
+								<td class="time">00:00</td>
+								<td class="event"><span class="sName">SpeakerName-</span>  Their presentation title</td>
+							</tr>
+							<tr>
+								<td class="time">00:00</td>
+								<td class="event"><span class="sName">SpeakerName-</span>  Their presentation title</td>
+							</tr>
+							<tr>
+								<td class="time">00:00</td>
+								<td class="event"><span class="sName">SpeakerName-</span>  Their presentation title</td>
+							</tr>
+							<tr>
+								<td class="time">00:00</td>
+								<td class="event"><span class="sName">SpeakerName-</span>  Their presentation title</td>
+							</tr>
+							<tr>
+								<td class="time">00:00</td>
+								<td class="event"><span class="sName">SpeakerName-</span>  Their presentation title</td>
+							</tr>
+						
+					</table>
+					
+					<!-- link to tickets page -->
+					<p><a href="tickets.html" class="boxlink">Click here for location information</a></p>
+				</div>
+				<!--end schedule div -->
+				
+				<p> &nbsp </p>
+				<hr />
+				
+				<!-- begin social bar and TED info -->
+				<div class="socialbar row">
+					<div class="iconbar col-lg-6 col-md-6">
+						<img src="images/tedxsvsulogo.jpg" class="tedlogo" />
+						<br />
+						<!--https://www.iconfinder.com/iconsets/social-media-icons-the-circle-set-->
+						<a href="https://www.facebook.com/tedxsvsu"><img src="images/facebook.png" class="icon" /></a>
+						<a href="https://twitter.com/tedxsvsu"><img src="images/twitter.png" class="icon" /></a>
+						<a href ="https://www.instagram.com/tedxsvsu/"><img src="images/instagram.png" class="icon" /></a>
+						<a href ="https://www.youtube.com/results?search_query=tedxsvsu"><img src="images/youtube.png" class="icon" /></a>
+						<br />
+						<br />
+					</div>
+					<div class="learnmore col-lg-6 col-md-6">
+						<h1 class="learnmore">Learn More About TED</h1>
+						<br />
+						<ul class="learnmore">
+							<li class="learnmore"><a href="https://www.ted.com/about/our-organization/history-of-ted" class="learnmore">History of TED</a></li>
+							<li class="learnmore"><a href="http://www.ted.com/participate/organize-a-local-tedx-event/before-you-start/what-is-a-tedx-event" class="learnmore">What is a TED Event?</a></li>
+							<li class="learnmore"><a href="https://www.ted.com/participate/organize-a-local-tedx-event/before-you-start/tedx-rules" class="learnmore">TEDx Rules</a></li>
+							<li class="learnmore"><a href="https://www.ted.com/tedx/events?autocomplete_filter=michigan&when=upcoming" class="learnmore">Find TEDx events in Michigan</a></li>
+							<li class="learnmore"><a href="http://www.ted.com/tedx/events/15596" class="learnmore">Official TEDxSVSU page</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- end social bar and TED info-->
+				
+				<!--begin footer -->
+				<footer class="col-lg-12">
+				<hr />
+				<p>&copy Alissa Myers 2016</p>
+				</footer>
+				<!-- end footer -->
+				
+			</div>
+			<!-- end div mainbody-->
+			
+		</div>
+		<!--end div  main-->
+		
+	</body>
+</html>
+
