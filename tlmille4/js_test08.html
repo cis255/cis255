@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript - Example 8</title>
+	</head>
+
+	<body>
+		<h2>Exercise 08 - Array of Functions</h2>
+		<p id = "label">Enter a number:</p>
+		<input type="text" id="inputNum"/>
+		<button onclick="performArrayCalc();">Enter</button>
+		<p id = "result"></p>
+		<script>
+			//Declaring an Array of Functions
+			var arrayFunctions = 
+				[
+					function add2(num) { return(Number(num) + 2); },
+					function subtract4(num) { return(Number(num) - 4); },
+					function mod5(num) { return(Number(num) % 5); },
+					function power3(num) { return(Math.pow(Number(num), 3)); },
+					function toString(item) { return(item.toString()); }
+				];
+				
+			function performArrayCalc()
+			{
+				var input = document.getElementById("inputNum").value;
+				var output = document.getElementById("result");
+				
+				if(!isNaN(input))
+				{
+					for(i = 0; i < arrayFunctions.length; i++)
+					{
+						switch(i)
+						{
+							case 0:
+								output.innerHTML += input + " + 2: " + arrayFunctions[i](input) + "<br/>";
+								break;
+							case 1:
+								output.innerHTML += input + " - 4: " + arrayFunctions[i](input) + "<br/>";
+								break;
+							case 2:
+								output.innerHTML += input + " % 5: " + arrayFunctions[i](input) + "<br/>";
+								break;
+							case 3:
+								output.innerHTML += input + " ^ 3: " + arrayFunctions[i](input) + "<br/>";
+								break;
+							case 4:
+								output.innerHTML += "As String: " + arrayFunctions[i](input) + "<br/><br/>";
+								break;
+						}
+					}
+				}
+				else
+					output.innerHTML += "Input is not a number! Please try again. <br/><br/>"
+
+			}			
+		</script>
+	</body>
+</html>
