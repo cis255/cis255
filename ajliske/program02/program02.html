@@ -11,10 +11,10 @@
 
 var x;
 var out = "";
-var isCountry;
+
 
 var xmlhttp = new XMLHttpRequest();
-var url = "/~ajliske/cis255/ajliske/classwork/jsonFiles/countries.txt";
+var url = "https://api.svsu.edu/courses";
 var myArr;
 
 
@@ -22,7 +22,7 @@ var myArr;
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         myArr = JSON.parse(this.responseText);
-        //myFunction(myArr); 
+        //myFunction(this.responseText); 
     }
 };
 
@@ -32,34 +32,24 @@ xmlhttp.send();
 
 
 function myFunction(arr) {
+
+//var arr = JSON.parse(JSON.stringify(response));
 x = (prompt("Enter Country Name. Enter 'clear' to clear list.", "Country Name"));
     var i;
 	isCountry = false;
-    for(i = 0; i < arr.length; i++) {
-		if(arr[i].name.toUpperCase() == x.toUpperCase())
+    for(i = 0; i < arr.courses.length; i++) {
+		if(arr.courses[i].prefix.toUpperCase() == x.toUpperCase())
 		{
-		out += ( arr[i].name + " is a country. It's international code is: " +
-        arr[i].code + "<br />");
-		isCountry = true;
-		}
-		else if (x.toUpperCase() == "CLEAR"){
-		out = "";
-		isCountry = true;
-		}
-		}
-		if (isCountry == false){
-		out += (x + " is not a country.<br />")
+		out +=  (arr.courses[i].prefix + 
+        arr.courses[i].courseNumber + "<br />");
+		
 		}
 		
+		}
     
  document.getElementById("id01").innerHTML = out;
  }
 
-
-
-		
-		
-		
 		</script>
 		
 	</body>
