@@ -1,0 +1,67 @@
+<html>
+
+    <body>
+	<p>Modified exercise 7- made it for countries of the world rather than provinces of canada </p>
+	<p>Push Button to Enter a Country Name. </p>
+
+    <button onclick="myFunction(myArr)">Enter Country</button>
+	
+	<div id="id01"></div>
+
+<script>
+
+var x;
+var out = "";
+var isCountry;
+
+var xmlhttp = new XMLHttpRequest();
+var url = "/~ajliske/cis255/ajliske/classwork/jsonFiles/countries.txt";
+var myArr;
+
+
+
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myArr = JSON.parse(this.responseText);
+        //myFunction(myArr); 
+    }
+};
+
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+
+
+function myFunction(arr) {
+x = (prompt("Enter Country Name. Enter 'clear' to clear list.", "Country Name"));
+    var i;
+	isCountry = false;
+    for(i = 0; i < arr.length; i++) {
+		if(arr[i].name.toUpperCase() == x.toUpperCase())
+		{
+		out += ( arr[i].name + " is a country. It's internatinal code is: " +
+        arr[i].code + "<br />");
+		isCountry = true;
+		}
+		else if (x.toUpperCase() == "CLEAR"){
+		out = "";
+		isCountry = true;
+		}
+		}
+		if (isCountry == false){
+		out += (x + " is not a country.<br />")
+		}
+		
+    
+ document.getElementById("id01").innerHTML = out;
+ }
+
+
+
+		
+		
+		
+		</script>
+		
+	</body>
+</html>

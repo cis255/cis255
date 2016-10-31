@@ -1,0 +1,108 @@
+<DOCTYPE!html>
+<html>
+	<body>
+		<label >Enter a number</label>
+		<input type="text" id="in01" onkeyup="call();" />
+		<p id="out01">OUTPUT</p>
+		<script>
+			//var b = [1,2,3];
+			//b[3] = 17;
+			//
+			//function myArrayFun() {
+			//	var elem = document.getElementById("out01");
+			//	var i = 0;
+			//	
+			//	while (i < 10) {
+			//	b[i] = i;
+			//	i++;
+			//	}
+			//	delArray();
+			//	for(i = b.length-1; i >= 0; i-- ) {
+			//		var tn = b[i];
+			//		elem.appendChild(document.createElement("br"));
+			//		elem.appendChild(document.createTextNode(tn));
+	        //
+			//	}
+			//}
+			//
+			//function delArray() {
+			////replace array b with only its elements 0-3 and 8-9. 
+			//b.splice(4, 4); 
+			//}
+			//
+			// for two points, ceate an array that contains 5 functions: add2(), subtract4(), mod5(), power3(), toString()
+			//write a function to loop throug hthe array of functions 
+			var call = function() {
+				var z = Number(document.getElementById("in01").value);
+				loopThrough(z);
+				loopThrough2(z);
+			}
+			
+			//if z is constant through all functions (stays input value)
+			function loopThrough(z) {
+			var elem = document.getElementById("out01");
+			elem.appendChild(document.createElement("br"));
+			elem.appendChild(document.createTextNode("Your Number is: " + z));
+					function add2(z) {
+						return (z+2);
+					}
+					function subtract4(z) {
+						return (z-4);
+					}
+					function mod5(z) {
+						return (z%5);
+					}
+					function power3(z) {
+						return(Math.pow(z,3));
+					}
+					function toString(z){
+						z = String(z);
+					
+					return (z +" is of type " + typeof(z));
+					}
+					var c = [add2, subtract4, mod5, power3,toString ];
+
+				for(var i= 0; i < 5; i ++) {
+					var tn = c[i](z);
+					elem.appendChild(document.createElement("br"));
+					elem.appendChild(document.createTextNode(tn));
+					
+				}
+			}
+			
+			//if z changes based on previous functions
+			function loopThrough2(z) {
+			var elem = document.getElementById("out01");
+			elem.appendChild(document.createElement("br"));
+			elem.appendChild(document.createTextNode("Your Number is: " + z));
+					function add2(z) {
+						return (z+2);
+					}
+					function subtract4(z) {
+						return (z-4);
+					}
+					function mod5(z) {
+						return (z%5);
+					}
+					function power3(z) {
+						return(Math.pow(z,3));
+					}
+					function toString(z){
+						z = String(z);
+					
+					return (z +" is of type " + typeof(z));
+					}
+					var c = [add2, subtract4, mod5, power3,toString ];
+
+				for(var i= 0; i < 5; i ++) {
+					var tn = c[i](z);
+					z = c[i](z);
+					elem.appendChild(document.createElement("br"));
+					elem.appendChild(document.createTextNode(tn));
+					
+				}
+			}
+		</script>
+	</body>
+	
+</html>

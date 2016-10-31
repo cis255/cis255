@@ -1,0 +1,77 @@
+<!doctype html>
+<!-- file: js_test12.html 
+JS HTML DOM (Document Object Model)
+Objects -->
+<html>
+
+	<head>
+	</head>
+	
+	<body>
+		<p id="js12"> Hello </p>
+		
+		<script>
+			document.write("Goodbye");
+			var obj = document.getElementById("js12");
+			obj.innerHTML = ("So long");
+			obj.setAttribute("style", "color: red;");
+			obj.setAttribute("onclick", "alert('hey');");
+			
+			obj2 = document.createElement("hr");
+			obj.appendChild(obj2);
+			var b = document.getElementsByTagName("body");
+			ul = document.createElement("ul");
+			obj.appendChild(ul);
+			var li1 = document.createElement("li");
+			var li2 = document.createElement("li");
+			var li3 = document.createElement("li");
+			var li4 = document.createElement("li");
+			var li5 = document.createElement("li");
+			li1.innerHTML = "Blue";
+			li2.innerHTML = "Green";
+			ul.appendChild(li1);
+			ul.appendChild(li2);
+			
+			
+			//add an ordered list with 5 list elements to the body. 
+			//The list items must be Ant, Bat, Cat, Dog, Elephant.
+			ol = document.createElement("ol");
+			obj.appendChild(ol);
+			
+			var list1 = document.creatElement("li");
+			var list2 = document.createElement("li");
+			var list3 = document.createElement("li");
+			var list4 = document.createElement("li");
+			var list5 = document.createElement("li");
+			
+			list1.innerHTML = "Ant";
+			list2.innerHTML = "Bat";
+			list3.innerHTML = "Cat";
+			list4.innerHTML = "Dog";
+			list5.innerHTML = "Elephant";
+			
+			ol.appendChild(list1);
+			ol.appendChild(list2);
+			ol.appendChild(list3);
+			ol.appendChild(list4);
+			ol.appendChild(list5);
+			
+			//zebra stripe the unordered list
+			ul.firstChild.style.backgroundColor = "lightgray";
+			var ns = null;
+			var current = ul.firstChild;
+			
+			while (current != null) {
+				ns = current.nextSibling;
+				ns = ns.nextSibling;
+				ns.style.backgroundColor = "lightgray";
+			}
+			
+			//Simple animations
+			
+			
+		</script>
+		
+	</body>
+	
+</html>

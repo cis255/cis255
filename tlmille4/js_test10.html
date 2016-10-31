@@ -1,0 +1,83 @@
+
+<!doctype html>
+<!-- file: js_test10.html 
+Events + Yahtzee
+some of this code was copied from 
+http://www.w3schools.com/js/js_events.asp
+-->
+<html>
+	
+	<body>
+			<button id="d1" onclick="tryAgain(this);">D1</button>
+			<button id="d2" onclick="tryAgain(this);">D2</button>
+			<button id="d3" onclick="tryAgain(this);">D3</button>
+			<button id="d4" onclick="tryAgain(this);">D4</button>
+			<button id="d5" onclick="tryAgain(this);">D5</button>
+			<p id="result"></p>
+			
+		<script>
+			playCounter = 0;
+			function tryAgain(ele)
+			//try to roll the selected dice again
+			{
+				var id = ele.id;
+				switch(id)
+				{
+					case 'd1':
+						d1 = reRoll(); 
+						break;
+					case 'd2':
+						d2 = reRoll();
+						break;
+					case 'd3':
+						d3 = reRoll();
+						break;
+					case 'd4':
+						d4 = reRoll();
+						break;
+					case 'd5':
+						d5 = reRoll();
+						break;
+				}
+				refresh();
+			}
+			
+			function reRoll()
+			//reroll the selected die
+			{
+				return Math.floor(1 + 6 * Math.random()); 
+			}
+						
+			function refresh()
+			//refresh the screen to reflect the new die changes
+			{
+				if(playCounter < 2)
+				{
+					playCounter++;
+					document.getElementById("result").innerHTML += "<br/>" + d1 + " " + d2 + " " + d3 + " " + d4 + " " + d5;
+					if(d1==d2 && d1==d3 && d1==d4 & d1==d5) 
+						document.getElementById("result").innerHTML += "<br />YAHTZEE<br />";
+					else 
+						document.getElementById("result").innerHTML += "<br />Try again<br />";
+				}
+				else
+					document.getElementById("result").innerHTML += "<br />You've used up your chances. Refresh the page to try again<br />";
+			}
+			
+			
+			d1 = Math.floor(1 + 6 * Math.random()); 
+			d2 = Math.floor(1 + 6 * Math.random()); 
+			d3 = Math.floor(1 + 6 * Math.random()); 
+			d4 = Math.floor(1 + 6 * Math.random()); 
+			d5 = Math.floor(1 + 6 * Math.random()); 
+			refresh();
+
+
+			// your mission is let the user choose which dice to re-throw
+			// your program will be one additional attempt to get a yahtzee. 
+			
+		</script>
+		
+	</body>
+	
+</html>
