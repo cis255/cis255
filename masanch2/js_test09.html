@@ -43,7 +43,9 @@
 					<li><a href="js_test07.html">Exercise 7: Functions</a></li>
 					<li><a href="js_test08.html">Exercise 8: Array of Functions</a></li>
 					<li role="separator" class="divider"></li>
-					<li class="active"><a href="js_test07.html">Exercise 9: JSON</a></li>
+					<li class="active"><a href="js_test09.html">Exercise 9: JSON</a></li>
+					<li><a href="js_test10.html">Exercise 10: Yahtzee</a></li>
+					<li><a href="js_test11.html">Exercise 11: 2-D Array</a></li>
 				</ul>
 			</li>
           </ul>
@@ -53,9 +55,6 @@
 
 
 	
-	
-    </div><!-- container -->
-	
 	<div class="container">
 		<h1 class="page-header">Exercise 09 - JSON and Sorting</h1>
 		
@@ -63,51 +62,118 @@
 		<div class="row">
 
 			<div class="col-md-6">
-				<h3>responseText</h3>
+			
+				<h3 class="sub-header">Sorted by 'prefix'</h3>
+				<div class="table-responsive">
 				
-				<p id="response"></p>
-				
-			</div><!-- col-6 -->
+					<table class="table table-striped">
+						<thead>
 						
+							<tr>
+								<th>Course Prefix</th>
+								<th>Course Number</th>
+							</tr>
+							
+						</thead>
+						<tbody id="table1">
 					
-			<div class="col-md-6">
-				<h3>JSON</h3>
+						</tbody>
+					</table>
+					
+				</div><!-- table -->
 				
-				<p id="json"></p>
-				<p id="loop"></p>
 				
 			</div><!-- col-6 -->
+
+			<div class="col-md-6">
+			
+				<h3 class="sub-header">Sorted by 'courseNumber'</h3>
+				<div class="table-responsive">
+				
+					<table class="table table-striped">
+						<thead>
+						
+							<tr>
+								<th>Course Prefix</th>
+								<th>Course Number</th>
+							</tr>
+							
+						</thead>
+						<tbody id="table2">
+					
+						</tbody>
+					</table>
+					
+				</div><!-- table -->
+				
+				
+			</div><!-- col-6 -->
+			
 
 		</div><!-- row -->
 
     </div><!-- container -->
 	
 	<script>
+	
+		// Create & parse JSON
+		var text = '{ "courses" : [' +
+						'{ "prefix":"CS" , "courseNumber":"146" },' +
+						'{ "prefix":"CS" , "courseNumber":"245" },' +
+						'{ "prefix":"CS" , "courseNumber":"316" },' +
+						'{ "prefix":"CIS" , "courseNumber":"255" },' +
+						'{ "prefix":"CIS" , "courseNumber":"311" },' +
+						'{ "prefix":"CIS" , "courseNumber":"355" },' +
+						'{ "prefix":"MATH" , "courseNumber":"261" },' +
+						'{ "prefix":"MATH" , "courseNumber":"300" },' +
+						'{ "prefix":"PHIL" , "courseNumber":"210" },' +
+						'{ "prefix":"ART" , "courseNumber":"410" },' +
+						'{ "prefix":"PHIL" , "courseNumber":"311" }' +
+						']}';
+		var json = JSON.parse(text);
 		
-		function onLoad () {
 		
-			// Output raw XMLHttpResponse
-			document.getElementById("response").innerHTML =  this.responseText;
+		/// TABLE 1
 		
-		
-			// Parse JSON
-			var json = JSON.parse(this.responseText);
-			
-			// JSON output
-			document.getElementById("json").innerHTML = json.courses.length;
-			
-			// Test output
-			var loop = document.getElementById("loop");
-			
-			for (var i = 0; i < json.courses.length; i++) {
-				loop.innerHTML = loop.innerHTML + "<p>" + json.courses[i].prefix + " - " + json.courses[i].courseNumber + " - " + json.courses[i].description + "</p>";
+		// Sort by 'courseNumber'
+		json.courses.sort(function(a, b) {
+			if (a.prefix == b.prefix) {
+				return a.courseNumber == b.courseNumber ? 0 : +a.courseNumber > +b.courseNumber ? 1 : -1;
 			}
-		}
+			
+			al = a.prefix.toLowerCase();
+			bl = b.prefix.toLowerCase();
 
-		var req = new XMLHttpRequest();
-		req.addEventListener("load", onLoad);
-		req.open("GET", "https://api.svsu.edu/courses?prefix=ECON");
-		req.send();
+			return (al < bl) ? -1 : (al > bl) ? 1 : 0;
+		});
+		
+		// Output 'table1'
+		var table = document.getElementById("table1");
+		for (var i = 0; i < json.courses.length; i++) {
+			table.innerHTML = table.innerHTML + "<tr><td>" + json.courses[i].prefix + "</td><td>" + json.courses[i].courseNumber + "</td></tr>";
+		}
+		
+		
+		/// TABLE 2
+		
+		// Sort by 'prefix'
+		json.courses.sort(function(a, b) {
+			if (a.courseNumber == b.courseNumber) {
+				al = a.prefix.toLowerCase();
+				bl = b.prefix.toLowerCase();
+
+				return (al < bl) ? -1 : (al > bl) ? 1 : 0;
+			}
+
+			return +a.courseNumber > +b.courseNumber ? 1 : -1;
+		});
+		
+		// Output 'table2'
+		var table = document.getElementById("table2");
+		for (var i = 0; i < json.courses.length; i++) {
+			table.innerHTML = table.innerHTML + "<tr><td>" + json.courses[i].prefix + "</td><td>" + json.courses[i].courseNumber + "</td></tr>";
+		}
+		
 		
 	</script>
 

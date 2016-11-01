@@ -15,6 +15,7 @@
 
     <!-- Template CSS -->
     <link href="template.css" rel="stylesheet">
+    <link href="custom.css" rel="stylesheet">
 
   </head>
 
@@ -43,7 +44,9 @@
 					<li><a href="js_test07.html">Exercise 7: Functions</a></li>
 					<li><a href="js_test08.html">Exercise 8: Array of Functions</a></li>
 					<li role="separator" class="divider"></li>
-					<li class="active"><a href="js_test07.html">Exercise 9: JSON</a></li>
+					<li><a href="js_test09.html">Exercise 9: JSON</a></li>
+					<li class="active"><a href="js_test10.html">Exercise 10: Yahtzee</a></li>
+					<li><a href="js_test11.html">Exercise 11: 2-D Array</a></li>
 				</ul>
 			</li>
           </ul>
@@ -54,60 +57,104 @@
 
 	
 	
-    </div><!-- container -->
 	
 	<div class="container">
-		<h1 class="page-header">Exercise 09 - JSON and Sorting</h1>
+		<h1 class="page-header">Exercise 10 - Yahtzee!</h1>
 		
 		<!-- Row of two columns -->
 		<div class="row">
 
 			<div class="col-md-6">
-				<h3>responseText</h3>
+			
+				<form>
+					<div class="form-group">
+						<label for="guess">Rolls left: <span id="rollsLeft">2</span></label>
+					</div>
+					<button id="submit" type="button" onclick="update()" class="btn btn-primary">Roll</button>
+				</form>
+				<br>
 				
 				<p id="response"></p>
+				<p id="noleft"></p>
 				
 			</div><!-- col-6 -->
-						
-					
+			
+			
+			
 			<div class="col-md-6">
-				<h3>JSON</h3>
-				
-				<p id="json"></p>
-				<p id="loop"></p>
+			
+				<table>
+					<tr>
+						<td>
+							<a id="d1" class="btn btn-outline btn-lg">-</a>
+						</td>
+						<td>
+							<a id="d2" class="btn btn-outline btn-lg">-</a>
+						</td>
+						<td>
+							<a id="d3" class="btn btn-outline btn-lg">-</a>
+						</td>
+						<td>
+							<a id="d4" class="btn btn-outline btn-lg">-</a>
+						</td>
+						<td>
+							<a id="d5" class="btn btn-outline btn-lg">-</a>
+						</td>
+					</tr>
+					<tr>
+						<td><input id="check1" type="checkbox"></td>
+						<td><input id="check2" type="checkbox"></td>
+						<td><input id="check3" type="checkbox"></td>
+						<td><input id="check4" type="checkbox"></td>
+						<td><input id="check5" type="checkbox"></td>
+					</tr>
+				</table>
 				
 			</div><!-- col-6 -->
+			
 
 		</div><!-- row -->
 
     </div><!-- container -->
 	
 	<script>
-		
-		function onLoad () {
-		
-			// Output raw XMLHttpResponse
-			document.getElementById("response").innerHTML =  this.responseText;
-		
-		
-			// Parse JSON
-			var json = JSON.parse(this.responseText);
+	
+		// Submit button - onclick
+		function update () 
+		{
+			// Obtain user input
+			var left = parseInt (document.getElementById("rollsLeft").innerHTML);
 			
-			// JSON output
-			document.getElementById("json").innerHTML = json.courses.length;
+			if (left > 0) {
 			
-			// Test output
-			var loop = document.getElementById("loop");
+				// Roll dice
+				if (!document.getElementById("check1").checked) {d1 = Math.ceil(6 * Math.random());}
+				if (!document.getElementById("check2").checked) {d2 = Math.ceil(6 * Math.random());}
+				if (!document.getElementById("check3").checked) {d3 = Math.ceil(6 * Math.random());}
+				if (!document.getElementById("check4").checked) {d4 = Math.ceil(6 * Math.random());}
+				if (!document.getElementById("check5").checked) {d5 = Math.ceil(6 * Math.random());} 
+				
+				// Update dice elements
+				document.getElementById("d1").innerHTML = d1;
+				document.getElementById("d2").innerHTML = d2;
+				document.getElementById("d3").innerHTML = d3;
+				document.getElementById("d4").innerHTML = d4;
+				document.getElementById("d5").innerHTML = d5;
+				
+				// Check for yahtzee
+				if (d1==d2 && d1==d3 && d1==d4 && d1==d5) {
+					document.getElementById("noleft").innerHTML = "YAHTZEE!!";
+				}
+				
+				// Update rolls left
+				document.getElementById("rollsLeft").innerHTML = parseInt (left - 1);
+				
+			} else {
 			
-			for (var i = 0; i < json.courses.length; i++) {
-				loop.innerHTML = loop.innerHTML + "<p>" + json.courses[i].prefix + " - " + json.courses[i].courseNumber + " - " + json.courses[i].description + "</p>";
+				// Output no rolls left
+				document.getElementById("noleft").innerHTML = "Sorry, no rolls left.";
 			}
 		}
-
-		var req = new XMLHttpRequest();
-		req.addEventListener("load", onLoad);
-		req.open("GET", "https://api.svsu.edu/courses?prefix=ECON");
-		req.send();
 		
 	</script>
 

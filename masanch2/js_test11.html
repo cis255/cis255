@@ -43,7 +43,9 @@
 					<li><a href="js_test07.html">Exercise 7: Functions</a></li>
 					<li><a href="js_test08.html">Exercise 8: Array of Functions</a></li>
 					<li role="separator" class="divider"></li>
-					<li class="active"><a href="js_test07.html">Exercise 9: JSON</a></li>
+					<li><a href="js_test09.html">Exercise 9: JSON</a></li>
+					<li><a href="js_test10.html">Exercise 10: Yahtzee</a></li>
+					<li class="active"><a href="js_test11.html">Exercise 11: 2-D Array</a></li>
 				</ul>
 			</li>
           </ul>
@@ -53,61 +55,116 @@
 
 
 	
-	
-    </div><!-- container -->
-	
 	<div class="container">
-		<h1 class="page-header">Exercise 09 - JSON and Sorting</h1>
+		<h1 class="page-header">Exercise 11 - 2-D Arrays</h1>
 		
 		<!-- Row of two columns -->
 		<div class="row">
 
 			<div class="col-md-6">
-				<h3>responseText</h3>
+			
+				<h3 class="sub-header">CIS Courses</h3>
+				<div class="table-responsive">
 				
-				<p id="response"></p>
-				
-			</div><!-- col-6 -->
+					<table class="table table-striped">
+						<thead>
 						
+							<tr>
+								<th>Course Prefix</th>
+								<th>Course Number</th>
+							</tr>
+							
+						</thead>
+						<tbody id="table1">
 					
-			<div class="col-md-6">
-				<h3>JSON</h3>
+						</tbody>
+					</table>
+					
+				</div><!-- table -->
 				
-				<p id="json"></p>
-				<p id="loop"></p>
 				
 			</div><!-- col-6 -->
+
+			<div class="col-md-6">
+			
+				<h3 class="sub-header">CS Courses</h3>
+				<div class="table-responsive">
+				
+					<table class="table table-striped">
+						<thead>
+						
+							<tr>
+								<th>Course Prefix</th>
+								<th>Course Number</th>
+							</tr>
+							
+						</thead>
+						<tbody id="table2">
+					
+						</tbody>
+					</table>
+					
+				</div><!-- table -->
+				
+				
+			</div><!-- col-6 -->
+			
 
 		</div><!-- row -->
 
     </div><!-- container -->
 	
 	<script>
+	
 		
-		function onLoad () {
-		
-			// Output raw XMLHttpResponse
-			document.getElementById("response").innerHTML =  this.responseText;
-		
+		// CIS TABLE
+		function onCISLoad () {
 		
 			// Parse JSON
 			var json = JSON.parse(this.responseText);
 			
-			// JSON output
-			document.getElementById("json").innerHTML = json.courses.length;
+			// Sort by 'courseNumber'
+			json.courses.sort(function(a, b) {
+				return +a.courseNumber > +b.courseNumber ? 1 : -1;
+			});
 			
-			// Test output
-			var loop = document.getElementById("loop");
+			// Test outpu
+			var table = document.getElementById("table1");
 			
 			for (var i = 0; i < json.courses.length; i++) {
-				loop.innerHTML = loop.innerHTML + "<p>" + json.courses[i].prefix + " - " + json.courses[i].courseNumber + " - " + json.courses[i].description + "</p>";
+				table.innerHTML = table.innerHTML + "<tr><td>" + json.courses[i].prefix + "</td><td>" + json.courses[i].courseNumber + "</td></tr>";
 			}
 		}
 
-		var req = new XMLHttpRequest();
-		req.addEventListener("load", onLoad);
-		req.open("GET", "https://api.svsu.edu/courses?prefix=ECON");
-		req.send();
+		var cisReq = new XMLHttpRequest();
+		cisReq.addEventListener("load", onCISLoad);
+		cisReq.open("GET", "https://api.svsu.edu/courses?prefix=CIS");
+		cisReq.send();
+		
+		// CS TABLE
+		function onCSLoad () {
+		
+			// Parse JSON
+			var json = JSON.parse(this.responseText);
+			
+			// Sort by 'courseNumber'
+			json.courses.sort(function(a, b) {
+				return +a.courseNumber > +b.courseNumber ? 1 : -1;
+			});
+			
+			// Test output
+			var table = document.getElementById("table2");
+			
+			for (var i = 0; i < json.courses.length; i++) {
+				table.innerHTML = table.innerHTML + "<tr><td>" + json.courses[i].prefix + "</td><td>" + json.courses[i].courseNumber + "</td></tr>";
+			}
+		}
+
+		var csReq = new XMLHttpRequest();
+		csReq.addEventListener("load", onCSLoad);
+		csReq.open("GET", "https://api.svsu.edu/courses?prefix=CS");
+		csReq.send();
+		
 		
 	</script>
 
