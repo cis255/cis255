@@ -47,6 +47,44 @@ http://www.w3schools.com/js/js_events.asp
 			// your mission is let the user choose which dice to re-throw
 			// your program will be one additional attempt to get a yahtzee. 
 			
+			
+			<div class="container">
+		<script>
+			function roll()
+			{
+			var i;
+			var j;
+			for (j=1; j<7;j++) {
+			i = Math.floor(Math.random()*7) + 1;  //1-6
+				if (document.getElementById("d" + j).className != "Keep"){
+					document.getElementById("d"+j).innerHTML = "<img src ='dice"+ i +".png'/>";
+				}
+			}
+			}
+			
+			function keep(ele)
+			{
+				var a = ele.id
+				document.getElementById(a).setAttribute("class", "Keep");
+				document.getElementById(a).style.borderWidth = "thick";
+				document.getElementById(a).style.borderColor = "green";
+			}
+		</script>
+		
+			<table border=1>
+			<tr>
+			<td id="d1" onClick="keep(this);"> <img src="dice1.png"/> </td>
+			<td id="d2" onClick="keep(this);"> <img src="dice-2.png"/> </td>
+			<td id="d3" onClick="keep(this);"> <img src="dice-3.png"/> </td>
+			<td id="d4" onClick="keep(this);"> <img src="dice-4.png"/> </td>
+			<td id="d5" onClick="keep(this);"> <img src="dice-5.png"/> </td>
+			<td id="d6" onClick="keep(this);"> <img src="6.png"/> </td>
+			</tr>
+
+			<input type="button" value="Roll" onClick="roll()"/>
+			</div> <!-- Close container -->
+			
+			
 		</script>
 		
 	</body>
