@@ -1,0 +1,141 @@
+<!doctype.html>
+<!-- file: js_test11.html -->
+<!-- information from: api.svsu.edu/courses -->
+<!-- XML HTTP Request -->
+
+<html>
+	<body>
+		<p id="demo"></p>
+		<button onclick="SortAndDisplayArray();">Display Classes</button>
+		<script>
+			//Array for course prefix and number
+			var CourseArray = new Array();
+			CourseArray[0] = new Array();
+			CourseArray[1] = new Array();
+		
+			//e is a string that contains a JSON object
+			var e = '{"employees":[{"firstName":"John", "lastName":"Doe"},{"firstName":"Anna", "lastName":"Smith"},{"firstName":"Peter", "lastName":"Jones"}]}';
+			
+			//j is the JSON object contained in e
+			var j = JSON.parse(e);
+			
+			//document.write(j.employees[0].firstName + " " + j.employees[0].lastName);
+			
+			
+			
+			function getTermsAndInstructors(obj)
+			{
+				//returns a string containing all terms and first instructors from a JSON object
+				str = "";
+				if (obj.courses.length == 0 ) return str;
+				var CourseArrayLength = CourseArray[0].length;
+				
+				for (var i = 0; i < obj.courses.length; i++)
+				{
+					if (CourseArray[0][CourseArray[0].length - 1] != obj.courses[i].prefix || CourseArray[1][CourseArray[1].length - 1] != obj.courses[i].courseNumber)
+					{
+						CourseArray[0][CourseArray[0].length] = obj.courses[i].prefix;
+						CourseArray[1][CourseArray[1].length] = obj.courses[i].courseNumber;
+					}
+				}
+				// document.write(obj.courses.length);
+				return str;
+			}
+			
+			//Taken from w3schools (XML Http Request)
+			function loadXMLDoc(){
+				  var xmlhttp;
+				  if (window.XMLHttpRequest) {
+					xmlhttp = new XMLHttpRequest();
+				  } else {
+					// code for older browsers
+					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				  }
+				  xmlhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						var s1 = this.responseText;
+						var o1 = JSON.parse(s1);
+						var s2 = getTermsAndInstructors(o1);
+						//document.getElementById("demo").innerHTML =
+						//this.responseText;
+					}
+				  };	
+				  xmlhttp.open("GET", url, true);
+				  xmlhttp.send();
+			}
+			
+			//CIS Courses
+			url = 'https://api.svsu.edu/courses?prefix=CIS';
+			loadXMLDoc();
+			url = 'https://api.svsu.edu/courses?prefix=CS';
+			loadXMLDoc();
+			
+			// use the code above to create a 2d array of all the cs, cis courses and sort the array by course number. (not prefix)
+			function SortAndDisplayArray()
+			{
+				quickSort(CourseArray[1], 0, CourseArray[1].length - 1);
+				for (var i = 0; i < CourseArray[0].length; i++)
+				{
+					document.write(CourseArray[0][i] + CourseArray[1][i] + "<br />");
+				}
+			}
+			
+			//Quick sort functions
+			function swap(firstIndex, secondIndex){
+				var temp = CourseArray[0][firstIndex];
+				CourseArray[0][firstIndex] = CourseArray[0][secondIndex];
+				CourseArray[0][secondIndex] = temp;
+				temp = CourseArray[1][firstIndex];
+				CourseArray[1][firstIndex] = CourseArray[1][secondIndex];
+				CourseArray[1][secondIndex] = temp;
+			}
+			
+			function partition(items, left, right) {
+				var pivot   = items[Math.floor((right + left) / 2)],
+					i       = left,
+					j       = right;
+
+
+				while (i <= j) {
+
+					while (items[i] < pivot) {
+						i++;
+					}
+
+					while (items[j] > pivot) {
+						j--;
+					}
+
+					if (i <= j) {
+						swap(i, j);
+						i++;
+						j--;
+					}
+				}
+
+				return i;
+			}
+			
+			function quickSort(items, left, right) {
+
+				var index;
+
+				if (items.length > 1) {
+
+					index = partition(items, left, right);
+
+					if (left < index - 1) {
+						quickSort(items, left, index - 1);
+					}
+
+					if (index < right) {
+						quickSort(items, index, right);
+					}
+
+				}
+
+				return items;
+			}
+		</script>
+	</body>
+</html>

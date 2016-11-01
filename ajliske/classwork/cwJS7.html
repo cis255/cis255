@@ -3,7 +3,6 @@
     <body>
 	<p>Modified exercise 7- made it for countries of the world rather than provinces of canada </p>
 	<p>Push Button to Enter a Country Name. </p>
-
     <button onclick="myFunction(myArr)">Enter Country</button>
 	
 	<div id="id01"></div>
@@ -39,7 +38,7 @@ x = (prompt("Enter Country Name. Enter 'clear' to clear list.", "Country Name"))
     for(i = 0; i < arr.length; i++) {
 		if(arr[i].name.toUpperCase() == x.toUpperCase())
 		{
-		out += ( arr[i].name + " is a country. It's internatinal code is: " +
+		out += ( arr[i].name + " is a country. It's international code is: " +
         arr[i].code + "<br />");
 		isCountry = true;
 		}
