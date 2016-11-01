@@ -3,25 +3,18 @@
 /* Padding below the footer and lighter body text */
 
 body {
-  background-color:#FF0000;
   padding-bottom: 3rem;
-  color: #FFFFFF;
-}
-
-a {
   color: #5a5a5a;
 }
 
-/* CUSTOMIZE BUTTONS
----------------------------------*/
-.btn-primary {
-	background-color:#ff0000;
+.btn {
+	color: #ffffff;
+	background-color: #aa0000;
+	border-color: #aa0000;
 }
-
-/* CUSTOMIZE NAV BAR
----------------------------------*/
-.navbar {
-  background-color:#FF0000;
+.btn:hover {
+	background-color: #990000;
+	border-color: #990000;
 }
 
 /* CUSTOMIZE THE CAROUSEL

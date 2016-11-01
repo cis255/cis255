@@ -8,14 +8,13 @@
     <meta name="description" content="">
     <meta name="author" content="Michael Sanchez">
 
-    <title>CIS 255 - JavaScript Tests</title>
+    <title>CIS 255 - TEDxSVSU - Evalution</title>
 
-    <!-- Bootstrap core CSS -->
+	<!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Template CSS -->
-    <link href="template.css" rel="stylesheet">
-    <link href="custom.css" rel="stylesheet">
+    <link href="../template.css" rel="stylesheet">
 
   </head>
 
@@ -37,7 +36,7 @@
             <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programs<span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="progTED.html">TEDxSVSU</a></li>
+					<li><a href="../progTED.html">TEDxSVSU</a></li>
 				</ul>
 			</li>
 			<li class="dropdown">
@@ -51,7 +50,7 @@
 					<li><a href="js_test08.html">Exercise 8: Array of Functions</a></li>
 					<li role="separator" class="divider"></li>
 					<li><a href="js_test09.html">Exercise 9: JSON</a></li>
-					<li class="active"><a href="js_test10.html">Exercise 10: Yahtzee</a></li>
+					<li><a href="js_test10.html">Exercise 10: Yahtzee</a></li>
 					<li><a href="js_test11.html">Exercise 11: 2-D Array</a></li>
 				</ul>
 			</li>
@@ -65,103 +64,64 @@
 	
 	
 	<div class="container">
-		<h1 class="page-header">Exercise 10 - Yahtzee!</h1>
+		<h1 class="page-header">TEDxSVSU - Evaluation</h1>
 		
 		<!-- Row of two columns -->
 		<div class="row">
 
-			<div class="col-md-6">
-			
-				<form>
-					<div class="form-group">
-						<label for="guess">Rolls left: <span id="rollsLeft">2</span></label>
-					</div>
-					<button id="submit" type="button" onclick="update()" class="btn btn-primary">Roll</button>
-				</form>
-				<br>
-				
-				<p id="response"></p>
-				<p id="noleft"></p>
-				
-			</div><!-- col-6 -->
-			
-			
-			
-			<div class="col-md-6">
-			
-				<table>
+			<div class="col-md-12"><div class="table-responsive">
+				<table class="table table-striped">
+				  <thead>
 					<tr>
-						<td>
-							<a id="d1" class="btn btn-outline btn-lg">-</a>
-						</td>
-						<td>
-							<a id="d2" class="btn btn-outline btn-lg">-</a>
-						</td>
-						<td>
-							<a id="d3" class="btn btn-outline btn-lg">-</a>
-						</td>
-						<td>
-							<a id="d4" class="btn btn-outline btn-lg">-</a>
-						</td>
-						<td>
-							<a id="d5" class="btn btn-outline btn-lg">-</a>
-						</td>
+					  <th></th>
+					  <th>TEDxSVSU 2015</th>
+					  <th>TEDxSVSU 2016</th>
+					  <th>TEDxSVSU 2017</th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <td>Presentation</td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
 					</tr>
 					<tr>
-						<td><input id="check1" type="checkbox"></td>
-						<td><input id="check2" type="checkbox"></td>
-						<td><input id="check3" type="checkbox"></td>
-						<td><input id="check4" type="checkbox"></td>
-						<td><input id="check5" type="checkbox"></td>
+					  <td>Accessibility</td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
 					</tr>
+					<tr>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <td>x ^ 3</td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <td>toString(x)</td>
+					  <td></td>
+					  <td></td>
+					  <td></td>
+					</tr>
+				  </tbody>
 				</table>
+			  </div>
 				
 			</div><!-- col-6 -->
 			
-
 		</div><!-- row -->
 
     </div><!-- container -->
 	
 	<script>
 	
-		// Submit button - onclick
-		function update () 
-		{
-			// Obtain user input
-			var left = parseInt (document.getElementById("rollsLeft").innerHTML);
-			
-			if (left > 0) {
-			
-				// Roll dice
-				if (!document.getElementById("check1").checked) {d1 = Math.ceil(6 * Math.random());}
-				if (!document.getElementById("check2").checked) {d2 = Math.ceil(6 * Math.random());}
-				if (!document.getElementById("check3").checked) {d3 = Math.ceil(6 * Math.random());}
-				if (!document.getElementById("check4").checked) {d4 = Math.ceil(6 * Math.random());}
-				if (!document.getElementById("check5").checked) {d5 = Math.ceil(6 * Math.random());} 
-				
-				// Update dice elements
-				document.getElementById("d1").innerHTML = d1;
-				document.getElementById("d2").innerHTML = d2;
-				document.getElementById("d3").innerHTML = d3;
-				document.getElementById("d4").innerHTML = d4;
-				document.getElementById("d5").innerHTML = d5;
-				
-				// Check for yahtzee
-				if (d1==d2 && d1==d3 && d1==d4 && d1==d5) {
-					document.getElementById("noleft").innerHTML = "YAHTZEE!!";
-				}
-				
-				// Update rolls left
-				document.getElementById("rollsLeft").innerHTML = parseInt (left - 1);
-				
-			} else {
-			
-				// Output no rolls left
-				document.getElementById("noleft").innerHTML = "Sorry, no rolls left.";
-			}
-		}
-		
 	</script>
 
 
