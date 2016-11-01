@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+		<h1>Derek mozden</h1>
+		
+		
+		<label>Enter a Provence</label>
+		<input type="text" id="in01" onkeyup="isProvence();" />
+		
+		<p id="out01">Output goes here</p>
+		
+		<script>
+			function testFun1() {
+				document.write("test")
+;			}
+		//demonstrate error checking.
+			function isNumber(){
+				var x = document.getElementById("in01").value;
+				if(!isNaN(x)) document.getElementById("out01").innerHTML = "Number";
+				else document.getElementById("out01").innerHTML = "Not a Number";
+				
+			}
+		
+			function isProvence(){
+				var a = document.getElementById("in01").value;
+				//if(a = "Ontario")
+				
+				switch(a) {
+					case "Ontario":
+						document.getElementById("out01").innerHTML = "Province";
+					break;
+					case "Quebec":
+						document.getElementById("out01").innerHTML = "Province";
+					break;
+					case "Manitoba":
+						document.getElementById("out01").innerHTML = "Province";
+					break;
+					case "Alberta":
+						document.getElementById("out01").innerHTML = "Province";
+					break;
+					case "British Columbia":
+						document.getElementById("out01").innerHTML = "Province";
+					break;
+					case "Saskatchewan":
+						document.getElementById("out01").innerHTML = "Province";
+					break;
+					case "Yukon":
+						document.getElementById("out01").innerHTML = "Province";
+					break;
+					case "Northwest Territories":
+						document.getElementById("out01").innerHTML = "Province";
+					break;
+					case "Nunavut":
+						document.getElementById("out01").innerHTML = "Province";
+					break;
+					case "Newfoundland":
+						document.getElementById("out01").innerHTML = "Province";
+					break;
+					case "Labrador":
+						document.getElementById("out01").innerHTML = "Province";
+					break;
+					case "Nova Scotia":
+						document.getElementById("out01").innerHTML = "Province";
+					break;
+					case "New Brunswick":
+						document.getElementById("out01").innerHTML = "Province";
+					break;
+					case "Prince Edward Island":
+						document.getElementById("out01").innerHTML = "Province";
+					break;
+					default:
+						document.getElementById("out01").innerHTML = "Not A Province";
+				}
+				
+			}
+		
+		
+		
+		
+			
+		
+		</script>
+
+	</body>
+</html> 

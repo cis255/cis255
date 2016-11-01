@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>TEDxSVSU - Tickets</title>
+
+		<!-- Bootstrap Core CSS -->
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Theme CSS -->
+		<link href="css/freelancer.css" rel="stylesheet">
+
+		<!-- Custom Fonts -->
+		<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+		<!--
+	 HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+		<!--Internal CSS-->
+		<style>
+				#navbarLogo {
+					height: 150%;
+					position: relative;
+					float: left;
+					clear: right;
+				}
+				#mainNav {
+					background-color: white;
+					position: fixed;
+				}
+				#mainHeader {
+					background: url("./img/tickets-background.jpg");
+					/* Image Credit: https://2014.nyc.wordcamp.org/get-your-tickets/ */
+					background-repeat: no-repeat;
+					background-size: cover;
+				}
+				.background-tint {
+					background-color: rgba(150, 0, 0, 0.75);
+					background-blend-mode: multiply;
+				}
+				.portfolio-link {
+					max-height: 250px;
+					width: cover;
+					overflow: hidden;
+				}
+				
+				li a, .dropbtn {
+					padding-top: 15px;
+					display: inline-block;
+					color: white;
+					text-align: center;
+					text-decoration: none;
+				}
+				
+				/* Counteracts the above effect on btn-social padding */
+				li a {
+					padding-top: 0px;
+				}
+				
+
+				li a:hover, .dropdown:hover .dropbtn {
+					text-decoration: none;
+				}
+
+				li.dropdown {
+					display: inline-block;
+				}
+				
+				.dropdown-content {
+					display: none;
+					position: absolute;
+					background-color: #f9f9f9;
+					min-width: 160px;
+					box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+					z-index: 50;
+				}
+
+				.dropdown-content a {
+					color: black;
+					padding: 12px 16px;
+					text-decoration: none;
+					display: block;
+					text-align: left;
+				}
+
+				.dropdown-content a:hover {background-color: #f1f1f1}
+				@media (min-width: 768px) {
+				
+					.dropdown:hover .dropdown-content {
+						display: block;
+					}
+					
+					li a:hover, .dropdown:hover .dropbtn {
+						background-color: red;
+						color: white;
+						text-decoration: none;
+					}
+					.navbar-custom .navbar-nav .external-nav li a:hover {
+						color: white;
+						outline: none;
+					}
+					.navbar-custom .navbar-nav .external-nav li div a:hover {
+						color: black;
+						outline: none;
+					}
+					#navbarLogo {
+					height: 300%;
+					}
+				}
+				
+				section h3.About-Header {
+					color: red;
+					text-transform: none;
+				}
+				section span.About-Header-White {
+					color: white;
+					text-transform: none;
+				}
+				section strong {
+					color: red;
+				}
+				
+				#Additional-Contact-Notice {
+					padding-left: 15px;
+				}
+				
+				section p {
+					text-align: left;
+				}
+				
+				
+		</style>
+
+	</head>
+
+	<body id="page-top" class="index">
+
+		<!-- Navigation -->
+		<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+			<a class="navbar-brand" href="#page-top"><img src="./img/TEDxSVSU Logo.png" id="navbarLogo"/></a>
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header page-scroll">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="hidden">
+							<a href="#page-top"></a>
+						</li>
+						<li class="page-scroll">
+							<a href="#event-information">Event Information</a>
+						</li>
+						<li class="page-scroll">
+							<a href="#buy">Buy</a>
+						</li>
+						<li class="page-scroll">
+							<a href="#schedule">Schedule</a>
+						</li>
+						<li class="external-nav">
+							<!-- Dropdown -->
+							<ul>
+							  <li class="dropdown">
+								<a href="./index.html" class="dropbtn"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+								<div class="dropdown-content">
+								  <a href="./index.html#portfolio">Presenters</a>
+								  <a href="./index.html#about">About</a>
+								  <a href="./index.html#contact">Contact</a>
+								</div>
+							  </li>
+							</ul>
+							<!-- End Dropdown -->
+						</li>
+						<li class="external-nav">
+							<!-- Dropdown -->
+							<ul>
+							  <li class="dropdown">
+								<a href="./Presentations.html" class="dropbtn">Presentations</a>
+								<div class="dropdown-content">
+								  <a href="./Presentations.html#2016-presentations">2016</a>
+								  <a href="./Presentations.html#2015-presentations">2015</a>
+								</div>
+							  </li>
+							</ul>
+							<!-- End Dropdown -->
+						</li>
+						<li class="external-nav">
+							<!-- Dropdown -->
+							<ul>
+							  <li class="dropdown">
+								<a href="./Engage.html" class="dropbtn">Engage</a>
+								<div class="dropdown-content">
+								  <a href="./Engage.html#contact-information">Contact Information</a>
+								  <a href="./Engage.html#apply-to-speak">Apply to Speak</a>
+								</div>
+							  </li>
+							</ul>
+							<!-- End Dropdown -->
+						</li>
+						<li class="external-nav">
+							<!-- Dropdown -->
+							<ul>
+							  <li class="dropdown">
+								<a href="./Sponsors.html" class="dropbtn">Sponsors</a>
+								<div class="dropdown-content">
+								  <a href="./Sponsors.html#covenant">Covenant Healthcare</a>
+								  <a href="./Sponsors.html#another-sponsor">Another Sponsor!</a>
+								</div>
+							  </li>
+							</ul>
+							<!-- End Dropdown -->
+						</li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+
+		<!-- Header -->
+		<header id="mainHeader">
+			<div class = "background-tint">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="intro-text">
+								<span class="name">Tickets</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- Event Information Section -->
+		<section id="event-information">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h2>Event Information</h2>
+						<hr class="star-primary">
+						<p>
+							TEDxSVSU is back for our second annual TEDx Conference!
+							<br /><br/>
+							TEDxSVSU will be held at Saginaw Valley State University in Curtis Hall and the conference will be in Banquet Rooms A & B located on the second floor. It can be reached by stairs or elevator located by the SVSU Bookstore with signs and directions posted at entryways. Parking is available in front of Curtis Hall in lots J1 and J2.
+							​<br /><br/>
+							As you've probably realized, you won't be receiving a physical ticket for TEDxSVSU. Instead, our registration volunteers will have your name (the name used to purchase tickets via PayPal) on our guest list. When you arrive on Friday, you'll check in at the registration table, give your name, and you'll be all set.
+							​<br /><br/>
+							The doors will be open at 5:00pm and attendees are encouraged to explore the exhibits outside of the Banquet Rooms. Experience virtual reality, learn about wireless security, and become familiar with credit card sized computing!
+							<br /><br/>
+							Food and snacks will be provided before and during the conference. Please be courteous to the speakers and stay seated until their Talk has concluded before standing.
+							<br /><br/>
+							TEDxSVSU will begin promptly at 6:00pm with breaks in between speakers. For more information on speakers and their 'Ideas Worth Spreading' check out their information on our website under the Speakers tab!
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Buy Section -->
+		<section class="success" id="buy">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h2>Buy</h2>
+						<hr class="star-light">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<p>
+							[Placeholder] This is where you would place a section to buy tickets, including things such as an embedded paypal. [Placeholder]
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- Schedule Section -->
+		<section id="schedule">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2 text-center">
+						<h2>Schedule</h2>
+						<hr class="star-primary">
+						<p>
+							[Placeholder] This is where you would put your schedule information [Placeholder]
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- Footer -->
+		<footer class="text-center">
+			<div class="footer-above">
+				<div class="container">
+					<div class="row">
+						<div class="footer-col col-md-4">
+							<h3>Location</h3>
+							<p>Saginaw Valley State University
+								<br>Curtiss Hall - Banquet Rooms A & B</p>
+						</div>
+						<div class="footer-col col-md-4">
+							<h3>Around the Web</h3>
+							<ul class="list-inline">
+								<li>
+									<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+								</li>
+								<li>
+									<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+								</li>
+								<li>
+									<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer-col col-md-4">
+							<h3>About Freelancer</h3>
+							<p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-below">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							Copyright &copy; TEDxSVSU 2016
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+		<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+		<div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+			<a class="btn btn-primary" href="#page-top">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+		</div>
+
+		<!-- jQuery -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Plugin JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+		<!-- Contact Form JavaScript -->
+		<script src="js/jqBootstrapValidation.js"></script>
+		<script src="js/contact_me.js"></script>
+
+		<!-- Theme JavaScript -->
+		<script src="js/freelancer.js"></script>
+
+	</body>
+
+</html>
