@@ -1,0 +1,81 @@
+<!doctype html>
+<!--file: js_test08.html-->
+
+<html>
+	<body>
+		<label>Enter a number</label>
+		<input type="text" id="in01" onkeyup="loopThruArrayOfFunctions();" />
+		<br>
+		<p id="out01">Output goes here</p>
+		
+		<script>
+			var a = new Array("1",2, "three");
+			var b = ["1",2,"three"];
+			b[3] = 17;
+			
+			function myArrayFun()
+			{
+				var elem = document.getElementById("out01");
+				var i = 0;
+				//populate array, a
+				while (i < 10)
+				{
+					a[i] = i;
+					i++;
+				}
+				//print backwards one element per line
+				a[5] = "zippdee";
+				a = delArray(a);
+				for (i = a.length - 1; i >= 0; i--)
+				{
+					var tn = a[i];
+					elem.appendChild(document.createElement("br"));
+					elem.appendChild(document.createTextNode(tn));
+				}
+			}
+			
+			// replace array, a, with only its elements 0-3 and 8-9.
+			// that is, make it so a contains only a[0], a[1], a[2], a[3], a[8], and a[9]
+			
+			function delArray(a)
+			{
+				a.splice(4, 4);
+				return a;
+			}
+			
+			// for three extra credit points create an array that contains 5 functions:
+			// add2(), subtract4(), mod5(), power3(), toString();
+			// write a function to loop through the array of functions and append text nodes to a paragraph <p>
+			// in the DOM which contains the output of a parameter.
+			
+			
+			
+			function loopThruArrayOfFunctions ()
+			{
+				var param = parseInt(document.getElementById("in01").value);
+				var FunctionArray = [
+					function add2 (input) {return input+2;},
+					function subtract4 (input) {return input-4;},
+					function mod5 (input) {return input % 5;},
+					function power3 (input) {return Math.pow(input, 3);},
+					function toString (input) {return input.toString();} ];
+				var FunctionDescription = ["Adding 2 to input returns: ", "Subtracting 4 from input returns: ", "Input mod 5 returns: ", "Input to the power of 3 returns: ", "Input as a string returns: "];
+				
+				if (!isNaN(param))
+				{
+					document.getElementById("out01").innerHTML = "You entered a number! <br />";
+					for (var i=0; i<FunctionArray.length; i++)
+					{
+						document.getElementById("out01").appendChild(document.createElement("br"));
+						document.getElementById("out01").appendChild(document.createTextNode(FunctionDescription[i]));
+						document.getElementById("out01").appendChild(document.createTextNode(FunctionArray[i](param)));
+					}
+				}
+				else
+					document.getElementById("out01").innerHTML = "Not a number";
+			}
+			
+			
+		</script>
+	</body>
+</html>
