@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- Test parsing JSON object from api.svsu.edu -->
+<html>
+	<body>
+		
+		<p id="demo"></p>
+		<script>
+			//e is a string that contains a JSON object
+			var e = 
+			{"employees":[{"firstName":"John", "lastName":"Doe"},
+			{"firstName":"Anna", "lastName":"Smith"},
+			{"firstName":"Peter", "lastName":"Jones"}]};
+			
+			var j = JSON.parse(e);
+			
+			document.write(j.employees[0].firstName + j.employees[0].lastName)
+			
+			url = 'https://api.svsu.edu/courses?prefix=CIS&courseNumber=255';
+			/*
+			var getJSON = function(url, callback) {
+				var xhr = new XMLHttpRequest();
+				xhr.open("get",url,true);
+				xhr.responseType = "json";
+				xhr.onload = function() {
+					var status = xhr.status;
+					if (status == 200){
+						callback(null, xhr.response);
+					} else {
+						callback(status);
+					}
+				};
+				xhr.send();
+				document.write(xhr.responseText);
+			};
+			
+			getJSON(url);
+			*/
+			
+			function getTermAndInstructor(obj) {
+				//returns a string containing all terms and instructors
+				str = ""; 
+				return str;
+			}
+			
+			
+			<script>
+				var xmlhttp = new XMLHttpRequest();
+				var url = "myTutorials.txt";
+				
+				xmlhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						var myArr = JSON.parse(this.responseText);
+						myFunction(myArr);
+					}
+				};
+				xmlhttp.open("GET", url, true);
+				xmlhttp.send();
+				
+				function myFunction(arr) {
+					var out = "";
+					var i;
+					for(i = 0; i < arr.length; i++) {
+						out += '<a href="' + arr[i].url + '">' + 
+						arr[i].display + '</a><br>';
+					}
+					document.getElementById("demo").innerHTML = out;
+				}
+			</script>
+			
+			
+			
+		</script>
+	</body>
+</html>

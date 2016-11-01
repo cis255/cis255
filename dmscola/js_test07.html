@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- file: js_test07.html
+-->
+<html>
+	
+	<body>
+		<label>Enter a number</label>
+		<input type="text" id="in01" onkeyup = "isNumber();" />
+
+		<P id ="out01"> Output goes here</p>
+		<script>
+		
+			// demonstrate error checking
+			
+			function isNumber() {
+				var x = document.getElementById("in01").value;
+				
+				if (!isNAN(x))
+				document.getElementById("out01").innerHTML = "Number";
+				
+				else
+				document.getElementById("out01").innerHTML = "Not a number Number";
+				
+				
+				}
+	
+			
+		</script>
+		
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+

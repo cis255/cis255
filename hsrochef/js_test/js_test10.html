@@ -1,0 +1,65 @@
+
+<!doctype html>
+<!-- file: js_test10.html 
+Events 
+some of this code was copied from 
+http://www.w3schools.com/js/js_events.asp
+-->
+<html>
+	
+	<body>
+	    <form action="login.php" method="post" id="loginform">         
+		<label>Username:</label>                                     
+		<input type="text" name="username" id="username" />	<br />   
+		<label>Password: </label>                                    
+		<input type="password" name="password" id="password" />      
+		<br />                                                       
+		<button onclick="alert('123...');">hint</button>             
+		<button id="button2">hint2</button>                          
+		<input type="submit" value="Submit" id="submit2"/>          
+		</form>                                                      
+                                                                  
+		<script>
+		//	//var x = document.getElementById("submit2");
+		//	//x.value = "Zippydee"; 
+		//	//x.style = "color: red;";
+		//	//var b = document.getElementById("button2");
+		//	//// b.onclick = alert('dude');
+		//	//b.onmouseover = function () {
+		//	//	var d = new Date(); 
+		//	//	console.log("date: " + d);
+		//	//	var f = document.getElementById("loginform");
+		//	//	f.submit();
+		//		
+		//	
+        //
+		//	};
+			var d1 = Math.floor(7*Math.random());
+			var d2 = Math.floor(7*Math.random());
+			var d3 = Math.floor(7*Math.random());
+			var d4 = Math.floor(7*Math.random());
+			var d5 = Math.floor(7*Math.random());
+			var total = d1+d2+d3+d4+d5
+			document.write("Dice1: "+d1+" <br />Dice2:  "+d2+" <br />Dice3:  "+d3+" <br />Dice4:  "+d4+" <br />Dice5:  "+d5);
+			
+			document.write("<br /> Total: "+total+"<br />");
+			
+			if(d1 == d2 == d3 == d4 == d5)
+				document.write("Bingo!");
+			
+
+
+			
+		</script>
+		
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+

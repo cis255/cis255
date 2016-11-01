@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <h2>Create and Sort JSON object</h2>
+
+        <p id="demo"></p>
+
+        <script>
+            // ******************************************************************************
+            var text = '{"courses":[' +
+                    '{"prefix":"cs","courseNum":"105" },' +
+                    '{"prefix":"cs","courseNum":"116" },' +
+                    '{"prefix":"cs","courseNum":"216" },' +
+                    '{"prefix":"cis","courseNum":"255" },' +
+                    '{"prefix":"cs","courseNum":"355" },' +
+                    '{"prefix":"cis","courseNum":"355" },' +
+                    '{"prefix":"cs","courseNum":"333" },' +
+                    '{"prefix":"math","courseNum":"355" },' +
+                    '{"prefix":"phil","courseNum":"316" },' +
+                    '{"prefix":"cs","courseNum":"316" }]}';
+
+            obj = JSON.parse(text);
+            //document.getElementById("demo").innerHTML 
+            // ******************************************************************************
+
+
+            obj.courses.sort(function (a, b) {
+				//sort first priority to courseNum
+                if (a.courseNum < b.courseNum)
+                    return -1;
+                if (a.courseNum > b.courseNum)
+                    return 1;
+                else {
+				//sort second priority to prefix
+                    if (a.prefix < b.prefix)
+                        return -1;
+                    if (a.prefix > b.prefix)
+                        return 1;
+                }
+
+            });
+
+            var i;
+            document.write("Sort by Course Number <br /> ");
+            document.write(" <br /> ");
+            for (i = 0; i < obj.courses.length; i++) {
+                document.write("<p>course #: " + obj.courses[i].courseNum +
+                        "   section: " + obj.courses[i].prefix + "</p>");
+            }
+            // ******************************************************************************
+            document.write(" <hr> ");
+            document.write(" <br /> ");
+
+            obj.courses.sort(function (a, b) {
+			//sort first priority to prefix
+                if (a.prefix < b.prefix)
+                    return -1;
+                if (a.prefix > b.prefix)
+                    return 1;
+                else {
+				//sort second priority to courseNum
+                    if (a.courseNum < b.courseNum)
+                        return -1;
+                    if (a.courseNum > b.courseNum)
+                        return 1;
+                }
+
+            });
+
+            var i;
+            document.write("Sort by Section Prefix <br /> ");
+            document.write(" <br /> ");
+            for (i = 0; i < obj.courses.length; i++) {
+                document.write("<p>section: " + obj.courses[i].prefix +
+                        "   course #: " + obj.courses[i].courseNum + "</p>");
+            }
+            // ******************************************************************************
+
+        </script>
+
+    </body>
+</html>

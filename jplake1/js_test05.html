@@ -4,7 +4,27 @@
 	</body>
 	
 	<script>
-	
+		
+		// Write my own function
+		function printSomething(thing) {
+			document.write(thing);
+		}
+		
+		// Write my own function that accpets a function as a parameter and runs it.
+		function sequencialNumbers(pFunc) {
+			for (var i = 0; i < 10; i++){
+			pFunc(i);
+			}
+		}
+		
+		sequencialNumbers(printSomething);
+		
+		// write my own IIFE
+		(function(x){
+			document.write(x);
+		})(10);
+		
+		
 	</script>
 
 </html>

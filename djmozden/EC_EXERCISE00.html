@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<h1>Derek mozden</h1>
+		<label></label>
+		<script>
+			/*var e = '{"employees":[{"firstName":"John", "lastName":"Doe"},{"firstName":"Anna", "lastName":"Smith"},{"firstName":"Peter", "lastName":"Jones"}]}';
+			var j = JSON.parse(e); 
+
+			document.write(j.employees[0].firstname);
+			*/
+			url = 'https://api.svsu.edu/courses?prefix=CIS&courseNumber=255';
+			var getJSON = function(url, callback){
+				var xhr = new XMLHttpRequest();
+				xhr.open("get",url,true);
+				xhr.responseType = "json";
+				xhr.onload = function() {
+					var status = xhr.status;
+					if (status == 200) {
+						callback(null, xhr.response);
+					} else {
+						callback(status);
+					};
+				};
+				xhr.send();
+				document.write(xhr.responseText);
+			};
+			
+			getJSON(url);
+			
+		</script>
+	</body>
+</html>

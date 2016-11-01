@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html>
+
+	<body>
+		<label>Enter a province of Canada (Hint: Capitalization Matters!)</lable>
+		<input type="text" id="in01" onkeyup="isProvince()" />
+		<br/>
+		
+		<p id="out01">Output goes here</p>
+	
+	</body>
+	<script>
+	
+		// demonstart error checking
+		
+		function isProvince(){
+			var x = document.getElementById("in01").value;
+			if(x == "Ontario" || x == "Manitoba" || x == "Quebec" || x == "New Brunswick" || x == "Nova Scotia" || x == "Manitoba" || x == "British Columbia" || x == "Prince Edward Island" || x == "Saskatchewan" || x == "Alberta" || x == "Newfoundland and Labrador"){
+			document.getElementById("out01").innerHTML = "Province of Canada!";
+			}
+			else{
+			document.getElementById("out01").innerHTML = "Not a province of Canada";
+			}
+		}
+	
+	</script>
+	
+</html>

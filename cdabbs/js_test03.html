@@ -1,0 +1,35 @@
+<html>
+	<body>
+		<script>
+			//For Loop
+			document.write("For Loop");
+			for (var a = 0; a<10; a++) {
+				document.write("<br/>hello, world");
+			}
+			
+			//While Loop
+			document.write("<br/><br/>While Loop");
+			var c = 1234567890;
+			var total = 0;
+			var counter = 0;
+			while(counter != 10){
+				total += counter % c;
+				counter++
+			}
+			document.write("<br/>1+2+3+4+5+6+7+8+9+0 = " + total);
+			
+			//Do Loop
+			document.write("<br/><br/>Do Loop");
+			var d = "zippy";
+			var e = 0;
+			document.write("<br/>");
+			do {
+				document.write(d[e]);
+				document.write("<br/>");
+				e++;
+			}
+			while(e < d.length)
+			
+		</script>
+	</body>
+</html>

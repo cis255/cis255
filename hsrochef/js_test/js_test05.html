@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+
+		<h1>Javascript Test5</h1>
+		<p>Building More Elaborate Functions</p>
+
+		<script>
+		//user-defined function
+		function myHello(){
+		document.write("<br/ >Hello World!");}
+		myHello();
+		
+		
+		function myHello15(){
+		return 1;}
+		//myHello();
+		//function w/ parameters
+		function myHello2(p1,p2,p3,p4,p5){
+		return p1+p2+p3+p4+p5;
+		}
+		
+		document.write("<br />"+myHello2(myHello15(),2,3,4,5));
+		
+		
+		
+		//IFFE
+		var myFunction = function() {return "Hello IFFE";};
+		document.write("<br />"+ myFunction()+" This is the result of myFunction()");
+		document.write("<br />"+ myFunction+" This is the result of myFunction");
+		</script>
+
+	</body>
+</html>

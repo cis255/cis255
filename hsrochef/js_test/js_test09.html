@@ -1,0 +1,82 @@
+
+<!doctype html>
+<!-- file: js_test09.html 
+Objects 
+some of this code was copied from 
+http://www.w3schools.com/js/js_objects.asp
+-->
+<html>
+	
+	<body>
+		<button type="button" onclick="myObjectFun();">Print list of cars</button>
+
+		<script>
+			function myObjectFun() {
+				var car = "Fiat";
+				// JSON - JavaScript Object Notation
+				var car1 = {
+					type:"Fiat", 
+					model:"500", 
+					color:"white",
+					odometer: function (x){console.log(x);;;;;;;;;;}
+				};
+				var car2 = {
+					type:"Chevy", 
+					model:"Malibu", 
+					color:"red",
+					odometer: function (x){console.log(2+x);}
+				};
+				var cars = [];
+				cars[0] = car1;
+				cars[1] = car2;
+				cars[2] = {
+					type:"Buick", 
+					model:"LeSabre", 
+					color:"black"
+				};
+				cars[3] = {
+					type:"Lotus", 
+					model:"Elise", 
+					color:"black"
+				};
+				for(var i=0; i<cars.length; i++) {
+					document.write(cars[i].type + "/"+cars[i].model + "<br />");
+				}
+				car1.odometer(123);
+				cars[0].odometer(456);
+				car2.odometer(123);
+				cars[1].odometer(456);
+				
+				var a = "hello";
+				var b = 5;
+				var c = true;
+				var x = new String();        // Declares x as a String object
+				var y = new Number();        // Declares y as a Number object
+				var z = new Boolean();       //	Declares z as a Boolean object
+				
+				console.log("a: " + typeof(a));
+				console.log("b: " + typeof(b));
+				console.log("c: " + typeof(c));
+				console.log("x: " + typeof(x));
+				console.log("y: " + typeof(y));
+				console.log("z: " + typeof(z));
+				
+			}
+			
+			// create an object that contains the prefixes and courseNumbers of 10 cs, cis, math and phil courses and write two functions; one to alphabetize the courses (second level sort is courseNumber) and the other to put in numerical order (second level sort is prefix)
+			
+			
+			
+		</script>
+		
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+

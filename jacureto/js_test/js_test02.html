@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>Exercise 2 - JavaScript Control Statements</h2>
+		<h3>js_test02.html should include internal javascript that tests control statements, as follows</h3>
+			<li>1. if/else using boolean operators</li>
+			<li>2. switch case using numbers</li>
+			<li>3. switch case using strings</li>
+		<br />
+
+		<h3> If/Else testing using boolean operators </h3>
+		<script>
+			js_test_bool=Boolean("True");
+			js_test_int1 = 3;
+			js_test_int2 = 4;
+			
+			if(js_test_int1==js_test_int2) 
+			{
+				document.write("js_test_int1 is equal to js_test_int2. <br />");
+			}
+			else document.write("js_test_int1 does not equal js_test_int2. <br /> <br />")
+			
+			if(js_test_int1===js_test_int2) document.write("js_test_int1 = js_test_int2 AND js_test_int1 and js_test_int2 are of the same data type. <br />");
+			else document.write("js_test_int1 and js_test_int2 are not of the same data type. <br />");
+			
+			if(js_test_bool=="False") document.write("<br /> Additionally, js_test_bool is equal to true. <br />");
+			else document.write("<br /> Additionally, js_test_bool is not equal to true.<br />")
+		</script>
+
+		<h3> Switch case testing using numbers </h3>
+		<script>
+			js_test_int1 = 5;
+			js_test_int2 = 2;
+			
+			switch(js_test_int1 + js_test_int2)
+			{
+				case js_test_int1:
+					document.write("js_test_int2 = 0, so the case for the value of js_test_int1 has been triggered. <br />");
+					break;
+				case js_test_int2:
+					document.write("js_test_int1 = 0, so the case for the value of js_test_int2 has been triggered. <br />");
+					break;
+				case 7:
+					document.write("js_test_int1 + js_test_int2 = 7, so this case has been triggered. <br />");
+					break;
+				default:
+					document.write("The default block has been triggered because no previous conditions were met. <br />");
+			}
+		</script>
+
+		<h3> Switch case testing using strings </h3>
+		<script>
+			js_test_string = "Testing, 1, 2, 3";
+			switch(js_test_string)
+			{
+				case "Testing, 1, 2, 3":
+					document.write("The appropriate Testing, 1, 2, 3 case has been triggered. <br />");
+					break;
+				case "Hello, World":
+					document.write("The appropriate case for 'Hello, World' has been triggered. <br />");
+					break;
+				default:
+					document.write("js_test_string does not have an appropriate value. Please fix it. <br />");
+			}
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,39 @@
+
+<!doctype html>
+<html>
+	<body>
+		<p id="zippidy"></p>
+		<script>
+		
+		document.write("<hr />");
+		document.write("~~Jared's Fun Facts~~");
+		document.write("<hr />");
+		
+		function myFunFunctionForFascinatingFacts (p1, p2, p3, p4){
+			document.write("Toilet was invented in what year? "+ p1);
+			document.write("<br />How many bones does a foot have? "+ p2);
+			document.write("<br />What color is hippo milk? "+ p3);
+			document.write("<br />Which Planet has the most gravity? "+ p4);
+		}
+		myFunFunctionForFascinatingFacts(1596,26,"Pink","Jupiter");
+		document.write("<br />");
+		
+		document.write("<hr />");
+		
+		// IIFE: Immediately Invoked Function Expression
+			
+			var funFactMachine = (function(name) {
+				return "These were fun facts brought to you by: " + name;
+			})("Jared Putz"); 
+			console.log(funFactMachine);
+			document.write(funFactMachine);
+			document.write("<hr />");
+
+		
+		
+
+		
+		</script>
+		
+	</body>
+</html>

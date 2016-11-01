@@ -9,48 +9,73 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	
 	</head>
-		<body>
+		<body background = "http://orig11.deviantart.net/4cba/f/2011/227/9/2/aperture_laporatories_logo_by_am_devcorp-d46muwj.png">
+		
+			<div id=cmd>
+			</div>
 		
 		<style>
-			table, th, td, tr{border: solid 2pt black;}
-			th, td {padding: 20px;	text-align: left;}
-			caption {text-align: center;font-size: 300%;}
-			#tableGood {background-color: LightSkyBlue}
-			#tableNeutral {background-color: LightSlateGray}
-			#tableEvil {background-color: Tomato}
-			td {font-size: 200%;}
-			td img{ display: block;
-					margin-left: auto;
-					margin-right: auto;}
-			
-			
-			
-			
+			@import "compass/css3";
+
+			body{
+				color: #daa520;
+				font-size: 20px;
+				padding-left: 2em;
+				}
+
+			#cmd span{
+				font-size: 30px;
+				position: absolute;
+				
+
+				-webkit-animation-direction: normal;
+				-webkit-animation-duration: 1.5s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-name: blink;
+				-webkit-animation-timing-function: ease;   
+				}
+
+			@-webkit-keyframes 'blink' {
+					0% { opacity:0 }
+					25% { opacity:1 }
+					50% { opacity: 1 }
+					75% { opacity: 1 }
+					100% { opacity: 0 }
+			}
 		</style>
 			
-			<div class="container">
-			<h1>John Lake</h1>
-			<h2>CIS-255: Client Side Web Development</h2>
-			<ul>
-				<li><a href="https://github.com/cis255/cis255">CIS Github Repos</a></li>
-				<li><a href="https://jplake1.wixsite.com/website">Wix Resume</a></li>
-				<li><a href="https://jplake1.weebly.com">Weebly Resume</a></li>
-				<li><a href="http://csis.svsu.edu/~jplake1/cis255/jplake1/orbit-v1.0/resume.html">Bootstrap Resume</a></li>
-				<li><a href="http://csis.svsu.edu/~jplake1/cis255/jplake1/js_test01.html">JavaScript Variable Example</a></li>
-				<li><a href="http://csis.svsu.edu/~jplake1/cis255/jplake1/js_test02.html">JavaScript Control Example</a></li>
-				<li><a href="http://csis.svsu.edu/~jplake1/cis255/jplake1/js_test03.html">JavaScript Loop Example</a></li>
-				<li><a href="http://csis.svsu.edu/~jplake1/cis255/jplake1/js_test04.html">JavaScript Simple / Math Function Example</a></li>
-				<li><a href="http://csis.svsu.edu/~jplake1/cis255/jplake1/alignmentchart.html">HTML table Example</a></li>
-				
-			</ul>
-					
-			</div> <!-- end: Class="container" -->
-			
-			
-			
-			
-			
+
 		</body>
+				
+		<script>
+		
+			// Javascript "borrowed" from http://codepen.io/shaundunne/pen/EixAu
+			var greeting = "Login:Username <br>Password: ********* <br>...<br>...<br>...<br>Welcome to the Appeture Science Mainframe! <br>OS - GladOS vs 1.3.4.52 <br>", 
+				cursor = "<span>&#9646;</span>",
+				cmd = $('#cmd');
+				greeting = greeting + Date();
+				greeting = greeting + "<br>...<br>#system.out.print(owner.information)<br>...<br>Owner: John Lake<br>Class: CIS255<br>...<br>#system.out.print(owner.links)<br>...<br><a href=https://github.com/cis255/cis255>CIS Github Repos</a><br><a href=https://jplake1.wixsite.com/website>Wix Resume</a><br><a href=https://jplake1.weebly.com>Weebly Resume</a><br><a href=http://csis.svsu.edu/~jplake1/cis255/jplake1/orbit-v1.0/resume.html>Bootstrap Resume</a><br><a href=http://csis.svsu.edu/~jplake1/cis255/jplake1/js_test01.html>JavaScript Variable Example</a><br><a href=http://csis.svsu.edu/~jplake1/cis255/jplake1/js_test02.html>JavaScript Control Example</a><br><a href=http://csis.svsu.edu/~jplake1/cis255/jplake1/js_test03.html>JavaScript Loop Example</a><br><a href=http://csis.svsu.edu/~jplake1/cis255/jplake1/js_test04.html>JavaScript Simple / Math Function Example</a><br><a href=http://csis.svsu.edu/~jplake1/cis255/jplake1/js_test05.html>JavaScript Function Example</a><br><a href=http://csis.svsu.edu/~jplake1/cis255/jplake1/js_test07,html>Another JS Function Example</a><br><a href=http://csis.svsu.edu/~jplake1/cis255/jplake1/js_test08.html>Javascript array of Functions Example</a><br><a href=http://csis.svsu.edu/~jplake1/cis255/jplake1/alignmentchart.html>HTML table Example</a><br>#";
+
+			function type(el,text,pos,no){
+				ctext = text.substring(0,pos)+(pos%2?cursor:cursor);
+				$(el).html(ctext);
+				if(pos==text.length){
+				$(el).html(text+cursor);
+			}
+			else{
+				window.setTimeout('type("'+el+'","'+text+'",'+(pos+1)+','+1+');',20);
+			}
+			}
+
+			$(document).ready(function(){
+			cmd.append(cursor);
+			type('#cmd',greeting,0);
+			})
+			
+		</script>
 
 </html>

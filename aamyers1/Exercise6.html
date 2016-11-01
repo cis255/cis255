@@ -1,0 +1,40 @@
+<html>
+	<body>
+		<script>
+			var one;
+			
+			(function() {
+				var two = 2, one = "uno";
+				console.log(two);
+				console.log(one);
+				//console.log(three); ERROR
+				three= "tres"
+				}) ();
+			console.log(one);
+			//console.log(two); ERROR
+			console.log(three);
+			
+		    function red() {
+				var m = "";
+				var magenta = function (length){
+				 
+					for(var i = 0; i < length; i++){
+						m+="m";
+					}
+				 }
+				var burgandy = function (length){
+				 
+					for(var i = 0; i < length; i++) {
+						m +="b";
+					}
+				 
+				}
+				magenta(5);
+				burgandy(3);
+				magenta(5);
+				burgandy(3);
+			}
+			console.log(red());
+		</script>
+	</body>
+</html>
