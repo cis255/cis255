@@ -1,0 +1,31 @@
+table {
+	max-width: 700px;
+	min-width: 60%;
+	margin:auto;
+}
+td.time {
+	text-align:left;
+	padding: 20px;
+	width: 30%;	
+}
+td.event {
+	text-align:left;
+	padding:20px;
+	width:70%;
+}
+.sName {
+	font-size:20pt;
+	color:#990000;
+	font-family:'roboto slab',arial,sans-serif;
+}
+tr:nth-child(odd){
+	background-color:#f7f6e8;
+}
+.headtext{
+	font-family:'roboto slab',arial,sans-serif;
+	font-size:25px;
+}
+.pinfo {
+	max-width:650px;
+	margin:auto;
+}

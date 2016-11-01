@@ -1,0 +1,45 @@
+<!doctype html>
+<!-- file:js_test07.html-->
+<!-- Jacob Hendricks -->
+<html>
+	<body>
+		<div class="container">
+			<h1>JS Test 07</h1>
+			<label>Enter a Number</label>
+			<input type="text" id="in01" onkeyup="isNumber()">
+			<p id="out01">Output goes here</p>
+			
+			<label>Enter your favorite Ocean</label>
+			<input type="text" id="in02" onkeyup="isOcean()">
+			<p id="out02">Output goes here</p>
+			<script>
+
+				function isNumber() {
+					var x = document.getElementById("in01").value;
+					if(!isNaN(x))
+					document.getElementById("out01").innerHTML = "Number";
+					else
+					document.getElementById("out01").innerHTML = "Not a Number";
+
+				}
+				
+				function testFun3() {
+					document.write("test");
+				}
+				
+				// write a function to test whether or not the input is a real ocean. 
+				function isOcean(){
+					var y = document.getElementById("in02").value.toLowerCase();
+					if(y == "artic" || y =="pacific" || y == "atlantic" || y == "indian"
+					|| y == "southern"
+					)
+					document.getElementById("out02").innerHTML = "That's a good ocean!";
+					else
+					document.getElementById("out02").innerHTML = "Not an Ocean";
+					
+				}
+
+
+			</script>_
+	</body>
+</html>

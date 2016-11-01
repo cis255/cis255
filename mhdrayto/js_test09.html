@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+	<body>
+	
+		<p>Creating a JavaScript Variable</p>
+		
+		<p id="demo"><button onClick="myObjectFunction();">Click me.</button></p>
+		
+		<p id="output"></p>
+	
+		<script>
+		
+			function myObjectFunction()
+			{
+				//var car = "Fiat";
+				var car = {type:"Fiat", model:"500", color:"white", odometer:function(x){console.log(x)}};
+				var otherCar = {type:"Chevrolet", model:"Malibu", color:"maroon", odometer: function(x){console.log(2 + x)}};
+				var  cars = [];
+				
+				cars[0] = car;
+				cars[1] = otherCar;
+				cars[2] = {type: "Buick", model:"LeSabre", color:"black"};
+				cars[3] = {type:"Lotus", model:"Elise", color:"black"};
+				
+				for(var i=0; i < cars.length; i++)
+					document.getElementById("output").innerHTML += cars[i].type + "/" + cars[i].model + "<br />";
+				
+				car.odometer(123);
+				cars[0].odometer(456);
+				otherCar.odometer(7);
+				cars[1].odometer(8);
+			
+			}
+			
+				
+			
+		</script>
+		
+	</body>
+	
+</html>
+			
+			

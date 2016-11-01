@@ -1,0 +1,32 @@
+<html>
+	
+	<body>
+
+    <p id="elaborate functions"></p>
+    
+		<script>
+		
+			function calculate (n1, n2) 
+			{
+				document.write("n1 = " + n1 + "  n2 = " + n2);
+				document.write("<br />n1 / n2: " + (n1 / n2));
+				document.write("<br />n1 * n2: " + (n1 * n2));
+				document.write("<br />n1 + n2: " + (n1 + n2));
+				document.write("<br />n1 - n2: " + (n1 - n2));
+				document.write("<br />n1^n2: " + (n1 ^ n2));
+			}
+			document.getElementById("calculate").innerHTML = calculate(12, 6);
+						
+			// IIFE: Immediately Invoked Function Expression
+			
+			var greetings = (function(zippy) {
+				return "<br />Hello, " + zippy;
+			})("Snake"); 
+			console.log(greetings);
+			document.write(greetings);
+			
+		</script>
+		
+	</body>
+	
+</html>

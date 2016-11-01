@@ -1,0 +1,92 @@
+<DOCTYPE!html>
+<html > 
+
+	<body>
+		<p id="output"></p>
+		<input  type="button" id="sortbtn" value="Print" name="print" onclick="myFunction();"></input>
+		<script>
+		var elem = document.getElementById("output");
+		var tn, tn1;
+		var courses = [];
+		courses[0] = {
+			prefix: "CS",
+			courseNumber: 216
+			};
+		courses[1] = {
+			prefix:"CS",
+			courseNumber:116
+		};
+		courses[2] = {
+			prefix:"MATH",
+			courseNumber:300
+		};
+		courses[3] = {
+			prefix:"MATH",
+			courseNumber:245
+		};
+		courses[4] = {
+			prefix:"CIS",
+			courseNumber:255
+		};
+		courses[5] = {
+			prefix:"CIS",
+			courseNumber:355
+		};
+		courses[6] = {
+			prefix:"CS",
+			courseNumber:105
+		};
+		courses[7] = {
+			prefix:"CIS",
+			courseNumber:400
+		};
+		courses[8] = {
+			prefix:"PHIL",
+			courseNumber:105
+		};
+		courses[9] = {
+			prefix:"CS",
+			courseNumber:316
+		};	
+		function myFunction() {
+		var m;
+		var n;
+		var d = 0;
+		for (var j =0; j<5; j++){
+			for (var i =0; i<9; i++) {
+				if(courses[i].prefix> courses[i+1].prefix) {
+					n= courses[i];
+					courses[i]= courses[i+1];
+					courses[i+1] = n;
+					
+				}
+			}
+		}
+		for(var i =0; i < 5; i ++){
+			for(var j = 0; j<9; j++){
+				if(courses[j].prefix == courses[j+1].prefix) {
+					if(courses[j].courseNumber > courses[j+1].courseNumber) {
+						d = courses[j];
+						courses[j] = courses[j+1];
+						courses[j+1] =  d;
+					}
+				}
+			}
+		}
+		printArray();
+			
+			
+			function printArray() {
+				for(var i =0; i < courses.length; i++) {
+					tn = courses[i].prefix;
+					tn1 = courses[i].courseNumber;
+					elem.appendChild(document.createTextNode(tn));
+					elem.appendChild(document.createElement("br"));
+					elem.appendChild(document.createTextNode(tn1));
+					elem.appendChild(document.createElement("br"))
+				}
+			}
+		}
+		</script>
+	</body>
+</html>
