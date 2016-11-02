@@ -8,6 +8,14 @@
 		<br />
 		
 		<p id="out01">Output goes here</p>
+		
+		</hr>
+		<label>Enter a number</label>
+		<input type="text" id="in02" onkeyup="loopThruArrayOfFunctions();" />
+		<br />
+		
+		<p id="out02">Output goes here</p>
+	
 
 		<script>
 			var a = new Array("1",2,"three");
@@ -26,7 +34,7 @@
 					elem.appendChild(document.createElement("br"));
 					elem.appendChild(document.createTextNode(tn));
 				}
-				delArray(); 
+				a = delArray(); 
 				for(i = a.length - 1; i >= 0; i--) {
 					var tn = a[i] + " - ";
 					elem.appendChild(document.createElement("br"));
@@ -39,13 +47,45 @@
 			function delArray() {
 				// changes array a to include [ a[0], a[1], a[2], a[3], a[8], a[9] ];
 				a.splice(4, 4);
+				return a;
 			}
 
 			
 			// for 3  extra credit points create an array contains 5 functions, add2(), subtract4(), mod5, power3(), toString()
 			// write a function to loop through the array of functions and append text nodes to a paragraph <p> in the DOM which contain the output of a parameter
 			
-			function loopThruArrayOfFunctions (param) {
+			function loopThruArrayOfFunctions() {
+			
+				var a = document.getElementById("in02").value;
+				var b = document.getElementById("out02");
+				var c = new Array[add2(a), subtract4(a), mod5(a), power3(a), toString(a)];
+				
+				<!-- Let's loop here -->
+				for (i = c.length - 1; i >= 0; i--){
+					var tn = c[i];
+					b.appendChild(document.createElement("br"));
+					b.appendChild(document.createTextNode(tn));
+				}
+			}
+			
+			function add2(i){
+				return ("Add2: " + (Number(i) + 2));
+			}
+			
+			function subtract4(i){
+				return ("Subtract4: " + (i - 4));
+			}
+			
+			function mod5(i){
+				return ("Mod5: " + (i % 5));
+			}
+			
+			function power3(i){
+				return ("Power3: " + Math.pow(i, 3));
+			}
+			
+			function toString(i){
+				return ("toString: " + i.toString());
 			}
 			
 		</script>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<body>
+		<p id="JS12">Hello</p>
+		<script>
+			document.write("goodbye");
+			var object = document.getElementById("JS12");
+			object.innerHTML = "so long";
+			object.setAttribute("style","color: purple");
+			object.setAttribute("onlick","alert('Hey dude');");
+			obj2 =document.createElement("hr");
+			object.appendChild(obj2);
+			var b = document.body;
+			var ul = document.createElement("ul");
+			document.body.appendChild(ul);
+			
+			var li1 = document.createElement("li");
+			var li2 = document.createElement("li");
+			var li3 = document.createElement("li");
+			var li4 = document.createElement("li");
+			var li5 = document.createElement("li");
+			li1.innerHTML = "Alligator";
+			ul.appendChild(li1);
+			li2.innerHTML = "Bat";
+			ul.appendChild(li2);
+			li3.innerHTML = "Cat";
+			ul.appendChild(li3);
+			li4.innerHTML = "Dog";
+			ul.appendChild(li4);
+			li5.innerHTML = "Elephant";
+			ul.appendChild(li5);
+			
+			
+			//add an ordered list with 5 list items to the body. list items should be:Ant, Bat, Cat,dog, Elephant,
+		</script>
+		
+	</body>
+</html>
