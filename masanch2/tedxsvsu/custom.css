@@ -1,10 +1,20 @@
-/* GLOBAL STYLES
--------------------------------------------------- */
-/* Padding below the footer and lighter body text */
+/* QUICK-FIXES */
 
 body {
   padding-bottom: 3rem;
   color: #5a5a5a;
+}
+
+#credit {
+	color:#aaaaaa;
+	position:absolute;
+	top: 534px;
+	left: 20px;
+	z-index:50;
+}
+
+.quote {
+	font-style: italic;
 }
 
 .btn {
@@ -16,13 +26,19 @@ body {
 	background-color: #990000;
 	border-color: #990000;
 }
+.btn-secondary:hover {
+	color: #cccccc;
+}
 .img-circle{
 	border-radius:50%
 }
 
+.sub-header {
+	color: #000000;
+	padding: 16px 10px;
+    border-bottom: 1px solid #aaaaaa;
 
-
-
+}
 
 
 
