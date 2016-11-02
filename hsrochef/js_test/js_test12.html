@@ -1,0 +1,105 @@
+
+<!doctype html>
+<!-- file: js_test12.html 
+JS HTML DOM (Document Object Model)
+http://www.w3schools.com/js/js_htmldom.asp
+-->
+<html>
+	<head>
+		<style>
+			#container {
+			width: 400px;
+			height: 400px;
+			position: relative;
+			background: yellow;
+			}
+			#animate {
+				width: 50px;
+				height: 50px;
+ position:absolute;
+  top: 350; /*[wherever you want it]*/
+  left:350; /*[wherever you want it]*/				background: red;
+			}
+		</style>
+	</head>
+	
+	<body>
+	
+		<p id="js12">Hello</p>
+		<p>
+			<button onclick="myMove()">Click Me</button>
+		</p>
+		<div id ="container">
+			<div id ="animate">Yeeha!</div>
+		</div>
+		
+		<script>
+			// document.write("Goodbye");
+			var obj = document.getElementById("js12");
+			obj.innerHTML = "Unordered list";
+			obj.setAttribute("style","color: red;");
+			obj.setAttribute("onclick","alert('hey dude');");
+			obj2 = document.createElement("hr");
+			obj.appendChild(obj2);
+			var b = document.body;
+			var ul = document.createElement("ul");
+			document.body.appendChild(ul);
+			var li1 = document.createElement("li");
+			var li2 = document.createElement("li");
+			var li3 = document.createElement("li");
+			var li4 = document.createElement("li");
+			var li5 = document.createElement("li");
+			li1.innerHTML = "Jellyfish";
+			li2.innerHTML = "Starfish";
+			li3.innerHTML = "Goldfish";
+			li4.innerHTML = "Blowfish";
+			li5.innerHTML = "Catfish";
+			ul.appendChild(li1);
+			ul.appendChild(li2);
+			ul.appendChild(li3);
+			ul.appendChild(li4);
+			ul.appendChild(li5);
+			
+			// add an ordered list (ol) with 5 list items (li) to the body. The list items should be animals: Alligator, Bat, Cat Dog, Elephant 
+			
+			// in class exercise
+			
+			// zebra stripe the unordered list
+			var current = ul.firstChild;
+			var ns = null;
+			while (current != null) {
+				current.style.backgroundColor = "lightgray";	
+				ns = current.nextSibling;
+				if (ns == null) current = null;
+				else current = ns.nextSibling;
+			}
+
+			
+			// Very Simple Animation
+			function myMove() {
+				var elem = document.getElementById("animate"); 
+				var pos = 350;
+				var id = setInterval(frame, 5);
+				function frame() {
+					if (pos == 0) {
+						clearInterval(id);
+					} else {
+						pos--; 
+						elem.style.top = pos + 'px'; 
+						elem.style.left = pos + 'px'; 
+					}
+				}
+			}
+		</script>
+
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+
