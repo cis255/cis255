@@ -7,9 +7,10 @@ http://www.w3schools.com/js/js_objects.asp
 <html>
 	
 	<body>
+	<div class="cars">
 		<button type="button" onclick="myObjectFun();">Print list of cars</button>
 		<hr/>
-		<button type="button" onclick="subjectsHere();">Print list of Courses</button>
+		
 		<script>
 			function myObjectFun() {
 				var car = "Fiat";
@@ -62,7 +63,11 @@ http://www.w3schools.com/js/js_objects.asp
 				console.log("z: " + typeof(z));
 				
 			}
-			
+			</script>
+		</div>
+		<div class= "courses">
+		<button type="button" onclick="subjectsHere();">Print list of Courses</button>
+		<script>
 			// create an object that contains the prefixes and courseNumbers of 10 cs, cis, math and phil courses and write two
 			//functions; one to alphabetize the courses (second level sort is courseNumber) and the other to put in numerical order 
 			//(second level sort is prefix) 
@@ -115,17 +120,19 @@ http://www.w3schools.com/js/js_objects.asp
 							prefix: "MATH",
 							courseNum: "300"
 						}	
-						
+					<!-- help from web -->	
+						//sort by course prefix
 						courses = sortByKey(courses, 'prefix');
-						document.write("Prefix Sort" + "<br>");
-						for(var i = 0; i< courses.length; i++){
-						document.write(courses[i].prefix + "/" + courses[i].courseNum+ " , ");
+						document.write("Result of Prefix Sort" + "<br>");
+						for(var i = 0; i < courses.length; i++){
+						document.write(courses[i].prefix + "--" + courses[i].courseNum+ "  ,  ");
 						}
 						
-						courses = sortByKey(courses, 'courseNumber');
-						document.write("<br>" + "CourseNumber Sort"  + "<br>");
-						for(var i = 0; i< courses.length; i++){
-						document.write(courses[i].prefix + "/" + courses[i].courseNum + " , ");
+						//sort by course number
+						courses = sortByKey(courses, 'courseNum');
+						document.write("<br>" + "Result of CourseNumber Sort"  + "<br>");
+						for(var i = 0; i < courses.length; i++){
+						document.write(courses[i].prefix + "--" + courses[i].courseNum + "  ,  ");
 						}
 				
 					}
@@ -139,7 +146,7 @@ http://www.w3schools.com/js/js_objects.asp
 					}
 			
 		</script>
-		
+		</div> <!--div courses ends here -->
 	</body>
 	
 </html>
