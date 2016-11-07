@@ -8,13 +8,13 @@
     <meta name="description" content="">
     <meta name="author" content="Michael Sanchez">
 
-    <title>CIS 255 - TEDxSVSU - Evalution</title>
+    <title>CIS 255 - JavaScript Tests</title>
 
-	<!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Template CSS -->
-    <link href="../template.css" rel="stylesheet">
+    <link href="template.css" rel="stylesheet">
 
   </head>
 
@@ -29,14 +29,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">CIS-255</a>
+          <a class="navbar-brand" href="menu.html">CIS-255</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programs<span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="../progTED.html">TEDxSVSU</a></li>
+					<li class="active"><a href="progTED.html">TEDxSVSU</a></li>
 				</ul>
 			</li>
 			<li class="dropdown">
@@ -61,61 +61,98 @@
 
 
 	
+	
+    </div><!-- container -->
+	
 	<div class="container">
-		<h1 class="page-header">TEDxSVSU - Evaluation</h1>
+		<h1 class="page-header">jQuery</h1>
 		
 		<!-- Row of two columns -->
 		<div class="row">
 
-			<div class="col-md-12"><div class="table-responsive">
-				<table class="table table-striped">
-				  <thead>
-					<tr>
-					  <th></th>
-					  <th>TEDxSVSU 2015</th>
-					  <th>TEDxSVSU 2016</th>
-					  <th>TEDxSVSU 2017</th>
-					</tr>
-				  </thead>
-				  <tbody>
-					<tr>
-					  <td>Presentation</td>
-					  <td>Very informative.  This page contains a lot of information right off the bat and it's also organized into readable blurbs.  Nothing terribly eye-catching on the page, but you can definitely tell the site is for a speaking event.</td>
-					  <td>Has a 'modern' feel.  Quite a bit more to look at on some pages and others are very informative.  Each page transitions nicely too.  However, it is not very personalized to an 'SVSU' theme.</td>
-					  <td>I tried to go for a clean layout with a short summary of each page, on a single page.  I don't get the feel my theme (as-is) really portrays the event type, but I did try to include SVSU in the design.  </td>
-					</tr>
-					<tr>
-					  <td>Functionality</td>
-					  <td>
-						Organization
-						
-						Purpose
-						
-						Everything is layed out well, and there's a lot to click on for the curious visitor.</td>
-					  <td>Provides a concise description of the nature of the event and how to participate.</td>
-					  <td>Once again, my goal here was to present each of the three pages in summary below something that would catch a visitors eye.</td>
-					</tr>
-				  </tbody>
-				</table>
-			  </div>
+			<div class="col-md-3">
 				
-			</div><!-- col-6 -->
-			
+				<form>
+					<div class="form-group">
+						<label for="length">7) Input length</label>
+						<input type="text" class="form-control" id="length" placeholder="" />
+					</div>
+					<div class="form-group">
+						<label for="width">8) Input width</label>
+						<input type="text" class="form-control" id="width" placeholder="" />
+					</div>
+					<button id="submit" type="button" onclick="update()" class="btn btn-primary">Submit</button>
+				</form>
+				
+				<br>
+				
+				<div class="well">
+					<p id="answer"> </p>
+				</div>
+				
+			</div><!-- col-3 -->
+
 		</div><!-- row -->
 
     </div><!-- container -->
-	
-	<script>
-	
-	</script>
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	
+	<script>
+	
+		$(document).ready(function(){
+			
+			// Input 'length' - onKeyUp
+			$("#length").keyup(function() {
+				var l = document.getElementById("length").value;
+				var w = document.getElementById("width").value;
+				document.getElementById("answer").innerHTML = l * w;
+			});
+			
+			// Input 'width' - onKeyUp
+			$("#width").keyup(function() {
+				var l = document.getElementById("length").value;
+				var w = document.getElementById("width").value;
+				document.getElementById("answer").innerHTML = l * w;
+			});
+			
+			
+		}); 
+	
+		
+		/*function onLoad () {
+		
+			// Output raw XMLHttpResponse
+			document.getElementById("response").innerHTML =  this.responseText;
+		
+		
+			// Parse JSON
+			var json = JSON.parse(this.responseText);
+			
+			// JSON output
+			document.getElementById("json").innerHTML = json.courses.length;
+			
+			// Test output
+			var loop = document.getElementById("loop");
+			
+			for (var i = 0; i < json.courses.length; i++) {
+				loop.innerHTML = loop.innerHTML + "<p>" + json.courses[i].prefix + " - " + json.courses[i].courseNumber + " - " + json.courses[i].description + "</p>";
+			}
+		}
+
+		var req = new XMLHttpRequest();
+		req.addEventListener("load", onLoad);
+		req.open("GET", "https://api.svsu.edu/courses?prefix=ECON");
+		req.send();*/
+		
+	</script>
 
   </body>
 </html>
