@@ -5,45 +5,54 @@
 <html>
 	
 	<body>
-		<label>Enter a province</label>
-		<input type="text" id="in01" onkeyup="myArrayFun();" />
+		<label>Enter a number</label>
+		<input type="text" id="in01" onkeyup="notFunFunctions();" />
 		<br />
 		<p id="out01">Output goes here</p>
+		
 		<script>
-			var a = new Array("1",2,"three");
-			var b = ["1",2,"three"];
-			b[3] = 17;
-			
-			
-			function myArrayFun() {
-				var elem = document.getElementById("out01");
-				var i = 0;
-				// populate array, a 
-				while (i < 10) a[i] = i++;
-				// print backwards one element per line
-				for(i = a.length -1; i>=0; i--){
-					var tn = a[i]; 
-					elem.appendChild(document.createElement("br"));
-					elem.appendChild(document.createTextNode(tn));
 
-				}
-				delArray();
-				for(i = a.length -1; i>=0; i--){
-					var tn = a[i]; 
-					elem.appendChild(document.createElement("br"));
-					elem.appendChild(document.createTextNode(tn));
-				}
-			//Replace array a with only its elements 0-3 and 8-9
-				function delArray () {
-					a.splice(4,4);
-				
-				
-				}
-			
+		var notFunFunctions = function() {
 
-
+				var x = Number(document.getElementById("in01").value);
+				loopThrough(x);
 			}
 			
+			function loopThrough(x) {
+			var elem = document.getElementById("out01");
+			elem.appendChild(document.createElement("br"));
+			elem.appendChild(document.createTextNode("Your Number is: " + x));
+					var array_of_functions = [
+			function add2() {
+						return (x+2);
+					},
+			function subtract4() {
+						return (x-4);
+					},
+			function mod5() {
+						return (x%5);
+					},
+			function power3() {
+						return(Math.pow(x,3));
+					},
+			function toString(){
+						x = String(x);
+					
+					return (x +" is of type " + typeof(x));
+					}					
+					
+]
+					var w = array_of_functions;
+
+				for(var i= 0; i < 5; i ++) {
+					var tn = w[i](x);
+					elem.appendChild(document.createElement("br"));
+					elem.appendChild(document.createTextNode(tn));
+					
+				}
+			}
+			
+		
 			
 			//for two extra credit points create an array that conatins 5 functions 
 			//add2(),subtract4(),mod5(),power3(),toString()
@@ -51,7 +60,6 @@
 			//functions and append textNodes to a oaragraph <p> in the DOM
 			//Which contain the output of a parameter
 			
-			function loopThroughFun(param){}
 			
 			
 		</script>

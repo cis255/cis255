@@ -1,0 +1,55 @@
+<DOCTYPE!html>
+<html>
+	<body>
+		<label>Enter a Province</label>
+		<input type="text" id="in01" onkeyup="isProvince();"  />
+		
+		<p id="out01">Output goes here</p>
+		<script>
+		
+			//checks if input is a number
+			//function isNumber() {
+			//	var x = document.getElementById("in01").value;
+			//	
+			//	if(!isNaN(x)) {
+			//	document.getElementById("out01").innerHTML = "Number";
+			//	}
+			//	else{
+			//	document.getElementById("out01").innerHTML = "Not a Number";
+			//	}
+			//	//try{
+			//	//testFunction();
+			//	//}
+			//	//catch (err){
+			//	//alert("function does not exist" + err);
+			//	//}
+			//}
+			//
+			//try {
+			//	var x=-1;
+			//	if(x<0) throw "tooSmallError";
+			//	}
+			//	catch(err){
+			//	alert(err);
+			//	}
+			
+			
+			//write a funciton to test whether or not the input is a province of Canada Output should be "Province" or "Not a Province"
+			function isProvince() {
+				var x = document.getElementById("in01").value;
+				var provinces = ["Nunavut", "Quebec", "Northwest Territories", "Ontario", "British Columbia", "Alberta", "Saskatchewan", "Manitoba", "Yukon", "Newfoundland and Labrador", "New Brunswick", "Nova Scotia", "Prince Edward Island"];
+				for(var i =0; i<provinces.length; i++) {
+				
+					if(provinces[i].toLowerCase()==x.toLowerCase()){
+						document.getElementById("out01").innerHTML = "Province";
+						break;
+					}
+					else{
+						document.getElementById("out01").innerHTML = "Not a Province";
+					}
+				}
+			}
+			
+		</script>
+	</body>
+</html>

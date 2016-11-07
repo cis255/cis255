@@ -1,0 +1,91 @@
+
+<!doctype html>
+<!-- file: js_test11.html 
+Test parsing JSON object from api.svsu.edu
+-->
+<html>
+	
+	<body>
+	
+		<p id="demo"></p>
+		
+		<script>
+		
+			// e is a string that contains a JSON object
+			var e = '{"employees":[{"firstName":"John","lastName":"Doe"},{"firstName":"Anna", "lastName":"Smith"},		{"firstName":"Peter", "lastName":"Jones"}]}';
+			
+			// j is the JSON object contained in e
+			var j = JSON.parse(e);
+			
+			document.write(j.employees[0].firstName + " " + j.employees[0].lastName);
+			
+			url = 'https://api.svsu.edu/courses?prefix=CIS&courseNumber=255';
+			/*
+			var getJSON = function(url, callback) {
+				var xhr = new XMLHttpRequest();
+				xhr.open("get",url,true);
+				xhr.responseType = "json";
+				xhr.onload = function() {
+					var status = xhr.status;
+					if (status == 200) {
+						callback(null, xhr.response);
+					} else {
+						callback(status);
+					}
+				};
+				xhr.send();
+				document.write(xhr.responseText);
+			};
+			
+			getJSON(url);
+			*/
+			
+			function getTermsAndInstructors(obj) {
+				// returns a string containing all terms and first instructors from a JSON object
+				str = "";
+				if(obj.courses.length == 0) return str;
+				for (var i = 0; i < obj.courses.length; i++) {
+					str = str + obj.courses[i].prefix + "-" + obj.courses[i].courseNumber + " " + obj.courses[i].term + " " + obj.courses[i].instructors[0].username + "<br />";
+				}
+				
+				// document.write(obj.courses.length);
+				return str;
+			}
+			
+			
+			function loadXMLDoc() {
+			  var xmlhttp;
+			  if (window.XMLHttpRequest) {
+				xmlhttp = new XMLHttpRequest();
+			  } else {
+				// code for older browsers
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			  }
+			  xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					var s1 = this.responseText;
+					var o1 = JSON.parse(s1);
+					var s2 = getTermsAndInstructors(o1);
+					//document.getElementById("demo").innerHTML = this.responseText;
+					document.getElementById("demo").innerHTML = s2;
+				};
+			  };
+			  xmlhttp.open("GET", url, true);
+			  xmlhttp.send();
+}
+			loadXMLDoc();
+		</script>
+		
+		
+
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+

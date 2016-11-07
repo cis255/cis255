@@ -117,11 +117,6 @@ p {
 }
 
 
-
-
-
-
-
 .bg-dark {
   background-color: black;
   color: white;
@@ -350,7 +345,7 @@ header .header-content  p:hover {
 }
 }
 .service-box {
-  max-width: 80%;
+  max-width: 100%;
   margin: 0px auto 0;
   padding-top: 6%;
 }
@@ -361,8 +356,8 @@ header .header-content  p:hover {
 }
 .service-box img{
   width:80px;
-  margin: 0px auto 0;
-  padding-top: 6%;
+  margin: 10px auto 0;
+  padding-top: 10%;
 	
 }
 
@@ -396,11 +391,13 @@ header .header-content  p:hover {
 	display:none;
 }
 @media(min-width:600px){
-	.speaker_p{
-		display:block;
-	}
+	
 }
 @media (min-width: 992px) {
+	
+  .speaker_p{
+  display:block;
+}
 	
   .service-box {
   max-width: 100%;
@@ -414,7 +411,7 @@ header .header-content  p:hover {
 	
 }
 .service-box p {
-  margin: 8px auto 0;
+  margin: auto 0;
   margin-bottom: 20px;
   color: #b30000;
   font-weight: 900;

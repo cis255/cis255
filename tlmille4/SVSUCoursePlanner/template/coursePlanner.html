@@ -1,0 +1,183 @@
+
+<! doctype html>
+<!-- table:
+	internal: all courses needed for student [A]
+	upper left (courses taken)[T]
+	upper right (courses needed)[A-T]
+	internal: all SVSU CS/CIS courses [S]
+	lower left (available courses, WI 2017) [C]
+	lower right (not available courses) [S-C]
+-->	
+<html>
+	<body>
+		<h1> Course Planner Template </h1>
+		<table border="1">
+			<tr>
+				<td>Courses Taken <br />
+					<input type="text" id="T">
+				</td>
+				<td>Courses Needed <br />
+				
+				<input type="text" id="N">
+				
+				</td>
+			</tr>
+			<tr>
+				<td>Courses Available <br />
+					<select id="id02"></select>
+				</td>
+				<td>Courses Not Available <br />
+					<select id ="notAvail"></select>
+				</td>
+			</tr>	
+		</table>
+		<button onclick ="showNeeded(A);">Show Courses Needed</button>
+		<script>
+			
+			//Create array A, list of all courses needed for student
+			var A = ["cs105","cs116","cis255","cs216","cis355"];
+			var CS = ["MATH103","COMM105A","MATH161","PHIL205A","CS105","CS146","CS116","CS245","MATH223","MATH300","RPW304","CS216","CIS255","CIS357","CIS331","CS355","CS316","CS401","CS411","CS446","CS421","CS461","CS451","CS471"];
+			var CIS = ["MATH103","CS105","CS116","CS146"];
+			console.log(A);
+			
+			highestCourse = 0;
+			
+			//A = A.sort();
+			console.log(A);
+			//returns index number of e in A or -1 if not found
+			function isIn(A, e){
+				for(var i = 0; i < A.length; i++){
+					if( A[i] == e) return i;
+				}
+				return -1;
+			}
+			//returns elements a, not in t
+			function showNeeded(A){
+				
+				var T = document.getElementById("T").value;
+				console.log(T);
+				var coursesTaken = T.split(" ");
+				
+				console.log(coursesTaken);
+				coursesTaken.sort();
+				
+				
+				
+				for(var i = 0; i < coursesTaken.length; i++)
+				{
+					var currPos = isIn(A, coursesTaken[i])
+					if(currPos > highestCourse)
+						highestCourse = currPos;
+				}
+				
+				console.log(highestCourse);
+				
+				//var x = isIn(A, coursesTaken[highestCourse]);
+				
+				if (highestCourse == -1){
+					//document.getElementById("N").value=stringify(A);
+					document.getElementById("N").value=stringify(A);
+					
+				}
+				else {
+					document.getElementById("N").value=stringifyExcept(A, highestCourse);
+				}
+			}
+
+			
+			
+			//make array into one string
+			function stringify(A)
+			{
+				var x= "";
+				for(var i = 0; i < A.length; i++)
+				{
+						x = x + " " + A[i];
+				}
+				return x.trim();
+			}
+			function stringifyExcept(A, n){
+				var x= "";
+				for(var i = 0; i < A.length; i++)
+				{
+					if(i > n) 
+						x = x + " " + A[i];
+				}
+			return x.trim();
+			}
+			
+			
+			
+			
+			<!-- javascript solution: creates new elements with attributes -->
+			
+			var xmlhttp = new XMLHttpRequest();
+			var url = "https://api.svsu.edu/courses?prefix=CS&term=17\/WI";
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var myArr = JSON.parse(xmlhttp.responseText);
+					myFunction(myArr);
+					notAvailCourses(myArr);
+				}
+			};
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+
+			function myFunction(arr) {
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) 
+				{
+				
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor + " "
+						+ arr.courses[i].status);
+					if (arr.courses[i].status == "Open")
+					{
+						document.getElementById("id02").appendChild(newP);
+						newP.appendChild(newText);
+					}
+					// out += arr.courses[i].prefix + " " + arr.courses[i].courseNumber + "<br />";
+				}
+				
+			}
+			
+			function notAvailCourses(arr) 
+			{
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) 
+				{
+				
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor + " "
+						+ arr.courses[i].status); 
+					if(arr.courses[i].status == "Clsd")
+					{
+						document.getElementById("notAvail").appendChild(newP);
+						newP.appendChild(newText);
+					}
+					// out += arr.courses[i].prefix + " " + arr.courses[i].courseNumber + "<br />";
+				}
+				
+			}
+
+		</script>
+		
+    </body>
+</html>

@@ -1,0 +1,58 @@
+// Pseudocode:
+//-------------------------------------------------------------------------------
+// !! main script		
+// initialize course arrays, URL string, integer values and XML request
+// call checkCSIS();
+//
+// !! checkCSIS function
+// clear coursesNeeded ouput
+// clear dropdown menus
+// if(radioCS.checked)
+// 	courseArray = CS_classes;
+//	pageImage = CSflow.png;
+//	fillDropdown(CSURL);
+// else
+// 	courseArray = CIS_classes;
+//      pageImage = CISflow.png;
+//	fillDropdown(CISURL);
+//
+// !! isIn function
+// for(0 to courseArray.length)
+// 	if(currentClass == takenClass)
+//		return currentClass
+// otherwise return -1	
+//
+// !! showNeeded function
+// initialize inputValue of taken courses and highestCourse
+// coursesTaken = newArray from input
+// for(0 to coursesTaken.length)
+// 	currPosition = isIn(courseArray, coursesTaken[currentCourse]) 
+//	if(currPosition > highestCourse)
+//	    highestCourse = currPosition
+// if (highestCourse != 0)
+// 	call stringifyExcept()
+// else
+//	call stringify()
+//
+// !! stringify() 
+// initialize x
+// output all courses needed to take to output section
+//
+// !! stringifyExcept() 
+// initialize x
+// output all courses not taken from CS or CIS array
+//
+// !! fillDropdown()
+//if(XML connection is valid)
+// 	newArray = CSURLJSON or CISURLJSON
+//	call getCourses
+//
+// !! getCourses()
+// for(length of passedXMLArray)
+//	create new dropdown element
+//	that contains courseNum, term, meeting times, location, and status
+// if(status is closed)
+//	put in notAvail dropdown
+// else
+//	put in avail dropdown
+//

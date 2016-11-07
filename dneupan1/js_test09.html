@@ -7,8 +7,10 @@ http://www.w3schools.com/js/js_objects.asp
 <html>
 	
 	<body>
+	<div class="cars">
 		<button type="button" onclick="myObjectFun();">Print list of cars</button>
-
+		<hr/>
+		
 		<script>
 			function myObjectFun() {
 				var car = "Fiat";
@@ -17,7 +19,7 @@ http://www.w3schools.com/js/js_objects.asp
 					type:"Fiat", 
 					model:"500", 
 					color:"white",
-					odometer: function (x){console.log(x);;;;;;;;;;}
+					odometer: function (x){console.log(x);}
 				};
 				var car2 = {
 					type:"Chevy", 
@@ -61,11 +63,90 @@ http://www.w3schools.com/js/js_objects.asp
 				console.log("z: " + typeof(z));
 				
 			}
+			</script>
+		</div>
+		<div class= "courses">
+		<button type="button" onclick="subjectsHere();">Print list of Courses</button>
+		<script>
+			// create an object that contains the prefixes and courseNumbers of 10 cs, cis, math and phil courses and write two
+			//functions; one to alphabetize the courses (second level sort is courseNumber) and the other to put in numerical order 
+			//(second level sort is prefix) 
 			
-			// create an object that contains the prefixes and courseNumbers of 10 cs, cis, math and phil courses and write two functions; one to alphabetize the courses (second level sort is courseNumber) and the other to put in numerical order (second level sort is prefix) 
+			function subjectsHere(){
+						var courses = [];
+						courses[0] = {
+							prefix: "CS",
+							courseNum: "105"
+						}
+						courses[1] = {
+							prefix: "CS",
+							courseNum: "116"
+						}
+						courses[2] = {
+							prefix: "CS",
+							courseNum: "216"
+						}
+						courses[3] = {
+							prefix: "CS",
+							courseNum: "316"
+						}
+						courses[4] = {
+							prefix: "CS",
+							courseNum: "245"
+						}
+						courses[5] = {
+							prefix: "CIS",
+							courseNum: "255"
+						}
+						courses[6] = {
+							prefix: "CIS",
+							courseNum: "355"
+						}
+						courses[7] = {
+							prefix: "CIS",
+							courseNum: "311"
+						}
+						courses[8] = {
+							prefix: "CS",
+							courseNum: "411"
+						}
+						
+						courses[9] = {
+							prefix: "MATH",
+							courseNum: "161"
+						}
+						
+						courses[10] = {
+							prefix: "MATH",
+							courseNum: "300"
+						}	
+					<!-- help from web -->	
+						//sort by course prefix
+						courses = sortByKey(courses, 'prefix');
+						document.write("Result of Prefix Sort" + "<br>");
+						for(var i = 0; i < courses.length; i++){
+						document.write(courses[i].prefix + "--" + courses[i].courseNum+ "  ,  ");
+						}
+						
+						//sort by course number
+						courses = sortByKey(courses, 'courseNum');
+						document.write("<br>" + "Result of CourseNumber Sort"  + "<br>");
+						for(var i = 0; i < courses.length; i++){
+						document.write(courses[i].prefix + "--" + courses[i].courseNum + "  ,  ");
+						}
+				
+					}
+					
+					<!-- help from web -->
+					function sortByKey(array, key) {
+							return array.sort(function(x, y) {
+								var a = x[key]; var b = y[key];
+								return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+							});
+					}
 			
 		</script>
-		
+		</div> <!--div courses ends here -->
 	</body>
 	
 </html>
