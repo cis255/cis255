@@ -1,9 +1,9 @@
 <html>
 
     <body>
-	<p>Modified exercise 7- made it for countries of the world rather than provinces of canada </p>
-	<p>Push Button to Enter a Country Name. </p>
-    <button onclick="myFunction(myArr)">Enter Country</button>
+	<p>Course Planner </p>
+	<p>Push Button to Enter a Course Number. </p>
+    <button onclick="myFunction(myArr)">Enter Number</button>
 	
 	<div id="id01"></div>
 
@@ -14,7 +14,7 @@ var out = "";
 
 
 var xmlhttp = new XMLHttpRequest();
-var url = "https://api.svsu.edu/courses";
+var url = "https://api.svsu.edu/courses?prefix=CIS";
 var myArr;
 
 
@@ -34,17 +34,20 @@ xmlhttp.send();
 function myFunction(arr) {
 
 //var arr = JSON.parse(JSON.stringify(response));
-x = (prompt("Enter Country Name. Enter 'clear' to clear list.", "Country Name"));
+x = (prompt("Enter course number.", "course number"));
     var i;
 	isCountry = false;
     for(i = 0; i < arr.courses.length; i++) {
-		if(arr.courses[i].prefix.toUpperCase() == x.toUpperCase())
+		if(arr.courses[i].courseNumber.toUpperCase() == x.toUpperCase())
 		{
 		out +=  (arr.courses[i].prefix + 
-        arr.courses[i].courseNumber + "<br />");
+        arr.courses[i].courseNumber + " " + arr.courses[i].section + " " + arr.courses[i].instructors[0].name + " " + arr.courses[i].term + "<br />");
 		
 		}
 		
+		}
+		if (x.toUpperCase() == "CLEAR"){
+		out = "";
 		}
     
  document.getElementById("id01").innerHTML = out;
