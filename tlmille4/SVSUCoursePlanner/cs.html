@@ -1,0 +1,135 @@
+<!--
+Filename:	  cs.html
+Author:		  Tyler Miller
+Description:  This is the webpage that contains the Course Scheduling program for the SVSU CSIS Course planner site.
+Website: http://csis.svsu.edu/~tlmille4/cis255/tlmille4/SVSUCoursePlanner/cs.html
+
+Program Flow (design):
+	<head>: Defining metatags 
+			browser tab title
+			favicon initialized
+			Linking our CSS pages for page design
+	<body>:
+			Navigation Container holds everything for navigation on the site to
+				-Home, CSIS Course Planner, mySVSU
+				-Also contains SVSU Logo (copyright SVSU)
+			Page Content section holds the following:
+				Table where user inputs classes taken and selects which degree option to use
+				Image of the course flow for the desired degree option
+			Javascript tags for site at end of file which includes the coursePlanner.js file in the JS folder
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Course Planner - SVSU CS/CIS Course Scheduling</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/logo-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+                <a class="navbar-brand" href="http://www.svsu.edu">
+                    <img src="img/svsuLogo.png" alt="Saginaw Valley State University">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="cs.html"style="color: white;">CSIS Course Planner</a>
+                    </li>
+                    <li> 
+                        <a href="https://my.svsu.edu/CookieAuth.dll?GetLogon?curl=Z2F&reason=0&formdir=3" target="blank">mySVSU</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>CSIS Course Planner</h1>
+				<hr></hr>
+				<p>
+					<center>
+					<table style="text-align: center">
+						<tr>
+							<form>
+								<input type="radio" id="radCS" name="CSIS" value="CS" onchange="checkCSIS();" checked> &nbsp;Computer Science  &nbsp; &nbsp;
+								<input type="radio" id="radCIS" name="CSIS" value="CIS" onchange="checkCSIS();"> &nbsp;Computer Information Systems
+							</form>
+						</tr>
+						<tr>
+							<td>Courses Taken (Seperate Multiple Courses w/ a Space): <br />
+								<input type="text" id="inTaken" style="width: 500px;" />
+							</td>
+							<td>Courses Needed: <br />
+							
+							<input type="text" id="outNeeded" style="width: 500px;" />
+							
+							</td>
+						</tr>
+						<tr>
+							<td>Courses Available: <br />
+								<select id="avail"></select>
+							</td>
+							<td>Courses Not Available: <br />
+								<select id ="notAvail"></select>
+							</td>
+						</tr>	
+					</table>
+					<button onclick ="showNeeded(courseArr);">Show Courses Needed</button>
+					</center>
+				</p>
+				<p id="imgSchedule"></p>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+	<!-- CoursePlanner JavaScript -->
+    <script src="js/coursePlanner.js"></script>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
