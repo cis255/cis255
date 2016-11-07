@@ -1,1 +1,10 @@
 h1, h2, h3 , h4 {color: red;}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+a:link { color: red; }
+a:visited { color: red; }
+a:active { color: red; }
