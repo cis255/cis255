@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!-- CIS-255 - Course Planner
+
+Table
+
+-->
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -8,13 +13,13 @@
     <meta name="description" content="">
     <meta name="author" content="Michael Sanchez">
 
-    <title>CIS 255 - TEDxSVSU - Evalution</title>
+    <title>CIS 255 - JavaScript Tests</title>
 
-	<!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Template CSS -->
-    <link href="../template.css" rel="stylesheet">
+    <link href="template.css" rel="stylesheet">
 
   </head>
 
@@ -29,14 +34,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">CIS-255</a>
+          <a class="navbar-brand" href="menu.html">CIS-255</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programs<span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="../progTED.html">TEDxSVSU</a></li>
+					<li class="active"><a href="progTED.html">TEDxSVSU</a></li>
 				</ul>
 			</li>
 			<li class="dropdown">
@@ -59,60 +64,133 @@
       </div>
     </nav>
 
-
-	
-	
 	
 	<div class="container">
-		<h1 class="page-header">TEDxSVSU - Evaluation</h1>
+		<h1 class="page-header">Course Planner</h1>
 		
-		<!-- Row of two columns -->
 		<div class="row">
-
-			<div class="col-md-12"><div class="table-responsive">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-						  <th></th>
-						  <th>TEDxSVSU 2015</th>
-						  <th>TEDxSVSU 2016</th>
-						  <th>TEDxSVSU 2017</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-						  <td>Presentation</td>
-						  <td>Very informative.  This page contains a lot of information right off the bat and each page is organized into readable snippets.  Nothing terribly eye-catching on the main page, but looking further one can easily determine the nature of the event.</td>
-						  <td>Has a 'modern' feel.  There is a more graphical focus on most pages, however all three sub-pages provide relevant detail.  Loading each page transitions  nicely.  The only distraction I found was that it had a slightly generic feel, opposed to maintaining an 'SVSU' theme.</td>
-						  <td>I aimed for a clean layout with a short summary of each page available on a single page.  I don't get the feel my theme (as-is) really portrays the event type, but I did try to include SVSU in the design along with original photos.  </td>
-						</tr>
-						<tr>
-						  <td>Accessibility</td>
-						  <td>The main page content answers initial questions, and the menu provides total site navigation for the curious visitor.</td>
-						  <td>Provides a concise menu and descriptions of the nature of the event, speakers and how to participate.</td>
-						  <td>Once again, my goal here was to present each of the three pages in summary below an eye-catching visual that would represent SVSU.</td>
-						</tr>
-					</tbody>
-				</table>
-			  </div>
-				
-			</div><!-- col-6 -->
+		
+			<div class="col-md-6">
 			
+				<div class="table-responsive">
+					<table class="table table-striped">
+						<thead>
+						
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									Taken<br>
+									<input type="text" id="taken" value="cis116, cis216" />
+								</td>
+								<td>Needed<br>
+									<span id="needed"></span>
+								</td>
+							</tr>
+							<tr>
+								<td>Available</td>
+								<td>Not Available</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<button class="btn btn-large" onclick="update(a)">Update</button>
+			
+			</div><!-- col-md-12 -->
+			
+			<div class="col-md-6">
+				<p id="response"></p>
+			</div>
+		
 		</div><!-- row -->
 
     </div><!-- container -->
 	
-	<script>
-	
-	</script>
-
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script>
+	
+		// In-class stuff
+		var a = ["cs105", "cs116", "cis255", "cis216", "cis355"];
+		a.sort();
+		
+		//document.getElementById("needed").innerHTML = "works";
+		
+		
+		function update (A)
+		{
+			// Get user input
+			var input = document.getElementById("taken").value;
+			
+			// Parse 'input' string into array
+			var courses = new Array;
+			var c = input.indexOf (",");
+			
+			while (c >= 0) {
+				// Add course
+				courses.push (input.substr(0, c).toLowerCase());
+				
+				// Remove from input string
+				input = input.substr (c + 1, input.length).trim ();
+				
+				// Look for next comma				
+				c = input.indexOf(",");
+			}
+			
+			// Add last course
+			courses.push (input.toLowerCase());
+			
+			// 
+			
+			
+			
+			document.getElementById("needed").innerHTML = "hmm";
+		
+		}
+		
+		
+		json.courses.sort(function(a, b) {
+			
+			al = a.prefix.toLowerCase();
+			bl = b.prefix.toLowerCase();
+
+			return (al < bl) ? -1 : (al > bl) ? 1 : 0;
+		});
+		
+		function onLoad ()
+		{
+		
+			// Output raw XMLHttpResponse
+			document.getElementById("response").innerHTML =  "oi";
+		
+		
+			// Parse JSON
+			var json = JSON.parse(this.responseText);
+			
+			// JSON output
+			/*document.getElementById("json").innerHTML = json.courses.length;
+			
+			// Test output
+			var loop = document.getElementById("loop");
+			
+			for (var i = 0; i < json.courses.length; i++) {
+				loop.innerHTML = loop.innerHTML + "<p>" + json.courses[i].prefix + " - " + json.courses[i].courseNumber + " - " + json.courses[i].description + "</p>";
+			}*/
+		}
+
+		var req = new XMLHttpRequest();
+		req.addEventListener("load", onLoad);
+		req.open("GET", "https://api.svsu.edu/courses?prefix=CIS");
+		req.send();
+		
+	</script>
+
 
   </body>
 </html>
