@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+ <title>Untitled Page</title>
+
+ <script src="jquery.js" type="text/javascript"></script>
+
+</head>
+<body>
+ <div>
+ <input id="TempTextBox" type="text" />
+ <br />
+ <input id="btnCtoF" type="button" value="Convert To Fahrenheit" />
+ <input id="btnFtoC" type="button" value="Convert To Celcius" />
+ </div>
+</body>
+
+<script type="text/javascript">
+ $(function() {
+ var txtTemp = $('#TempTextBox');
+ $('#btnCtoF').click(function(e) {
+ CToF();
+ e.preventDefault();
+ });
+ $('#btnFtoC').click(function(e) {
+ FtoC();
+ e.preventDefault();
+ });
+
+
+ function CToF() {
+ var tempInC = Math.round((((212 - 32) / 100) * txtTemp.val() + 32) * 100) / 100;
+ alert('Temp in Celcius:' + tempInC);
+ }
+
+ function FtoC() {
+ var tempInF = Math.round(((100 / (212 - 32)) * (txtTemp.val() - 32)) * 100) / 100;
+ alert('Temp in Fahrenheit:' + tempInF);        
+
+ }
+ });
+</script>
+</html>
