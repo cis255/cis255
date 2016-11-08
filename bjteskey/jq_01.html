@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+			
+			
+		</script>
+	</head>
+	<body>
+		Fahrenheit: <input type="text" id="fahrenheit"/>
+		Celsius: <input type="text" id="celsius"/>
+		<script>
+			
+			// Converts farenheit to celsius
+			$('#fahrenheit').on('input', function() {
+				var fahrenheit;
+				var celsius;
+				fahrenheit = this.value;
+				celsius = (fahrenheit * 1.8) + 32;
+				$('#celsius').val(celsius);
+			});
+			
+			// Converts celsius to farenheit
+			$('#celsius').on('input', function() {
+				var fahrenheit;
+				var celsius;
+				celsius = this.value;
+				fahrenheit = (celsius / 1.8) - 32;
+				$('#fahrenheit').val(fahrenheit);
+			});
+		</script>
+		
+	</body>
+</html>
