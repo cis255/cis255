@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Michael Sanchez">
 
-    <title>CIS 255 - In-Class Exercise 01</title>
+    <title>CIS 255 - In-Class Exercise 02</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -57,8 +57,8 @@
             <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">In-Class <span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li class="active"><a href="jq01.html">Exercise 1</a></li>
-					<li><a href="jq02.html">Exercise 2</a></li>
+					<li><a href="jq01.html">Exercise 1</a></li>
+					<li class="active"><a href="jq02.html">Exercise 2</a></li>
 				</ul>
 			</li>
           </ul>
@@ -75,34 +75,55 @@
 		<!-- Row for page header and instructions -->
 		<div class="row">
 		
-			<h1 class="page-header">jQuery 01 - Celsius / Farenheit</h1>
+			<h1 class="page-header">jQuery 02 - Board Calculator</h1>
 
-			<div class="col-md-6">
+			<div class="col-md-12">
 			
-				<p><strong>Instructions:</strong> Enter a temperature into either text box to have it converted.</p>
+				<p><strong>Instructions:</strong> Enter the length and width of your deck.  Specify, the board length you are using as well.</p>
 				
-			</div><!-- col-md-6 -->
+			</div><!-- col-md-12 -->
 			
 		</div><!-- row -->
 		
-		<!-- Row for form -->
+		<!-- Row for two columns -->
 		<div class="row">
-			<div class="col-md-3">
-				
-				
+			<div class="col-md-4">
+			
 				<form>
 					<div class="form-group">
-						<label for="cel">Celsius:</label>
-						<input type="text" class="form-control" id="cel" placeholder="" />
-					</div>
-					<div class="form-group">
-						<label for="far">Farenheit:</label>
-						<input type="text" class="form-control" id="far" placeholder="" />
+						<label for="length">Length:</label>
+						<input type="text" class="form-control" id="length" placeholder="" />
+						<label for="width">Width:</label>
+						<input type="text" class="form-control" id="width" placeholder="" />
 					</div>
 					<!-- <button id="submit" type="button" onclick="update()" class="btn btn-primary">Submit</button> -->
 				</form>
 				
-			</div><!-- col-3 -->
+			</div><!-- col-4 -->
+			<div class="col-md-4">
+			
+				<form>
+					<div class="form-group">
+						<label for="b_length">Board Length:</label>
+						<input type="text" class="form-control" id="b_length" value="8" />
+					</div>
+					<!-- <button id="submit" type="button" onclick="update()" class="btn btn-primary">Submit</button> -->
+				</form>
+				
+			</div><!-- col-6 -->
+
+		</div><!-- row -->
+		
+		<div class="row">
+			<div class="col-md-6">
+				<br>
+				<div id="response" class="well">
+				
+					You need <span id="numBoards">_</span> boards to complete you deck.
+				
+				</div>
+				
+			</div><!-- col-6 -->
 
 		</div><!-- row -->
 
@@ -123,15 +144,18 @@
 		$(document).ready(function(){
 			
 			// Input 'celsius' - onKeyUp
-			$("#cel").keyup(function() {
-				var c = document.getElementById("cel").value;
-				document.getElementById("far").value = c * 1.8 + 32;
-			});
-			
-			// Input 'farenheit' - onKeyUp
-			$("#far").keyup(function() {
-				var f = document.getElementById("far").value;
-				document.getElementById("cel").value = (f - 32) / 1.8;
+			$("#length, #width, #b_length").keyup(function() {
+				var l = $("#length").val();
+				var w = $("#width").val();
+				
+				var bl = $("#b_length").val();
+				
+				// Calculate boards needed (Assume boards are 8 x 1)
+				var area = l * w;
+				var boards = area / bl;
+				
+				// Update number of boards <span>
+				document.getElementById("numBoards").innerHTML = Math.ceil(boards);
 			});
 			
 			
