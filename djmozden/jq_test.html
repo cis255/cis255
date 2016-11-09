@@ -1,0 +1,39 @@
+<!doctype html>
+ <html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<h1>Derek Mozden</h1>
+		
+		<script>
+			$(document).ready(function(){
+			
+				$("#Farenheit").keyup(function(){
+					document.getElementById("Celsius").value = (document.getElementById("Farenheit").value - 32) * 5 / 9; 
+					console.log(document.getElementById("Celsius").innerHTML);
+				});
+				
+				$("#Celsius").keyup(function(){
+					document.getElementById("Farenheit").value = (document.getElementById("Celsius").value * 9) / 5 + 32; 
+					console.log(document.getElementById("Farenheit").innerHTML);
+				});
+			
+			});
+			// make 2 input boxes, one for farrenheit and the other 
+			//for celsius and code the jquery
+			//to convert one from the other. 
+			
+			
+			
+			
+		</script>
+		1. input farenheit: <input type="text" id="Farenheit" />
+		<br />
+		2. input Celsius: <input type="text" id="Celsius" />
+		<br />
+		<!-- output area: <span id="area">Not set</span> -->
+		
+	</body>
+</html>
+ 
