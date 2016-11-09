@@ -1,0 +1,60 @@
+<!-- Basic Class Exercise 1 - Tyler Miller -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Basic Class Exercise 01 - Celsius / Fahrenheit Conversion</title>
+		<!--Importing JQuery Library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+			//JQuery code to handle texbox textchanged evenets in each textbox
+			$(document).ready(function()
+			{
+				$("#inFar").change(function()
+				{
+					var inputFar = $("#inFar").val();
+					
+					if(!isNaN(inputFar))
+					{
+						inputFar = ((inputFar - 32) * (5/9));
+						$("#inCel").val(inputFar);
+					}
+					else
+						alert("Please enter a valid number");
+				});
+				
+				$("#inCel").change(function()
+				{
+					var inputCel = $("#inCel").val();
+					
+					if(!isNaN(inputCel))
+					{
+						inputCel = ((inputCel * (9/5)) + 32);
+						$("#inFar").val(inputCel);
+					}
+					else
+						alert("Please enter a valid number");
+				});
+
+			});
+		</script>
+	</head>
+	<body>
+
+		<h1>Basic Class Exercise 01 - Celsius / Fahrenheit Conversion</h1>
+		<center>
+		<table style="border: 1px solid black;">
+			<tr>
+			  <th>Temperature in Fahrenheit:</th>
+				<th>&nbsp;|&nbsp;</th>
+			  <th>Temperature in Celsius:</th>
+			</tr>
+			<tr>
+				<td style="text-align: center;"><input type="text" id="inFar" style="text-align:right;"/>°F</td>
+				<td>&nbsp;|&nbsp;</td>
+				<td style="text-align: center;"><input type="text" id="inCel" style="text-align:right;"/>°C</td>
+			</tr>
+		</table>
+		</center>
+	</body>
+</html>
+

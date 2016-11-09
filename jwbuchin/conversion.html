@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	
+	
+	
+	<p><strong><font size= "16">Tempature Conversion</font></strong></p>
+	
+	<p> <strong>Ferinheight to Celsius</strong></p>
+	
+		Ferinheight temp: <input type="text" id="ferinheight" />
+		<br />
+		Celsius temp: <span id="fTOc"> Not set</span>
+		
+	<p> <strong>Celsius to Ferinheight</strong></p>
+	
+		Celsius temp: <input type="text" id="celsius" />
+		<br />
+		Ferinheight temp: <span id="cTOf">Not set</span>
+	
+	<script>
+	
+		$("#ferinheight").keyup(function(){
+			document.getElementById("fTOc").innerHTML = (document.getElementById("ferinheight").value - 32) * 5/9;
+		});
+		
+		$("#celsius").keyup(function(){
+			document.getElementById("cTOf").innerHTML = (document.getElementById("celsius").value * 9/5) + 32;
+		});
+			
+	</script>
+	
+</body>
+
+</html>

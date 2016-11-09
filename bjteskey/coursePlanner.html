@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+		
+		<script>
+			
+			<!-- javascript solution: creates new elements with attributes -->
+			var xmlhttp = new XMLHttpRequest();
+			var url = "https://api.svsu.edu/courses?prefix=CS";
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var myArr = JSON.parse(xmlhttp.responseText);
+					myFunction(myArr);
+				}
+			};
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+
+			function myFunction(arr) {
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor); 
+					document.getElementById("id02").appendChild(newP);
+					newP.appendChild(newText);
+				}
+			}
+			
+		</script>
+
+	</head>
+	<body>
+		<input type="checkbox" name="CISCheckbox" />
+		<p id="id01"></p>
+		<select id="id02"></select>
+	</body>
+</html>
