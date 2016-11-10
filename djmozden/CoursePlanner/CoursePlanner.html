@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- 
+	table: 
+		internal: all courses needed for student
+		upper left (courses Taken)
+		upper right (courses Needed-not taken a-t)
+		internal: all svsu cs/cis courses{s}
+		lower left: available to take winter 2017[c]
+		lower right: not available 2017 [s-c]
+-->
+<html>
+	<body>
+
+		<h1>Course Planner by Derek Mozden</h1>
+		
+		<table border="1">
+			<tr>
+				<td>Courses Taken
+					<br />
+					<input type="text" id="T"/>
+				</td>
+				<td>Courses Needed<br />
+					<input type="text" id="N"/>
+				</td>
+			</tr>
+			<tr>
+				<td>Courses Available</td>
+				<td>Courses not Available</td>
+			</tr>
+		</table>
+		<button onclick="showNeeded(arrCourses);">Show Courses Needed</button>		
+		<script>
+		// arrCourses is a list of all courses
+		var arrCourses = ["CS105","CS116","CS255","CS216","CIS355"];
+		console.log(arrCourses);
+		arrCourses.sort();
+		console.log(arrCourses);
+		// stringifyExcept
+		function stringifyExcept (arrCourses){
+			var x = "";
+			for(var i = 0; i<arrCourses.lenght; i++){
+				if(i != n){
+				x = x + " " + arrCourses[i];
+				}
+			}
+			return x.trim();
+		}
+		// make an array into one string
+		function stringify (arrCourses){
+			var x = "";
+			for(var i = 0; i<arrCourses.lenght; i++){
+				x = x + " " + arrCourses[i];
+			}
+			return x.trim();
+		}
+		// returns index number of e in arrCourses or -1 if not found
+		function isIn(arrCourses, e){
+			for(var i = 0; i < arrCourses.lenght; i++){
+				if(arrCourses[i] == e) return i;
+			}
+			return -1;
+		}
+		
+		// Returns elements in arrCourses that are not in T
+		function showNeeded(arrCourses){
+			var T = document.getElementById("T").value;
+			//document.getElementById("N").value = "hello";
+			T = new Array(T);
+			console.log(T);
+			
+			var x = isIn(arrCourses, T[0]);
+			console.log(x);
+			if(x == -1){
+				var y = stringify(arrCourses);
+				document.getElementById("N").value = y;			
+			}
+			else{
+				document.getElementById("N").value = stringifyExcept(arrCourses);
+			}
+		}
+	
+		</script>
+
+	</body>
+</html> 

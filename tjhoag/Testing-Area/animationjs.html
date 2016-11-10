@@ -1,0 +1,54 @@
+<DOCTYPE!html>
+<html>
+	<head>
+		<head>
+		<style>
+			#container {
+			width: 400px;
+			height: 400px;
+			position: relative;
+			background: black;
+			}
+			#animate {
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				bottom:0;
+				left:0;
+				
+				background: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			<button onclick="myMove()">Click Me</button>
+		</p>
+		<div id ="container">
+			<div id ="animate">BOO</div>
+		</div>
+	
+		<script>
+			var obj = document.getElementById("out1");
+			
+			//make the animation go from lower left to upper right, make the red box start from lower left
+			function myMove() {
+				var elem = document.getElementById("animate"); 
+				var pos = 350;
+				var pos2 = 0;
+				var id = setInterval(frame, 5);
+				function frame() {
+					if (pos == 0) {
+						clearInterval(id);
+					} else {
+						pos--; 
+						pos2++;
+						elem.style.top = pos + 'px'; 
+						elem.style.left = pos2 + 'px'; 
+					}
+				}
+			}
+			
+		</script>
+		
+	</body>

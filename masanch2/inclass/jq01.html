@@ -8,13 +8,13 @@
     <meta name="description" content="">
     <meta name="author" content="Michael Sanchez">
 
-    <title>CIS 255 - Program - TEDxSVSU</title>
+    <title>CIS 255 - In-Class Exercise 01</title>
 
-	<!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Template CSS -->
-    <link href="template.css" rel="stylesheet">
+    <link href="../template.css" rel="stylesheet">
 
   </head>
 
@@ -29,35 +29,36 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="menu.html">CIS-255</a>
+          <a class="navbar-brand" href="../menu.html">CIS-255</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programs <span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li class="active"><a href="progTED.html">TEDxSVSU</a></li>
+					<li><a href="../progTED.html">TEDxSVSU</a></li>
 				</ul>
 			</li>
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript Tests <span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="js_test01.html">Test 1: Data Types</a></li>
-					<li><a href="js_test02.html">Test 2: Control Statements</a></li>
-					<li><a href="js_test03.html">Test 3: Loops</a></li>
+					<li><a href="../js_test01.html">Test 1: Data Types</a></li>
+					<li><a href="../js_test02.html">Test 2: Control Statements</a></li>
+					<li><a href="../js_test03.html">Test 3: Loops</a></li>
 					<li role="separator" class="divider"></li>
-					<li><a href="js_test07.html">Exercise 7: Functions</a></li>
-					<li><a href="js_test08.html">Exercise 8: Array of Functions</a></li>
+					<li><a href="../js_test07.html">Exercise 7: Functions</a></li>
+					<li><a href="../js_test08.html">Exercise 8: Array of Functions</a></li>
 					<li role="separator" class="divider"></li>
-					<li><a href="js_test09.html">Exercise 9: JSON</a></li>
-					<li><a href="js_test10.html">Exercise 10: Yahtzee</a></li>
-					<li><a href="js_test11.html">Exercise 11: 2-D Array</a></li>
+					<li><a href="../js_test09.html">Exercise 9: JSON</a></li>
+					<li><a href="../js_test10.html">Exercise 10: Yahtzee</a></li>
+					<li><a href="../js_test11.html">Exercise 11: 2-D Array</a></li>
 				</ul>
 			</li>
             <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">In-Class <span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="inclass/jq01.html">Exercise 1</a></li>
+					<li class="active"><a href="jq01.html">Exercise 1</a></li>
+					<li><a href="jq02.html">Exercise 2</a></li>
 				</ul>
 			</li>
           </ul>
@@ -65,45 +66,78 @@
       </div>
     </nav>
 
-	
 
+	
+	
+	
 	<div class="container">
-		<h1 class="page-header">Program - TEDxSVSU</h1>
 		
-		<!-- Row of two columns -->
+		<!-- Row for page header and instructions -->
 		<div class="row">
+		
+			<h1 class="page-header">jQuery 01 - Celsius / Farenheit</h1>
 
 			<div class="col-md-6">
-				
-				<ul>
-					<li>
-						<a href="tedxsvsu/index.html">Website</a><br>
-					</li>
-					<li>
-						<a href="tedxsvsu/evaluation.html">Evaluation</a><br>
-					</li>
-					<li>
-						<a href="tedxsvsu/images/sitemap.jpg">Site Map</a>
-					</li>
-				</ul>
-				
-			</div><!-- col-6 -->
 			
+				<p><strong>Instructions:</strong> Enter a temperature into either text box to have it converted.</p>
+				
+			</div><!-- col-md-6 -->
+			
+		</div><!-- row -->
+		
+		<!-- Row for form -->
+		<div class="row">
+			<div class="col-md-3">
+				
+				
+				<form>
+					<div class="form-group">
+						<label for="cel">Celsius:</label>
+						<input type="text" class="form-control" id="cel" placeholder="" />
+					</div>
+					<div class="form-group">
+						<label for="far">Farenheit:</label>
+						<input type="text" class="form-control" id="far" placeholder="" />
+					</div>
+					<!-- <button id="submit" type="button" onclick="update()" class="btn btn-primary">Submit</button> -->
+				</form>
+				
+			</div><!-- col-3 -->
+
 		</div><!-- row -->
 
     </div><!-- container -->
+
+
+    <!-- Bootstrap core JavaScript & jQuery
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
 	
 	<script>
 	
+		// Event - on page fully loaded
+		$(document).ready(function(){
+			
+			// Input 'celsius' - onKeyUp
+			$("#cel").keyup(function() {
+				var c = document.getElementById("cel").value;
+				document.getElementById("far").value = c * 1.8 + 32;
+			});
+			
+			// Input 'farenheit' - onKeyUp
+			$("#far").keyup(function() {
+				var f = document.getElementById("far").value;
+				document.getElementById("cel").value = (f - 32) / 1.8;
+			});
+			
+			
+		});
+		
 	</script>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
   </body>
 </html>
