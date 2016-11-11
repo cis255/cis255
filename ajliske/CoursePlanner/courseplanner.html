@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<!-- 
+filename:
+author:
+date:
+description:
+design: <head>
+                <body>
+-->
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../favicon.ico">
+        <link href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Rebel_Alliance_logo.svg/1000px-Rebel_Alliance_logo.svg.png" rel="shortcut icon">
+        <title>CIS 255 : Andrew Liske</title>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" 
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
+              integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+        <!-- Bootstrap core CSS -->
+        <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="starter-template.css" rel="stylesheet">
+        <link href="jumbotron.css" rel="stylesheet">
+        <link href="MyCSS-Menu.css" rel="stylesheet">
+
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+        <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+
+    <body id="page-top">
+
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-inverse navbar-static-top">
+
+            <div class="col-md-12 col-sm-12 col-lg-12 ">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <ul class="nav navbar-nav">
+                        <li><a target="_blank" href="https://www.youtube.com/watch?v=frdj1zb9sMY" class="navbar-brand"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Rebel_Alliance_logo.svg/1000px-Rebel_Alliance_logo.svg.png" width="20" alt="CLICK HUR"></a></li>
+                    </ul>
+
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav">
+                        <li><a href="http://csis.svsu.edu/~ajliske/cis255/ajliske/menu.html">CIS 255 : Andrew Liske</a></li>
+                        <li><a href="http://csis.svsu.edu/~ajliske/cis255/ajliske/menu.html">Home</a></li>
+                        
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <script><!--jquery script -->
+            $(document).ready(function () {
+                $('.dropdown a.test').on("click", function (e) {
+                    $(this).next('ul').toggle();
+                    e.stopPropagation();
+                    e.preventDefault();
+                });
+            });
+        </script>
+
+
+        <section id="projects">
+            <div class="container" style="padding-top: 40px; padding-bottom: 40px;">
+                <div class="col-md-12  col-sm-12 col-lg-12  text-center">
+                    <hr style="height:3px;width:12%;color:#333;background-color:#333;">
+                    <h2 class="section-heading">CSIS Course Planner</h2>
+                    <hr style="height:3px;width:12%;color:#333;background-color:#333;">
+                </div>
+        </section>
+
+
+        <section>
+		
+       <div class="container">
+
+       <div class="col-md-12  col-sm-12 col-lg-12  text-center">
+
+        <form action="">
+            <input   type="radio" name="degree" value="cs" id="csB" autocomplete="on"> CS <br>
+            <input  type="radio" name="degree" value="cis" id="cisB" autocomplete="off"> CIS
+        </form>
+
+        <form name="Example">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td>
+                        <h3>Select Courses Taken</h3>
+                        <select  style="width:350px" id="courses" name="Features[]" size="9" MULTIPLE>
+
+                        </select>
+                    </td>
+                    <td align="center" valign="middle" width="150px">
+                        <input class="btn btn-default" type="Button" id="addCourse" value="Add >>" style="width:100px" onClick="add(document.Example.courses, document.Example.coursesTaken);addNeeded(document.Example.courses, document.Example.coursesTaken, document.Example.coursesNeeded);"><br>
+                        <br>
+                        <input class="btn btn-default" type="Button" id="removeCourse" value="<< Remove" style="width:100px" onClick="remove(document.Example.coursesTaken, document.Example.courses);addNeeded(document.Example.courses, document.Example.coursesTaken, document.Example.coursesNeeded);">
+                    </td>
+                    <td>
+                        <h3>Courses Taken</h3>
+                        <select style="width:350px" id="coursesTaken" name="FeatureCodes[]" size="9" MULTIPLE>
+
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+
+            <table border="0" cellpadding="3" cellspacing="0">
+                <td>
+                    <h3>Courses Needed</h3>
+                    <select id="coursesNeeded" style="width:350px" name="CourseNeeded" size="9" MULTIPLE>
+
+                    </select>
+                </td>	
+
+                <td width="150px">
+                    <input class="btn btn-default" type="Button" value="Get Courses" style="width:100px" onClick="setCourses()">
+                </td>
+
+                <td>
+                    <h3>Courses Available</h3>
+                    <select id="id03" style="width:350px" name="CourseAvailable" size="9" MULTIPLE>
+
+                    </select>
+                </td>		
+            </table>
+        </form>	
+		</div>
+
+        <script>
+
+
+
+
+            function add(SS1, SS2)
+            {
+                var inList = false;
+                var SelID = '';
+                var SelText = '';
+                // Move rows from SS1 to SS2 from bottom to top
+                for (i = SS1.options.length - 1; i >= 0; i--)
+                {
+                    inList = false;
+                    if (SS1.options[i].selected == true)
+                    {
+                        SelID = SS1.options[i].value;
+                        SelText = SS1.options[i].text;
+                        var newRow = new Option(SelText, SelID);
+                        if (SS2.options.length > 0) {
+                            for (j = 0; j < SS2.options.length; j++) {
+                                if (SS2.options[j].value == newRow.value && SS2.options[j].text == newRow.text) {
+                                    inList = true;
+                                }
+                            }
+                        }
+                        if (inList == false) {
+                            SS2.options[SS2.length] = newRow;
+
+                        }
+                        //SS1.options[i]=null;
+                    }
+                }
+                SelectSort(SS2);
+            }
+
+
+            function addNeeded(SS1, SS2, SS3)
+            {
+                var inList = false;
+                var SelID = '';
+                var SelText = '';
+                // Move rows from SS1 to SS2 from bottom to top
+                for (i = 0; i < SS1.options.length; i++)
+                {
+                    inList = false;
+
+                    SelID = SS1.options[i].value;
+                    SelText = SS1.options[i].text;
+                    var newRow = new Option(SelText, SelID);
+                    if (SS2.options.length > 0) {
+                        for (j = 0; j < SS2.options.length; j++)
+                        {
+
+                            if (SS2.options[j].text == newRow.text) {
+                                inList = true;
+
+                            }
+                        }
+                    }
+                    if (SS3.options.length > 0) {
+                        for (k = 0; k < SS3.options.length; k++)
+                        {
+
+                            if (SS3.options[k].text == newRow.text) {
+                                inList = true;
+
+                            }
+                        }
+                    }
+                    if (inList == false) {
+                        SS3.options[SS3.length] = newRow;
+
+                    }
+                    //SS1.options[i]=null;
+
+                }
+
+                for (x = 0; x < SS2.options.length; x++)
+                {
+                    for (y = 0; y < SS3.options.length; y++)
+                    {
+                        if (SS3.options[y].text == SS2.options[x].text)
+                        {
+                            SS3.options[y] = null;
+                        }
+                    }
+                }
+
+
+
+                SelectSort(SS3);
+            }
+
+
+            function remove(SS1, SS2)
+            {
+
+                for (i = SS1.options.length - 1; i >= 0; i--)
+                {
+                    if (SS1.options[i].selected == true)
+                    {
+                        SS1.options[i] = null;
+                    }
+                }
+            }
+
+
+
+            function SelectSort(SelList)
+            {
+                var ID = '';
+                var Text = '';
+                for (x = 0; x < SelList.length - 1; x++)
+                {
+                    for (y = x + 1; y < SelList.length; y++)
+                    {
+                        if (SelList[x].text > SelList[y].text)
+                        {
+                            // Swap rows
+                            ID = SelList[x].value;
+                            Text = SelList[x].text;
+                            SelList[x].value = SelList[y].value;
+                            SelList[x].text = SelList[y].text;
+                            SelList[y].value = ID;
+                            SelList[y].text = Text;
+                        }
+                    }
+                }
+            }
+
+
+
+
+            function changeAPI() {
+                document.getElementById("courses").options.length = 0;
+                document.getElementById("coursesTaken").options.length = 0;
+                document.getElementById("coursesNeeded").options.length = 0;
+                var x;
+                var out = "";
+
+                var xmlhttp = new XMLHttpRequest();
+
+                if (document.getElementById('csB').checked) {
+                    var url = "http://csis.svsu.edu/~ajliske/cis255/ajliske/CoursePlanner/cs.txt";
+                } else if (document.getElementById('cisB').checked) {
+                    var url = "http://csis.svsu.edu/~ajliske/cis255/ajliske/CoursePlanner/cis.txt";
+                }
+
+                var myArr;
+
+
+
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        myArr = JSON.parse(this.responseText);
+                        myFunction(myArr);
+                    }
+                };
+
+                xmlhttp.open("GET", url, true);
+                xmlhttp.send();
+            }
+
+
+            function myFunction(arr) {
+                var out = "";
+                var i;
+                for (i = 0; i < arr.length; i++) {
+                    var newP = document.createElement("option");
+                    newP.setAttribute("value", i);
+                    var newText
+                            = document.createTextNode(arr[i].prefix + " "
+                                    + arr[i].courseNumber); //+ " " 
+                    //+ arr.courses[i].term + " " 
+                    //+ arr.courses[i].meetingTimes[0].days + " " 
+                    //+ arr.courses[i].meetingTimes[0].startTime + " " 
+                    //+ arr.courses[i].meetingTimes[0].instructor); 
+                    document.getElementById("courses").appendChild(newP);
+                    newP.appendChild(newText);
+                }
+                SelectSort(document.getElementById("courses"));
+            }
+
+
+
+
+            function setCourses() {
+                document.getElementById("id03").options.length = 0;
+                var xmlhttp = new XMLHttpRequest();
+                var xmlhttp2 = new XMLHttpRequest();
+                // 2. Initialize URL
+                var url = "https://api.svsu.edu/courses?prefix=CS";
+                totalnumber = 0;
+
+                // initialize array of urls
+                coursesPrefixes = ["CS", "CIS", "MATH", "COMM", "RPW", "PHIL", "ACCT", "ECON", "LAW", "MGT", "MKT"];
+
+                // initialize array of http requests
+                var requests = new Array(coursesPrefixes.length);
+
+                allCoursesArr = [];
+
+                for (var i = 0; i < coursesPrefixes.length; i++) {
+                    requests[i] = new XMLHttpRequest();
+                    // 3. Specify Callback Function
+                    requests[i].onreadystatechange = function (index) {
+                        return function () {
+                            if (requests[index].readyState == 4 && requests[index].status == 200) {
+                                var myArr2 = JSON.parse(requests[index].responseText);
+                                myFunction2(myArr2);
+                                for (var j = 0; j < myArr2.courses.length; j++) {
+                                    pushIntoDefinedArr(myArr2, j); // calling another function to push into courses array, just because of scoping issues.
+                                }
+                            }
+                        }
+                    }(i);
+
+                    var url = "https://api.svsu.edu/courses?prefix=" + coursesPrefixes[i];
+                    // 4. Execute Request
+                    requests[i].open("GET", url, true);
+                    requests[i].send();
+                }
+            }
+
+
+            function pushIntoDefinedArr(arr, index) {
+                allCoursesArr.push(arr.courses[index]);
+            }
+            ;
+
+            function myFunction2(arr) {
+                for (var i = 0; i < arr.courses.length; i++) {
+                    for (var j = 0; j < document.getElementById("coursesNeeded").options.length; j++) {
+                        if ((arr.courses[i].prefix + " " + arr.courses[i].courseNumber) == document.getElementById("coursesNeeded").options[j].text) {
+                            var newP = document.createElement("option");
+                            newP.setAttribute("value", totalnumber + i);
+                            var newText
+                                    = document.createTextNode(arr.courses[i].prefix + " "
+                                            + arr.courses[i].courseNumber + " "
+                                            + arr.courses[i].term + " "
+                                            // + (arr.courses[i].prerequisites).substring(0, 10) + " " 
+                                            + arr.courses[i].meetingTimes[0].days + " "
+                                            + arr.courses[i].meetingTimes[0].startTime + " "
+                                            + arr.courses[i].meetingTimes[0].instructor);
+                            document.getElementById("id03").appendChild(newP);
+                            newP.appendChild(newText);
+                        }
+                    }
+                }
+                SelectSort(document.getElementById("id03"));
+                totalnumber += arr.courses.length;
+            }
+
+
+
+
+
+            function start() {
+                document.getElementById("csB").checked = true;
+                changeAPI();
+                setCourses();
+
+            }
+            window.onload = start;
+
+            document.getElementById("csB").addEventListener("click", changeAPI);
+            document.getElementById("cisB").addEventListener("click", changeAPI);
+
+
+        </script>
+			
+
+            </div>
+        </section>
+
+
+
+        <section>
+           
+                <div class="container"  >
+                    <footer>
+                        <p>&copy; 2016 harkslau</p>
+                    </footer>
+                </div>
+           
+        </section>
+
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+        <script src="../../dist/js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+
+</html>
+
+
+
+
+
+
+      
