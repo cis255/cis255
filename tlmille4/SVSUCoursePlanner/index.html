@@ -1,0 +1,103 @@
+<!--
+Filename:	  index.html
+Author:		  Tyler Miller
+Description:  This is the main index file for my bootstrap SVSU CSIS Course planner site.
+Website: http://csis.svsu.edu/~tlmille4/cis255/tlmille4/SVSUCoursePlanner/index.html
+
+Program Flow (design):
+	<head>: Defining metatags 
+			browser tab title
+			favicon initialized
+			Linking our CSS pages for page design
+	<body>:
+			Navigation Container holds everything for navigation on the site to
+				-Home, CSIS Course Planner, mySVSU
+				-Also contains SVSU Logo (copyright SVSU)
+			Page Content section holds the welcome message as well is info about the CSIS department
+			Javascript tags for site at end of file
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CSIS Course Planner">
+    <meta name="author" content="Tyler Miller">
+
+    <title>Home - SVSU CS/CIS Course Scheduling</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <!-- Custom CSS -->
+    <link href="css/logo-nav.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+
+                <a class="navbar-brand" href="http://www.svsu.edu">
+                    <img src="img/svsuLogo.png" alt="Saginaw Valley State University">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html" style="color: white;">Home</a>
+                    </li>
+                    <li>
+                        <a href="cs.html">CSIS Course Planner</a>
+                    </li>
+                    <li> 
+                        <a href="https://my.svsu.edu/CookieAuth.dll?GetLogon?curl=Z2F&reason=0&formdir=3">mySVSU</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Welcome CS/CIS Students!</h1>
+				<hr></hr>
+				<h2>Use the <a href="cs.html">CSIS Course Scheduler</a> to plan your CS or CIS class schedule!</h2>
+				<center><img src="https://www.wit.edu/sites/default/files/CAS/cis-header.jpg"/></center>
+				<h2>Why CSIS?</h2>
+				<p><strong>Computer Science and Information Systems</strong> (<a target="_blank" href="http://www.svsu.edu/computerscience/">CSIS</a>) is one of the most popular departments on campus. Why?&nbsp;<ul><li><span><strong>Fun</strong>. If you like to tinker with your computer's software, then CSIS is about the most fun you can have. Learning on your own is possible, 
+				but we have found that learning together is more effective, faster, and more fun!</span></li><li><span><strong>Interesting</strong>. Many CSIS classes involve computer programming. The mental challenge is curiously engaging, and continued practice builds mind-bending logical reasoning skills.</span></li><li><span><strong>Economically stable. </strong>All major 
+				local employers and several major regional employers actively recruit CSIS <em>current students</em> for internships and&nbsp;</span><span><em>graduates </em>for&nbsp;</span><span>full time employment.&nbsp;</span><span>Nationwide </span><a target="_blank" href="http://www.payscale.com/college-salary-report-2014/majors-that-pay-you-back">starting salaries</a><span> 
+				average $59,800.&nbsp;</span></li></ul></div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
