@@ -1,0 +1,100 @@
+<!doctype html>
+<!-- file: js_test12.html 
+JS HTML DOM (Document Object Model)
+http://www.w3schools.com/js/js_htmldom.asp
+-->
+<html>
+	<head>
+		<style>
+			#container {
+			width: 400px;
+			height: 400px;
+			position: relative;
+			background: yellow;
+			}
+			#animate {
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				background: red;
+			}
+		</style>
+	</head>
+	
+	<body>
+	
+		<p id="js12">Hello</p>
+		<p>
+			<button onclick="myMove()">Click Me</button>
+		</p>
+		<div id ="container">
+			<div id ="animate">Yeeha!</div>
+		</div>
+		
+		<script>
+			// 1. add an ordered list (ol) with 5 list items (li) to the body. The list items should be animals: Alligator, Bat, Cat Dog, Elephant 
+			
+			var obj = document.getElementById("js12");
+			obj.innerHTML = "Ordered list";
+			obj.setAttribute("style","color: red;");
+			obj.setAttribute("onclick","alert('Hello There');");
+			obj2 = document.createElement("hr");
+			obj.appendChild(obj2);
+			var b = document.body;
+			var ol = document.createElement("ol");
+			document.body.appendChild(ol);
+			var li1 = document.createElement("li");
+			var li2 = document.createElement("li");
+			var li3 = document.createElement("li");
+			var li4 = document.createElement("li");
+			var li5 = document.createElement("li");
+			li1.innerHTML = "Alligator";
+			li2.innerHTML = "Bat";
+			li3.innerHTML = "Cat";
+			li4.innerHTML = "Dog";
+			li5.innerHTML = "Elephant";
+			ol.appendChild(li1);
+			ol.appendChild(li2);
+			ol.appendChild(li3);
+			ol.appendChild(li4);
+			ol.appendChild(li5);	
+			
+			// zebra stripe the unordered list
+			var current = ol.firstChild;
+			var ns = null;
+			while (current != null) {
+				current.style.backgroundColor = "lightgray";	
+				ns = current.nextSibling;
+				if (ns == null) current = null;
+				else current = ns.nextSibling;
+			}
+
+			// 2. make the animation go from lower left to upper right (make the red box start from lower left!)
+			function myMove() {
+				var elem = document.getElementById("animate"); 
+				var pos = 350;
+				var id = setInterval(frame, 5);
+				function frame() {
+					if (pos == 0) {
+						clearInterval(id);
+					} else {
+						pos--; 
+						elem.style.top = pos + 'px'; 
+						elem.style.right = pos + 'px'; 
+					}
+				}
+			}
+			
+				</script>
+
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+
