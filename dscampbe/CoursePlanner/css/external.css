@@ -1,0 +1,57 @@
+/* CSS Document */
+
+body{
+	background-color:#B0B0B0;
+	width:100%;
+	max-width: 1000px;
+	margin:auto;
+}
+
+
+#Input_Container form .rightF {
+	float: right;
+}
+body h1, h3{
+	text-align: center;
+}
+#Input_Container{
+	Width:80%;
+	transform: translateX(10%);
+	text-align: center;
+}
+#Input_Container{
+	float:left;
+	width:100%;	
+}
+.ListContainer {
+	position: relative;	
+	float:none;
+	width:75%;
+	margin:auto;
+	margin-top: 80px;
+	margin-bottom: 50px;
+	border:dashed;
+}
+.ListContainer h3{
+	font-size:20px;
+}
+div.column1{
+	text-align:center;
+	width:50%;
+	
+}
+div.column2{
+	text-align:center;
+	width:50%;
+	position:absolute;
+	left:50%;
+	top:70px;
+}
+#Container-Centered{
+	position:relative;
+	left:50%;
+	transform:translateX(-150px);
+}
+#Container-Centered input{
+	width:auto;
+}

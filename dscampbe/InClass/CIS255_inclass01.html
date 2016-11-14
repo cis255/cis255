@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>In-class Program 01 - Campbell</title>
+	<style>
+		input{
+			position: absolute;
+			left:100px;
+		}
+		
+	</style>
+</head>
+
+	<body>
+		<label>Fahrenheit<input type="text" id="f"></label><br/>
+		<label>Celsius<input type="text" id="c"></label>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript">
+			$("#f").keyup(function(){
+				$("#c").val((this.value-32) / 1.8);
+				//$("#c").attr("value",(this.value-32) / 1.8);
+				
+			});
+			$("#c").keyup(function(){
+				$("#f").val((this.value*1.8)+32);
+				//$("#f").attr("value",(this.value*1.8)+32);
+			});
+		</script>
+	</body>
+</html>
