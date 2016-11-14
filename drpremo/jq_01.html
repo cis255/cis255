@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+		<!--Daniel Premo
+			Basic Class Exercise 01 - celsius / fahrenheit conversion
+			CIS-255: Client Side Web Development
+			Online Class
+			November 10th, 2016
+		-->
+		<style>
+			<!--Mostly same style used in menu.html-->
+			h1 {
+				font-family: tahoma;
+				text-align: center;
+			}
+			h2 {
+				font-family: tahoma;
+				text-align: center;
+			}
+			p {
+				font-family: tahoma;
+				margin-left: 5%;
+				width: 90%;
+			}
+			input {
+				font-family: tahoma;
+				margin-right: 5%;
+				width: 30%;
+			}
+		</style>
+	</head>
+	<body>
+		<!--Website display header-->
+		<h2>Basic Class Exercise 01 - celsius / fahrenheit conversion</h2>
+		<!--Labels followed by appropriate textboxes-->
+		<p>Celsius: <input type="text" id="celsius" onkeyup="toFahrenheit();"></input>
+		Fahrenheit: <input type="text" id="fahrenheit" onkeyup="toCelsius();"></input></p><br>
+	
+		<script>
+			//Function called when user types anything into Celsius textbox.
+			function toFahrenheit() {
+				var c = document.getElementById("celsius").value;
+				var f = Math.round(c * 1.8 + 32);
+				document.getElementById("fahrenheit").value = f;
+			}
+			
+			//Function called when user types anything into Fahrenheit textbox.
+			function toCelsius() {
+				var f = document.getElementById("fahrenheit").value;
+				var c = Math.round((f - 32) / 1.8);
+				document.getElementById("celsius").value = c;
+			}
+			
+			// Built in Javascript error handling fills in "NaN" if a string is typed in either textbox.
+		</script>
+	</body>
+</html>
