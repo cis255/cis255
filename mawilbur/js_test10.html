@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- file: js_test10.html 
+Events + Yahtzee
+some of this code was copied from 
+http://www.w3schools.com/js/js_events.asp
+-->
+<html>
+	
+	<body>
+		<p>Click the numbered buttons corresponding to the dice you want rerolled and hit new results.</p>
+		<button onclick="rerolld1()">#1</button>
+		<button onclick="rerolld2()">#2</button>
+		<button onclick="rerolld3()">#3</button>
+		<button onclick="rerolld4()">#4</button>
+		<button onclick="rerolld5()">#5</button>
+		<button onclick="rerolld6()">#6</button>
+		<button onclick="newResults()">New Results</button>
+		<br>
+		<p id="dice"></p>
+		<p id="dice2"></p>
+		<p id="yahtzee"></p>
+
+		<script>
+			function rerolld1() {d1 = Math.floor(1 + 6 * Math.random());}
+			function rerolld2() {d2 = Math.floor(1 + 6 * Math.random());}
+			function rerolld3() {d3 = Math.floor(1 + 6 * Math.random());}
+			function rerolld4() {d4 = Math.floor(1 + 6 * Math.random());}
+			function rerolld5() {d5 = Math.floor(1 + 6 * Math.random());}
+			function rerolld6() {d6 = Math.floor(1 + 6 * Math.random());}
+			function newResults() {
+				document.getElementById("dice2").innerHTML = ("New Dice Roll: " + d1 + " " + d2 + " " + d3 + " " + d4 + " " + d5 + " " + d6);
+			if(d1==d2 && d1==d3 && d1==d4 && d1==d5 && d1==d6) 
+					document.getElementById("yahtzee").innerHTML = "<br />YAHTZEE";
+				else 
+					document.getElementById("yahtzee").innerHTML = "<br />Try again";
+			}
+			
+			d1 = Math.floor(1 + 6 * Math.random()); 
+			d2 = Math.floor(1 + 6 * Math.random()); 
+			d3 = Math.floor(1 + 6 * Math.random()); 
+			d4 = Math.floor(1 + 6 * Math.random()); 
+			d5 = Math.floor(1 + 6 * Math.random());
+			d6 = Math.floor(1 + 6 * Math.random());
+			
+			document.getElementById("dice").innerHTML = ("Initial Dice Roll: " + d1 + " " + d2 + " " + d3 + " " + d4 + " " + d5 + " " + d6);
+			if(d1==d2 && d1==d3 && d1==d4 && d1==d5 && d1==d6) 
+				document.getElementById("yahtzee").innerHTML = "<br />YAHTZEE";
+			else 
+				document.getElementById("yahtzee").innerHTML = "<br />Try again";
+
+			// your mission is let the user choose which dice to re-throw
+			// your program will be one additional attempt to get a yahtzee. 
+			
+		</script>
+		
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+
