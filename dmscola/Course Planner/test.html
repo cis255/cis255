@@ -1,0 +1,172 @@
+<!doctype html>
+<!-- Course planner program for cis255
+table: 
+	Assignment   : Course Planner
+
+	Author		 : Deepak Neupane, CIS255 - Online
+	
+	Submitted to : Dr. George Corser
+	
+	Purpose      : The program takes multiple inputs from the user, separated by spaces.
+				  The inputs are the courses that have already been taken by a CS student.
+				  After considering the inputs, the program goes through the list of available courses.
+				  It then displays the course that the student should take. If there is no
+				  such course offered then it is displayed in the fourth box as "courses not
+				  available "
+			
+	Structure    : The page displays a table with four divisions. One of them contains a textBox for the user
+				   to enter the courses already taken. According to the input from the user the courses required,
+				   the courses offered and the courses that are required but not offered are listed on click of
+				   the button.
+				   
+				   The courses offered has been hard-coded into the program citing the svsu course lookup. 
+				
+-->
+<html>
+	<body>
+		<h1>Course Planner Template</h1>
+		
+		<div>
+			<form action="" autocomplete="off">
+				<input type="radio" name="courses" id="CS" value="CS" onclick="listCourses()">CS</br>
+				<input type="radio" name="courses" id="CIS" value="CIS" onclick="listCourses()">CIS</br>
+			</form>
+		</div>
+		<table border="2" width="500">
+			<tr>
+				<!-- The select boxes collects inputs from the user -->
+				<td>Courses Taken: <br />
+					<input type="text" autocomplete="off" id="coursesTaken" />
+				</td>
+				<td>Courses Required: </br>
+					<select multiple id = "coursesNotTaken">
+					</select>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<!-- The list below is a select list from the svsu website -->
+				<td>Available Courses: </br>
+					<select multiple id="coursesOffered">
+					</select>
+				</td>
+				<td>Courses not available:</br>
+					<select multiple id="coursesNotOffered">
+					</select>
+				</td>
+			</tr>
+		</table>
+		
+		<button onclick="showInformation();">Show Courses Needed</button>
+		</br></br>
+		<p>*Refresh the page to clear the data.</p>
+		<p></br>*Inputs are separated by spaces./ Sample: CS105 CS116 /</p>
+		
+		<script>
+			// create array, A, list of all courses needed for a CS student
+			var CIS = ["CS105", "CS116", "CS146", "CS216", "CIS255", "CIS301", "CIS311", "CIS333", "CIS355", 
+			"CIS366", "CIS386", "CIS422", "CIS424"];
+			var CS = ["CS105", "CS116", "CS146", "CS216", "CIS255", "CS316", "CS331", "CIS355", "CS357", "CS401", 
+			"CS411", "CS421", "CS446", "CS451", "CS461", "CS471", "CS476", "CS482"];
+			
+			//the array below contains the courses offered in Winter 2017 according to  the department
+			var CISOffered = ["CS105", "CS116", "CS146", "CS216", "CIS301", "CIS311", "CIS355", "CIS357", "CIS366", "CIS390", "CIS424"];
+			var CSOffered = ["CS105", "CS116", "CS146", "CS216", "CS331", "CIS355", "CS411", "CS433", "CS446", "CS451", "CS471"];
+			 
+			 
+			//this showInformation function does several things. It takes the input from the user 
+			//separated by spaces and stores it in an array to compare with the courses needed
+			//and course available and displays accordingly		
+			function showInformation() {
+							
+				//function to get stuff from the textbox and change it into an array
+				var taken = document.getElementById("coursesTaken").value;
+				var coursesTaken = taken.split(" ");
+				console.log(coursesTaken);
+				
+				
+				//gets value for the courses according to the option choosen in the radio-button
+				if(document.getElementById('CS').checked) {
+					var courseList = CS;
+				}
+				
+				if(document.getElementById('CIS').checked) {
+					var courseList = CIS;
+				}
+				
+				//gets value for courses offered according to which radio-button is selected
+				if(document.getElementById('CS').checked) {
+					var coursesAvailable = CSOffered;
+				}
+				
+				if(document.getElementById('CIS').checked) {
+					var coursesAvailable = CISOffered;
+				}
+				
+				//getting the necessary element from the courseList using the filter method
+				// CODE OBTAINED FROM stackoverflow contents				
+				coursesNeeded = courseList.filter( function( f ) { //function f removes the similar elements
+				  return coursesTaken.indexOf( f ) < 0;
+				} );
+        
+				console.log(coursesNeeded);
+					
+				select = document.getElementById('coursesNotTaken');
+
+				for (var i = 0; i < coursesNeeded.length; i++){
+					var classes = document.createElement('option');
+					classes.value = coursesNeeded[i];
+					classes.innerHTML = coursesNeeded[i];
+					select.appendChild(classes);
+				}
+				
+				//removing the courses taken by the user entered in the textBox and displaying a new list
+				coursesOfferedNew = coursesAvailable.filter( function( f ) { //function f removes the similar elements
+				  return coursesTaken.indexOf( f ) < 0;
+				} );
+        
+				console.log(coursesOffered);
+					
+				select = document.getElementById('coursesOffered');
+
+				for (var i = 0; i < coursesOfferedNew.length; i++){
+					var classes = document.createElement('option');
+					classes.value = coursesOfferedNew[i];
+					classes.innerHTML = coursesOfferedNew[i];
+					select.appendChild(classes);
+				}
+				
+				//find out which classes are offered and which are not offered and display the result
+				coursesNotOffered = coursesNeeded.filter( function( f ) { //function f removes the similar elements
+				  return coursesOfferedNew.indexOf( f ) < 0;
+				} );
+        
+				console.log(coursesNotOffered);
+					
+				select = document.getElementById('coursesNotOffered');
+
+				for (var i = 0; i < coursesNotOffered.length; i++){
+					var classes = document.createElement('option');
+					classes.value = coursesNotOffered[i];
+					classes.innerHTML = coursesNotOffered[i];
+					select.appendChild(classes);
+				}
+				
+				
+			} //end of function showInformation
+			
+			
+			
+			//the function below clears any selected item from a selectBox it is called upon
+			//**code help from w3schools
+			function removeOptions(selectBox){			
+				//for all the elements in the selectBox
+				for (var i = 0; i < selectBox.options.length; i++){
+					selectBox.remove(i);					
+				}
+			}
+			
+		</script>
+	</body>
+</html>
