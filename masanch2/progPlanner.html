@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!-- CIS-255 - Course Planner
-
-Table
-
--->
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -13,9 +8,9 @@ Table
     <meta name="description" content="">
     <meta name="author" content="Michael Sanchez">
 
-    <title>CIS 255 - JavaScript Tests</title>
+    <title>CIS 255 - Program - Class Planner</title>
 
-    <!-- Bootstrap core CSS -->
+	<!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Template CSS -->
@@ -39,9 +34,10 @@ Table
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programs<span class="caret"></span></a>
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programs <span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li class="active"><a href="progTED.html">TEDxSVSU</a></li>
+					<li><a href="progTED.html">TEDxSVSU</a></li>
+					<li class="active"><a href="progPlanner.html">Class Planner</a></li>
 				</ul>
 			</li>
 			<li class="dropdown">
@@ -59,138 +55,58 @@ Table
 					<li><a href="js_test11.html">Exercise 11: 2-D Array</a></li>
 				</ul>
 			</li>
+            <li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">In-Class <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="inclass/jq01.html">Exercise 1</a></li>
+					<li><a href="inclass/jq02.html">Exercise 2</a></li>
+				</ul>
+			</li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
 	
+
 	<div class="container">
-		<h1 class="page-header">Course Planner</h1>
+		<h1 class="page-header">Program - Class Planner</h1>
 		
+		<!-- Row of two columns -->
 		<div class="row">
-		
+
 			<div class="col-md-6">
-			
-				<div class="table-responsive">
-					<table class="table table-striped">
-						<thead>
-						
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									Taken<br>
-									<input type="text" id="taken" value="cis116, cis216" />
-								</td>
-								<td>Needed<br>
-									<span id="needed"></span>
-								</td>
-							</tr>
-							<tr>
-								<td>Available</td>
-								<td>Not Available</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
 				
-				<button class="btn btn-large" onclick="update(a)">Update</button>
+				<ul>
+					<li>
+						<a href="planner/index.html">Program</a>
+					</li>
+					<li>
+						<a href="planner/diagram.png">Diagram</a>
+					</li>
+				</ul>
+				
+				<br>
+				[Notes]<br>
+				- Editing the text in the 'Needed' textarea will cause need to reload page
+				
+			</div><!-- col-6 -->
 			
-			</div><!-- col-md-12 -->
-			
-			<div class="col-md-6">
-				<p id="response"></p>
-			</div>
-		
 		</div><!-- row -->
 
     </div><!-- container -->
 	
+	<script>
+	
+	</script>
+
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-	<script>
-	
-		// In-class stuff
-		var a = ["cs105", "cs116", "cis255", "cis216", "cis355"];
-		a.sort();
-		
-		//document.getElementById("needed").innerHTML = "works";
-		
-		
-		function update (A)
-		{
-			// Get user input
-			var input = document.getElementById("taken").value;
-			
-			// Parse 'input' string into array
-			var courses = new Array;
-			var c = input.indexOf (",");
-			
-			while (c >= 0) {
-				// Add course
-				courses.push (input.substr(0, c).toLowerCase());
-				
-				// Remove from input string
-				input = input.substr (c + 1, input.length).trim ();
-				
-				// Look for next comma				
-				c = input.indexOf(",");
-			}
-			
-			// Add last course
-			courses.push (input.toLowerCase());
-			
-			// 
-			
-			
-			
-			document.getElementById("needed").innerHTML = "hmm";
-		
-		}
-		
-		
-		json.courses.sort(function(a, b) {
-			
-			al = a.prefix.toLowerCase();
-			bl = b.prefix.toLowerCase();
-
-			return (al < bl) ? -1 : (al > bl) ? 1 : 0;
-		});
-		
-		function onLoad ()
-		{
-		
-			// Output raw XMLHttpResponse
-			document.getElementById("response").innerHTML =  "oi";
-		
-		
-			// Parse JSON
-			var json = JSON.parse(this.responseText);
-			
-			// JSON output
-			/*document.getElementById("json").innerHTML = json.courses.length;
-			
-			// Test output
-			var loop = document.getElementById("loop");
-			
-			for (var i = 0; i < json.courses.length; i++) {
-				loop.innerHTML = loop.innerHTML + "<p>" + json.courses[i].prefix + " - " + json.courses[i].courseNumber + " - " + json.courses[i].description + "</p>";
-			}*/
-		}
-
-		var req = new XMLHttpRequest();
-		req.addEventListener("load", onLoad);
-		req.open("GET", "https://api.svsu.edu/courses?prefix=CIS");
-		req.send();
-		
-	</script>
-
 
   </body>
 </html>
