@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#blength, #bwidth").keyup(function() {
+					boardLength = $("#blength").val();
+					boardWidth = $("#bwidth").val();
+					boardArea = boardLength * boardWidth;
+				});
+				$("#length ,#width").keyup(function() {
+					l = $("#length").val();
+					w = $("#width").val();
+					area = l * w;
+					// assume all boards are 8 ft by 1 ft 
+					// boardlength = parseFloat(boardlength);
+					// boardwidth = 1;
+					boards = area / boardArea; 
+					
+					document.getElementById("numberofboards").innerHTML = boards;
+				});
+				
+			});
+		</script>
+	</head>
+<body>
+		
+		<h1>Calculate Materials for Deck</h1>
+		
+		<form>
+			Input board length:<input type="text" id="blength" /> (in ft.)<br />
+			Input board width:<input type="text" id="bwidth" /> (in ft.)<br /><br />
+			Input length:<input type="text" id="length" /> (in ft.)<br />
+			Input width:<input type="text" id="width" /> (in ft.)<br />
+			
+			<br />You need <span id="numberofboards">__</span> boards.
+			<br /><input type="button" value="Reset Form" onClick="this.form.reset()" />
+		</form>
+
+		
+
+</body>
+</html>

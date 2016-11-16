@@ -392,8 +392,8 @@ h2 {
 *******Event CSS******
 **************************/
 #event {
-  background-color: #33888F;
-  background-image: url("../images/performar-bg.jpg");
+  background-color: #fff;
+  background-image: url("blank.jpg");
   background-position: 50% 0;
   background-size: contain;
   position: relative;
@@ -402,13 +402,14 @@ h2 {
 
 .guitar {
   position: absolute;
-  right:0;
-  top: 0
+  top:20px;
+  left:20px;
+ 
 }
 
 
 #event h2 {
-  color: #FFFFFF;
+  color: #FF;
   font-size: 36px;
   font-weight: 300;
   margin-bottom: 40px;
@@ -474,7 +475,7 @@ h2 {
 }
 
 .guitar2 img {
-  padding-top: 3%;
+  padding-top: none;
 }
 
 .about-content {
