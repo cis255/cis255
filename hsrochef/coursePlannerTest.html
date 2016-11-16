@@ -1,0 +1,173 @@
+<!-- LINK TO DIAGRAM 
+
+http://csis.svsu.edu/~hsrochef/cis255/hsrochef/RochefortCoursePLanner.vsdx
+
+Program: SVSU course planner
+Date:    11/14/2015
+Professor: Dr. Corser
+Name:    Hunter Rochefort
+-->
+<html>
+<body>
+<head>
+
+</head>
+
+<form>
+    <input type="radio" name="degree" id = "cs" value="cs" onclick = "checkChecked();" checked="checked"> CS Major<br>
+    <input type="radio" name="degree" id = "cis" value="cis" onclick="checkChecked();" > CIS Major<br>
+</form>
+<br>
+<table border="2">
+    <input type="text" id="add"/>
+    <button onclick ="append();">Add course</button>
+    <tr>
+        <td>courses taken<br />
+            <output id="T"></output>	
+        </td>
+        <td>courses needed<br/>
+            <output multiple  id = "N";></output>
+        </td>
+    </tr>
+    <tr>
+        <td>courses available <br>
+            <output multiple  id = "id02";></output>
+
+        </td>
+        <td>courses not available<br>
+            <output multiple  id = "Not";></output>
+        </td>
+    </tr>
+</table>
+<br/>
+<button onclick="showNeeded();">Show Courses Remaining</button>
+
+</body>
+<head>
+    <script>
+        CISCourses = ["CS 245", "MATH 120B","COMM 105A","RPW 304", "ACCT 213", "ECON 221", "LAW 308", "MGT 321", "MKT 331", "PHIL 205A!", "PHIL 210B","CS 105", "CS 116", "CS 146", "CS 216", "CIS 255", "CIS 301", "CIS 311", "CIS 333", "CIS 355",
+            "CIS 366", "CIS 386", "CIS 422", "CIS 424"];
+			CISCourses = CISCourses.sort(); 			
+			document.write( "<br />"+"CIS Courses Available to Choose: " + "<br />");
+			for(var i = 0; i<CISCourses.length; i++){
+			document.write(CISCourses[i]+" ");
+			if(i==5 || i==10 || i==15)
+			document.write("<br />");
+			}
+        CSCourses = ["MATH 161","MATH 223", "MATH 300","COMM 105A","RPW 304","PHIL 205A!", "PHIL 210B","CS 105", "CS 116", "CS 146", "CS 216", "CIS 255", "CS 316", "CS 331", "CIS 355", "CIS 357", "CS 401",
+            "CS 411", "CS 421", "CS 446", "CS 451", "CS 461", "CS 471"];
+			CSCourses = CSCourses.sort();
+			document.write("<br />"+"CS Courses Available to Choose: "+ "<br />")
+			for(var i = 0; i<CSCourses.length; i++){
+			document.write(CSCourses[i]+" ");
+			if(i==5 || i==10 || i==15)
+			document.write("<br />");}
+			
+        function checkChecked() {
+            if(document.getElementById('cs').checked){
+                return 1;
+            }
+            else if (document.getElementById('cis').checked){
+                return 0;
+            }
+        }
+
+        function appendTtA() {
+            var list = document.getElementById('T').childNodes;
+            var classTaken = [];
+            for(var i=0;i < list.length; i++) {
+                var arrValue = list[i].innerHTML;
+                classTaken.push(arrValue);
+            }
+            return classTaken;
+        }
+
+
+        function showNeeded() {
+            var classTaken = appendTtA();
+            if (checkChecked()) {
+                var courses = CSCourses.filter(function (list2) {
+                    return classTaken.indexOf(list2) < 0;
+                });
+            }
+            else {
+                var courses = CISCourses.filter(function (list2) {
+                    return classTaken.indexOf(list2) < 0;
+                });
+            }
+            var select = document.getElementById('N');
+
+            for (var i = 0; i <= courses.length - 1; i++) {
+                var choices = document.createElement('option');
+                choices.value = courses[i];
+                choices.innerHTML = courses[i];
+                select.appendChild(choices);
+            }
+            CA = [];
+            CAP = [];
+
+            var xmlhttp = new XMLHttpRequest();
+            var url = "https://api.svsu.edu/courses?prefix=CS&term=17/WI";
+
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var myArr = JSON.parse(xmlhttp.responseText);
+                    myFunction(myArr);
+                }
+            };
+
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+
+            var xmlhttp2 = new XMLHttpRequest();
+            var url2 = "https://api.svsu.edu/courses?prefix=CIS&term=17/WI";
+
+            xmlhttp2.onreadystatechange = function () {
+                if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200) {
+                    var myArr = JSON.parse(xmlhttp2.responseText);
+                    myFunction(myArr);
+                }
+            };
+
+            xmlhttp2.open("GET", url2, true);
+            xmlhttp2.send();
+
+        }
+        function append(){
+            var unOrderedList = document.createElement("UL");
+            var input = document.getElementById("add");
+            unOrderedList.innerHTML = input.value;
+            input.value = "";
+
+            document.getElementById("T").appendChild(unOrderedList);
+        }
+
+        function myFunction(arr) {
+            var out = "";
+            var i;
+            for(i = 0; i < arr.courses.length; i++) {
+                var newP = document.createElement("option");
+                newP.setAttribute("value", i);
+                var newText=
+                        arr.courses[i].prefix + " "
+                        + arr.courses[i].courseNumber + " "
+                        + arr.courses[i].term + " "
+                        + arr.courses[i].meetingTimes[0].days + " "
+                        + arr.courses[i].meetingTimes[0].startTime + " "
+                        + arr.courses[i].meetingTimes[0].instructor;
+					 CA.push(newText);
+                    CAP.push(arr.courses[i].prefix + " "
+                            + arr.courses[i].courseNumber);
+                }
+                var availableCourses = document.getElementById('id02');
+
+				for (var i = 0; i <= CA.length - 1; i++) {
+                    var opt = document.createElement('option');
+                    opt.value = CA[i];
+                    opt.innerHTML = CA[i];
+                    availableCourses.appendChild(opt);
+                }
+        }
+    </script>
+</head>
+</html>

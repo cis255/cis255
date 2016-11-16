@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<!-- code copied from w3schools --> 
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				
+				$("#length, #width, #bw, #bl").keyup(function() {
+					 l = $("#length").val();
+					 w = $("#width").val();
+					 bl = $("#bl").val();
+					 bw = $("#bw").val();
+					area= l*w; 
+					boardlength = bl*bw;
+					boards = area / boardlength;
+					document.getElementById("board").innerHTML = boards;
+					});
+				});
+
+			
+			// modify code to allow user to change the dimensions of the boards
+		</script>
+	</head>
+	<body>
+	
+		<h1>Calculate Materials for Deck</h1>
+		
+		<form>
+			Board Length:<input type="text" id="bl" /> <br />
+			Board Width:  <input type="text" id="bw" /> <br />
+			Deck Length:		<input type="text" id="length" /> <br />
+			Deck Width:<input type="text" id="width" /> <br />
+				<br />You need <span id="board">___</span>  board(s).
+		</form>
+
+	</body>
+</html>
