@@ -1,0 +1,62 @@
+
+<!doctype html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<span>1. this is a span</span><br />
+	<p class="intro">2. this is a <span class="intro">para 2.a.</span></p>
+	<div>3. this is a div</div>
+
+	<script>
+		// this code hides any paragraph, <p>, that is clicked
+		$(document).ready(function(){
+			$("p").click(function(){
+				$(this).hide();
+			});
+			// $("#input1").mouseenter(function(){
+			//	 alert("You entered a input#1");
+			// });
+			$("#length,#width").keyup(function(){ 
+				document.getElementById("area").innerHTML = document.getElementById("length").value * document.getElementById("width").value;
+				
+				console.log(document.getElementById("area").innerHTML);
+			});
+			
+		});
+		// the second div does not hide when clicked because the second div was not loaded before the jquery was executed
+		$("div").click(function(){
+			$(this).hide();
+		});
+		
+		// if any span is clicked all elements become hidden
+		$("span").click(function(){
+			$("*").hide();
+		});
+		
+		// if any div is clicked then any child of a paragraph where the child is of class "intro" will be hidden
+		$("div").click(function(){
+			$("p .intro").hide();
+		});
+		
+		//Make two input boxes, one for fahrenheit and the other for celsis and cde the Jquery to conver 1 to the other
+		
+	</script>
+	
+	<p>4. this is another para</p>
+	<div>5. this is a div</div><br />
+	6. input: <input type="text" id="input1" />
+	<br /><br /><br />
+	7. input length: <input type="text" id="length" />
+	<br />
+	8. input width: <input type="text" id="width" />
+	<br />
+	9. output area: <span id="area">Not set</span>
+	
+	
+	
+	
+</body>
+
+</html>
