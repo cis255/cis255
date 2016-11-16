@@ -1,0 +1,17 @@
+body {
+	margin-top: 40px;
+}
+
+
+/* QUICK-FIXES */
+.sub-header {
+	border-bottom: 1px solid #eee;
+}
+
+.radio-label {
+	margin: 5px;
+}
+
+.form-control[readonly] {
+	background-color: #fff;
+}

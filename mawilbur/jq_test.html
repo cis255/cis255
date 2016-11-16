@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<span>1. This is a span</span><br />
+	
+		<p class ="intro">2. This is an intro paragraph</p>
+		
+		<div>3. This is a div</div>
+		
+		<script>
+			// this code hides any paragraph, <p>, that is clicked
+			$(document).ready(function(){
+				$("p").click(function(){
+					$(this).hide();
+				});
+				// $("#input1").mouseenter(function(){
+				//	alert("You entered an input box!");
+				// });
+				$("#length, #width").keyup(function(){
+					document.getElementById("area").innerHTML = (document.getElementById("length").value * document.getElementById("width").value)
+				});
+				$("#farenheit").keyup(function(){
+					document.getElementById("celcius").value = ((document.getElementById("farenheit").value - 32) * (5/9))
+				});
+				$("#celcius").keyup(function(){
+					document.getElementById("farenheit").value = (document.getElementById("celcius").value  * (9/5) + 32)
+				});
+			});
+			
+			// the second dive does not hide when clicked because the second div was not loaded before the jquery was executed
+			$("div").click(function(){
+				$(this).hide();
+			});
+			
+			// if any spans are cliked, all elements are hidden
+			$("span").click(function(){
+				$("*").hide();
+			});
+			
+			// if any div is clicked, then any paragraph of class "intro" is also hidden
+			
+			$("div").click(function(){
+				$("p.intro").hide();
+			}); 
+			
+			// in-class assignment: make 2 input boxes, 
+		</script> 
+		
+		<p>4. This is a paragraph</p>
+		
+		<div>5. This is a div</div><br />
+		
+		6. Input: <input type="text" id="input1"/><br /><br /><br />
+		
+		7. Input Length: <input type="text" id="length"/> <br />
+		
+		8. Input Width: <input type="text" id="width"/> <br />
+		
+		9. Output Area: <span id="area">Not Set</span> <br /><br /><br /><br />
+		
+		
+		
+		<p>In-Class Assignment:</p>
+		
+		Farenheit: <input type="text" id="farenheit"/> <br />
+		
+		Celcius: <input type="text" id="celcius"/> <br />
+	</body>
+
+</html>

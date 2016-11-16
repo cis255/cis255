@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Csis Course Planner</title>
+    <link rel="stylesheet" href="css/external.css" />
+</head>
+
+<body onLoad="ListMajors()">
+    <h1>Csis Course Planner</h1>
+    <div id="Input_Container">
+
+
+        <div style="float:left">
+            <label>Course Major</label>
+            <select id="selectMajor" onChange="ListMajors()">
+					<option value="CIS">Computer Information Systems</option>
+					<option value="CS">Computer Science</option>
+				</select>
+        </div>
+        <div class="rightF">
+            <label>Courses Completed</label>
+            <input type="text" placeholder="[prefix]-[course #]" id="inputCourseComplete" list="ListOfMajors">
+            <input type="button" value="Add Course" onClick="AddToCompletedList()">
+            <datalist id="ListOfMajors">					
+				</datalist>
+        </div>
+
+
+    </div>
+    <div class="ListContainer" id="listCompletedCourses" style="margin-bottom:0px;">
+        <h3>Completed Courses</h3>
+        <hr/>
+        <div class="column1" id="completeCol1">
+        </div>
+        <div class="column2" id="completeCol2">
+        </div>
+    </div>
+    <div id="Container-Centered">
+        <input type="button" value="Find Courses for Graduation" id="btnGetCourses" onClick="PopulateNeededList()">
+        <input type="button" value="Reset Lists" id="btnResetCourses" onClick="ResetLists()">
+    </div>
+    <div class="ListContainer" id="CoursesNeededContainer">
+        <h3>Courses Needed to Graduate</h3>
+        <hr>
+        <div class="column1" id="neededCol1">
+
+        </div>
+        <div class="column2" id="neededCol2">
+
+        </div>
+    </div>
+    <div class="ListContainer" id="">
+        <h3>Courses Availiable</h3>
+        <hr>
+        <div class="column1" id="Avail1">
+
+        </div>
+        <div class="column2" id="Avail2">
+
+        </div>
+    </div>
+    <div class="ListContainer" id="">
+        <h3>Courses Not Available</h3>
+        <hr>
+        <div class="column1" id="Unavail1">
+
+        </div>
+        <div class="column2" id="Unavail2">
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>

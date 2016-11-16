@@ -1,38 +1,39 @@
-<!doctype html>
-<!-- file: js_test07.html
--->
-<html>
-	
-	<body>
-		<label>Enter a number</label>
-		<input type="text" id="in01" onkeyup = "isNumber();" />
 
-		<P id ="out01"> Output goes here</p>
+<DOCTYPE!html>
+<html>
+	<body>
+		<label>Enter a Province</label>
+		<input type="text" id="in01" onkeyup="isProvince();"  />
+		
+		<p id="out01">Output goes here</p>
 		<script>
 		
-			// demonstrate error checking
 			
-			function isNumber() {
-				var x = document.getElementById("in01").value;
+			
+			//write a function to test whether or not the input is a legit province of CANADA. Output should be "Province" or "Not a Province"
+			function isProvince() 
+			{
+			
+				var input = document.getElementById("in01").value;
+				var listOfProvinces = ["Nunavut", "Quebec", "Northwest Territories", "Ontario", "British Columbia", "Alberta", "Saskatchewan", "Manitoba", "Yukon", "Newfoundland and Labrador", "New Brunswick", "Nova Scotia", "Prince Edward Island"];
+				for(var i =0; i<listOfProvinces.length; i++)
+				{
 				
-				if (!isNAN(x))
-				document.getElementById("out01").innerHTML = "Number";
 				
-				else
-				document.getElementById("out01").innerHTML = "Not a number Number";
-				
-				
+			
+					if(listOfProvinces[i].toLowerCase()==input.toLowerCase()){
+						document.getElementById("out01").innerHTML = " is a province";
+						break;
+					}
+					else{
+						document.getElementById("out01").innerHTML = "is not a Province";
+					}
 				}
-	
+			}
 			
 		</script>
-		
 	</body>
-	
 </html>
-
-
-
 
 
 

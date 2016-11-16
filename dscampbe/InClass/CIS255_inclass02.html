@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CIS255_inclass02</title>
+</head>
+
+<body>
+	<h1>Calculate Materials for Deck</h1>
+		
+		<form>
+			<input type="number" id="length" placeholder="length"/>
+			<input type="number" id="width" placeholder="width"/>
+			<input type="number" id="boardLength" placeholder="board length"/>
+			<input type="number" id="boardWidth" placeholder="board width"/>
+			
+			<!-- assume boards are 8x1 -->
+			<br />You need <span id="numberofboards">___</span> <span id="boardDimensions"></span> boards.
+		</form>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+			$(document).keyup(function () {
+				var l,w,bl,bw,area,boardArea,numBoards;
+				l = $("#length").val();
+				console.log(l);
+				w = $("#width").val();
+				bl = $("#boardLength").val();
+				bw = $("#boardWidth").val();
+				area = l * w;
+				boardArea = bl*bw;
+				numBoards = area/boardArea;
+
+				document.getElementById("boardDimensions").innerHTML = bl+" x "+bw;					document.getElementById("numberofboards").innerHTML = numBoards;
+			});
+			
+	</script>
+</body>
+
+</html>

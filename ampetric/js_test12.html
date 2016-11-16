@@ -1,0 +1,83 @@
+<!doctype html>
+<!-- JS HTML DOM (Document Object Model)
+http://www.w3schools.com/js/js_htmldom.asp -->
+<html>
+	<head>
+	</head>
+	
+	<body>
+		
+		<p id="js12">Hello</p>
+		
+		<h1>My First JvaScript Animation</h1>
+		
+		<div id ="container">
+    <div id ="animate">My animation will go here</div>
+		</div>
+		
+		<script>
+			document.write("Goodbye");
+			var obj = document.getElementById("js12");
+			obj.innerHTML = "So Long";
+			obj.setAttribute("style","color: red");
+			obj.setAttribute("onclick","alert('hey dude')");
+			obj2 = document.createElement("hr");
+			obj.appendChild(obj2);
+			var b = document.body;
+			
+			//The slow way to create a unordered list using JS
+			var ul = document.createElement("ul");
+			document.body.appendChild(ul);
+			var li1 = document.createElement("li");
+			var li2 = document.createElement("li");
+			var li3 = document.createElement("li");
+			var li4 = document.createElement("li");
+			var li5 = document.createElement("li");
+			li1.innerHTML = "Blue";
+			ul.appendChild(li1);
+			
+			// add an ordered list with 5 li elements to the body. The list items
+			//should be alligator, bat, cat, dog, elephant
+			var ol = document.createElement("ol");
+			document.body.appendChild(ol);
+			var an1 = document.createElement("li");
+			var an2 = document.createElement("li");
+			var an3 = document.createElement("li");
+			var an4 = document.createElement("li");
+			var an5 = document.createElement("li");
+			an1.innerHTML = "Alligator";
+			an2.innerHTML = "Bat";
+			an3.innerHTML = "Cat";
+			an4.innerHTML = "Dog";
+			an5.innerHTML = "Elephant";
+			ol.appendChild(an1);
+			ol.appendChild(an2);
+			ol.appendChild(an3);
+			ol.appendChild(an4);
+			ol.appendChild(an5);
+			
+			
+			//zebra stripe the ordered list
+			
+			
+			var current = ol.firstChild;
+			var ns = null;
+			while (current != null){
+				current.style.backgroundColor = "lightgray";
+				ns = current.nextSibling;
+				if(ns == null)
+					current = null;
+				else
+					current = ns.nextSibling;
+					
+			}
+			
+			//Very Simple Animation
+			
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

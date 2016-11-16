@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<body>
+		<h1>Course Planner Template</h1>
+		<table border="1">
+			<tr>
+				<td>Courses Taken <br />
+					<li><input type="text" id="B0" /></li>
+					<li><input type="text" id="B1" /></li>
+				</td>
+				<td>Courses Needed<br />
+					<p id="demo"></p>
+				</td>
+			</tr>
+		</table>
+		<button onclick="showNeeded(classes);">Show Courses Needed</button>
+		<script>
+			var classes = "Hello World. Blah blah blahblahblah blah blah blahblah."
+			function showNeeded(classes) {
+				console.log("Im in!");
+				document.getElementById("demo").innerHTML = classes;
+			}
+
+		</script>
+	</body>
+</html>

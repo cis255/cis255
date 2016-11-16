@@ -1,0 +1,36 @@
+
+<!doctype html>
+<!-- file: js_test10.html 
+Events + Yahtzee
+-->
+<html>
+	<body>
+		<script>
+			
+			
+			d1 = Math.floor(1 + 6 * Math.random()); 
+			d2 = Math.floor(1 + 6 * Math.random()); 
+			d3 = Math.floor(1 + 6 * Math.random()); 
+			d4 = Math.floor(1 + 6 * Math.random()); 
+			d5 = Math.floor(1 + 6 * Math.random()); 
+			
+			document.write(d1 + " " + d2 + " " + d3 + " " + d4 + " " + d5);
+			if(d1==d2 && d1==d3 && d1==d4 & d1==d5) 
+				document.write("<br />YAHTZEE");
+			else 
+				document.write("<br />Try again");
+
+			// your mission is let the user choose which dice to re-throw
+			// your program will be one additional attempt to get a yahtzee. 
+			
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+

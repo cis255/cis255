@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+		<script>
+		// this code hides any paragraph, <p>, that is clicked
+		$(document).ready(function(){
+			$("p").click(function(){
+				$(this).hide();
+			});
+			// $("#input1").mouseenter(function(){
+			//	 alert("You entered a input#1");
+			// });
+			$("#celsuis").keyup(function(){ 
+				document.getElementById("temp").innerHTML = document.getElementById("celsuis").value * (9/5) +32
+				document.getElementById("fahrenheit").value="";
+			});
+			$("#fahrenheit").keyup(function(){ 
+				document.getElementById("temp").innerHTML = (document.getElementById("fahrenheit").value -32) * (5/9)
+				document.getElementById("celsuis").value="";
+			});
+			
+		});
+		
+		
+		//Make two input boxes, one for fahrenheit and the other for celsis and cde the Jquery to conver 1 to the other
+		
+	</script>
+	
+	input fahrenheit: <input type="text" id="fahrenheit" />
+	<br />
+	input celsuis: <input type="text" id="celsuis" />
+	<br />
+	converted temp: <span id="temp">Not set</span>
+	
+	
+	
+	
+</body>
+
+</html>

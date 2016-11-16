@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<!-- Brought to you by W3 schools. -->
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#button1").click(function(){
+        $("#div1").load("http://csis.svsu.edu/~hsrochef/cis255/hsrochef/jqTesst.html");
+    });
+	 $("#button2").click(function(){
+        $("#div1").load("https://api.svsu.edu/courses?prefix=CIS&courseNumber=255");
+    });
+	$(".one").css("background-color","yellow")
+	$(".two").css("background-color","blue")
+	
+
+});
+</script>
+</head>
+<body>
+
+<div id="div1"><h2>This Page is for you Chantz</h2></div>
+
+<button id="button1">Fix America</button>
+<!--<button id="button2">Get SVSU API Content</button>
+
+ <p class="one"> these one paragraphs</p>
+ <p class="two"> these two paragraphs</p><-->
+</body>
+</html>
+
