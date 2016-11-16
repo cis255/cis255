@@ -1,0 +1,158 @@
+<!doctype html>
+<!--
+Name: Michael Drayton
+assignment: course planner program for cis255
+filename: APIprogram.html
+-->
+
+	<head>
+	</head>
+	
+	<body>
+		<h1>Course Planner</h1>
+		<table border="1">
+			<tr>
+				<td>Courses Taken <br />
+					<input type="text" name="taken" id="taken" />
+				</td>
+				
+				<td>Courses Needed
+					<p id="needed"></p>
+				</td>
+			</tr>
+			<tr>
+				<td>Courses Available<br />
+					<select id="id02"></select>
+				</td>
+				<td>Courses Not Available
+					<p id="unavailable"></p>
+				</td>
+			</tr>
+		</table>
+		<button onClick="showNeeded(neededCourses);">Show Courses Needed</button>
+			
+			<script>
+				var neededCourses = ["cs105", "cis255", "cis355", "cs116", "cs216", "cs316"];
+				var unavailableCourses = [ "cs319", "cis496", "cs500", "cs178", "cis245"];
+				
+				for(var c = 0; c < unavailableCourses.length; c++)
+				{
+					document.getElementById("unavailable").innerHTML += (unavailableCourses[c] + " ");
+				}
+				
+				
+				
+				neededCourses = neededCourses.sort();
+				
+				
+				
+				function courseCompare(needed, taken)
+				{
+					console.log(needed);
+					console.log(taken);
+					var required = [];
+					var matched = false;
+					
+					for(var i = 0; i < neededCourses.length; i++)
+					{
+						for(var j = 0; j < taken.length; j++)
+						{
+							if(neededCourses[i] == taken[j])
+								{
+									matched = true;
+									break;
+								}
+								
+						}
+						
+						if(!matched)
+							required.push(needed[i]);
+							
+						matched = false;
+					}
+					
+					console.log(required);
+					return required;
+				}
+				
+				function stringify(courseNeed) 
+				{
+					var courseString = "";
+					
+					for(var i = 0; i < courseNeed.length; i++)
+					{
+						courseString = courseString + " " + courseNeed[i];
+					}
+					
+					return courseString.trim();
+				}
+				
+				
+			
+				
+				function showNeeded(neededCourses)
+				{
+					var coursesTaken = document.getElementById("taken").value;
+					coursesTaken = coursesTaken.split(" ");
+					neededCourse = courseCompare(neededCourses, coursesTaken);
+					console.log(neededCourse);
+					
+					document.getElementById("needed").innerHTML = stringify(neededCourse);
+					
+				}
+				
+				
+			<!-- javascript solution: creates new elements with attributes -->
+			var xmlhttp = [];
+			var apiRequest = ["CS", "CIS", "MATH", "COMM", "RPW", "ACCT", "ECON", "LAW", "MGT", "PHIL", "MKT"];
+			
+			
+			for(var i = 0; i < apiRequest.length; i++) 
+			{
+				xmlhttp[i] = new XMLHttpRequest();
+				var url = "https://api.svsu.edu/courses?prefix=" + apiRequest[i] + "&term=17/WI";
+				
+				xmlhttp[i].open("GET", url, true);
+				
+				xmlhttp[i].onreadystatechange = function() 
+				{
+					if (this.readyState == 4 && this.status == 200) 
+					{
+						var myArr = JSON.parse(this.responseText);
+						showWinter(myArr);
+					}
+				}
+				
+				xmlhttp[i].send();
+			}
+			
+			
+			
+
+			function showWinter(arr) 
+			{
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) 
+				{
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor); 
+					document.getElementById("id02").appendChild(newP);
+					newP.appendChild(newText);
+					
+				}
+			
+			}
+			
+		
+			</script>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<!--Filename: jq_test3.html
+jquery script copied from w3c schools
+-->
+
+<html>
+
+	<head>
+	</head>
+
+<body>
+		<div id="div1"><h2>jQuery AJAX changed this text.</h2></div>
+		<button>Get External Content</button>
+</body>
