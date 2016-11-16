@@ -1,0 +1,216 @@
+
+<!doctype html>
+<!-- course planner program for cis255
+table: 
+	internal: all courses needed for student [classes]
+	upper left (courses taken) [takenClasses]
+	upper right (courses needed not already taken) [N = classes - takenClasses]
+	internal: all SVSU cs/cis courses [S]
+	lower left: courses available to take winter 2017 [C]
+	lower right: courses not available winter 2017 [S - C]
+-->
+<html>
+	<head>
+		<style>
+			th, td, tr {
+				padding: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<b style="font-size:18pt">Course Planner Template</b><br/>
+		<table border="1">
+			<tr>
+				<th><b>Courses Taken</b></th>  
+				<th><b>Courses Needed</b></th>
+			<tr>
+				<td>
+					<table>
+						<td>
+							<b>Format must be:</b><br/>
+							<em>Lowercase Course: e.g. "bio"</em><br />
+							<em>Course Number(3): e.g. "123"</em><br />
+							<em>Upperclass Class Type Id: e.g. "A"</em><br />
+							<li><input type="text" id="B0" /></li>
+							<li><input type="text" id="B1" /></li>
+							<li><input type="text" id="B2" /></li>
+							<li><input type="text" id="B3" /></li>
+							<li><input type="text" id="B4" /></li>
+							<li><input type="text" id="B5" /></li>
+							<li><input type="text" id="B6" /></li>
+							<li><input type="text" id="B7" /></li>
+							<br/><br/>
+						</td>
+						<td><br/><br/><br/><br/><br/>
+							<li><input type="text" id="B8" /></li>
+							<li><input type="text" id="B9" /></li>
+							<li><input type="text" id="B10" /></li>
+							<li><input type="text" id="B11" /></li>
+							<li><input type="text" id="B12" /></li>
+							<li><input type="text" id="B13" /></li>
+							<li><input type="text" id="B14" /></li>
+							<li><input type="text" id="B15" /></li>
+							<br/><br/>
+							<button onclick="showNeeded(classes);">Show Courses Needed</button>
+						</td>
+					</table>
+				</td>
+				<td>
+					<div id="N">
+						<table>
+							<tr>
+								<th>
+									<b>Classes Required for CIS Major</b>
+								</th>
+							</tr>
+							<tr>
+								<td>
+									<p>math103<br/>math120B<br/>cs105<br/>cs116<br/>cs146<br/>cis255<br/>cs216<br/>cs245
+								</td>
+								<td>
+									<br/>cis301<br/>cis386<br/>cis333<br/>cis311<br/>cis366<br/>cis355<br/>cis422<br/>cis424</p>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th><b>Courses Available</b> </th>
+				<th><b>Courses Unavailable</b></th>	
+			</tr>
+			<tr>
+				<td><select id="id02"></select></td>
+				<td></td>
+			</tr>
+		</table>
+		
+		<script>
+			// create array, "classes", of courses needed for a CIS student
+			var classes = ["math103","math120B","cs105","cs116","cs146","cis255","cs216","cs245","cis301","cis386","cis333","cis311","cis366","cis355","cis422","cis424"];
+			classes = classes.sort();
+			console.log(classes);
+			
+			// make an array into one string
+			function stringifyExcept (classes, n) {
+				matchFlag = new Array();
+				for (var i=0;i<classes.length;i++)
+					matchFlag[i] = 1;
+				var x = "";
+				var g = 0;
+				var i = 0;
+				var passCount = 0;
+				while (g < n.length) {
+					if ((i != n[g]) && (n[g] == -1)){
+						//console.log("Got a -1", n[g]);
+						g++;
+					}
+					else if (i == n[g]) {
+						//console.log("Don't print this", n[g]);
+						matchFlag[i] = 0;
+						g++;
+						i = 0;
+					}
+					else if (i != n[g]){
+						//console.log("Still serching", n[g]);
+						i++;
+					}
+					if (i > classes.length){
+						i = 0;
+						g++;
+					}
+					//console.log("End matchFlag creator pass", passCount);
+					passCount++;
+				}
+				console.log(matchFlag);
+				var counter = 0;
+				for (i=0;i<matchFlag.length;i++){
+					
+					if ((matchFlag[i]) && (counter == 0)){
+						x = x + classes[i];
+						counter++;
+					}
+					else if ((matchFlag[i])&&(counter != 0)){
+						x = x + "<br/>" + classes[i];
+						counter++;
+					}
+				}
+				console.log(x.trim());
+				return x.trim();
+			}
+			
+			// make an array into one string
+			function stringify (classes) {
+				var x = "";
+				for(var i = 0; i<classes.length; i++) {
+					x = x + " " + classes[i];
+				}
+				return x.trim();
+			}
+			// returns index number of e in classes or -1 if not found
+			function isIn (classes, e) {
+				for(var i = 0; i<classes.length; i++) {
+					if (classes[i] == e) { console.log("Found ", i, "!"); return i; }
+					//else console.log("looking", i);
+				}
+				return -1;
+			}
+			// returns elements in array, classes, that are not in array, takenClasses
+			function showNeeded(classes) {
+				document.getElementById("N").innerHTML = 1;
+				takenClasses = new Array();
+				Id = new Array("B0","B1","B2","B3","B4","B5","B6","B7","B8","B9","B10","B11","B12","B13","B14","B15");
+				for(var i=0;i<classes.length;i++){
+					if (document.getElementById(Id[i]).value == "")
+						console.log(Id[i], "is NULL");
+					else
+						takenClasses[i] = document.getElementById(Id[i]).value;
+					
+				}
+				console.log(takenClasses);
+				x = new Array();
+				for (var i = 0; i<classes.length; i++){ 
+					//console.log("isIn pass", (i+1));
+					x[i] = isIn(classes, takenClasses[i]);	 
+				}
+				console.log(x);
+				document.getElementById("N").innerHTML = stringifyExcept(classes, x);
+			}
+			
+		
+			<!-- javascript solution: creates new COURSE elements with attributes -->
+			var xmlhttp = new XMLHttpRequest();
+			var url = "https://api.svsu.edu/courses?prefix=CS&term=17/WI";
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var myArr = JSON.parse(xmlhttp.responseText);
+					myFunction(myArr);
+				}
+			};
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+
+			function myFunction(arr) {
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor); 
+					document.getElementById("id02").appendChild(newP);
+					newP.appendChild(newText);
+				}
+			}
+			
+
+
+		</script>
+	</body>
+</html>
