@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+	<div> This is the DIV!!! </div>
+	<p> This is the PARAGRAPH!!! </p>
+	<script>
+
+		$("div").click(function(){
+			$("p").fadeToggle("slow");
+		});
+		
+		$("p").click(function(){
+			$("div").fadeToggle("slow");
+			
+		});
+		
+	</script>
+		
+</body>
+
+</html>
