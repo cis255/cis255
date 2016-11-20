@@ -403,8 +403,9 @@ design: <head>
             ;
 
             function myFunction2(arr) {
-                for (var i = 0; i < arr.courses.length; i++) {
+                
                     for (var j = 0; j < document.getElementById("coursesNeeded").options.length; j++) {
+					for (var i = 0; i < arr.courses.length; i++) {
                         if ((arr.courses[i].prefix + " " + arr.courses[i].courseNumber) == document.getElementById("coursesNeeded").options[j].text) {
                             var newP = document.createElement("option");
                             newP.setAttribute("value", totalnumber + i);
