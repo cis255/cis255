@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>TEDxSVSU - Presentations</title>
+
+		<!-- Bootstrap Core CSS -->
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Theme CSS -->
+		<link href="css/freelancer.css" rel="stylesheet">
+
+		<!-- Custom Fonts -->
+		<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+		<!--
+	 HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+		<!--Internal CSS-->
+		<style>
+				#navbarLogo {
+					height: 150%;
+					position: relative;
+					float: left;
+					clear: right;
+				}
+				#mainNav {
+					background-color: white;
+					position: fixed;
+				}
+				#mainHeader {
+					background: url("./img/presentations-background.jpg");
+					background-repeat: no-repeat;
+					background-size: cover;
+				}
+				.background-tint {
+					background-color: rgba(150, 0, 0, 0.75);
+					background-blend-mode: multiply;
+				}
+				.portfolio-link {
+					max-height: 250px;
+					width: cover;
+					overflow: hidden;
+				}
+				
+				li a, .dropbtn {
+					padding-top: 15px;
+					display: inline-block;
+					color: white;
+					text-align: center;
+					text-decoration: none;
+				}
+				
+				/* Counteracts the above effect on btn-social padding */
+				li a {
+					padding-top: 0px;
+				}
+				
+
+				li a:hover, .dropdown:hover .dropbtn {
+					text-decoration: none;
+				}
+
+				li.dropdown {
+					display: inline-block;
+				}
+				
+				.dropdown-content {
+					display: none;
+					position: absolute;
+					background-color: #f9f9f9;
+					min-width: 160px;
+					box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+					z-index: 50;
+				}
+
+				.dropdown-content a {
+					color: black;
+					padding: 12px 16px;
+					text-decoration: none;
+					display: block;
+					text-align: left;
+				}
+
+				.dropdown-content a:hover {background-color: #f1f1f1}
+				@media (min-width: 768px) {
+				
+					.dropdown:hover .dropdown-content {
+						display: block;
+					}
+					
+					li a:hover, .dropdown:hover .dropbtn {
+						background-color: red;
+						color: white;
+						text-decoration: none;
+					}
+					.navbar-custom .navbar-nav .external-nav li a:hover {
+						color: white;
+						outline: none;
+					}
+					.navbar-custom .navbar-nav .external-nav li div a:hover {
+						color: black;
+						outline: none;
+					}
+					#navbarLogo {
+					height: 300%;
+					}
+				}
+				
+				section h3.About-Header {
+					color: red;
+					text-transform: none;
+				}
+				section span.About-Header-White {
+					color: white;
+					text-transform: none;
+				}
+				section strong {
+					color: red;
+				}
+				
+				#Additional-Contact-Notice {
+					padding-left: 15px;
+				}
+				
+				section p {
+					text-align: left;
+				}
+		</style>
+
+	</head>
+
+	<body id="page-top" class="index">
+
+		<!-- Navigation -->
+		<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+			<a class="navbar-brand" href="#page-top"><img src="./img/TEDxSVSU Logo.png" id="navbarLogo"/></a>
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header page-scroll">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+					</button>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="hidden">
+							<a href="#page-top"></a>
+						</li>
+						<li class="page-scroll">
+							<a href="#2016-presentations">2016 Presentations</a>
+						</li> 
+						<li class="page-scroll">
+							<a href="#2015-presentations">2015 Presentations</a>
+						</li>
+						<li class="external-nav">
+							<!-- Dropdown -->
+							<ul>
+							  <li class="dropdown">
+								<a href="./index.html" class="dropbtn"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+								<div class="dropdown-content">
+								  <a href="./index.html#portfolio">Presenters</a>
+								  <a href="./index.html#about">About</a>
+								  <a href="./index.html#contact">Contact</a>
+								</div>
+							  </li>
+							</ul>
+							<!-- End Dropdown -->
+						</li>
+						<li class="external-nav">
+							<!-- Dropdown -->
+							<ul>
+							  <li class="dropdown">
+								<a href="./Tickets.html" class="dropbtn">Tickets/Info</a>
+								<div class="dropdown-content">
+								  <a href="./Tickets.html#event-information">Event Information</a>
+								  <a href="./Tickets.html#buy">Buy</a>
+								  <a href="./Tickets.html#schedule">Schedule</a>
+								</div>
+							  </li>
+							</ul>
+							<!-- End Dropdown -->
+						</li>
+						<li class="external-nav">
+							<!-- Dropdown -->
+							<ul>
+							  <li class="dropdown">
+								<a href="./Engage.html" class="dropbtn">Engage</a>
+								<div class="dropdown-content">
+								  <a href="./Engage.html#contact-information">Contact Information</a>
+								  <a href="./Engage.html#apply-to-speak">Apply to Speak</a>
+								</div>
+							  </li>
+							</ul>
+							<!-- End Dropdown -->
+						</li>
+						<li class="external-nav">
+							<!-- Dropdown -->
+							<ul>
+							  <li class="dropdown">
+								<a href="./Sponsors.html" class="dropbtn">Sponsors</a>
+								<div class="dropdown-content">
+								  <a href="./Sponsors.html#covenant">Covenant Healthcare</a>
+								  <a href="./Sponsors.html#another-sponsor">Another Sponsor!</a>
+								</div>
+							  </li>
+							</ul>
+							<!-- End Dropdown -->
+						</li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+
+		<!-- Header -->
+		<header id="mainHeader">
+			<div class = "background-tint">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="intro-text">
+								<span class="name">Presentations</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- 2016 -->
+		<section id="2016-presentations">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h2>2016 Presentations</h2>
+						<hr class="star-primary">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+							<img src="img/Presenters/Benjamin Champagne.jpg" class="img-responsive img-centered" alt="">
+							Photo Courtesy | Thor Rasmussen
+					</div>
+					<div class="col-lg-6">
+							<h3>Benjamin Champagne</h3>
+							<h4>Memes n Stuff (LoLz)</h4>
+							<h5>You can find value in everything and use seemingly worthless things to your advantage.</h5>
+						<p>
+							Benjamin Champagne is co-owner of Counter Culture in Saginaw, MI. Educated at Saginaw Valley State University, he writes monthly reviews for Newpages.com. Counter Culture is an Arts Collective with a focus on art, music and any aspect of the humanities. Ben himself, writes, sings, paints, plays music, directs crowds and dabbles with yoga along with any other pursuit that tickles his fancy at the time. He isn't great at any, but nothing stops him from trying.
+						</p>
+					</div>
+				</div>
+				<br />
+				<div class="row">
+					<div class="col-lg-6">
+							<h3>Brian Thomas</h3>
+							<h4>1,000 miles of ultrarunning through grief</h4>
+							<h5>Dr. Thomas' talk will explore what ultrarunning taught him about persevering after loss.</h5>
+						<p>
+							Dr. Brian Thomas is an Associate Professor of Sociology at Saginaw Valley State University where he teaches and does research on global cultures and food. Dr. Thomas has been running ultramarathons for over a decade. He has successfully completed over a dozen ultramarathons including three 100 mile runs and a solo, unsupported 50k run on the Great Wall of China.  He is currently training to run the Hallucination 100 mile trail run on September 9th in honor of his late wife, Holli Wallace. Through his running, he has also raised almost $20,000 in donations to various charities including, most recently, the Children’s Grief Center of the Great Lakes Bay Region.  Dr. Thomas has two sons, Oliver age 5 and Elliott, age 10. 
+						</p>
+					</div>
+					<div class="col-lg-6">
+							<img src="img/Presenters/Brian Thomas.jpg" class="img-responsive img-centered" alt="">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+							<img src="img/Presenters/Marlin M. Jenkins.jpg" class="img-responsive img-centered" alt="">
+					</div>
+					<div class="col-lg-6">
+							<h3>Marlin M. Jenkins</h3>
+							<h4>How "crazy" is that? Probably not at all.</h4>
+							<h5>We can do better than flippancy when discussing mental health.</h5>
+						<p>
+							Marlin M. Jenkins was born and raised in Detroit. A graduate of SVSU, he's currently a poetry student in University of Michigan's MFA program where he writes about faith, pop culture, race, and mental health. He competes in poetry slams and has had writing published by a variety of publications, including The Collagist, The Journal, Word Riot, and The Offing. A former college Writing Center tutor, he's recently worked with students in Detroit Public Schools through a program called Inside Out.
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+							<h3>Glenn Daniels</h3>
+							<h4>Why Smart Goal Setting is Dumb!</h4>
+							<h5>Creating success by setting powerful goals.  Goals that put you on the road to JOY!</h5>
+						<p>
+							Glenn Daniels has over 25 years’ experience in working with thousands of individuals and organizations to help set strategies that create powerful changes from within.  His clients are spread across a variety of industries including the United States Military, Communications, Insurance, Health Care, Funeral and Network Marketing.
+							<br /><br />
+							His goal is to improve the life’s of individuals by sharing skills that motivate people to learn and be able to quickly apply their new found skills, creating the life that they desire.  He does this through entertaining and informative lectures and workshops that unleash the potential of each person, and connect work life and personal life to create powerful and joyful people. The end result is the creation of compelling personal goals that align with one’s desires and passion.
+						</p>
+					</div>
+					<div class="col-lg-6">
+							<img src="img/Presenters/Glenn Daniels.jpg" class="img-responsive img-centered" alt="">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+							<img src="img/Presenters/Darnell Jackson.jpg" class="img-responsive img-centered" alt="">
+					</div>
+					<div class="col-lg-6">
+							<h3>Darnell Jackson</h3>
+							<h4>What Carbon Footprint Are You Leaving Behind?</h4>
+							<h5>Activities that we take part in can shape those around us.</h5>
+						<p>
+							As human beings we all create a carbon footprint based upon the activities that we are involved in, which contribute carbon dioxide to the environment and have an impact on the earth.  Just as our actions have an impact on the earth in terms of our carbon footprint, so too do our activities have an impact upon those people that we come into contact with.  We all get a chance to shape our legacy, and there are certain steps that we can take to make sure that ours is a positive one.
+							<br /><br />
+							Darnell Jackson is a Circuit Court Judge, informational speaker and nationwide presenter for the National Judicial Institute on Domestic Violence. He is the author of the acclaimed book “The Steps of A Good Man," which provides practical and proven methods for dealing with the challenges and setbacks of life.  This presentation will focus on those things that each of us can do in order to create a legacy that we can be proud of.
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+							<h3>Elad Inbar</h3>
+							<h4>Robots may take jobs, but they can earn you a million dollars</h4>
+							<h5>Elad will share his personal experience as a runaway from home who almost became a drifter and then as a leader of an organization focused on students engagement by using robots.</h5>
+						<p>
+							Elad Inbar is the founder and CEO of both www.RobotLAB.com, a multi award-winning company focused on teaching STEM subjects using robotics platforms in order to engage students; and www.RobotAppStore.com the first marketplace for apps for robots.
+							<br /><br />
+							Passionate about robotics, Elad has shared his expertise with thousands of high schools, science museums, and research groups at prominent schools and universities around the world. He share his experience as a speaker in many events such as SxSW, TCEA, ACTE, FETC and many others. With parallel careers in academia and technology, Elad is uniquely qualified to bridge the cutting-edge robotics industry and the educational market.
+							<br /><br />
+						</p>
+					</div>
+					<div class="col-lg-6">
+							<img src="img/Presenters/Elad Inbar.jpg" class="img-responsive img-centered" alt="">
+					</div>
+					<div class="col-lg-12">
+						<p>
+							Based in San Francisco, Elad has lived on three continents and recruited teams speaking more than 10 languages. He managed Israel’s largest internet portal’s R&D team back in 1999, managed the internet department of Orange Israel and founded massiveImpact and Affilimob, the first global mobile marketing network utilizing artificial intelligence, with offices in Taiwan, China, Thailand, Singapore, Israel and Italy. He is also the co-founder of the IROB Israel's Robot Association. His current ventures in robotics and education received wide publication and recognition in the Time Magazine, The New Yorker, Tech Crunch, IEEE, NBC, Financial Times, Fast Company, CNET, San Francisco Chronicle and many other media outlets.
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+							<img src="img/Presenters/David Deline.jpg" class="img-responsive img-centered" alt="">
+					</div>
+					<div class="col-lg-6">
+							<h3>David Deline</h3>
+							<h4>Introduce Yourself</h4>
+							<h5>David believes we all need to be equipped with a 2 minute speech about the topic we know the most about… [dramatic pause]... OURSELVES! During this talk, David will walk through pop culture's obsession with hearing artists names in music, humanities unfortunate tendency to judge based on first impression, his experience introducing himself and how it could make you rich one day.</h5>
+						<p>
+							David DeLine is Toastmasters District 62 public relations managers, motivational speaker, blogger, and serial introductionist. Prepare to be challenged to take your life to the next level as David guides you to reach out to everyone around you.  Why be afraid to say hello? Your next handshake could lead you down the path of success.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 2017 -->
+		<section class="success" id="2015-presentations">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h2>2015 Presentations</h2>
+						<hr class="star-light">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/5rfu3x4QBE8" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div class="col-lg-6">
+							<h3>Darnell Jackson</h3>
+							<h4>The Value of Human Worth</h4>
+							<h5>What is the definition of human worth? Judge Jackson suggests it is the conscious decision to compassionately do something that has a positive impact on another.</h5>
+						<p>
+							Darnell Jackson is a Circuit Court Judge, informational speaker and nationwide presenter for the National Judicial Institute on Domestic Violence. He is the author of the acclaimed book The Steps of A Good Man, which provides practical and proven methods for dealing with the challenges and setbacks of life. His philosophy is, “I have an obligation to those who hear me speak to provide them with something of significance that they didn’t have before.”
+						</p>
+					</div>
+				</div>
+				<br />
+				<div class="row">
+					<div class="col-lg-6">
+							<h3>Franz Schneider</h3>
+							<h4>You thought you hired an employee, but a human being showed up instead</h4>
+							<h5>To close the productivity gap, your organization has to treat people with at least the same respect as you treat buildings and machines.</h5>
+						<p>
+							Franz Schneider, CEO Humantech, is a prominent authority on what organizations must do to get the best from their people. His client list is comprised of the world's most influential as well as profitable companies. A speaker at literally thousands of events, his humor and talent to make the complex usable has warmed audiences on six continents; Antarctica is still on his bucket list. Franz’s TEDx presentation will focus on three criteria every organization must embrace to close the gap between “what people can do if they are inspired and the least they do not to get fired.”
+						</p>
+					</div>
+					<div class="col-lg-6">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/Jx3zGKyfRTY" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/ksiJV-nM9WA" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div class="col-lg-6">
+							<h3>Margaret Arnold</h3>
+							<h4>Because People Matter</h4>
+							<h5>We can change the culture of patient care by believing evidence and consistently aligning our thoughts and actions with evidence based practice, because people really do matter.</h5>
+						<p>
+							Margaret Arnold is a Safe Patient Handling and Early and Progressive Mobility Consultant, and owner of Inspire Outcomes LLC. She also continues to practice Physical Therapy at McLaren-Bay Region, in Bay City, Michigan. Margaret has over 20 years of experience as a PT, specializing in back injury prevention, industrial rehabilitation and ergonomics. 
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+							<h3>Tracy Weber</h3>
+							<h4>Horse Wisdom for the Human World</h4>
+							<h5>Horse wisdom can inspire humans to engage authentically in ways which nurture self awareness, empathy, compassion, transforming our own lives, our organizations, our communities and the world.</h5>
+						<p>
+							Tracy Weber, Ph.D. is a recognized leader in equine-assisted learning (EAL), a university professor, an author, and entrepreneur. In addition to her state-of-the art facility in Michigan, she has facilitated EAL learning programs throughout the world, including Dubai, Croatia, Puerto Rico and several states in the US. Her engaging presentation will prompt spirited dialogue about humans becoming more horse-like.
+						</p>
+					</div>
+					<div class="col-lg-6">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/Hr3QjTSomFE" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/f4456JwceMY" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div class="col-lg-6">
+							<h3>Mike Mosher</h3>
+							<h4>Three C's of Design</h4>
+							<h5>Seek your conceptual model so your art/life's work may fly amidst overlaps of art and science.</h5>
+						<p>
+							Mike Mosher is a Professor, Art/Communication Media Administration at Saginaw Valley State University. Artist, adventurer and educator, his books include Creating Web Graphics, Audio & Video (2002, with Roger Shepard), two textbooks published in Japan (2005, 2008, with Noriko Uosaki) that teach English via rock and pop song lyrics, and illustrations for David Smith's cartoon biography Orwell for Beginners (1984). Before he came to SVSU in 2000 from California, Mike had been a community muralist for the San Francisco Art Commission, and a Senior Graphic Designer at Apple. 
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+							<h3>Jason Pockrandt</h3>
+							<h4>Fatherless to Fatherhood: The Journey</h4>
+							<h5>You can transform your own life and serve as the father figure for another. Humanity needs a world full of men being fathers theirs couldn't be, the fathers they want to be, for their family and community.</h5>
+						<p>
+							Tracy Weber, Ph.D. is a recognized leader in equine-assisted learning (EAL), a university professor, an author, and entrepreneur. In addition to her state-of-the art facility in Michigan, she has facilitated EAL learning programs throughout the world, including Dubai, Croatia, Puerto Rico and several states in the US. Her engaging presentation will prompt spirited dialogue about humans becoming more horse-likeJason Pockrandt is a fatherlessness expert, Transformation Coach, motivational speaker, and author. He is also the founder of Live To Give where he spends most of his days coaching fatherless men to become the husbands and fathers they were created to be. He has spoken for institutions such as Power of Dad, Teen Challenge, Bay Arenac ISD, The Rock Center for Youth Development and Good Samaritan Rescue Mission. His TEDx talk will inspire and motivate fathers around the world to re-evaluate their choices and the lives they are leading. Asking them the question. Will you choose today to become the father he couldn’t be and live a legacy worth leaving in your family and community? The choice is yours and the opportunity for change is now.
+						</p>
+					</div>
+					<div class="col-lg-6">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/BbnxAHET72Y" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/bEgKtUxW0uE" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div class="col-lg-6">
+							<h3>Joshua Smith</h3>
+							<h4>Crypto-currency can be used to advance medical research</h4>
+							<h5>Team leader of the 4th all-time highest-ranked team on the largest super computing research project Folding@Home. Developer of a secure currency earned by doing research. Respected strategic visionary for IoT (Internet of Things).</h5>
+						<p>
+							Team leader of the 4th all-time highest-ranked team on the largest super computing research project Folding@Home. Developer of a secure currency earned by doing research. Respected strategic visionary for IoT (Internet of Things).
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+							<h3>Frank Hall</h3>
+							<h4>It takes a community to raise a teacher</h4>
+							<h5>In order for students to succeed, teachers need to succeed, and the overall community can help</h5>
+						<p>
+							Dr. Frank R. Hall joined Saginaw Valley State University as Dean, College of Science Engineering & Technology in June 2015. He brings a broad set of experiences in scientific research, education, and policy; and worked in academia, federal agencies, and non-governmental organizations on STEM related issues. Prior to coming to SVSU, Frank was a member of the Working Group to define STEM for the Commonwealth of Massachusetts, working to establish a definition beyond the acronym.
+						</p>
+					</div>
+					<div class="col-lg-6">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/8vjLcSYuna8" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/P-qJhdsmyDI" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div class="col-lg-6">
+							<h3>Basil Clark</h3>
+							<h4>From Concept to Reality: How a University is Created</h4>
+							<h5>Dr Clark recalls the birth and development of a Michigan university,</h5>
+						<p>
+							Dr. Basil Clark is Professor Emeritus of English at Saginaw Valley State University. Dr. Clark has his Ph.D. from The Ohio State University and recently retired from SVSU after forty years of service. He taught a wide variety of English composition, language, and literature courses, with a particular interest in Old and Middle English literature. He is editor of the first volume of SVSU history, The Early and Formative Years, and contributing editor to the second, The Years of Growth and Maturity.
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+							<h3>Kate Cardinali</h3>
+							<h4>Parenting: Why Pinterest has it all wrong</h4>
+							<h5>Parenting should not be a competition.</h5>
+						<p>
+							Kate Cardinali, the owner of Innovative Media & Design, is avid about propelling companies, creating success stories through engaging design and marketing solutions. In the midst of this, Kate is an active mother of three children under 5 years old who still finds time to lend a supportive hand by volunteering for local non-profit organizations and events.
+						</p>
+					</div>
+					<div class="col-lg-6">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/Q5Jif7DHTCo" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<!-- Footer -->
+		<footer class="text-center">
+			<div class="footer-above">
+				<div class="container">
+					<div class="row">
+						<div class="footer-col col-md-4">
+							<h3>Location</h3>
+							<p>Saginaw Valley State University
+								<br>Curtiss Hall - Banquet Rooms A & B</p>
+						</div>
+						<div class="footer-col col-md-4">
+							<h3>Around the Web</h3>
+							<ul class="list-inline">
+								<li>
+									<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+								</li>
+								<li>
+									<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+								</li>
+								<li>
+									<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer-col col-md-4">
+							<h3>About Freelancer</h3>
+							<p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-below">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							Copyright &copy; TEDxSVSU 2016
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+		<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+		<div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+			<a class="btn btn-primary" href="#page-top">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+		</div>
+
+		<!-- jQuery -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Plugin JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+		<!-- Contact Form JavaScript -->
+		<script src="js/jqBootstrapValidation.js"></script>
+		<script src="js/contact_me.js"></script>
+
+		<!-- Theme JavaScript -->
+		<script src="js/freelancer.js"></script>
+
+	</body>
+
+</html>

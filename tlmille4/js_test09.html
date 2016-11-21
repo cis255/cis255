@@ -11,7 +11,6 @@
 		<p id = "demo"></p>
 		<script>
 			
-
 			intCourseID = 0;
 			urlCS = 'https://api.svsu.edu/courses?prefix=CS';
 			urlCIS = 'https://api.svsu.edu/courses?prefix=CIS';
@@ -48,7 +47,7 @@
 					{
 						str += obj.courses[i].courseNumber + " " + obj.courses[i].prefix + "<br/>";
 						//arrCourses[intCourseID][i] = [obj.courses[i].prefix, obj.courses[i].courseNumber];
-						arrCourses[intCourseID][i] = obj.courses[i].courseNumber;
+						arrCourses[intCourseID][i]= obj.courses[i].courseNumber;
 					}
 					intCourseID++;
 					return str;
@@ -82,7 +81,7 @@
 			
 			sortCourseNumber();
 			printCourses();
-			
+			document.getElementById("demo").innerHTML += arrCourses[0][0] + "<br/>";
 
 		</script>
 	</body>

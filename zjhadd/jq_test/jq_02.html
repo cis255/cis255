@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#hideP").click(function(){
+					$("p").hide();
+				});
+				$("#showP").click(function(){
+					$("p").show();
+				});
+				$("#hideD").click(function(){
+					$("div").fadeOut(1000);
+				});
+				$("#showD").click(function(){
+					$("div").show(300);
+				});				
+				
+			});
+		</script>
+	</head>
+	<body>
+		<h2>This is a demo to practice using jquery effects such as... </h2>
+		<ul>
+			<li>Hide/Show</li>
+			<li>Fade</li>
+			<li>Slide</li>
+		</ul>
+		
+		<p>If you click on the "Hide Paragraph" button, this paragraph will disappear.</p>
+		
+		<button id="hideP">Hide Paragraph</button>
+		<button id="showP">Show Paragraph</button>
+		<br/><br/>
+		<div>If you click on the "Hide Div with Fade" button, this Div will disappear.</div>	
+		<br/>
+		<button id="hideD">Hide Div with Fade</button>
+		<button id="showD">Show Div with Fade</button>
+		
+	</body>
+</html>

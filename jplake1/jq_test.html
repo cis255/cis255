@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<span>1. this is a span</span><br />
+	<p class="intro">2. this is a <span class="intro">para 2.a.</span></p>
+	<div>3. this is a div</div>
+
+	<script>
+		// this code hides any paragraph, <p>, that is clicked
+		$(document).ready(function(){
+			$("p").click(function(){
+				$(this).hide();
+			});
+			
+			$("#length, #width").keyup(function(){
+				document.getElementById("area").innerHTML = document.getElementById("length").value * document.getElementById("width").value;
+				
+				console.log(document.getElementById("area").innerHTML);
+			});
+			$("#celsius").keyup(function(){
+				
+				var x = document.getElementById("celsius").value;
+				document.getElementById("fahrenheit").value = x * 1.8 + 32;
+				document.getElementById("kelvin").value = x * 1 + 273.15;	
+			});
+			
+			$("#fahrenheit").keyup(function(){
+				
+				var x = document.getElementById("fahrenheit").value;
+				document.getElementById("celsius").value = (x - 32) / 1.8;
+				document.getElementById("kelvin").value = (x - 32) / 1.8 + 273.15;	
+			});
+			
+			$("#kelvin").keyup(function(){
+				
+				var x = document.getElementById("kelvin").value;
+				document.getElementById("fahrenheit").value = (x - 273.5) *1.8 + 32;
+				document.getElementById("celsius").value = x - 273.15;	
+			});
+			
+			
+		});
+		// the second div does not hide when clicked because the second div was not loaded before the jquery was executed
+		$("div").click(function(){
+			$(this).hide();
+		});
+		
+		// if any span is clicked all elements become hidden
+		$("span").click(function(){
+			$("*").hide();
+		});
+		
+		// if any div is clicked then any child of a paragraph where the child is of class "intro" will be hidden
+		$("div").click(function(){
+			$("p .intro").hide();
+		});
+		
+		// in-class assignment: Make 2 input boxes, one for fahrenheit and the other
+		// for celsius and code the jquery to convert the value entered.
+		
+	</script>
+	
+	<p>4. this is another para</p>
+	<div>5. this is a div</div><br />
+	6. input: <input type="text" id="input1" />
+	<br /><br /><br />
+	7. input length: <input type="text" id="length" />
+	<br />
+	8. input width: <input type="text" id="width" />
+	<br />
+	9. output area: <span id="area">Not set</span>
+	<br><br>
+	10. Fahrenheit : <input type="text" id="fahrenheit"/><br>
+	11. Celsius : <input type="text" id="celsius"/><br>
+	12. Kelvin : <input type="text" id="kelvin"/>
+	
+	
+	
+	
+</body>
+
+</html>

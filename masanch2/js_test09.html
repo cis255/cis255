@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Michael Sanchez">
+
+    <title>CIS 255 - JavaScript Tests</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Template CSS -->
+    <link href="template.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+ 
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="menu.html">CIS-255</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programs<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="progTED.html">TEDxSVSU</a></li>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript Tests <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="js_test01.html">Test 1: Data Types</a></li>
+					<li><a href="js_test02.html">Test 2: Control Statements</a></li>
+					<li><a href="js_test03.html">Test 3: Loops</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="js_test07.html">Exercise 7: Functions</a></li>
+					<li><a href="js_test08.html">Exercise 8: Array of Functions</a></li>
+					<li role="separator" class="divider"></li>
+					<li class="active"><a href="js_test09.html">Exercise 9: JSON</a></li>
+					<li><a href="js_test10.html">Exercise 10: Yahtzee</a></li>
+					<li><a href="js_test11.html">Exercise 11: 2-D Array</a></li>
+				</ul>
+			</li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+	
+	<div class="container">
+		<h1 class="page-header">Exercise 09 - JSON and Sorting</h1>
+		
+		<!-- Row of two columns -->
+		<div class="row">
+
+			<div class="col-md-6">
+			
+				<h3 class="sub-header">Sorted by 'prefix'</h3>
+				<div class="table-responsive">
+				
+					<table class="table table-striped">
+						<thead>
+						
+							<tr>
+								<th>Course Prefix</th>
+								<th>Course Number</th>
+							</tr>
+							
+						</thead>
+						<tbody id="table1">
+					
+						</tbody>
+					</table>
+					
+				</div><!-- table -->
+				
+				
+			</div><!-- col-6 -->
+
+			<div class="col-md-6">
+			
+				<h3 class="sub-header">Sorted by 'courseNumber'</h3>
+				<div class="table-responsive">
+				
+					<table class="table table-striped">
+						<thead>
+						
+							<tr>
+								<th>Course Prefix</th>
+								<th>Course Number</th>
+							</tr>
+							
+						</thead>
+						<tbody id="table2">
+					
+						</tbody>
+					</table>
+					
+				</div><!-- table -->
+				
+				
+			</div><!-- col-6 -->
+			
+
+		</div><!-- row -->
+
+    </div><!-- container -->
+	
+	<script>
+	
+		// Create & parse JSON
+		var text = '{ "courses" : [' +
+						'{ "prefix":"CS" , "courseNumber":"146" },' +
+						'{ "prefix":"CS" , "courseNumber":"245" },' +
+						'{ "prefix":"CS" , "courseNumber":"316" },' +
+						'{ "prefix":"CIS" , "courseNumber":"255" },' +
+						'{ "prefix":"CIS" , "courseNumber":"311" },' +
+						'{ "prefix":"CIS" , "courseNumber":"355" },' +
+						'{ "prefix":"MATH" , "courseNumber":"261" },' +
+						'{ "prefix":"MATH" , "courseNumber":"300" },' +
+						'{ "prefix":"PHIL" , "courseNumber":"210" },' +
+						'{ "prefix":"ART" , "courseNumber":"410" },' +
+						'{ "prefix":"PHIL" , "courseNumber":"311" }' +
+						']}';
+		var json = JSON.parse(text);
+		
+		
+		/// TABLE 1
+		
+		// Sort by 'courseNumber'
+		json.courses.sort(function(a, b) {
+			if (a.prefix == b.prefix) {
+				return a.courseNumber == b.courseNumber ? 0 : +a.courseNumber > +b.courseNumber ? 1 : -1;
+			}
+			
+			al = a.prefix.toLowerCase();
+			bl = b.prefix.toLowerCase();
+
+			return (al < bl) ? -1 : (al > bl) ? 1 : 0;
+		});
+		
+		// Output 'table1'
+		var table = document.getElementById("table1");
+		for (var i = 0; i < json.courses.length; i++) {
+			table.innerHTML = table.innerHTML + "<tr><td>" + json.courses[i].prefix + "</td><td>" + json.courses[i].courseNumber + "</td></tr>";
+		}
+		
+		
+		/// TABLE 2
+		
+		// Sort by 'prefix'
+		json.courses.sort(function(a, b) {
+			if (a.courseNumber == b.courseNumber) {
+				al = a.prefix.toLowerCase();
+				bl = b.prefix.toLowerCase();
+
+				return (al < bl) ? -1 : (al > bl) ? 1 : 0;
+			}
+
+			return +a.courseNumber > +b.courseNumber ? 1 : -1;
+		});
+		
+		// Output 'table2'
+		var table = document.getElementById("table2");
+		for (var i = 0; i < json.courses.length; i++) {
+			table.innerHTML = table.innerHTML + "<tr><td>" + json.courses[i].prefix + "</td><td>" + json.courses[i].courseNumber + "</td></tr>";
+		}
+		
+		
+	</script>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<span><strong><font size="12"> Tempeture Conversion </font></strong></span><br />
+	<br /><br /><br />
+	
+	<strong>Input Fahrenheit Temp:</strong> <input type="text" id="fTemp"/><br />
+	<strong>Celcius Temp:</strong> <span id="fToc">Not Set</span>
+	<br /><br /><br />
+	<strong>Input Celcius Temp:</strong> <input type="text" id="cTemp"/>
+	<br />
+	<strong>Fahrenheit Temp:</strong> <span id="cTof">Not set</span>
+
+	<script>
+			$("#fTemp").keyup(function(){
+				document.getElementById("fToc").innerHTML = (document.getElementById("fTemp").value - 32) * 9/5;
+			});	
+				console.log(document.getElementById("fToc").innerHTML);
+
+			$("#cTemp").keyup(function(){
+				document.getElementById("cTof").innerHTML = (document.getElementById("cTemp").value * 9/5) + 32;
+			});
+				console.log(document.getElementById("cTof").innerHTML);
+
+	</script>
+</body>
+</html>

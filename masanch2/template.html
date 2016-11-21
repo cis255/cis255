@@ -8,101 +8,60 @@
     <meta name="description" content="">
     <meta name="author" content="Michael Sanchez">
 
-    <title>CIS255 - Michael Sanchez - Home</title>
+    <title>CIS 255 - JavaScript Tests</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Template CSS
-    <link href="template.css" rel="stylesheet"> -->
+    <!-- Template CSS -->
+    <link href="template.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+ 
+    <div id="menu"></div>
 	
+	<div class="container">
+		<h1 class="page-header">Exercise 09 - JSON and Sorting</h1>
+		
+		<!-- Row of two columns -->
+		<div class="row">
+
+			<div class="col-md-6">
+				<h3>responseText</h3>
+				
+				<p id="response"></p>
+				
+			</div><!-- col-6 -->
+						
+					
+			<div class="col-md-6">
+				<h3>JSON</h3>
+				
+				<p id="json"></p>
+				<p id="loop"></p>
+				
+			</div><!-- col-6 -->
+
+		</div><!-- row -->
+
+    </div><!-- container -->
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 	
-  </head>
-
-  <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">CIS-255</a>
-        </div><!--/.CIS255 -->
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript Tests<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li class="active"><a href="js_test01.html">Test 1: Data Types</a></li>
-					<li><a href="js_test02.html">Test 2: Control Statements</a></li>
-					<li><a href="js_test03.html">Test 3: Loops</a></li>
-					<li role="separator" class="divider"></li>
-					<li><a href="js_test07.html">Exercise 7: Functions</a></li>
-					<li><a href="js_test08.html">Exercise 8: Array of Functions</a></li>
-				</ul>
-			</li>
-          </ul><!-- javascript tests drop-down -->
-        </div><!-- nav-collapse -->
-      </div><!-- container -->
-    </nav>
-
-    <div class="container">
+	<script>
 	
-		<div class="row">
-
-			<div class="col-md-6">
-				<p class="page-header">
-					;alksdjfa;lksdfj;
-				
-				</p>
-				<p id="demo"></p>
-
-				<script>
-					document.write ("works");
-						
-					function loadDoc(url) {
-					  var xhttp = new XMLHttpRequest();
-					  xhttp.onreadystatechange = function() {
-						if (this.readyState == 4 && this.status == 200) {
-						 document.getElementById("demo").innerHTML = this.responseText;
-						}
-					  };
-					  xhttp.open("GET", url, true);
-					  xhttp.send();
-					}
-					
-					loadDoc ("https://api.svsu.edu/courses?prefix=CIS&courseNumber=255");
-					
-				</script>
-				
-			</div><!-- col-16 -->
-						
-					
-			<div class="col-md-6">
-				<p class="page-header">
-					;alksdjfa;lksdfj;
-				
-				</p>
-				
-			</div><!-- col-12 -->
-			
-		</div><!-- row -->
-
-    </div><!-- container -->
+		// Load page menu
+		$("#menu").load("include/menu.html");
+		
+	</script>
 
   </body>
 </html>

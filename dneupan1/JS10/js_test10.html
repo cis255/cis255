@@ -1,0 +1,104 @@
+<!doctype html>
+<!-- file: js_test10.html 
+Events + Yahtzee
+some of this code was copied from 
+http://www.w3schools.com/js/js_events.asp
+-->
+<html>
+	
+	<body>
+		<div class = "form">
+		<form action="login.php" method="post" id="loginform">
+			<label>Username:</label>
+			<input type="text" name="username" id="username" />	<br />
+			<label>Password: </label>
+			<input type="password" name="password" id="password" />
+			<br />
+			<button onclick="alert('123...');">hint</button>
+			<button id="button2">hint2</button>
+			<input type="submit" value="Submit" id="submit2"/>
+		</form>
+
+		<script>
+			var x = document.getElementById("submit2");
+			x.value = "Zippydee"; 
+			x.style = "color: red;";
+			var b = document.getElementById("button2");
+			// b.onclick = alert('dude');
+			b.onmouseover = function () {
+				var d = new Date(); 
+				console.log("date: " + d);
+				//var f = document.getElementById("loginform");
+				// f.submit();
+				// console.log(Math.floor(1 + 6 * Math.random())); 
+			};
+		</script>	
+		<!--	d1 = Math.floor(1 + 6 * Math.random()); 
+			d2 = Math.floor(1 + 6 * Math.random()); 
+			d3 = Math.floor(1 + 6 * Math.random()); 
+			d4 = Math.floor(1 + 6 * Math.random()); 
+			d5 = Math.floor(1 + 6 * Math.random()); 
+			
+			document.write(d1 + " " + d2 + " " + d3 + " " + d4 + " " + d5);
+			if(d1==d2 && d1==d3 && d1==d4 & d1==d5) 
+				document.write("<br />YAHTZEE");
+			else 
+				document.write("<br />Try again"); -->
+
+			<!-- your mission is let the user choose which dice to re-throw
+			// your program will be one additional attempt to get a yahtzee. -->
+			</div>
+			
+			<div class="container">
+			<script>
+				//generates random number and rolls the dice
+				function rolldice()
+				{
+				var i;
+				var j;
+				for (j=1; j<7;j++) {
+				i = Math.floor(Math.random()*5) + 1;  //1-7
+					if (document.getElementById("d" + j).className != "Keep"){
+						document.getElementById("d" + j).innerHTML = "<img src ='dice-"+ i +".png'/>";
+						}
+					}
+				}
+				
+				//retains the element on click
+				function keep(ele)
+				{
+					var n = ele.id
+					document.getElementById(n).setAttribute("class", "Keep");
+					document.getElementById(n).style.borderWidth = "thick";
+					document.getElementById(n).style.borderColor = "yellow";
+				}
+			</script>
+		
+			<!-- The table has been organized here!-->
+			<table border=1>
+			<tr>
+			<td id="d1" onClick="keep(this);"> <img src="dice-1.png"/> </td>
+			<td id="d2" onClick="keep(this);"> <img src="dice-2.png"/> </td>
+			<td id="d3" onClick="keep(this);"> <img src="dice-3.png"/> </td>
+			<td id="d4" onClick="keep(this);"> <img src="dice-4.png"/> </td>
+			<td id="d5" onClick="keep(this);"> <img src="dice-5.png"/> </td>
+			<td id="d6" onClick="keep(this);"> <img src="dice-6.png"/> </td>
+			</tr>
+
+			<input type="button" value="Roll Dice" onClick="rolldice()"/>
+			</div> <!-- Close container -->
+			
+			
+		
+		
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+

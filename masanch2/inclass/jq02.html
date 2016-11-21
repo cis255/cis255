@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Michael Sanchez">
+
+    <title>CIS 255 - In-Class Exercise 02</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Template CSS -->
+    <link href="../template.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+ 
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../menu.html">CIS-255</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programs <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="../progTED.html">TEDxSVSU</a></li>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript Tests <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="../js_test01.html">Test 1: Data Types</a></li>
+					<li><a href="../js_test02.html">Test 2: Control Statements</a></li>
+					<li><a href="../js_test03.html">Test 3: Loops</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="../js_test07.html">Exercise 7: Functions</a></li>
+					<li><a href="../js_test08.html">Exercise 8: Array of Functions</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="../js_test09.html">Exercise 9: JSON</a></li>
+					<li><a href="../js_test10.html">Exercise 10: Yahtzee</a></li>
+					<li><a href="../js_test11.html">Exercise 11: 2-D Array</a></li>
+				</ul>
+			</li>
+            <li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">In-Class <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="jq01.html">Exercise 1</a></li>
+					<li class="active"><a href="jq02.html">Exercise 2</a></li>
+				</ul>
+			</li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+	
+	
+	
+	<div class="container">
+		
+		<!-- Row for page header and instructions -->
+		<div class="row">
+		
+			<h1 class="page-header">jQuery 02 - Deck Calculator</h1>
+
+			<div class="col-md-12">
+			
+				<p><strong>Instructions:</strong> Enter the length and width of your deck.  Specify, the board length you are using as well.</p>
+				
+			</div><!-- col-md-12 -->
+			
+		</div><!-- row -->
+		
+		<!-- Row for two columns -->
+		<div class="row">
+			<div class="col-md-4">
+			
+				<form>
+					<div class="form-group">
+						<label for="length">Length:</label>
+						<input type="text" class="form-control" id="length" placeholder="" />
+						<label for="width">Width:</label>
+						<input type="text" class="form-control" id="width" placeholder="" />
+					</div>
+					<!-- <button id="submit" type="button" onclick="update()" class="btn btn-primary">Submit</button> -->
+				</form>
+				
+			</div><!-- col-4 -->
+			<div class="col-md-4">
+			
+				<form>
+					<div class="form-group">
+						<label for="b_length">Board Length:</label>
+						<input type="text" class="form-control" id="b_length" value="8" />
+					</div>
+					<!-- <button id="submit" type="button" onclick="update()" class="btn btn-primary">Submit</button> -->
+				</form>
+				
+			</div><!-- col-6 -->
+
+		</div><!-- row -->
+		
+		<div class="row">
+			<div class="col-md-6">
+				<br>
+				<div id="response" class="well">
+				
+					You need <span id="numBoards">_</span> boards to complete you deck.
+				
+				</div>
+				
+			</div><!-- col-6 -->
+
+		</div><!-- row -->
+
+    </div><!-- container -->
+
+
+    <!-- Bootstrap core JavaScript & jQuery
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	
+	<script>
+	
+		// Event - on page fully loaded
+		$(document).ready(function(){
+			
+			// Input 'celsius' - onKeyUp
+			$("#length, #width, #b_length").keyup(function() {
+				var l = $("#length").val();
+				var w = $("#width").val();
+				
+				var bl = $("#b_length").val();
+				
+				// Calculate boards needed (Assume boards are 8 x 1)
+				var area = l * w;
+				var boards = area / bl;
+				
+				// Update number of boards <span>
+				document.getElementById("numBoards").innerHTML = Math.ceil(boards);
+			});
+			
+			
+		});
+		
+	</script>
+
+  </body>
+</html>

@@ -1,0 +1,271 @@
+<!doctype html>
+<!-- course planner program for cis255
+Author: John Lake
+Purpose: Program - Javascript - SVSU Course Planner
+
+table: 
+	internal: all courses needed for student [A]
+	upper left (courses taken) [T]
+	upper right (courses needed not already taken) [N = A - T]
+	internal: all SVSU cs/cis courses [S]
+	lower left: courses available to take winter 2017 [C]
+	lower right: courses not available winter 2017 [S - C]
+-->
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+	<style>
+		body {padding: 15px;}
+		td {height: 400px;
+			width: 450px;
+			padding: 15px;}
+		th {padding: 15px;}
+			
+	</style>
+	<body>
+		<form>
+			<input type="radio" name="program" value="1" onclick="handleClick(this);">CS
+			<input type="radio" name="program" value="2" onclick="handleClick(this);">CIS<br>
+			Courses Taken:<br>
+			<input type="text" id="input">
+			<input type="button" name="inputButton" value="Add to Course Taken" onclick="buttonClick();">
+		</form>
+		<h1>Course Planner Template</h1>
+		<table border="1">
+			<th>Courses Taken:</th>
+			<th>Courses Needed:</th>
+			<tr>
+				<td id="taken"></td>
+				<td id="needed"></td>
+			</tr>
+		</table>
+		<br>
+		<table border="1">
+			<th>Courses Available:</th>
+			<th>Courses not Available:</th>
+			<tr>
+				<td id="avail"></td>
+				<td id="nonavail"></td>
+			</tr>
+		</table>
+		<script>
+			// We set up a boat load of arrays
+			var cis = ["cs105","cs146","cs116","cs245","cs216","cis255","cis311","cis301","cis333","cis355","cis366","cis386","cis422","cis424"];
+			var cs = ["cs105","cs116","cs245","cs216","cis255","cis311","cs316","cs366","cs331","cis355","cs411","cs401","cs421","cs446","cs451"];
+			var coursesNeeded = [""];
+			var coursesTaken = [];
+			var courseMarker = 0;
+			var coursesAvailable = [];
+			var coursesAvailableB = [];
+			var coursesAvailable2 = [];
+			var coursesAvailableB2 = [];
+			var AvailableFinal = [];
+			var AvailableFinalB = [];
+			var coursesNeeded2 = [];
+			var coursesNotAvailable = [];
+			
+			// The handleClick function loads the array coursesNeeded with either the CS or CIS course requirments
+			// depending on the radio button clicked.
+			function handleClick(program) {
+				if(program.value == 1){
+				coursesNeeded = cs;
+				}
+				else{coursesNeeded = cis;}
+				console.log(coursesNeeded);
+				document.getElementById("needed").innerHTML = "";
+				for(var i =0;i < coursesNeeded.length;i++){
+					document.getElementById("needed").innerHTML += coursesNeeded[i];
+					document.getElementById("needed").innerHTML += "<br>";
+					}
+			}
+			
+			// The buttonClick function is used for the add course button on the page and does all
+			// the heavy lifting.
+			function buttonClick() {
+				// The first part simply adds the value entered into the text input
+				// into the array coursesTaken
+				coursesTaken[courseMarker] = document.getElementById("input").value;
+				courseMarker++;
+				
+				// coursesNeeded2 is filled with the array coursesNeeded minus
+				// anything in coursesTaken using the cleanArray function
+				coursesNeeded2 = cleanArray(coursesNeeded,coursesTaken);
+				
+				// The course taken table box is filled
+				document.getElementById("taken").innerHTML = "";
+				for(var i =0;i < coursesTaken.length;i++){
+					document.getElementById("taken").innerHTML += coursesTaken[i];
+					document.getElementById("taken").innerHTML += "<br>";
+					}
+					
+				// After many handelings, the two arrays for courses available
+				// are created from their two source arrays
+				AvailableFinalB = coursesAvailableB.concat(coursesAvailableB2);
+				AvailableFinal = coursesAvailable.concat(coursesAvailable2);
+				
+				// The available courses are striped of any courses already taken
+				AvailableFinalB = cleanArray(AvailableFinalB,coursesTaken);
+				
+				// Any changes to the simple version of the available course array are
+				// also made to the fancy version for our Available table box
+				Available = compArray(AvailableFinalB,AvailableFinal);
+				
+				// Our available table box is filled.
+				document.getElementById("avail").innerHTML = "";
+				for(var i =0;i < AvailableFinal.length;i++){
+					if(AvailableFinal[i] != ""){
+					document.getElementById("avail").innerHTML += AvailableFinal[i];
+					document.getElementById("avail").innerHTML += "<br>";
+					}
+				}
+				
+				// We make our not available array, by taking any avaialable courses
+				// and subtracting them from the ones we need
+				coursesNotAvailable = cleanArray(coursesNeeded2,AvailableFinalB);
+				
+				// our not available table box is filled
+				document.getElementById("nonavail").innerHTML = "";
+				for(var i =0;i < coursesNotAvailable.length;i++){
+					if(coursesNotAvailable[i] != ""){
+					document.getElementById("nonavail").innerHTML += coursesNotAvailable[i];
+					document.getElementById("nonavail").innerHTML += "<br>";
+					}
+				}
+			}
+			
+			
+			
+			// Our function for getting all the CS courses from the SVSU api
+			var xmlhttp = new XMLHttpRequest();
+			var url = "https://api.svsu.edu/courses?prefix=CS&term=17\/WI";
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var myArr = JSON.parse(xmlhttp.responseText);
+					myFunction(myArr);
+				}
+			};
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+
+			function myFunction(arr) {
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= (arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor); 
+					coursesAvailable[i] = JSON.stringify(newText);
+				}
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= (arr.courses[i].prefix + arr.courses[i].courseNumber) 
+					coursesAvailableB[i] = JSON.stringify(newText);
+				}
+				for(i = 0;i < coursesAvailableB.length;i++){
+					coursesAvailableB[i] = coursesAvailableB[i].substring(1,coursesAvailableB[i].length-1); 
+				}
+				for(i = 0;i < coursesAvailableB.length;i++){
+					if(coursesAvailableB[i].substring(0,2) == "CS"){
+						coursesAvailableB[i] = "cs" + coursesAvailableB[i].substring(2,5);
+					}
+					if(coursesAvailableB[i].substring(0,2) == "CI"){
+						coursesAvailableB[i] = "cis" + coursesAvailableB[i].substring(3,6);
+					}	
+				}
+				
+			}
+			
+			// Our function for getting all the CIS courses from the SVSU api
+			var xmlhttp2 = new XMLHttpRequest();
+			var url2 = "https://api.svsu.edu/courses?prefix=CIS&term=17\/WI";
+
+			xmlhttp2.onreadystatechange = function() {
+				if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200) {
+					var myArr2 = JSON.parse(xmlhttp2.responseText);
+					myFunction2(myArr2);
+				}
+			};
+			xmlhttp2.open("GET", url2, true);
+			xmlhttp2.send();
+
+			function myFunction2(arr) {
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= (arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor); 
+					coursesAvailable2[i] = JSON.stringify(newText);
+				}
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= (arr.courses[i].prefix + arr.courses[i].courseNumber) 
+					coursesAvailableB2[i] = JSON.stringify(newText);
+				}
+				for(i = 0;i < coursesAvailableB2.length;i++){
+					coursesAvailableB2[i] = coursesAvailableB2[i].substring(1,coursesAvailableB2[i].length-1); 
+				}
+				for(i = 0;i < coursesAvailableB2.length;i++){
+					if(coursesAvailableB2[i].substring(0,2) == "CS"){
+						coursesAvailableB2[i] = "cs" + coursesAvailableB2[i].substring(2,5);
+					}
+					if(coursesAvailableB2[i].substring(0,2) == "CI"){
+						coursesAvailableB2[i] = "cis" + coursesAvailableB2[i].substring(3,6);
+					}	
+				}
+				
+			}
+			
+			// A function for subtracting one array from another
+			function cleanArray(arr1, arr2){
+				for(i = 0; i < arr1.length; i++){
+					for(j = 0; j < arr2.length; j++){
+						if(arr1[i] == arr2[j]){
+						arr1[i] = "";
+						}
+					}
+				}
+				return arr1;
+			}
+			
+			// A function for ensuring anything cleaned from the usable available array
+			// was also cleaned form the proper avaialble array
+			function compArray(arr1,arr2) {
+				for(i =0; i < arr2.length;i++ ){
+					if(arr1[i] == ""){
+						arr2[i] = "";
+					}
+				}
+				return arr2;	
+			}
+			
+
+		</script>
+	</body>
+</html>

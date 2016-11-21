@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="Campbell, Devin - Menu">
+    <meta name="author" content="Devin Campbell">
+
+    <title>Devin Campbell - Menu</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="menu_resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="menu_resources/css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="wrapper" >
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        - Menu - 
+						
+               		</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="program01/resume.html">Program 1 - Resume</a>
+                </li>
+		<li>
+			<a href="CoursePlanner/">Program JavaScript - Course Planner</a>
+		</li>
+
+                <li>
+			<a href="#submenu-toggle" id="submenu-toggle" >JavaScript Exercise <span style="padding-left:60px">&#9660;</span></a>
+    			
+	    			
+		    		<ul id="SubListing" class="toggled">
+		    			<a onclick="openIframe('ExerciseFiles/JS_Exercise01.html')">Js_Exercise01</a>
+		    			<a onclick="openIframe('ExerciseFiles/JS_Exercise02.html')">Js_Exercise02</a>
+		    			<a onclick="openIframe('ExerciseFiles/JS_Exercise03.html')">Js_Exercise03</a>
+		    			<a onclick="openIframe('ExerciseFiles/JS_Exercise04.html')">Js_Exercise04</a>
+		    			<a onclick="openIframe('ExerciseFiles/JS_Exercise05.html')">Js_Exercise05</a>
+		    			<!--<a href="ExerciseFiles/JS_Exercise04.html" disabled="disabled">Js_Exercise04</a>-->
+		    		</ul>
+		    	
+		</li>
+		<li>
+			<a href="InClass/CIS255_inclass01.html">In Class Assignment #1</a>
+		</li>
+		<li>
+			<a href="InClass/CIS255_inclass02.html">In Class Assignment #2</a>
+		</li>
+               		               		
+                </ul>
+
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" >
+           <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">&#9776;</a>
+            <div >
+                
+                  
+				<h1>Devin Campbell</h1>
+				<p>Welcome to my home page. Menu's and content will be updated periodically as projects are completed. Check back regularly for updates</p>
+				<p>Updated (9/5/2016) - Added Program 1 to menu.<span>
+					<img height="100px" width="100px" src="https://chart.googleapis.com/chart?cht=qr&chl=http%3A%2F%2Fcsis.svsu.edu%2F~gpcorser%2Fcis255%2Fdscampbe%2Fprogram01%2Fresume.html&chs=180x180&choe=UTF-8&chld=L|2" rel="nofollow" alt="qr code"><a href="http://www.qrcode-generator.de" border="0" style="cursor:default"  rel="nofollow"></a></span>
+				</p>
+				<span style="text-align:center;"><h2><u>Live Code Preview</u></h2></span>
+				<div id="iframe-Container">
+					
+				</div>
+                <a onclick="clearIframe()" class="btn btn-default toggled" id="iframe-clear" >Clear Preview</a>
+
+                
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="menu_resources/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="menu_resources/js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+	$("#submenu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#SubListing").toggleClass("toggled");
+    });
+	function openIframe(resource){
+		document.getElementById("iframe-Container").innerHTML = "";
+		var frame = document.createElement("iframe");
+		frame.setAttribute("src",resource);
+		frame.setAttribute("style","height:300px; width:100%;");
+		document.getElementById("iframe-Container").appendChild(frame);
+		//document.getElementById("iframe-clear").setAttribute("class","");
+		document.getElementById("iframe-clear").setAttribute("class","btn btn-default");
+	};
+	function clearIframe(){
+		document.getElementById("iframe-Container").innerHTML = "";
+		//document.getElementById("iframe-clear").setAttribute("class","toggled");
+		document.getElementById("iframe-clear").setAttribute("class","btn btn-default toggled");
+	};
+		
+    </script>
+
+</body>
+
+</html>

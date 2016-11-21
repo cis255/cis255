@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+	<head>
+		<!--Daniel Premo
+			Basic Class Exercise 01 - celsius / fahrenheit (& kelvin) conversion
+			CIS-255: Client Side Web Development
+			Online Class
+			November 10th, 2016
+			Kelvin added: November 14th, 2016
+		-->
+		<style>
+			<!--Mostly same style used in menu.html-->
+			h1 {
+				font-family: tahoma;
+				text-align: center;
+			}
+			h2 {
+				font-family: tahoma;
+				text-align: center;
+			}
+			p {
+				font-family: tahoma;
+				margin-left: 5%;
+				width: 90%;
+			}
+			input {
+				font-family: tahoma;
+				margin-right: 5%;
+				width: 20%;
+			}
+		</style>
+	</head>
+	<body>
+		<!--Website display header-->
+		<h2>Basic Class Exercise 01 - celsius / fahrenheit (& kelvin) conversion</h2>
+		
+		<!--Labels followed by appropriate textboxes-->
+		<p>Celsius: <input type="text" id="celsius" onkeyup="fromCelsius();">
+		   Fahrenheit: <input type="text" id="fahrenheit" onkeyup="fromFahrenheit();">
+		   Kelvin: <input type="text" id="kelvin" onkeyup="fromKelvin();"></p><br>
+		   
+		<script>
+			//Function called when user types anything into Celsius textbox.
+			function fromCelsius() {
+				var c = document.getElementById("celsius").value;
+				if (c == "") {
+					document.getElementById("fahrenheit").value = "";
+					document.getElementById("kelvin").value = "";
+				} else {
+					var f = Math.round(c * 1.8 + 32);
+					var k = Math.round(c * 1 + 273);
+					document.getElementById("fahrenheit").value = f;
+					document.getElementById("kelvin").value = k;
+				}
+			}
+			
+			//Function called when user types anything into Fahrenheit textbox.
+			function fromFahrenheit() {
+				var f = document.getElementById("fahrenheit").value;
+				if (f == "") {
+					document.getElementById("celsius").value = "";
+					document.getElementById("kelvin").value = "";
+				} else {
+					var c = Math.round((f - 32) / 1.8);
+					var k = Math.round(c + 273);
+					document.getElementById("celsius").value = c;
+					document.getElementById("kelvin").value = k;
+				}
+			}
+			
+			//Function called when user types anything into Kelvin textbox.
+			function fromKelvin() {
+				var k = document.getElementById("kelvin").value;
+				if (k == "") {
+					document.getElementById("fahrenheit").value = "";
+					document.getElementById("celsius").value = "";
+				} else {
+					var c = Math.round(k - 273);
+					var f = Math.round(c * 1.8 + 32);
+					document.getElementById("celsius").value = c;
+					document.getElementById("fahrenheit").value = f;
+				}
+			}
+			
+			// Built in Javascript error handling fills in "NaN" if a string is typed in either textbox.
+		</script>
+	</body>
+</html>

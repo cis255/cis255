@@ -1,42 +1,14 @@
-
-<html>
-	
-	<body>
-	<p id="demo"></p>
-
-		<script>
-			// test loops, 
-			// 1. for loop to print hello, world 10 times
-			// 2. while loop to print sum of the digits of the number 1234567890 (use mod operator (%))
-			// 3. do loop to print letters in the word "zippy" (string) one letter per line
-			
-			// 1. for loop to print hello, world 10 times
-			for (var i=0; i<10; i++) {
-				document.write((i+1) + ". hello, world.<br />");
-			}
-			
-			// 2. while loop to print sum of the digits of the number 1234567890 (use mod operator (%))
-			var digit = 1234567890;
-			var sum = 0;
-			var counter = 9;
-			while(counter != 0)
-			{
-			sum += counter % digit;
-			counter= counter -1;
-			}
-			document.write("<br /> The total sum of the individual digits of 1234567890 is: <br/>");
-			document.write(sum);
-
-			// 3. do loop to print letters in the word "zippy" (string) one letter per line
-
-				var wordzippy = ["z", "i", "p", "p", "y",];
-				var text = "";
-				var i=0;
-				do {
-						text += wordzippy[i]+"<br>"
-						i++;}
-						while (i < wordzippy.length)
-				document.getElementById("demo").innerHTML = text;
-		</script>
-	</body>
+<!DOCTYPE html> 
+<html> 
+<body> 
+<p id = "this">Here is the body</p>
+Also the body
+<script> 
+$(document).ready(function(){
+    $("body").click(function(){
+        $(this).hide();
+    });
+});
+</script> 
+</body> 
 </html>

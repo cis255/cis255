@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- code copied from w3schools -->
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				$("#button1").click(function(){
+					$("#div1").load("jq_test3.txt");
+				});
+				$("#button2").click(function(){
+					var y = $("#div1").load("https://api.svsu.edu/courses?prefix=CIS&courseNumber=255");
+					console.log(y);
+				});
+				$(".zap").css("background-color", "yellow").css("color", "red");
+			});	
+		</script>
+	</head>
+	<body>
+		
+		<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+		
+		<button id="button1">Get Zippy dee Content</button>
+		
+		<button id="button2">Get SVSU API Content</button>
+		
+		<p class="zip">Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy Zippy</p>
+		<p class="zap">Zappy Zappy Zappy Zappy Zappy Zappy Zappy Zappy Zappy</p>
+		
+	</body>
+
+</html>

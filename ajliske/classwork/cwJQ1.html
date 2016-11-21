@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	
+	<body>
+	
+	Celcius:    <input id="c">
+	Fahrenheit: <input id="f">
+		
+		<script>
+		
+var $f = document.getElementById("f");
+var $c = document.getElementById("c");
+
+function conversion() {
+
+  var temp;  
+  var $targ; // Used to target the element we're not typing into:
+
+  if (this.id === "c") { // input to c, convert to fahrenheit
+    $targ = $f;          
+    temp = (this.value * 9 / 5) + 32;  // celsius to fahrenheit
+  } else {
+    $targ = $c;
+    temp = (this.value - 32) * 5 / 9;  // fahrenheit to celsius
+  }
+
+  if (!isNaN(temp))
+  $targ.value =parseFloat(temp.toFixed(1))//keeps one decimal place
+  else
+  $targ.value = "Error"
+  
+  //$targ.value = !isNaN(temp) ? parseFloat(temp.toFixed(1))  : "Error";
+  
+
+}
+
+
+$f.oninput = conversion; 
+$c.oninput = conversion;
+		
+		</script>
+			
+	</body>
+	
+</html>

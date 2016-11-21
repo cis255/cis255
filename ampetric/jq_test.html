@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+	
+	<body>
+		<span>1. this is a span</span><br />
+		<p>2. this is a paragraph</p>
+		<div>3. this is a div</div>
+		
+		<button id="button1">Toggle show and hide text</button>
+		
+		
+		<script>
+		//this code hides any paragraph that is clicked
+			$(document).ready(function(){
+				$("p").click(function(){
+					$(this).hide();
+				});
+			/*	$("#input1").mouseenter(function(){
+					alert("You entered an #input1");
+				});*/
+				$("#length, #width").keyup(function(){
+					document.getElementById("area").innerHTML = 
+						document.getElementById("length").value * 
+						document.getElementById("width").value;
+				});
+				$("#Fahrenheit").keyup(function(){
+					document.getElementById("Celcius").innerHTML = 
+					(document.getElementById("Fahrenheit").value - 32) / 1.8;
+				});
+			}); 
+			
+			//the second div does not hide when clicked because
+			//the second div was not loaded before the jquery was executed
+				$("div").click(function(){
+					$(this).hide();
+				});
+				
+			//if any span is clicked all elements are hidden
+				$("span").click(function(){
+					$("*").hide();
+				});
+				
+			//if any div is clicked then any paragraph of class "intro"
+			//is hidden
+			$("div").click(function(){
+					$("p.intro").hide();
+				});
+			
+			
+			//inclass assignment: make 2 input boxes, one for fahrenheit and the other for celsius and code the
+			// jquery to convert the value entered into the fahrenheit box into celcius in the celcius box
+			
+		
+		</script>
+		
+		<p>4. this is another paragraph</p>
+		<div>5. this is another div</p>
+		6. input: <input type="text" id="input1"/><br />
+		7. input length: <input type="text" id="length"/><br />
+		8. input width: <input type="text"  id="width"/><br />
+		9. output area: <span id="area">Not Set</span><br />
+		
+		
+		<br /><h2>Fahrenheit to Celcius</h2><br />
+		Fahrenheit: <input type="text" id="Fahrenheit"/><br />		
+		Celcius: <span id="Celcius">No values yet</span><br />
+		
+	</body>
+</html>

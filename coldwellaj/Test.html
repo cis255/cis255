@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo"></div>
+
+<script>
+function getProf(obj){
+	str =""
+	str = obj.courses[0].instructors[0].name;
+	return str;
+}
+function loadXMLDoc() {
+
+  url = "https://api.svsu.edu/courses?prefix=CS"
+  var xmlhttp;
+  if (window.XMLHttpRequest) {
+    xmlhttp = new XMLHttpRequest();
+  } else {
+    // code for older browsers
+    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+	  var s1 = this.responseText;
+	  var o1 = JSON.parse(s1);
+	  var s2 = getProf(o1);
+      document.getElementById("demo").innerHTML =
+      s2;
+    }
+  };
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send();
+}
+
+	loadXMLDoc();
+
+</script>
+
+</body>
+</html>

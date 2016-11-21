@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+Name: Michael Drayton
+Filename: jq_01.html
+Description: This program is a test with jquery.
+-->
+<html>
+
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+		
+	<body>
+		<p class="intro">An introductory paragraph.</p>
+		<div><span>These are</span> words typed on a screen.</div>
+	
+		<script>
+			// this code hides any paragraph <p> that is clicked
+			$(document).ready(function()
+				{
+					$("p").click(function()
+						{
+							//$(this).hide();
+						})
+					$("div").click(function()
+					{
+						$("p.intro").hide();
+					})
+					
+					/*$("#width").mouseenter(function()
+					{
+						alert("You entered an input box.");
+					})*/
+					
+					$("#length, #width").keyup(function()
+					{
+						document.getElementById("area").innerHTML = document.getElementById("length").value * document.getElementById("width").value;
+					})
+					
+					// If a number value is entered into the celsius input box, it will change the value in the fahrenheit box
+					$("#celsius").keyup(function()
+					{
+						$("#fahrenheit").val((this.value * 1.8) + 32);
+					})
+					
+					// If a number value is entered into the fahrenheit input box, it will change the value in the celsius box
+					$("#fahrenheit").keyup(function()
+					{
+						$("#celsius").val((this.value - 32) / 1.8);
+					})
+				})
+				
+				$("span").click(function()
+					{
+						$("span").hide();
+					})
+					
+			// class assignment: make two input boxes, one for farenheit and one for celsius, code jquery to convert a value entered in either box to the other
+			// (farenheit to celsius, or celsius to farenheit)
+		</script>
+		
+		<p class="intro">That can be <span>hidden by</span> clicking on them.</p>
+		<div>What am I doing here?</div>
+		<br />
+		<input type="text" id="width" /><br />
+		<input type="text" id="length" /><br />
+		<p>Area: <span id="area"></span><br />
+		<p>Fahrenheit: <input type="text" id="fahrenheit" /></p><br />
+		<p>Celsius: <input type="text" id="celsius" /> </p><br />
+		
+		
+	</body>
+	
+</html>

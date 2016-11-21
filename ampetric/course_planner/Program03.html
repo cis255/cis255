@@ -1,0 +1,153 @@
+<!doctype html>
+<!-- course planner program03 for CIS255
+table: 
+		internal: all courses needed for student (A)
+		upper left (courses taken)(T)
+		upper right(courses needed)(N=A-T)
+		internal: all SVSU CS/CIS courses (S)
+		lower left (available to take Winter 2017)(C)
+		lower right (not available winter 2017)(S-C)
+--> 
+<html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/CSs/bootstrap.min.CSs" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/CSs/bootstrap-theme.min.CSs" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+	<body>
+<!-- ------------------------------------------------------------------->
+		<h1>Course Planner Template</h1>
+		<h2>CIS</h2>
+		<table border="1">
+			<tr>
+				<td>Courses Taken<br />
+					<textarea id="T" style="width:250px;height:150px;"></textarea>
+				</td>
+				<td>Courses Needed<br />
+					<textarea id="N" style="width:250px;height:150px;"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>Course Available<br />
+					<select id="id02"></select>
+				</td>
+				<td>Courses not Available</td>
+			</tr>
+		</table>
+		<button onclick="showNeeded(A);">Show Courses Needed</button><br /><br /><br />
+<!-- ------------------------------------------------------------------->
+		<h2>CS</h2>
+		<table border="1">
+			<tr>
+				<td>Courses Taken<br />
+					<textarea id="T2" style="width:250px;height:150px;"></textarea>
+				</td>
+				<td>Courses Needed<br />
+					<textarea id="N2" style="width:250px;height:150px;"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>Course Available<br />
+					<select id="id02"></select>
+				</td>
+				<td>Courses not Available</td>
+			</tr>
+		</table>
+<!-- ------------------------------------------------------------------->
+		<button onclick="showNeeded2(B);">Show Courses Needed</button>
+		<script>
+		
+			//create A, the list of all courses needed for a CIS student
+			var A = ["CIS255","CIS355","CIS301","CIS311","CIS333","CIS355","CIS357","CIS366","CIS386","CIS390","CIS422","CIS424","CIS425","CS105",
+					"CS146","CS116","CS216","PHIL210B","ACCT213","ECON221","LAW308","MGT321","MKT331","RPW304","COMM105A","MATH120B","CS245"];
+			A = A.sort();
+			
+			
+			//returns elements in A that are not in T
+			function showNeeded(A){
+				var T = document.getElementById("T").value;
+				T = new Array(T);
+				var x = isIn(A, T[0]);
+				if(x == -1)
+				document.getElementById("N").value = stringify(A) ;
+				else document.getElementById("N").value = stringifyExcept(A, x);
+				
+			}
+			
+			//make an array into one string
+			function stringify (A) {
+				var x = "";
+				for(var i=0;i<A.length;i++){
+					x = x + ", " + A[i];
+				}
+				return x.trim();
+			}
+			
+			//make an array into one string
+			function stringifyExcept (A, N) {
+				var x = "";
+				for(var i=0;i<A.length;i++){
+					if (i != N) x = x + " " + A[i];
+				}
+				return x.trim();
+			}
+			
+			//returns index number of e in A or -1 if not found
+			function isIn (A, e) {
+				for(var i=0;i<A.length;i++){
+					if(A[i] == e)return i;
+					return -1;
+				}
+			}
+		</script>
+<!-- ------------------------------------------------------------------->
+		<script>
+//create B, the list of all courses needed for a CS student
+			var B = ["CS105","CS116","CS451","CS461","CS471","CS216","CS101","CS146","CS150","CS160","CS232","CS233","CS245","CS316","CS331","CS333","CS345","CS401","CS403","CS411","CS421","CS433","CS434","CS446","CS451","CS461","CS471"];
+			B = B.sort();
+			
+			
+			//returns elements in B that are not in T2
+			function showNeeded2(B){
+				var T2 = document.getElementById("T2").value;
+				T2 = new Array(T2);
+				var x = isIn(B, T2[0]);
+				if(x == -1)
+				document.getElementById("N2").value = stringify2(B) ;
+				else document.getElementById("N2").value = stringifyExcept2(B, x);
+				
+			}
+			
+			//make an array into one string
+			function stringify2 (B) {
+				var x = "";
+				for(var i=0;i<B.length;i++){
+					x = x + ", " + B[i];
+				}
+				return x.trim();
+			}
+			
+			//make an array into one string
+			function stringifyExcept2 (B, N2) {
+				var x = "";
+				for(var i=0;i<B.length;i++){
+					if (i != N2) x = x + " " + B[i];
+				}
+				return x.trim();
+			}
+			
+			//returns index number of e in B or -1 if not found
+			function isIn (B, e) {
+				for(var i=0;i<B.length;i++){
+					if(B[i] == e)return i;
+					return -1;
+				}
+			}
+		</script>
+	</body>
+</html>

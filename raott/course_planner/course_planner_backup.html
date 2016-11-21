@@ -1,0 +1,125 @@
+<!doctype html>
+<!-- course planner program for cis255
+table: 
+	internal: all courses needed for student [A]
+	upper left (courses taken) [T]
+	upper right (courses needed not already taken) [N = A - T]
+	internal: all SVSU cs/cis courses [S]
+	lower left: courses available to take winter 2017 [C]
+	lower right: courses not available winter 2017 [S - C]
+-->
+<html>
+	<body>
+		<h1>Course Planner Template</h1>
+		<table border="1">
+			<tr>
+				<td>courses taken <br />
+					<input type="text" id="T" />
+				</td>
+				<td>courses needed<br />
+					<input type="text" id="N" />
+				</td>
+			</tr>
+			<tr>
+				<td>courses available <br />
+					<select id="available"></select>
+				</td>
+				<td>courses not available <br />
+					<select id="notAvailable"></select>
+				</td>
+			</tr>
+		</table>
+		<button onclick="showNeeded(A);">Show Courses Needed</button>
+		<script>
+			// create array, A, list of all courses needed for a CIS student
+			var A = ["MATH120B","CS245","COMM105A","RPW304","MATH161","CS105","CS116",
+							"CS146","CS245","MATH223","MATH300","CS216","CIS255","CS316",
+							"CS331","CIS355","CIS357","CS401","CS411","CS421","CS446","CS451",
+							"CS461","CS471"];
+			console.log(A);
+			A = A.sort();
+			console.log(A);
+			
+			// make an array into one string
+			function stringifyExcept (A, n) {
+				var x = "";
+				for(var i = 0; i<A.length; i++) {
+					if (i != n) x = x + " " + A[i];
+				}
+				return x.trim();
+			}
+			
+			// make an array into one string
+			function stringify (A) {
+				var x = "";
+				for(var i = 0; i<A.length; i++) {
+					x = x + " " + A[i];
+				}
+				return x.trim();
+			}
+			// returns index number of e in A or -1 if not found
+			function isIn (A, e) {
+				for(var i = 0; i<A.length; i++) {
+					if (A[i] == e) return i;
+				}
+				return -1;
+			}
+			// returns elements in array, A, that are not in array, T
+			function showNeeded(A) {
+				var T = document.getElementById("T").value;
+				T = new Array(T);
+				console.log(T);
+				var x = isIn(A, T[0]);
+				if (x == -1) {
+					document.getElementById("N").value = stringify(A);
+				}
+				else {
+					document.getElementById("N").value = stringifyExcept(A, x); 
+				}
+			}
+			
+		
+			<!-- javascript solution: creates new COURSE elements with attributes -->
+			var xmlhttp = new XMLHttpRequest();
+			var url = "https://api.svsu.edu/courses?prefix=CS&term=17/WI";
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var myArr = JSON.parse(xmlhttp.responseText);
+					myFunction(myArr);
+				}
+			};
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+
+			function myFunction(arr) {
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor+ " "
+						+ arr.courses[i].location + " "
+						+ arr.courses[i].status); 
+					if(arr.courses[i].status == "Clsd")
+						{	
+							document.getElementById("notAvailable").appendChild(newP);
+							newP.appendChild(newText);
+						}
+					else
+						{
+							document.getElementById("available").appendChild(newP);
+							newP.appendChild(newText);
+						}
+				}
+			}
+
+		</script>
+	</body>
+</html>

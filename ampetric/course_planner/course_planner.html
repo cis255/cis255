@@ -1,0 +1,257 @@
+<!doctype html>
+<!-- course planner program for cis255
+table: 
+
+	internal: all courses needed for student [A]
+	upper left (courses taken) [T]
+	upper right (courses needed not already taken) [N = A - T]
+	internal: all SVSU cs/cis courses [S]
+	lower left: courses available to take winter 2017 [C]
+	lower right: courses not available winter 2017 [S - C]
+	
+	["CIS255","CIS355","CIS301","CIS311","CIS333","CIS355","CIS357","CIS366","CIS386","CIS390","CIS422","CIS424","CIS425","CS105",
+					"CS146","CS116","CS216","PHIL210B","ACCT213","ECON221","LAW308","MGT321","MKT331","RPW304","COMM105A","MATH120B","CS245"];
+-->
+<html>
+	<head>
+		<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	</head>
+	<body style="margin-left: 10px;">
+		<h1>Course Planner Template</h1>
+		<h2>Computer Science</h2>
+		
+		
+		<!--<table border="1">
+			<tr>
+				<td align="center">Courses Taken <br />
+					<input type="radio"value="CS105"id="CS105radio">CS105</input>
+					<input type="radio"value="CS116"id="CS116radio">CS116</input><br />
+					<input type="radio"value="CS146"id="CS146radio">CS146</input>
+					<input type="radio"value="CS216"id="CS216radio">CS216</input><br />
+					<input type="radio"value="CIS255"id="CIS255radio">CIS255</input>
+					<input type="radio"value="CIS301"id="CIS301radio">CIS301</input><br />
+					<input type="radio"value="CIS311"id="CIS311radio">CIS311</input>
+					<input type="radio"value="CIS333"id="CIS333radio">CIS333</input><br />
+					<input type="radio"value="CIS355"id="CIS355radio">CIS355</input>
+					<input type="radio"value="CIS357"id="CIS357radio">CIS357</input><br />
+					<input type="radio"value="CIS366"id="CIS366radio">CIS366</input>
+					<input type="radio"value="CIS386"id="CIS386radio">CIS386</input><br />
+				</td>
+				<td style="padding: 10px 10px 10px 10px;" align="center"> Courses Taken <br />
+					<input type="radio"value="CIS390"id="CIS390radio">CIS390</input>
+					<input type="radio"value="CIS422"id="CIS422radio">CIS422</input><br />
+					<input type="radio"value="CIS424"id="CIS424radio">CIS424</input>
+					<input type="radio"value="CIS425"id="CIS425radio">CIS425</input><br />
+					<input type="radio"value="CS245"id="CS245radio">CS245</input>
+					<input type="radio"value="MATH120B"id="MATH120Bradio">MATH120B</input><br />
+					<input type="radio"value="COMM105A"id="COMM105Aradio">COMM105A</input>
+					<input type="radio"value="RPW304"id="RPW304radio">RPW304</input><br />
+					<input type="radio"value="MKT331"id="MKT331radio">MKT331</input>
+					<input type="radio"value="MGT321"id="MGT321radio">MGT321</input><br />
+					<input type="radio"value="LAW308"id="LAW308radio">LAW308</input>
+					<input type="radio"value="ECON221"id="ECON221radio">ECON221</input><br />
+					<input type="radio"value="ACCT213"id="ACCT213radio">ACCT213</input>
+					<input type="radio"value="PHIL210B"id="PHIL210Bradio">PHIL210B</input><br />
+				</td>
+				<td>Courses Needed<br />
+					<textarea id="N"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>Courses Available <br />
+					<select id="id02"></select>
+				</td>
+				<td>Courses Not Available</td>
+			</tr>
+		</table>
+		<button onClick="showNeeded(A);">Show Courses Needed</button>
+		<br /><br />
+	-->
+		<h2>Computer Information Systems</h2>
+		<table border="1" style="border-width: medium; border-style: solid;">
+			<tr style="padding: 20px;">
+				<td align="center" style="padding:20px; border-width: medium; border-style:solid; ">Courses Taken<br />
+					<div style="opacity: 0.5">
+						Add courses previously taken with spaces in between
+						e.g.(CS105 CS116 CIS255)
+					</div>
+				<br />
+					<textarea rows="8" cols="50" id="T"></textarea>
+				</td>
+				<td style="padding:20px; border-width:medium; border-style: solid;" align="center">Courses Needed<br />
+					<textarea rows="8" cols="50" id="N"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding:20px; border-width:medium; border-style: solid;">Courses Available <br />
+					<select id="id02"></select>
+				</td>
+				<td style="padding:20px; border-width:medium; border-style: solid;"align="center">Courses Not Available<br />
+					<textarea rows="8" cols="50">CIS255, CIS333, CIS386, CIS390, CIS422, CIS425, CS105, CS146, CS116, CS216, PHIL210B, ACCT213, ECON221, LAW308, MGT321, MKT331, RPW304, COMM105A, MATH120B, CS245</textarea>
+				</td>
+			</tr>
+		</table>
+		<button onClick="showNeeded(A);">Show Courses Needed</button><br /><br />
+		<table border="1">
+			<tr>
+				<td>Courses Taken <br />
+					
+				</td>
+				<td>Courses Needed<br />
+					
+				</td>
+			</tr>
+			<tr>
+				<td>Courses Available <br />
+					<select id="id03"></select>
+				</td>
+				<td>Courses Not Available</td>
+			</tr>
+		</table>
+		<script>
+			// create array, A, list of all courses needed for a CIS student
+			var A = ["CIS255","CIS301","CIS311","CIS333","CIS355","CIS357","CIS366","CIS386","CIS390","CIS422","CIS424","CIS425","CS105",
+					"CS146","CS116","CS216","PHIL210B","ACCT213","ECON221","LAW308","MGT321","MKT331","RPW304","COMM105A","MATH120B","CS245"];
+			A = A.sort();
+			var avail = ["CIS301", "CIS311", "CIS355" ,"CIS357", "CIS366",  "CIS390", "CIS424"];
+			var notAvail = ["CIS255","CIS333","CIS386","CIS390","CIS422","CIS425","CS105",
+					"CS146","CS116","CS216","PHIL210B","ACCT213","ECON221","LAW308","MGT321","MKT331","RPW304","COMM105A","MATH120B","CS245"];
+				notAvail = notAvail.toString();
+			
+			// make an array into one string
+			function stringifyExcept (A, n) {
+				var x = "";
+				for(var i = 0; i<A.length; i++) {
+					if (i != n) x = x + " " + A[i];
+				}
+				return x.trim();
+			}
+			
+			// make an array into one string
+			function stringify (A) {
+				var x = "";
+				for(var i = 0; i<A.length; i++) {
+					x = x + " " + A[i];
+				}
+				return x.trim();
+			}
+			// returns index number of e in A or -1 if not found
+			function isIn (A, e) {
+				for(var i = 0; i<A.length; i++) {
+					if (A[i] == e) return i;
+				}
+				return -1;
+			}
+			// returns elements in array, A, that are not in array, T
+		//	function showNeeded(A) {
+		//		var T = document.getElementById("T").value;
+				
+		//		T = new Array(T);
+			/*	console.log(T);
+				var str = T.toString();
+				console.log(str);
+				T = str.split(" ");
+				console.log(T);
+			*/
+		//		var x = isIn(A, T[0]);
+		//		if (x == -1) {
+		//			document.getElementById("N").value = stringify(A);
+			//	}
+		//		else {
+			//		document.getElementById("N").value = stringifyExcept(A, x); 
+		//		}
+		//	}
+		function showNeeded(A) {
+				var T = document.getElementById("T").value;
+				T = T.toString().split(" ");
+				
+				console.log(T);
+				
+				//loop through T
+				for(var i = 0; i<T.length;i++){
+					var x = isIn(A, T[i]);
+					if (x == -1) {
+						document.getElementById("N").value = stringify(A);
+					}
+					else {
+						document.getElementById("N").value = stringifyExcept(A, x); 
+					}
+				}
+			}
+			
+		
+			<!-- javascript solution: creates new COURSE elements with attributes -->
+			var xmlhttp = new XMLHttpRequest();
+			var xmlhttp2 = new XMLHttpRequest();
+			var url2 = "https://api.svsu.edu/courses?prefix=CS&term=17/WI";
+			var url = "https://api.svsu.edu/courses?prefix=CIS&term=17/WI"
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var myArr = JSON.parse(xmlhttp.responseText);
+					myFunction(myArr);
+				}
+			};
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+			
+
+			function myFunction(arr) {
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor); 
+					document.getElementById("id02").appendChild(newP);
+					newP.appendChild(newText);
+				}
+			}
+			
+<!--------------------------------------------------------------------------------->
+			xmlhttp2.onreadystatechange = function() {
+				if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200) {
+					var myArr = JSON.parse(xmlhttp2.responseText);
+					myFunction2(myArr);
+				}
+			};
+			xmlhttp2.open("GET", url2, true);
+			xmlhttp2.send();
+
+			function myFunction2(arr) {
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor); 
+					document.getElementById("id03").appendChild(newP);
+					newP.appendChild(newText);
+				}
+			}
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- JQuery -->
+		<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+	<body>
+	<!-- course planner program for cis255
+		table: 
+			internal: all courses neeed for student [A]
+			upper left: courses taken [T]
+			upper right: courses needed not already taken. [A - T]
+			internal: all SVSU cs/cis courses [S]
+			lower left: available to take winter 2017 [C]
+			lower right: not available winter 2017 [S-C]
+	-->
+		<div class="container">
+		<h1>Course Planner Template</h1>
+		<form action="">
+		  <input type="radio" name="degree" id = "CS" value="CS" onclick = "courses()">CS<br>
+		  <input type="radio" name="degree" id = "CIS" value="CIS" onclick = "courses()">CIS<br>
+		</form>
+		<table border="1">
+			<tr>
+				<td>
+					<p> Courses Taken </p>
+
+				</td>
+				<td>
+					<p> Courses Needed </p>
+
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p> Courses Avaliable </p>
+
+					</select>
+				</td>
+				<td>
+					<p> Courses Unavaliable </p>
+
+					</select>
+				</td>
+			</tr>
+		</table>
+		<button onclick="show()">Show Courses Needed</button>
+		
+		<script>
+			CISCourses = ["CS 105", "CS 116", "CS 146", "CS 216", "CIS 255", "CIS 301", "CIS 311", "CIS 333", "CIS 355", 
+			"CIS 366", "CIS 386", "CIS 422", "CIS 424"];
+			CSCourses = ["CS 105", "CS 116", "CS 146", "CS 216", "CIS 255", "CS 316", "CS 331", "CIS 355", "CIS 357", "CS 401", 
+			"CS 411", "CS 421", "CS 446", "CS 451", "CS 461", "CS 471"];
+		
+			// add options to selection box
+			function courses() {
+			
+				removeOptions(document.getElementById('Taken'));
+				removeOptions(document.getElementById('Needed'));
+				removeOptions(document.getElementById('Avaliable'));
+				removeOptions(document.getElementById('Unavaliable'));
+
+				
+				if(document.getElementById('CS').checked) {
+					var min = 0,
+					max = CSCourses.length - 1,
+					select = document.getElementById('Taken');
+
+					for (var i = min; i<=max; i++){
+						var opt = document.createElement('option');
+						opt.value = CSCourses[i];
+						opt.innerHTML = CSCourses[i];
+						select.appendChild(opt);
+					}
+				  
+				}
+				else if(document.getElementById('CIS').checked) {
+				var min = 0,
+					max = CISCourses.length - 1,
+					select = document.getElementById('Taken');
+
+					for (var i = min; i<=max; i++){
+						var opt = document.createElement('option');
+						opt.value = CISCourses[i];
+						opt.innerHTML = CISCourses[i];
+						select.appendChild(opt);
+					}
+				  
+				}
+			}
+		
+			//Remove options from Selection box
+			function removeOptions(selectbox)
+			{
+				var i;
+				for(i = selectbox.options.length - 1 ; i >= 0 ; i--)
+				{
+					selectbox.remove(i);
+				}
+			}
+			
+			
+			function show(){
+				//show needed classes
+				removeOptions(document.getElementById('Needed'));
+				var selectedCourses = getSelectValues(document.getElementById('Taken'));
+				
+				if(document.getElementById('CS').checked) {
+					var courseList = CSCourses;
+				}
+				else if(document.getElementById('CIS').checked) {
+					var courseList = CISCourses;
+				}
+				
+				coursesNeeded = courseList.filter( function( el ) {
+				  return selectedCourses.indexOf( el ) < 0;
+				} );
+				
+				
+				var min = 0,
+					max = coursesNeeded.length - 1,
+					select = document.getElementById('Needed');
+
+					for (var i = min; i<=max; i++){
+						var opt = document.createElement('option');
+						opt.value = coursesNeeded[i];
+						opt.innerHTML = coursesNeeded[i];
+						select.appendChild(opt);
+					}
+					
+				// show classes available
+				removeOptions(document.getElementById('Avaliable'));
+				coursesAvaliable = [];
+				coursesAvaliablePrefix = [];
+			
+				var xmlhttp = new XMLHttpRequest();
+				var xmlhttp2 = new XMLHttpRequest();
+				var url = "https://api.svsu.edu/courses?prefix=CS&term=17/WI";
+				var url2 = "https://api.svsu.edu/courses?prefix=CIS&term=17/WI";
+				
+				xmlhttp.open("GET", url, true);
+				xmlhttp.send();
+				
+				xmlhttp2.open("GET", url2, true);
+				xmlhttp2.send();
+
+				xmlhttp.onreadystatechange = function() {
+					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+						var myArr = JSON.parse(xmlhttp.responseText);
+						myFunction(myArr);
+					}
+				};
+				
+				xmlhttp2.onreadystatechange = function() {
+					if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200) {
+						var myArr = JSON.parse(xmlhttp2.responseText);
+						myFunction(myArr);
+					}
+				};
+
+				function myFunction(arr) {
+					
+					for(i = 0; i < arr.courses.length; i++) {
+						var newText 
+							= arr.courses[i].prefix + " " 
+							+ arr.courses[i].courseNumber + " " 
+							+ arr.courses[i].term + " " 
+							+ arr.courses[i].meetingTimes[0].days + " " 
+							+ arr.courses[i].meetingTimes[0].startTime + " " 
+							+ arr.courses[i].meetingTimes[0].instructor; 
+						coursesAvaliable.push(newText);
+						coursesAvaliablePrefix.push(arr.courses[i].prefix + " " 
+							+ arr.courses[i].courseNumber);
+					}
+					
+					//append availableCourses
+					var min = 0,
+					max = coursesAvaliable.length - 1,
+					availableCourses = document.getElementById('Avaliable');
+
+					for (var i = min; i<=max; i++){
+						var opt = document.createElement('option');
+						opt.value = coursesAvaliable[i];
+						opt.innerHTML = coursesAvaliable[i];
+						availableCourses.appendChild(opt);
+					}
+					
+					
+					//append unavailable courses
+					removeOptions(document.getElementById('Unavaliable'));
+					coursesUnavaliable = courseList.filter( function( el ) {
+					  return coursesAvaliablePrefix.indexOf( el ) < 0;
+					} );
+					
+					var min = 0,
+					max = coursesUnavaliable.length - 1,
+					unavailableCourses = document.getElementById('Unavaliable');
+
+					for (var i = min; i<=max; i++){
+						var opt = document.createElement('option');
+						opt.value = coursesUnavaliable[i];
+						opt.innerHTML = coursesUnavaliable[i];
+						unavailableCourses.appendChild(opt);
+					}
+				
+				}
+			
+			
+			
+			}
+			
+			//get selected elements
+			function getSelectValues(select) {
+			  var result = [];
+			  var options = select && select.options;
+			  var opt;
+
+			  for (var i=0, iLen=options.length; i<iLen; i++) {
+				opt = options[i];
+
+				if (opt.selected) {
+				  result.push(opt.value || opt.text);
+				}
+			  }
+			  return result;
+			}
+			
+			
+
+		
+			
+
+		</script>
+	</body>
+</html>
