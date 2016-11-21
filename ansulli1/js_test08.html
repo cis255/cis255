@@ -1,0 +1,55 @@
+<html>
+	<body>
+	</body>
+</html>
+
+<!doctype html>
+<!--- Events + Yahtzee -->
+<html>
+	<body>
+		<!----- from page 276 of textbook -->
+		<form action="login.php" method="post" id="loginform">
+			<label>Username:</label>
+			<br />
+			<input type="text" name="username" id="username" />
+			<br />
+			<label>Password:</label>
+			<br />
+			<input type="password" name="password" id="password" />
+			<button onclick="alert('Happy Hump Day!);">Click Me!</button>
+			<button id="button2">Click Me Too!</button>
+			<input type="submit" value="Submit" id="submit2" />
+		</form>
+		
+		<script>
+			var x = document.getElementById("submit2");
+			x.value = "Zippydee";
+			x.style = "color: hotpink;";
+			var b = document.getElementById("button2");
+			b.onclick = alert('Happy Hump Day!');
+			b.onmouseover = function () {
+				var d = new Date();
+				console.log("date: " + d);
+				var f = document.getElementById("loginform");
+				f.submit();
+			};
+			
+			d1 = Math.floor(1 + 6 * Math.random());
+			d2 = Math.floor(1 + 6 * Math.random());
+			d3 = Math.floor(1 + 6 * Math.random());
+			d4 = Math.floor(1 + 6 * Math.random());
+			d5 = Math.floor(1 + 6 * Math.random());
+			
+			
+			document.write(d1 + " " + d2 + " " + d3 + " " + d4 + " " + d5);
+			if(d1==d2 && d1==d3 && d1==d4 && d1==d5)
+				document.write("<br />Congrats! You got a Yahtzee!");
+			else
+				document.write("<br />So sorry. Try again.");
+				
+			//your mission is let the user choose which dice to re-throw
+			//your program will be one additional attempt to get a yahtzee
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<!-- js_test12.html -->
+<!-- http://www.w3schools.com/js/js_htmldom.asp -->
+
+<html>
+	<head>
+		<style>
+			#container {
+				width: 400px;
+				height: 400px;
+				position: relative;
+				background: pink;
+			}
+			#animate {
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				background: green;
+				top: 350px;
+				right: 350px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<p id="js12">Hello</p>
+		<p>
+			<button onclick="myMove()">Click Me</button>
+		</p>
+
+		<div id="container">
+			<div id="animate">My animation will go here</div>
+		<div>
+		<script>
+			document.write("Goodbye");
+			var obj = document.getElementById("js12")
+			obj.innerHTML = "so long";
+			obj.setAttribute("style", "color: red;");
+			obj.setAttribute("onclick", "alert('hey dude')");
+			var obj2 = document.createElement("hr");
+			obj.appendChild(obj2);
+			var b = document.body;
+			var ul = document.createElement("ul")
+			document.body.appendChild(ul);
+			var li1 = document.createElement("li");
+			var li2 = document.createElement("li");
+			var li3 = document.createElement("li");
+			var li4 = document.createElement("li");
+			var li5 = document.createElement("li");
+			li1.innerHTML = "Jellyfish";
+			li2.innerHTML = "Starfish";
+			li3.innerHTML = "Green";
+			li4.innerHTML = "Yellow";
+			li5.innerHTML = "Purple";
+			ul.appendChild(li1);
+			ul.appendChild(li2);
+			ul.appendChild(li3);
+			ul.appendChild(li4);
+			ul.appendChild(li5);
+			
+			//Add an ordered list (ol) with 5 list items (li) to the body.
+			//The list items should be "Alligator", "Bat", "Cat", "Dog, "Elephant"
+			var ol = document.createElement("ol");
+			b.appendChild(ol);
+			var olItemArray = [];
+			for (var i = 0; i < 5; i++)
+			{
+				olItemArray[i] = document.createElement("li");
+			}
+			olItemArray[0].innerHTML = "Alligator";
+			olItemArray[1].innerHTML = "Bat";
+			olItemArray[2].innerHTML = "Cat";
+			olItemArray[3].innerHTML = "Dog";
+			olItemArray[4].innerHTML = "Elephant";
+			for (var i = 0; i < 5; i++)
+			{
+				ol.appendChild(olItemArray[i]);
+			}			
+			
+			// Zebra stripe unordered list
+			ul.firstChild.style.backgroundColor = "lightblue";
+			var current = ul.firstChild;
+			var ns = null;
+			while (current != null) {
+				current.style.backgroundColor = "lightblue";
+				ns = current.nextSibling;
+				if (ns == null) current = null;
+				else current = ns.nextSibling;
+			}
+
+			// 2. Make the animation go from lower left to upper right (make the red box start from lower left!)
+			
+			// Simple Animation
+			function myMove() {
+				var elem = document.getElementById("animate"); 
+				var pos = 350;
+				var id = setInterval(frame, 5);
+				function frame() {
+					if (pos == 0) {
+						clearInterval(id);
+					} else {
+						pos--; 
+						elem.style.top = pos + 'px';
+						elem.style.right = pos + 'px';
+					}
+				}
+			}		
+			
+		</script>
+	</body>
+</html>
+
+

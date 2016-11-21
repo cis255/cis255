@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<body>
+	    <form action="login.php" method="post" id="loginform">         
+		<label>Username:</label>                                     
+		<input type="text" name="username" id="username" />	<br />   
+		<label>Password: </label>                                    
+		<input type="password" name="password" id="password" />      
+		<br />                                                       
+		<button onclick="alert('123...');">hint</button>             
+		<button id="button2">hint2</button>                          
+		<input type="submit" value="Submit" id="submit2"/>          
+		</form>                                                      
+                                                                  
+		<script>
+
+			var d1 = Math.floor(7*Math.random());
+			var d2 = Math.floor(7*Math.random());
+			var d3 = Math.floor(7*Math.random());
+			var d4 = Math.floor(7*Math.random());
+			var d5 = Math.floor(7*Math.random());
+			var total = d1 + d2 + d3 + d4 + d5
+			document.write("Dice 1: " + d1 + " <br />Dice 2:  " + d2 + " <br />Dice 3:  " + d3 + " <br />Dice 4:  " + d4 + " <br />Dice 5:  " + d5);
+			
+			document.write("<br /> Total: "+total+"<br />");
+			
+			if(d1==d2 && d1==d3 && d1==d4 && d1==d5)
+				document.write("<br />Congrats! You got a Yahtzee!");
+			else
+				document.write("<br />So sorry. Try again.");
+				
+		</script>
+	</body>
+</html>
+
+

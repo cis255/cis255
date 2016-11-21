@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+	<body>
+		<input type = "button" id = "in01"  value = "Print list of classes by prefix" onclick = "printPrefix();"/>
+        <input type = "button" id = "in02"  value = "Print list of classes by course number" onclick = "printNumber();"/>
+		<br />
+		
+		<p id = "out01"> Output goes here <br /></p>
+		
+		<script>
+			//JSON- Javascript Object Notation
+			function objectFun(){
+				var car1 = {type: "Fiat", model:"500", color: "white", odometer: function(){console.log(12345);}};
+				var car2 = {type: "Chevy", model:"Malibu", color: "red", odometer: function(x){console.log(2+x);}};
+				var cars = [];
+				cars[0] = car1;
+				cars[1] = car2;
+				cars[2] = {type: "Buick", model:"LeSabre", color: "black"};
+				cars[3] = {type: "Lotus", model:"Elise", color: "black"};
+				for(var i = 0; i < cars.length; i++){
+					document.write(cars[i].type + "/" + cars[i].model+"<br />");
+				}
+				car1.odometer();
+				cars[0].odometer();
+				car2.odometer(12345);
+				cars[1].odometer(12345);
+			}
+			
+			//Create an object with the prefixes and courseNumbers of 10 cs and cis, math, and phil classes and write two functions; one to alphabatize the courses(second level sort is courseNumber) and the other to put in numerical order (second level sort is prefix) 
+            var courses = [];
+            courses[0] = {prefix: "CS", courseNumber: "105"};
+            courses[1] = {prefix: "CS", courseNumber: "116"};
+            courses[2] = {prefix: "CS", courseNumber: "216"};
+            courses[3] = {prefix: "CIS", courseNumber: "255"};
+            courses[4] = {prefix: "CIS", courseNumber: "355"};
+            courses[5] = {prefix: "CIS", courseNumber: "301"};
+            courses[6] = {prefix: "MATH", courseNumber: "120B"};
+            courses[7] = {prefix: "MATH", courseNumber: "161"};
+            courses[8] = {prefix: "PHIL", courseNumber: "210B"};
+            courses[9] = {prefix: "PHIL", courseNumber: "315"};
+            var elem = document.getElementById("out01");
+            function sortPrefix(){                 
+            courses.sort(function(a, b){
+                var courseNumberA=a.courseNumber.toLowerCase(), courseNumberB=b.courseNumber.toLowerCase()
+                var prefixA=a.prefix.toLowerCase(), prefixB=b.prefix.toLowerCase()
+                if (prefixA < prefixB) //sort string ascending
+                    return -1 
+                if (prefixA > prefixB)
+                    return 1
+                //if (prefixA == prefixB)
+                 //   sortNumber()
+            })
+            }
+            function sortNumber(){
+            courses.sort(function(a, b){
+                var courseNumberA=a.courseNumber.toLowerCase(), courseNumberB=b.courseNumber.toLowerCase()
+                var prefixA=a.prefix.toLowerCase(), prefixB=b.prefix.toLowerCase()
+                if (courseNumberA < courseNumberB) //sort string ascending
+                    return -1 
+                if (courseNumberA > courseNumberB)
+                    return 1
+               // if (courseNumberA == courseNumberB)
+                 //   sortPrefix()
+            })
+            }
+            function printPrefix(){
+                sortPrefix();
+                elem.innerHTML = "";
+                for (var i = 0; i < courses.length; i++){
+                elem.innerHTML = elem.innerHTML + " " + courses[i].prefix + "-" + courses[i].courseNumber + "<br />";
+                }
+            }
+            function printNumber(){
+                sortNumber();
+                elem.innerHTML = "";
+                for (var i = 0; i < courses.length; i++){
+                elem.innerHTML = elem.innerHTML + " " + courses[i].prefix + "-" + courses[i].courseNumber + "<br />";
+                }
+            }
+        </script>
+	</body>
+</html>
+
