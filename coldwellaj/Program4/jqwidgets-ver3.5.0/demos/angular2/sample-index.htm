@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title id='Description'>Angular 2 Button</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/jqx.base.css" type="text/css" />
+     
+    <!-- JQuery and jQWidgets Library -->
+    <script src="jquery.js"></script>
+    <script src="jqxcore.js"></script>
+    <script src="jqxbuttons.js"></script>
+     
+    <!-- Angular and Typescript -->
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/typescript/lib/typescript.js"></script>
+     
+    <!-- SystemJS -->
+    <script src="systemjs.config.js"></script>
+     
+    <!-- Execute Our main.ts File -->
+    <script>
+        System.import('app/main').catch((err) =>
+        {
+            console.error(err);
+        });
+    </script>
+</head>
+ 
+<!-- Display The Application -->
+<body>
+    <my-app></my-app>
+</body>
+
+</html>

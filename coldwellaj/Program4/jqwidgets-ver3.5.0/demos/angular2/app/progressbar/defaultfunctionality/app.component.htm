@@ -1,0 +1,19 @@
+﻿<div style="font-size: 13px; font-family: Verdana; float: left;">
+    <div style='margin-top: 10px;'>Horizontal</div>
+    <angularProgressBar #horizontal></angularProgressBar>
+
+    <div style='margin-top: 10px;'>Vertical</div>
+    <angularProgressBar #vertical></angularProgressBar>
+    <br />
+
+    <div>Enter a value between 0 and 100</div>
+    <input id='ValueInput' type='text' style='margin-top: 5px;' />
+    <angularButton #buttonReference (onClick)="onClick()">Update</angularButton>
+
+    <angularCheckBox #checkbox (onChange)="onCheckBox($event)">
+        Show Progress Text
+    </angularCheckBox>
+    <angularCheckBox #customtextcheckbox (onChange)="onCustomTextCheckBox($event)">
+        Custom Progress Text
+    </angularCheckBox>
+</div>

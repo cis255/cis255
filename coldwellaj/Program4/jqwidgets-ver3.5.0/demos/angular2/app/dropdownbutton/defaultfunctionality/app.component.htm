@@ -1,0 +1,38 @@
+﻿<div id='jqxWidget'>
+    <angularDropDownButton style='float: left;' #dropDownButtonReference>
+        <angularTree style="border: none;" (onSelect)="treeOnSelect($event)" #treeReference>
+            <ul>
+                <li item-selected='true'>Home</li>
+                <li item-expanded='true'>
+                    Solutions
+                    <ul>
+                        <li>Education</li>
+                        <li>Financial services</li>
+                        <li>Government</li>
+                        <li>Manufacturing</li>
+                        <li>
+                            Solutions
+                            <ul>
+                                <li>eLearning</li>
+                                <li>Mobile</li>
+                                <li>RIA</li>
+                                <li>Training</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Products
+                    <ul>
+                        <li>PC products</li>
+                        <li>Mobile products</li>
+                        <li>All products</li>
+                    </ul>
+                </li>
+            </ul>
+        </angularTree>
+    </angularDropDownButton>
+    <div style='float: left; margin-top: 5px; margin-left: 30px;'>
+    <angularCheckBox (onChange)="checkBoxOnChange($event)" #checkBoxReference>Open on mouse over</angularCheckBox>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+﻿ <angularExpander #expander>
+    <div>
+        Create a new account
+    </div>
+    <div>
+        <table style="overflow: hidden; margin: 10px;">
+            <tr>
+                <td colspan="2">
+                    Choose your username:
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <angularInput #userName width="200px" height="21px"></angularInput>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Create a password:
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <angularPasswordInput #password width="200px" height="21px"></angularPasswordInput>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Confirm your password:
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <angularPasswordInput #passwordConfirm width="200px" height="21px"></angularPasswordInput>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <angularButton #submit (onClick)="buttonClicked()">Create account</angularButton>
+                </td>
+            </tr>
+        </table>
+    </div>
+</angularExpander>

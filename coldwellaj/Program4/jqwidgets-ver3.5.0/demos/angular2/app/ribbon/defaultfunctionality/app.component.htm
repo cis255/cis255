@@ -1,0 +1,274 @@
+﻿    <angularRibbon #ribbonReference id='jqxRibbon'>
+        <ul>
+            <li id="fileItem">
+                <angularDropDownButton id="fileItemButton" #fileItemButton>
+                    <div style="height:103px;">
+                        <ul style="list-style-type: none; margin:0px; padding: 3px;">
+                            <li>
+                                <angularButton id="save" class="button" #save>
+                                    <div class='icon SaveImage'></div> Save
+                                </angularButton>
+                            </li>
+                            <li>
+                                <angularButton id="saveAs" class="button" #saveAs>
+                                    <div class='icon SaveSelectionImage'></div> Save As
+                                </angularButton>
+                            </li>
+                            <li>
+                                <angularButton id="open" class="button" #open>
+                                    <div class='icon folder'></div> Open
+                                </angularButton>
+                            </li>
+                            <li>
+                                <angularButton id="close" class="button" #close>
+                                    <div class='icon close'></div> Close
+                                </angularButton>
+                            </li>
+                        </ul>
+                    </div>
+                </angularDropDownButton>
+            </li>
+            <li>Home</li>
+            <li>Help</li>
+        </ul>
+        <div>
+            <div style="overflow:hidden;">
+            </div>
+            <div style="overflow:hidden;">
+                <table class="buttonHolderTable" id="clipBoardTable">
+                    <tr>
+                        <td rowspan="3" style="text-align: center; height: 70px; font-size:10px">
+                            <div id="paste" style="width: 50px;">
+                                <angularButton id="pasteButton" #pasteButton (onClick)="onPasteButtonClick($event)" (mousedown)="onMouseDownPasteButton($event)">
+                                    <span class="icon page_paste" style="zoom:1.5"></span><span class="pasteText">Paste</span>
+                                </angularButton>
+                                <angularDropDownList id="pasteDropDown" #pasteDropDown (onSelect)="onPasteDropDownSelect($event)"></angularDropDownList>
+                            </div>
+                        </td>
+                        <td class="firstrow" rowspan="1">
+                            <angularTooltip #cutButtonToolTip>
+                                <angularButton id="cutButton" #cutButton>
+                                    <div class='icon cut_red'></div>
+                                    <span class="cutText">Cut</span>
+                                </angularButton>
+                            </angularTooltip>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="secondrow">
+                            <angularTooltip #copyButtonToolTip>
+                                <angularButton id="copyButton" #copyButton>
+                                    <div class='icon page_copy'></div>
+                                    <span class="copyText">Copy</span>
+                                </angularButton>
+                            </angularTooltip>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="thirdrow">
+                            <angularButton id="formatPainter" #formatPainter>
+                                <div class='icon FormatPainterImage'></div>
+                                <span class="formatPainter">Format Painter</span>
+                            </angularButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="font-size: 9px; text-align: center; top: -3px; position: relative;">
+                            Clipboard
+                        </td>
+                    </tr>
+                </table>
+                <div class="sectionSeparator">
+                </div>
+                <table class="buttonHolderTable" style="float: left;">
+                    <tr>
+                        <td colspan="4">
+                            <angularDropDownList id="font" #font>
+                            </angularDropDownList>
+                        </td>
+                        <td>
+                            <angularDropDownList id="fontSize" #fontSize>
+                            </angularDropDownList>
+                        </td>
+                        <td>
+                            <angularButton id="growFont" #growFont><div class='icon fontsizeincrease16'></div></angularButton>
+                        </td>
+                        <td>
+                            <angularButton id="shrinkFont" #shrinkFont><div class='icon fontsizedecrease16'></div></angularButton>
+                        </td>
+                        <td>
+                            <angularButton id="clearFormatting" #clearFormatting><div class='icon ClearFormattingImage'></div></angularButton>
+                        </td>
+                        <td>
+                            <angularDropDownList id="changeCase" #changeCase></angularDropDownList>
+                        </td>
+                    </tr>
+                    <tr class="secondrow">
+                        <td colspan="8">
+                            <angularDropDownButton id="fontColor" #fontColor>
+                                <div style="padding: 3px;">
+                                    <angularColorPicker id="fontColorPicker" #fontColorPicker (onColorchange)="onFontColorPicker($event)">
+                                    </angularColorPicker>
+                                </div>
+                            </angularDropDownButton>
+                            <div class="separator"></div>
+                            <angularDropDownButton id="highlightColor" #highlightColor>
+                                <div style="padding: 3px;">
+                                    <angularColorPicker id="highlightColorPicker" #highlightColorPicker (onColorchange)="onHighlightColorPicker($event)">
+                                    </angularColorPicker>
+                                </div>
+                            </angularDropDownButton>
+                        </td>
+                    </tr>
+                    <tr class="thirdrow">
+                        <td colspan="8">
+                            <angularTooltip #superscriptToolTip>
+                                <angularToggleButton id="superscript" #superscript (onClick)="onSuperScriptClick()">
+                                    <div class='icon text_superscript'></div>
+                                </angularToggleButton>
+                            </angularTooltip>
+                            <angularTooltip #subscriptToolTip>
+                                <angularToggleButton id="subscript" #subscript (onClick)="onSubScriptClick()">
+                                    <div class='icon text_subscript'></div>
+                                </angularToggleButton>
+                            </angularTooltip>
+                            <div class="separator" style="top: 3px;"></div>
+                            <angularTooltip #boldToolTip>
+                                <angularToggleButton id="bold" #bold>
+                                    <div class='icon text_bold'></div>
+                                </angularToggleButton>
+                            </angularTooltip>
+                            <angularTooltip #italicToolTip>
+                                <angularToggleButton id="italic" #italic>
+                                    <div class='icon text_italic'></div>
+                                </angularToggleButton>
+                            </angularTooltip>
+                            <angularTooltip #underlineToolTip>
+                                <angularToggleButton id="underline" #underline>
+                                    <div class='icon text_underline'></div>
+                                </angularToggleButton>
+                            </angularTooltip>
+                            <angularTooltip #strikethroughToolTip>
+                                <angularToggleButton id="strikethrough" #strikethrough>
+                                    <div class='icon text_strikethrough'></div>
+                                </angularToggleButton>
+                            </angularTooltip>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="9" style="font-size: 9px; text-align: center;">
+                            Font
+                        </td>
+                    </tr>
+                </table>
+                <div class="sectionSeparator">
+                </div>
+                <table class="buttonHolderTable" style="float: left; margin-top: -4px">
+                    <tr class="firstrow">
+                        <td colspan="8">
+                            <angularTooltip #bulletListToolTip>
+                                <angularButton id="bulletList" #bulletList>
+                                    <div class='icon text_list_bullets'></div>
+                                </angularButton>
+                            </angularTooltip>
+                            <angularTooltip #numberedListToolTip>
+                                <angularButton id="numberedList" #numberedList>
+                                    <div class='icon text_list_numbers'></div>
+                                </angularButton>
+                            </angularTooltip>
+                            <angularTooltip #decreaseIndentToolTip>
+                                <angularButton id="decreaseIndent" #decreaseIndent>
+                                    <div class='icon text_indent'></div>
+                                </angularButton>
+                            </angularTooltip>
+                            <angularTooltip #increaseIndentToolTip>
+                                <angularButton id="increaseIndent" #increaseIndent>
+                                    <div class='icon text_indent_remove'></div>
+                                </angularButton>
+                            </angularTooltip>
+                            <angularTooltip #SortToolTip>
+                                <angularButton id="Sort" #Sort>
+                                    <div class='icon SortHS'></div>
+                                </angularButton>
+                            </angularTooltip>
+                            <angularTooltip #bucketColorToolTip>
+                                <angularDropDownButton id="bucketColor" #bucketColor>
+                                    <div style="padding: 3px;">
+                                        <angularColorPicker id="bucketColorPicker" #bucketColorPicker (onColorchange)="onBucketColorPicker($event)">
+                                        </angularColorPicker>
+                                    </div>
+                                </angularDropDownButton>
+                            </angularTooltip>
+                        </td>
+                    </tr>
+                    <tr class="secondrow">
+                        <td colspan="8">
+                            <angularTooltip #alignLeftToolTip>
+                                <angularButton id="alignLeft" #alignLeft>
+                                    <div class='icon text_align_left'></div>
+                                </angularButton>
+                            </angularTooltip>
+                            <angularTooltip #alignCenterToolTip>
+                                <angularButton id="alignCenter" #alignCenter>
+                                    <div class='icon text_align_center'></div>
+                                </angularButton>
+                            </angularTooltip>
+                            <angularTooltip #alignRightToolTip>
+                                <angularButton id="alignRight" #alignRight>
+                                    <div class='icon text_align_right'></div>
+                                </angularButton>
+                            </angularTooltip>
+                            <angularTooltip #alignJustifyToolTip>
+                                <angularButton id="alignJustify" #alignJustify>
+                                    <div class='icon text_align_justify'></div>
+                                </angularButton>
+                            </angularTooltip>
+                            <div class="separator" style="top:5px; height: 15px;"></div>
+                            <angularTooltip #lineSpacingToolTip>
+                                <angularButton id="lineSpacing" #lineSpacing>
+                                    <div class='icon text_linespacing'></div>
+                                </angularButton>
+                            </angularTooltip>
+                            <angularTooltip #showHideToolTip>
+                                <angularButton id="showHide" #showHide>
+                                    <div class='icon ShowParagraphMarksImage'></div>
+                                </angularButton>
+                            </angularTooltip>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 43px; text-align: center; vertical-align: bottom; font-size:9px;">
+                            Alignment
+                        </td>
+                    </tr>
+                </table>
+                <div class="sectionSeparator">
+                </div>
+            </div>
+            <div style="overflow:hidden;">
+                <table class="buttonHolderTable" style="height: 100%;">
+                    <tr>
+                        <td class="bigTd">
+                            <angularButton id="help" class="button left" #help>
+                                <img src="../../images/help-26.png" />
+                            </angularButton>
+                            Help
+                        </td>
+                        <td class="bigTd">
+                            <angularButton id="about" #about class="button left" >
+                                <img src="../../images/about-26.png" />
+                            </angularButton>
+                            About
+                        </td>
+                        <td class="bigTd">
+                            <angularButton id="update" class="button left" #update>
+                                <img src="../../images/downloading_updates-26.png" />
+                            </angularButton>
+                            Update
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </angularRibbon>
+    <angularGrid #gridReference id='jqxGrid'></angularGrid>

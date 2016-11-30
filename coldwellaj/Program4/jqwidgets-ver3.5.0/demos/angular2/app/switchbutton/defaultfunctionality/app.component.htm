@@ -1,0 +1,43 @@
+﻿<div id="settings-panel">
+    <div class="sections-top-shadow"></div>
+    <div class="settings-section-top settings-section">
+        <div class="settings-label">Ringtone</div>
+        <div class="settings-setter">
+            <div class="settings-melody">Marimba</div>
+        </div>
+    </div>
+    <div class="settings-section">
+        <div class="settings-label">New Mail</div>
+        <div class="settings-setter">
+            <angularSwitchButton id='button1' #button1 (onChecked)="onChecked($event)" (onUnchecked)="onUnchecked($event)"></angularSwitchButton>
+        </div>
+    </div>
+    <div class="settings-section">
+        <div class="settings-label">Sent Mail</div>
+        <div class="settings-setter">
+            <angularSwitchButton id='button2' #button2 (onChecked)="onChecked($event)" (onUnchecked)="onUnchecked($event)"></angularSwitchButton>
+        </div>
+    </div>
+    <div class="settings-section">
+        <div class="settings-label">Calendar Alerts</div>
+        <div class="settings-setter">
+            <angularSwitchButton id='button3' #button3 (onChecked)="onChecked($event)" (onUnchecked)="onUnchecked($event)"></angularSwitchButton>
+        </div>
+    </div>
+    <div class="settings-section">
+        <div class="settings-label">Lock Sounds</div>
+        <div class="settings-setter">
+            <angularSwitchButton id='button4' #button4 (onChecked)="onChecked($event)" (onUnchecked)="onUnchecked($event)"></angularSwitchButton>
+        </div>
+    </div>
+    <div class="sections-section-bottom settings-section">
+        <div class="settings-label">Keyboard Clicks</div>
+        <div class="settings-setter">
+            <angularSwitchButton id='button5' #button5 (onChecked)="onChecked($event)" (onUnchecked)="onUnchecked($event)"></angularSwitchButton>
+        </div>
+    </div>
+</div>
+<div class="events-container">
+    <div>Events:</div>
+    <div id="events"></div>
+</div>
