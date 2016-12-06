@@ -1,0 +1,31 @@
+﻿<angularChart [width]='850' [height]='500' #chartReference></angularChart>
+<table style="width: 850px">
+    <tr>
+        <td style="padding-left:50px">
+            <p style="font-family: Verdana; font-size: 12px;">
+                Move the slider to rotate:
+            </p>
+            <angularSlider #sliderStartAngle (onChange)="sliderStartAngleOnChange($event)"></angularSlider>
+        </td>
+        <td>
+            <p style="font-family: Verdana; font-size: 12px;">
+                Select the series type:
+            </p>
+            <angularDropDownList #dropDownSeries (onSelect)="dropDownListSeriesOnSelect($event)"></angularDropDownList>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-left:50px">
+            <p style="font-family: Verdana; font-size: 12px;">
+                Move the slider to change the radius:
+            </p>
+            <angularSlider #sliderRadius (onChange)="sliderRadiusOnChange($event)"></angularSlider>
+        </td>
+        <td>
+            <p style="font-family: Verdana; font-size: 12px;">
+                Select color scheme:
+            </p>
+            <angularDropDownList #dropDownColors (onChange)="dropDownListColorsOnChange($event)"></angularDropDownList>
+        </td>
+    </tr>
+</table>

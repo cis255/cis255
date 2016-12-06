@@ -1,0 +1,23 @@
+﻿export class AppComponent implements ngAfterViewInit
+{
+    @ViewChild('reference') barGauge: jqxBarGaugeComponent;
+ 
+    ngAfterViewInit(): void
+    {
+        this.barGauge.createWidget();
+    }
+ 
+    values: Array<number> = [102, 115, 130, 137];
+     
+    max: number = 150;
+     
+    tooltip: any =
+    {
+        visible: true,
+        formatFunction: (value: string) =>
+        {
+            let realVal = parseInt(value);
+            return ('Year: 2016<br />Price Index:' + realVal);
+        }
+    }
+}

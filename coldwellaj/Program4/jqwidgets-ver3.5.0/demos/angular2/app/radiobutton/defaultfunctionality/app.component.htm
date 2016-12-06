@@ -1,0 +1,29 @@
+﻿<div id='jqxWidget' style='font-family: Verdana Arial; font-size: 12px; width: 400px;'>
+    <h3>
+        House Contract
+    </h3>
+
+    <angularRadioButton #firstRadioButton (onChange)="onChangeFirst($event)">
+        12 Months Contract
+    </angularRadioButton>
+
+    <angularRadioButton #secondRadioButton (onChange)="onChangeSecond($event)">
+        <span>6 Months Contract</span>
+    </angularRadioButton>
+
+    <angularRadioButton #thirdRadioButton (onChange)="onChangeThird($event)">
+        <span>3 Months Contract</span>
+    </angularRadioButton>
+
+    <angularRadioButton #fourthRadioButton>
+        <span>1 Month Contract</span>
+    </angularRadioButton>
+
+    <div style='margin-top: 10px;'>
+        <div>
+            Events:
+        </div>
+        <div id='events'>
+        </div>
+    </div>
+</div>

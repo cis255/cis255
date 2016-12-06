@@ -1,0 +1,9 @@
+﻿<div class="main-container">
+    <div id="draggable-parent">
+        <angularDragDrop #dragDropReference (ondragstart)="onDragStart($event)" (ondragend)="onDragEnd($event)" (ondroptargetenter)="onDropTargetEnter($event)" (ondroptargetleave)="onDropTargetLeave($event)">
+            <div class="label">I can be dragged only inside my parent</div>
+        </angularDragDrop>
+        <div class="drop-target"><div class="label">I'm a drop target</div></div>
+    </div>
+    <angularPanel #panelReference class="events"></angularPanel>
+</div>

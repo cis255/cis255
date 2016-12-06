@@ -1,0 +1,12 @@
+﻿// From:
+@Component({
+    selector: 'angularInput',
+    template: '<input type="text" [(ngModel)]="ngValue">',
+    providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR]
+})
+ 
+// To:
+@Component({
+    selector: 'angularInput',
+    template: '<input type="text">'
+})
