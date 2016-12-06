@@ -1,0 +1,87 @@
+<!doctype html>
+<!-- ng-cloak is added so that HTML isn't shown in the document before AngularJS has had time to process it -->
+<html ng-app="app3" ng-cloak>
+  <head>
+    <title>AngularJS Tutorial 3</title>
+
+    <!-- Included when we wait to call AngularJS at the end of the document -->
+    <style>
+    [ng\:cloak], [ng-cloak], .ng-cloak {
+      display: none;
+    }
+    </style>
+  </head>
+  <body>
+
+    <div id="groceryList" ng-controller="gListCtrl">
+
+      <!-- You can use data binding as an expression or
+      with ng-bind -->
+      <h3 class="ListTitle">
+        <span ng-bind="groceries.length"></span> Groceries to Get</h3>
+
+      <!-- You can list array items -->
+      <ol style="margin: 0 0 -15px 0;">
+        <li>{{groceries[0].item}}</li>
+      </ol>
+
+      <!-- List the rest of the groceries and skip the 1st index value. ng-repeat contains variables you can use such as $index, $first (true) if first item, $last (true if last item), $middle (true if not 1st or last), $even (true if even), $odd (true if odd) -->
+      <ol start="2">
+        <li ng-repeat = "grocery in groceries"
+          ng-if="$index > 0">
+          {{grocery.item}} {{$index}}
+        </li>
+      </ol>
+
+      <!-- ng-repeat-start and ng-repeat-end allow us to use ng-repeat on 2 elements rather then on just one -->
+      <table>
+      <tr ng-repeat-start="grocery in groceries">
+        <td>
+          {{grocery.item}}
+        </td>
+        <tr ng-repeat-end>
+          <td>
+            {{grocery.purchased}}
+          </td>
+        </tr>
+      </table>
+
+      <!-- 2 way binding allows the user to change the data
+      model -->
+      <label>Change 1st Item : </label>
+      <input ng-model="groceries[0].item" />
+
+      <!-- ng-include inputs a HTML fragment into a page. If you get the error "Cross origin requests are only supported for protocol schemes" that is because this page must be served from a server.  -->
+      <h3>Grocery List</h3>
+      <div ng-include="'grocerylist.html'"></div>
+
+      <!-- We can also dynamically load different HTML partials -->
+      <label>
+        <!-- showList will represent the HTML returned -->
+        <input type="checkbox" ng-model="showList">
+        Show Unordered List
+      </label>
+      <ng-include src="getList()"></ng-include>
+
+      <!-- ng-switch allows us to conditionally insert or remove an element in the document -->
+      <label>Type a number (1 to 4):
+        <input type="text" ng-model="someNumber" />
+      </label>
+      <div ng-switch="someNumber">
+        <p ng-switch-when="1">You entered 1</p>
+        <p ng-switch-when="2">You entered 2</p>
+        <p ng-switch-when="3">You entered 3</p>
+        <p ng-switch-when="4">You entered 4</p>
+        <p ng-switch-default="1">Not Following Directions</p>
+      </div>
+
+    </div>
+
+    <!-- Load the AngularJS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+    <!-- Load the JS Module -->
+    <script src="js/exam3.js"></script>
+
+  </body>
+</html>
