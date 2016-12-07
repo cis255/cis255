@@ -1,0 +1,161 @@
+<html>
+	<head>
+	    <style>
+			td {vertical-align: text-top; }
+		</style>
+		<script>		
+		    // below code adapted from Abdulrahman Zaiter
+			<!-- javascript solution: creates new elements with attributes -->
+			// 1. Create New HTTP Request
+			var xmlhttp = new XMLHttpRequest();
+			var xmlhttp2 = new XMLHttpRequest();
+			// 2. Initialize URL
+			var url = "https://api.svsu.edu/courses?prefix=CS";
+			// var url2 = "https://api.svsu.edu/courses?prefix=CIS";
+			//var url = "https://api.svsu.edu/courses?prefix=MATH";
+			totalnumber = 0;
+			
+			// initialize array of urls
+			coursesPrefixes = ["CS","CIS","MATH","COMM","RPW","PHIL","ACCT","ECON","LAW","MGT","MKT"];
+
+			// initialize array of http requests
+			var requests = new Array(coursesPrefixes.length);
+			
+			allCoursesArr = []; 
+			
+			for (var i = 0; i < coursesPrefixes.length; i++) {
+				requests[i] =  new XMLHttpRequest();
+				// 3. Specify Callback Function
+				requests[i].onreadystatechange = function(index) {
+					return function () {
+						if (requests[index].readyState == 4 && requests[index].status == 200) {
+							var myArr = JSON.parse(requests[index].responseText);
+							myFunction(myArr);
+							for(var j=0;j<myArr.courses.length;j++) {
+								pushIntoDefinedArr(myArr,j); // calling another function to push into courses array, just because of scoping issues.
+							}
+						}
+					}
+				}(i);
+				
+				var url = "https://api.svsu.edu/courses?prefix=" + coursesPrefixes[i];
+				// 4. Execute Request
+				requests[i].open("GET", url, true);
+				requests[i].send();
+			}
+			
+			function pushIntoDefinedArr(arr,index) {
+				allCoursesArr.push(arr.courses[index]);
+			};
+
+			function myFunction(arr) {
+				for(var i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", totalnumber + i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						// + (arr.courses[i].prerequisites).substring(0, 10) + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor); 
+					document.getElementById("id02").appendChild(newP);
+					newP.appendChild(newText);
+				}
+				totalnumber += arr.courses.length;
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1>Program 02: SVSU API</h1>
+		<table border="1">
+			<tr>
+				<td>
+					<h2>1. Courses Taken So Far</h2>
+					<p>Enter courses taken so far, separated by commas</p>
+					<textarea id="coursesTaken" rows="10" cols="40" placeholder="CS 105, CS 116, CIS 255, ..."></textarea>
+				</td>
+				<td>
+					<h2>2. All Courses Needed for Degree</h2>
+						<form action="">
+							<input type="radio" name="degree" value="cs"> CS <br>
+							<input type="radio" name="degree" value="cis"> CIS
+						</form>
+					<p>Edit, if desired</p>
+					<textarea id="allCoursesNeeded" rows="10" cols="40"></textarea>
+					</textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h2>3. Courses Needed, But Not Taken, and Eligible for Registration</h2>
+					<p>Courses needed for degree, but not yet taken, and all prereqs taken</p>
+					<select id="id02"></select>
+					<br />
+				</td>
+				<td>
+					<h2>4. Courses Needed But Not Yet Eligible for Registration</h2>
+					<p>Courses needed for degree, but not yet taken, and NOT all prereqs taken</p>
+				</td>
+			</tr>
+		</table>
+		<p id="id01"></p>
+
+		
+		<script>
+			// courses for CS
+			var cs = ["CS 105", "MATH 300", "CS 116", "CS 216", "CS 245", "MATH 161",
+			"MATH 223", "COMM 105A", "RPW 304", "PHIL 205A!", "PHIL 210B", "CS 146",
+			"CS 316", "CS 331", "CS 401", "CS 411", "CS 421", "CS 446", "CS 451", "CS 461"
+			, "CS 471", "CIS 255", "CIS 355", "CIS 357", "CIS 311", "CS 345", "CS 403",
+			"CS 431", "CS 476", "CS 482", "CS 490"];
+
+			// courses for CIS
+			var cis = ["CS 245", "MATH 120B", "COMM 105A", "RPW 304", "ACCT 213",
+			"ECON 221", "LAW 308", "MGT 321", "MKT 331", "PHIL 205A!", "PHIL 210B",
+			"CS 105", "CS 116", "CS 146", "CS 216", "CIS 255", "CIS 301", "CIS 311",
+			"CIS 333", "CIS 355", "CIS 366", "CIS 386", "CIS 422", "CIS 424", "CS 345",
+			"CIS 357", "CIS 371", "CIS 425", "CIS 486", "CIS 490"];
+			
+			// prequisite list
+			var prereqs = [
+				{course: "CIS 355", prereq: "CIS 255", prereq2: "CS 216"},
+				{course: "CS 116", prereq: "CS 105", prereq2: ""}
+			];
+			
+			// courses taken
+			var taken = "CS 105";
+			
+			// return true is all prereqs taken, false otherwise
+			function prereqsTaken (course) {
+				var retval = true; // assume true that prereq for course has been taken
+				for (var i=0; i < prereqs.length; i++) { // loop through all course prereqs
+					if (prereqs[i].course == course) { // if course is in prereqs list
+						if ( (taken.indexOf(prereqs[i].prereq) == -1)  // if the first prereq is NOT in the taken list
+							|| ((taken.indexOf(prereqs[i].prereq2) == -1) // OR if the second prereq is NOT in the taken list
+								&& (prereqs[i].prereq2 != "")) ) { // AND second prereq is NOT ""
+								retval = false; // then set retval to false
+								console.log(taken.indexOf(prereqs[i].prereq));
+								break; // bounce out of loop
+						}
+					}
+				}
+				return retval;
+			};
+			
+			console.log("prereq for cs116: " + prereqsTaken("CS 116")); // true
+			console.log("prereq for cs105: " + prereqsTaken("CS 105")); // true, because no prereqs
+			console.log("prereq for cis355: " + prereqsTaken("CIS 355")); // false
+
+		    // insert CS courses into textarea (id="allCoursesNeeded")
+			var allCourses = document.getElementById("allCoursesNeeded");
+			var allCoursesText = "";
+			for(var i=0; i<cs.length; i++) 
+				allCoursesText += cs[i] + ", ";
+			allCourses.innerHTML = allCoursesText;
+		</script>
+		
+	</body>
+</html>

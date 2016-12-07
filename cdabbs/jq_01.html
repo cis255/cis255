@@ -1,0 +1,27 @@
+<html>
+  Celsius: <input id="c" onclick="textClear()">&nbsp;&nbsp;&nbsp;
+  Fahrenheit: <input id="f" onclick="textClear()">&nbsp;&nbsp;&nbsp;
+  <button type="button" id="convert" onclick="tempConvert()">Convert</button>
+</html>
+
+
+<script>
+ function tempConvert() {
+  var c = document.getElementById('c'), f = document.getElementById('f');
+  if (c.value != ''){
+	f.value = Math.round(c.value * 9 / 5 + 32);
+	c.value = '';
+  } else {
+    c.value = Math.round((f.value - 32) * 5/9);
+	f.value = '';
+  }
+}
+</script>
+
+<script>
+ function textClear(){ 
+ var c = document.getElementById('c'), f = document.getElementById('f');
+ c.value = '';
+ f.value = '';
+}
+</script>

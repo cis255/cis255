@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- code copied from w3schools --> 
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#decklength, #deckwidth, #boardlength, #boardwidth").keyup(function () {
+					//Finds deck area
+					dl = $("#decklength").val();
+					dw = $("#deckwidth").val();
+					deckarea = dl * dw;
+					// Finds board area
+					bl = $("#boardlength").val();
+					bw = $("#boardwidth").val();
+					boardarea = bl * bw;
+					
+					//Finds how many boards are needed
+					boards = deckarea / boardarea; 
+					//outputs the numbers to the page
+					document.getElementById("boardL").innerHTML = bl;
+					document.getElementById("boardW").innerHTML = bw;
+					document.getElementById("numberofboards").innerHTML = boards;
+				});
+			}); 
+			
+		</script>
+	</head>
+	<body>
+	
+		<h1>Calculate Materials for Deck</h1>
+		
+		<form>
+			Deck Length:   
+			<input type="text" id="decklength" />
+			Deck Width: 
+			<input type="text" id="deckwidth" />
+			<br/>Board Length:
+			<input type="text" id="boardlength" />
+			Board Width:
+			<input type="text" id="boardwidth" />
+			<br />Your boards are all <span id="boardL">___</span> ft long by <span id="boardW">___</span> ft wide. <br />
+			<br />You need <span id="numberofboards">___</span> boards.
+		</form>
+
+	</body>
+</html>
