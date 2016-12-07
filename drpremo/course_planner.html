@@ -1,0 +1,202 @@
+<!doctype html>
+<!--Program: Course Planner Program for CIS255
+	Name: Daniel Premo
+	Due Date: 11/14/2016
+-->
+<!--Program Flow (Design)
+	Head:
+		Style
+	Body:
+		Header
+		Table
+			Courses Taken
+				Textarea
+				Button to update Courses Needed
+			Courses Needed
+				Textarea
+			Courses Available
+				Textarea
+				Buttons to switch between CS/CIS
+			Courses Not Available
+				Textarea
+		Script
+			Global variables, default.
+			function csMajor: called on load and CS Major button click
+			function cisMajor: called on CIS Major button click
+			function fillTextareas: called from csMajor & cisMajor
+			function getCourses: called from fillTextareas
+			function updateNeeded: called from Update Needed button click
+-->
+<!--Script Pseudocode
+	Initialize and Default to CS Major
+	Call Courses SVSU API to Generate Courses in major
+	If course is available in Winter 2017:
+		Add to available textarea.
+	Else:
+		Add to not available textarea.
+	
+	Put needed courses in array.
+	Put taken courses in array.
+	Remove taken from needed.
+	Put taken into textarea.
+-->
+
+<html>
+	<head>
+		<style>
+			/* The usual CSS here. The site looks nice, but is nothing fancy. */
+			h1 {
+				font-family: "Tahoma";
+				text-align: center;
+			}
+			span {
+				font-family: "Tahoma";
+				text-align: center;
+			}
+			button {
+				width: 49.3%;
+			}
+			table {
+				border: 2px solid black;
+				border-collapse: collapse;
+			}
+			td {
+				width: 45%;
+				vertical-align: top;
+				horizontal-align: center;
+				text-align: center;
+			}
+			textarea {
+				resize: none;
+				width: 98.3%;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Header -->
+		<h1>Course Planner</h1>
+		<!-- Table -->
+		<table border="1" width="100%">
+			<tr>
+				<!--Courses Taken (and button to update needed)-->
+				<td><span>Courses Taken (seperate with Space)</span><br/>
+					<textarea id="taken" rows="4"></textarea>
+					<button onclick="updateNeeded();" style="width:98.6%">Update Needed</button>
+				</td>
+				<!--Courses Needed-->
+				<td><span>Courses Needed</span><br/>
+					<textarea id="needed" rows="4"></textarea>
+					<br/>
+				</td>
+			</tr>
+			<tr>
+				<!--Courses Available in Winter 2017 (and buttons to change major)-->
+				<td><span>Courses Available</span><br/>
+					<textarea id="available" rows="4"></textarea>
+					<button onclick="csMajor();">CS</button>
+					<button onclick="cisMajor();">CIS</button>
+				</td>
+				<!--Courses Not Available in Winter 2017-->
+				<td><span>Courses Not Available</span><br/>
+					<textarea id="notAvailable" rows="4"></textarea>
+					<br/>
+				</td>
+			</tr>
+		</table>
+		
+		<!-- JavaScript-->
+		<script>
+			// Declare global variable
+			var xmlhttp = new XMLHttpRequest();
+			// Default to CS Major
+			csMajor();
+		
+			// Function Name: csMajor
+			// Invoked by: Load or Button Click
+			// --------------------------------------------------
+			// Populates needed courses with those in CS major. Sorts courses. Fills textareas.
+			function csMajor() {
+				needed = ["MATH140", "MATH103", "CS105", "CS146", "CS116", "MATH120A", "CS245", "CIS255", "CS216", "MATH300", "CIS355", "CIS257", "CS411", "CS331", "CS316", "CS446", "CS401", "CS451", "CS461", "CS421", "CS471"];
+				needed = needed.sort();
+				
+				fillTextareas("https://api.svsu.edu/courses?prefix=CS&term=17/WI")
+			}
+		
+			// Function Name: cisMajor
+			// Invoked by: Button Click
+			// --------------------------------------------------
+			// Populates needed courses with those in CIS major. Sorts courses. Fills textareas.
+			function cisMajor() {
+				needed = ["MATH103", "CS105", "CS146", "CS116", "MATH120B", "CS245", "CIS255", "CS216", "CIS301", "CIS311", "CIS333", "CIS386", "CIS366", "CIS355", "CIS422", "CIS424"]
+				needed = needed.sort();
+				
+				fillTextareas("https://api.svsu.edu/courses?prefix=CIS&term=17/WI")
+			}
+			
+			// Function Name: fillTextarea
+			// Invoked by: csMajor & cisMajor
+			// Proudly stolen from George Corser
+			// --------------------------------------------------
+			// Clears textareas. Parses API call. Calls getCourses.
+			function fillTextareas(url) {
+				document.getElementById("available").value = "";
+				document.getElementById("notAvailable").value = "";
+				
+				xmlhttp.onreadystatechange = function() 
+				{
+					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+					{
+						var myArr = JSON.parse(xmlhttp.responseText);
+						getCourses(myArr);
+					}
+				};
+				xmlhttp.open("GET", url, true);
+				xmlhttp.send();
+			}
+			
+			// Function Name: getCourses
+			// Invoked by: fillTextareas
+			// Proudly stolen from George Corser
+			// --------------------------------------------------
+			// Determines if course should be added to Available textbox or Not-Available textbox.
+			// Adds it.
+			function getCourses(arr) {
+				var i;
+				for(i = 0; i < arr.courses.length; i++) {
+					if (arr.courses[i].status == "Open") {
+						if (document.getElementById("available").value != "") document.getElementById("available").value += " ";
+						document.getElementById("available").value += arr.courses[i].prefix + arr.courses[i].courseNumber;
+					}
+					else {
+						if (document.getElementById("notAvailable").value != "") document.getElementById("notAvailable").value += " ";
+						document.getElementById("notAvailable").value += arr.courses[i].prefix + arr.courses[i].courseNumber;
+					}
+				}	
+			}
+			
+			// Function Name: updateNeeded
+			// Invoked by: Button Click
+			// --------------------------------------------------
+			// Fills Needed textarea with all courses needed for selected major subtract all courses in taken text area.
+			function updateNeeded() {
+				document.getElementById("needed").value = "";
+				document.getElementById("taken").value = document.getElementById("taken").value.toUpperCase();
+				taken = document.getElementById("taken").value.split(" ");
+				taken.sort();
+				
+				for (var i = 0; i < taken.length; i++) {
+					for (var j = 0; j < needed.length; j++) {
+						if (taken[i] == needed[j]) {
+							needed.splice(needed.indexOf(taken[i]), 1);
+						}
+					}
+				}
+				
+				for (var i = 0; i < needed.length; i++) {
+					if (document.getElementById("needed").value != "") document.getElementById("needed").value += " ";
+					document.getElementById("needed").value += needed[i];
+				}
+			}
+		</script>
+	</body>
+</html>
