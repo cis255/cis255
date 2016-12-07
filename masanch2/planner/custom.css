@@ -1,0 +1,25 @@
+body {
+	margin-top: 40px;
+}
+hr {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+/* QUICK-FIXES */
+.sub-header {
+	border-bottom: 1px solid #eee;
+}
+
+.radio-label {
+	margin: 5px;
+}
+
+.form-control[readonly] {
+	background-color: #fff;
+}
+
+#selectDegree {
+	color: #999;
+	margin-left: 12px;
+}

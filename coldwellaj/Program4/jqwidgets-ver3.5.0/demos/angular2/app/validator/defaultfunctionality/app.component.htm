@@ -1,0 +1,53 @@
+﻿<angularExpander #expanderReference>
+    <div><h3>Register</h3></div>
+    <div>
+        <angularValidator #validatorReference>
+            <form id='form' action="./">
+                <table class="register-table">
+                    <tr>
+                        <td>Username:</td>
+                        <td><angularInput #userInput id="userInput" class="text-input"></angularInput></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><angularPasswordInput #passwordInput id="passwordInput" class="text-input"></angularPasswordInput></td>
+                    </tr>
+                    <tr>
+                        <td>Confirm password:</td>
+                        <td><angularPasswordInput #passwordConfirmInput id="passwordConfirmInput" class="text-input"></angularPasswordInput></td>
+                    </tr>
+                    <tr>
+                        <td>Real name:</td>
+                        <td><angularInput #realNameInput id="realNameInput" class="text-input"></angularInput></td>
+                    </tr>
+                    <tr>
+                        <td>Birth date:</td>
+                        <td><angularDateTimeInput #birthInput id="birthInput"></angularDateTimeInput></td>
+                    </tr>
+                    <tr>
+                        <td>E-mail:</td>
+                        <td><angularInput #emailInput id="emailInput" class="text-input"></angularInput></td>
+                    </tr>
+                    <tr>
+                        <td>SSN:</td>
+                        <td><angularMaskedInput #ssnInput id="ssnInput"></angularMaskedInput></td>
+                    </tr>
+                    <tr>
+                        <td>Phone:</td>
+                        <td><angularMaskedInput #phoneInput id="phoneInput"></angularMaskedInput></td>
+                    </tr>
+                    <tr>
+                        <td>Zip code:</td>
+                        <td><angularMaskedInput #zipInput id="zipInput"></angularMaskedInput></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="padding: 5px;"><angularCheckBox #acceptCheckBox id="acceptCheckBox">I accept terms</angularCheckBox></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;"><angularButton #sendButton (onClick)="onSend($event)">Send</angularButton></td>
+                    </tr>
+                </table>
+            </form>
+        </angularValidator>
+    </div>
+</angularExpander>

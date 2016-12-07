@@ -1,0 +1,78 @@
+
+<!doctype html>
+<!-- file: js_test12.html 
+JS HTML DOM (Document Object Model)
+http://www.w3schools.com/js/js_htmldom.asp
+-->
+<html>
+	<head>
+	</head>
+	
+	<body>
+	
+		<p id="js12">Hello</p>
+		
+		<script>
+		<script>
+			// document.write("Goodbye");
+			var obj = document.getElementById("js12");
+			obj.innerHTML = "Unordered list";
+			obj.setAttribute("style","color: red;");
+			obj.setAttribute("onclick","alert('hey dude');");
+			obj2 = document.createElement("hr");
+			obj.appendChild(obj2);
+			var b = document.body;
+			var ul = document.createElement("ul");
+			document.body.appendChild(ul);
+			var li1 = document.createElement("li");
+			var li2 = document.createElement("li");
+			var li3 = document.createElement("li");
+			var li4 = document.createElement("li");
+			var li5 = document.createElement("li");
+			li1.innerHTML = "Jellyfish";
+			li2.innerHTML = "Starfish";
+			li3.innerHTML = "Goldfish";
+			li4.innerHTML = "Blowfish";
+			li5.innerHTML = "Catfish";
+			ul.appendChild(li1);
+			ul.appendChild(li2);
+			ul.appendChild(li3);
+			ul.appendChild(li4);
+			ul.appendChild(li5);
+
+			
+			//add an ordered list with 5 li elements to the body
+
+			var ol = document.createElement("ol");
+			document.body.appendChild(ol);
+			var ol1 = document.createElement("li");
+			var ol2 = document.createElement("li");
+			var ol3 = document.createElement("li");
+			var ol4 = document.createElement("li");
+			var ol5 = document.createElement("li");
+			
+			ol1.innerHTML = "Alligator";
+			ol2.innerHTML = "Bat";
+			ol3.innerHTML = "cat";
+			ol4.innerHTML = "dog";
+			ol5.innerHTML = "Elephant";
+			ul.appendChild(ol1);
+			ul.appendChild(ol2);
+			ul.appendChild(ol3);
+			ul.appendChild(ol4);
+			ul.appendChild(ol5);
+			
+			
+			
+		</script>
+
+	</body>
+	
+</html>
+
+
+
+
+
+
+

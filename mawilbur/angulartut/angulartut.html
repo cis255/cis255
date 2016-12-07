@@ -1,0 +1,79 @@
+<!doctype html>
+
+<!-- Define the ng-app parameter in the root element so AngularJS
+knows where to begin compiling. app1 is the module name and is referenced
+in the JS file we will create -->
+
+<!-- ng-init is a directive that initializes application data by assigning
+variable values -->
+<html ng-app="app1" ng-init="person = {fName: 'Derek', lName: 'Banas'};
+  capitals = [{city: 'Montgomery', state: 'Alabama'}, {city: 'Juneau', state: 'Alaska'}, {city: 'Phoenix', state: 'Arizona'}]">
+  <head>
+    <title>AngularJS Tutorial</title>
+  </head>
+  <body>
+
+    <!-- Adds a controller that the Angular module will control.
+    The view is the div element and all that it contains. The $scope
+    component is used to provide data to the view. -->
+    <div ng-controller="ctrl1">
+      <span>Values:</span>
+
+      <!-- Define 2 elements that will be bound to the first and
+      second values in the scope using the ng-model directive. If
+      either value changes here it will change in the scope and
+      vice versa -->
+      <input type="text" ng-model="first" />
+      <input type="text" ng-model="second" />
+
+      <!-- Bind a click on this button to the function updateValue
+      using ng-click -->
+      <button ng-click="updateValue()">Sum</button>
+      <br><br>
+	  
+	  <span>Celsius:</span>
+	  <input type="text" ng-model="celsius" />
+	  <button ng-click="updateTempF()">Celsius to Fahrenheit</button>
+	  <br>
+	  <span>Fahrenheit:</span>
+	  <input type="text" ng-model="fahrenheit" />
+	  <button ng-click="updateTempC()">Fahrenheit to Celsius</button>
+	  <br><br>
+	  
+      <!-- Displays the Scope value of calculation in the expression-->
+      {{calculation}}
+	  <br>
+	  {{temperatureF}}
+	  <br>
+	  {{temperatureC}}
+
+      <!-- You can perform calculations in expressions -->
+      <p>5 + 5 = {{5+5}}</p>
+
+      <!-- Expressions bind data to HTML as well -->
+      <p>Your first value is {{first}}</p>
+
+      <!-- You can do the same with ng-bind -->
+      <p>Your second value is
+        <span data-ng-bind="second"></span>
+      </p>
+
+      <!-- Strings can be built in expressions -->
+      <p>{{person.fName + " " + person.lName}} you entered {{first + " and " + second}}</p>
+
+      <!-- ng-repeat cycles through a collection -->
+      <ul>
+        <li ng-repeat = "capital in capitals">
+          {{ 'City: ' + capital.city + ', State: ' + capital.state}}
+        </li>
+      </ul>
+
+    </div>
+
+    <!-- Load the AngularJS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+    <!-- Load the JS Module -->
+    <script src="js/exam1.js"></script>
+  </body>
+  </html>

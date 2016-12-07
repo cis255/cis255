@@ -1,0 +1,57 @@
+﻿<angularSplitter #mainSplitter>
+    <angularExpander style="border: none;" #feedExpander>
+        <div class="jqx-hideborder">
+            Feeds
+        </div>
+        <div class="jqx-hideborder jqx-hidescrollbars">
+            <angularTree #treeReference (onSelect)="onTreeSelect($event)">
+                <ul>
+                    <li item-expanded='true' id="t1">
+                        <img src='../../images/contactsIcon.png' /><span item-title="true">News and Blogs</span>
+                        <ul>
+                            <li>
+                                <img src='../../images/favorites.png' /><span item-title="true">Favorites</span>
+                                <ul>
+                                    <li>
+                                        <img src='../../images/folder.png' /><span item-title="true">ScienceDaily</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <img src='../../images/folder.png' /><span item-title="true">Geek.com</span>
+                            </li>
+                            <li>
+                                <img src='../../images/folder.png' /><span item-title="true">CNN.com</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </angularTree>
+        </div>
+    </angularExpander>
+    <div>
+        <angularSplitter #contentSplitter>
+            <div class="feed-item-list-container" id="feedUpperPanel">
+                <angularExpander class="jqx-hideborder" #feedListExpander>
+                    <div class="jqx-hideborder" id="feedHeader">
+                    </div>
+                    <div class="jqx-hideborder jqx-hidescrollbars">
+                        <angularListBox #listBoxReference class="jqx-hideborder" (onSelect)="onListBoxSelect($event)">
+                        </angularListBox>
+                    </div>
+                </angularExpander>
+            </div>
+            <div id="feedContentArea">
+                <angularExpander class="jqx-hideborder" #feedContentExpander>
+                    <div class="jqx-hideborder" id="feedItemHeader">
+                    </div>
+                    <div class="jqx-hideborder jqx-hidescrollbars">
+                        <angularPanel #panelReference class="jqx-hideborder">
+                            Select a news item to see it's content
+                        </angularPanel>
+                    </div>
+                </angularExpander>
+            </div>
+        </angularSplitter>
+    </div>
+</angularSplitter>

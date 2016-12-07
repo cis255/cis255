@@ -1,0 +1,79 @@
+<!doctype html>
+<!-- course planner program for cis255
+Ryan A. Ott CIS255 Fall'16 November 14, 2016
+table:
+	internal: all courses needed for student [A]
+	upper left: (courses taken) [T]
+	upper right: (courses needed not already taken) [N = A - T]
+	internal: all SVSU cs/csis courses [S]
+	lower left: courses available to take winter 2017 [C]
+	lower right: not available winter 2017 [S - C]
+
+	HTML Design:
+	link to bootstrap CSS
+		-Header, CSIS Course Planner
+		-Radio buttons determing CS or CIS major
+		-Table
+			- Row 1
+				-Courses taken:
+				- Input Text Box
+				-Courses Needed:
+				- Input Text Box
+			- Row 2
+				- Courses Available:
+				- Select box containing courses available for WI'17
+				- Courses Not available:
+				- Select box containing courses not available for WI'17
+		-Button to determine courses needed based on input given
+	-->
+<html>
+	<body>
+			<!-- Bootstrap Core CSS -->
+			<link href="css/bootstrap.css" rel="stylesheet">
+		<section>
+			  <!--for demo wrap-->
+			  <h1>CSIS Course Planner</h1>
+  
+			<form style="vertical-align: center">
+				<input type="radio" id="CS" name="CSIS" value="CS" onchange="courseChange();" checked> &nbsp;Computer Science
+				<input type="radio" id="CIS" name="CSIS" value="CIS" onchange="courseChange();"> &nbsp;Computer Information Systems
+			</form>
+	
+			  <div class="tbl-content">
+				<table cellpadding="0" cellspacing="0" border="0">
+				  <tbody>
+					<tr>
+						<td>Courses Taken: <br />
+							<input type="text" id="T" />
+						</td>
+						<td>Courses Needed: <br />
+							<input type="text" id="N" />
+						</td>
+					</tr>
+					<tr>
+						<td>Courses Available: <br />
+							<select id="available"></select>
+						</td>
+						<td>Courses Not Available: <br />
+							<select id="notAvailable"></select>
+						</td>
+					</tr>
+				  </tbody>
+				 
+				</table>
+				 <button onclick="showNeeded(courseList);" style="padding:5px" > Show Courses Needed</button>
+			  </div>
+			</section>
+
+
+			<!-- follow me template -->
+			<div class="made-with-love">
+			  Bootstrap made with
+			  <i>?</i> by
+			  <a target="_blank" href="http://codepen.io/nikhil8krishnan">Nikhil Krishnan</a>
+			</div>
+
+		<script src="js/course_planner.js"></script>
+		
+	</body>
+</html>	

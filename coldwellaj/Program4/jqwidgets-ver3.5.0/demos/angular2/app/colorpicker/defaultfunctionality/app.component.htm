@@ -1,0 +1,26 @@
+﻿<angularScrollView #photoGallery>
+    <div>
+        <div class="photo" style="background-image: url(../../images/imageNature1.jpg)"></div>
+    </div>
+    <div>
+        <div class="photo" style="background-image: url(../../images/imageNature2.jpg)"></div>
+    </div>
+    <div>
+        <div class="photo" style="background-image: url(../../images/imageNature3.jpg)"></div>
+    </div>
+    <div>
+        <div class="photo" style="background-image: url(../../images/imageNature4.jpg)"></div>
+    </div>
+    <div>
+        <div class="photo" style="background-image: url(../../images/imageNature5.jpg)"></div>
+    </div>
+</angularScrollView>
+<br />
+<label style="margin-left: 5px; font-size: 12px; font-family: Verdana;">Select Frame color</label>
+<br />
+<angularDropDownButton style="margin: 3px; float: left;" #dropDownButton>
+    <div style="padding: 3px;">
+        <angularColorPicker #colorPicker (onColorchange)="colorPickerEvent($event)"></angularColorPicker>
+    </div>
+</angularDropDownButton>
+  

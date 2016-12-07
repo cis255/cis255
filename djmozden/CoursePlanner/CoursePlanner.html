@@ -1,85 +1,126 @@
 <!DOCTYPE html>
-<!-- 
-	table: 
-		internal: all courses needed for student
-		upper left (courses Taken)
-		upper right (courses Needed-not taken a-t)
-		internal: all svsu cs/cis courses{s}
-		lower left: available to take winter 2017[c]
-		lower right: not available 2017 [s-c]
--->
 <html>
+	<head>
+	<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+		crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	</head>
 	<body>
-
-		<h1>Course Planner by Derek Mozden</h1>
+		<h1>Course Planner Template</h1>
+		<p>Degree<br />
+			<select id="degree">
+			<option>CIS
+			<option>CS
+			</select>
+		</p>
 		
 		<table border="1">
 			<tr>
-				<td>Courses Taken
-					<br />
-					<input type="text" id="T"/>
+				<td>courses taken <br />
+					<input type="text" id="T" />
 				</td>
-				<td>Courses Needed<br />
-					<input type="text" id="N"/>
+				<td>courses needed<br />
+					<input type="text" id="N" />
 				</td>
 			</tr>
 			<tr>
-				<td>Courses Available</td>
-				<td>Courses not Available</td>
+				<td>courses available <br />
+					<select id="id02"></select>
+				</td>
+				<td>courses not available <br />
+					<select id="id03"></select>
+				</td>
 			</tr>
 		</table>
-		<button onclick="showNeeded(arrCourses);">Show Courses Needed</button>		
+		<button onclick="showNeeded(A);">Show Courses Needed</button>
 		<script>
-		// arrCourses is a list of all courses
-		var arrCourses = ["CS105","CS116","CS255","CS216","CIS355"];
-		console.log(arrCourses);
-		arrCourses.sort();
-		console.log(arrCourses);
-		// stringifyExcept
-		function stringifyExcept (arrCourses){
-			var x = "";
-			for(var i = 0; i<arrCourses.lenght; i++){
-				if(i != n){
-				x = x + " " + arrCourses[i];
+		
+		
+		// create array, A, list of all courses needed for a CIS student
+			
+			var A = ["cs105","cs116","cs146","cs316","cs333","cs345","cs401","cs403","cs411","cs433","cs434" ,"cis255","cs216","cis355"];
+			console.log(A);
+			A = A.sort();
+			console.log(A);
+			
+			// make an array into one string
+			function stringifyExcept (A, n) {
+				var x = "";
+				for(var i = 0; i<A.length; i++) {
+					if (i != n) x = x + " " + A[i];
+				}
+				return x.trim();
+			}
+			
+			// make an array into one string
+			function stringify (A) {
+				var x = "";
+				for(var i = 0; i<A.length; i++) {
+					x = x + " " + A[i];
+				}
+				return x.trim();
+			}
+			// returns index number of e in A or -1 if not found
+			function isIn (A, e) {
+				for(var i = 0; i<A.length; i++) {
+					if (A[i] == e) return i;
+				}
+				return -1;
+			}
+			// returns elements in array, A, that are not in array, T
+			function showNeeded(A) {
+				var T = document.getElementById("T").value;
+				T = new Array(T);
+				console.log(T);
+				var x = isIn(A, T[0]);
+				if (x == -1) {
+					document.getElementById("N").value = stringify(A);
+				}
+				else {
+					document.getElementById("N").value = stringifyExcept(A, x); 
 				}
 			}
-			return x.trim();
-		}
-		// make an array into one string
-		function stringify (arrCourses){
-			var x = "";
-			for(var i = 0; i<arrCourses.lenght; i++){
-				x = x + " " + arrCourses[i];
-			}
-			return x.trim();
-		}
-		// returns index number of e in arrCourses or -1 if not found
-		function isIn(arrCourses, e){
-			for(var i = 0; i < arrCourses.lenght; i++){
-				if(arrCourses[i] == e) return i;
-			}
-			return -1;
-		}
-		
-		// Returns elements in arrCourses that are not in T
-		function showNeeded(arrCourses){
-			var T = document.getElementById("T").value;
-			//document.getElementById("N").value = "hello";
-			T = new Array(T);
-			console.log(T);
 			
-			var x = isIn(arrCourses, T[0]);
-			console.log(x);
-			if(x == -1){
-				var y = stringify(arrCourses);
-				document.getElementById("N").value = y;			
+		
+			<!-- javascript solution: creates new COURSE elements with attributes -->
+			var xmlhttp = new XMLHttpRequest();
+			var url = "https://api.svsu.edu/courses?prefix=CS&term=17/WI";
+			
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var myArr = JSON.parse(xmlhttp.responseText);
+					myFunction(myArr);
+				}
+			};
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+			
+			function myFunction(arr) {
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor); 
+					document.getElementById("id02").appendChild(newP);
+					newP.appendChild(newText);
+				}
 			}
-			else{
-				document.getElementById("N").value = stringifyExcept(arrCourses);
-			}
-		}
-	
-		</script>
+			
 
+			
+		</script>
 	</body>
-</html> 
+</html>

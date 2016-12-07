@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--Filename: jq_deck.html
+	jquery script copied from w3c schools
+description: program takes user input from boxes for length and width of a deck as well as the boards
+going into that deck.
+-->
+
+<html>
+
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function()
+			{
+				$("#length, #width, #boardLength, #boardWidth").keyup(function()
+				{
+					l = $("#length").val();
+					w = $("#width").val();
+					area = l * w;
+					boardlength = document.getElementById("boardLength").value;
+					boardlength = parseFloat(boardlength);
+					boardwidth = document.getElementById("boardWidth").value;
+					boardwidth = parseFloat(boardwidth);
+					boardarea = boardlength * boardwidth;
+					boards = area / boardarea;
+					document.getElementById("numBoards").innerHTML = boards;
+					console.log(l);
+				});
+				
+			});
+			
+			// Assignment: modify the code to allow the user to change the dimensions of the boards
+
+		</script>
+	</head>
+	
+	<body>
+		<h1>Calculate materials for a deck.</h1>
+		<br />
+		<form>
+			<p>Enter a length: <input type="text" id="length" />
+			Enter a width: <input type="text" id="width" /></p>
+			<p>Enter a board length: <input type="text" id="boardLength" />
+			Enter a board width: <input type="text" id="boardWidth" /></p>
+			<p>You need <span id="numBoards">___</span> boards.</p>
+			<!--assume  boards are 8'x1'-->
+		</form>
+	</body>
+</html>

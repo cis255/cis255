@@ -1,0 +1,33 @@
+
+<!doctype html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<p>this is a paragraph</p>
+	<div>this is a div</div>
+
+	<script>
+		// this code hides any paragraph, <p>, that is clicked
+		$(document).ready(function(){
+		
+			$("p").click(function(){
+				$("div").fadeToggle(1000);
+			});
+			
+			$("div").click(function(){
+				$("p").slideDown("slow");
+			});
+			
+		});
+	</script>
+	
+
+	
+	
+	
+</body>
+
+</html>

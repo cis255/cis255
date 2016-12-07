@@ -1,0 +1,73 @@
+
+<!doctype html>
+<!-- js12 -->
+<html>
+	<head>
+		
+	</head>
+	
+	<body>
+	
+		<p id="js12">Hello</p>
+					
+		<script>
+			document.write("Farewell<br>");
+			document.write("Auf Wiedersehen<br>");
+			document.write("Goodbye");
+			
+			var obj = document.getElementById("js12");
+			obj.innerHTML = "So long...";
+			obj.setAttribute("style","color: red");
+			obj.setAttribute("onclick","alert('hey dude')");
+			
+			obj2 = document.createElement("hr");
+			obj.appendChild(obj2);
+			
+			
+			// Add an ordered list (ol) with five li elements (li) to the body
+			// Ant, Bat, Cat, Dog, Elephant
+			
+			ol = document.createElement("ol");
+			document.body.appendChild(ol);
+			var li1 = document.createElement("li");
+			li1.innerHTML = "Ant";
+			var li2 = document.createElement("li");
+			li2.innerHTML = "Bat";
+			var li3 = document.createElement("li");
+			li3.innerHTML = "Cat";
+			var li4 = document.createElement("li");
+			li4.innerHTML = "Dog";
+			var li5 = document.createElement("li");
+			li5.innerHTML = "Elephant";
+			
+			ol.appendChild(li1);
+			ol.appendChild(li2);
+			ol.appendChild(li3);
+			ol.appendChild(li4);
+			ol.appendChild(li5);
+			
+			// Zebra stripe the unordered list
+			var current = ol.firstChild;
+			var ns = null;
+			while (current != null) {
+				current.style.backgroundColor = "orange";
+				ns = current.nextSibling;
+				if(ns == null) current = null;
+				else {ns.style.backgroundColor = "purple";
+				ns.style.color = "white";
+				current = ns.nextSibling;
+				}
+			}
+			
+			// Very Simple Animation
+			// Go from lower left (start) to bottom right (w3schools animation)
+			
+			
+			
+			
+			
+		</script>
+	
+	</body>
+
+</html>

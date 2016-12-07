@@ -1,0 +1,28 @@
+<html>
+	<h1>Temperature Conversion</h1>
+	
+	<body>
+	Celsius: <input id="c" onkeyup="convert('C')">
+	</br>
+	<button type="button" id="convert" onclick="convertTemp()">Convert</button>
+	</br>
+	Fahrenheit: <input id="f" onkeyup="convert('F')">
+	
+		<script>
+		function convertTemp() {
+		// Set the initial variables for c (Celsius) and f (Fahrenheit)
+		var c = document.getElementById('c'), f = document.getElementById('f');
+		// Test if there's a value for Celsius
+		if(c.value != '') {
+		// Set the value for Fahrenheit
+		f.value = Math.round(c.value * 9 / 5 + 32);
+		// If there isn't a value for Celsius
+		} else  {
+		// Set the value for Celsius
+		c.value = Math.round((f.value - 32) * 5 / 9);
+		}
+		}
+	
+		</script>
+	</body>
+</html>

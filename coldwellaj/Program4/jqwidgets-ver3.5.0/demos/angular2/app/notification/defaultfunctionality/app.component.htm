@@ -1,0 +1,17 @@
+﻿<!--Notifications-->
+<angularNotification #msgNotification>
+    <div>
+        Welcome to our website.
+    </div>
+</angularNotification>
+<angularNotification #timeNotification>
+    <div>Current time: <span id="currentTime" style="font-weight: bold;"></span>.</div>
+</angularNotification>
+<!--Layout-->
+<angularButton #openMessageNotification (onClick)="onClickOpenMessageNotification()">
+    Open a message notification
+</angularButton>
+<br />
+<angularButton #openTimeNotification (onClick)="onClickOpenTimeNotification()">
+    Open a current time notification
+</angularButton>

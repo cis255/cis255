@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<!-- code copied from w3schools --> 
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				var l = $("#length").text;
+				var w = $("#width").text;
+				var area = l * w;
+				// assume all boards ar 8 ft by 1 ft
+				var boardlength = 8; 
+				var boards = area / boardlength; 
+			});
+		</script>
+	</head>
+	<body>
+	
+		<h1>Calculate Materials for Deck</h1>
+		
+		<form>
+			<input type="text" id="length" />
+			<input type="text" id="width" />
+			<!-- assume boards are 8x1 -->
+			
+		</form>
+
+		<div id="div1" class="zap"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+		<button id="calc">Calculate</button>
+		<button id="button2">Get SVSU API Content for CIS-255</button>
+		
+		<p class="zip"></p>
+		<p class="zap"> </p>
+
+	</body>
+</html>

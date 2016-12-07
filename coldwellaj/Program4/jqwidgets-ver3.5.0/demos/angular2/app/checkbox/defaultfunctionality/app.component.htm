@@ -1,0 +1,54 @@
+﻿<div id='jqxWidget' style='font-family: Verdana Arial; font-size: 12px; width: 400px;'>
+    <div style='float: left; width: 400px;'>
+        <h3 style='margin-left: 15px;'>Categories</h3>
+        <angularCheckBox #CheckBox1 style='margin-left: 10px; float: left;'>
+            Entertainment
+        </angularCheckBox>
+        <angularCheckBox #CheckBox2 style='margin-left: 10px; float: left;'>
+            <span>Computers</span>
+        </angularCheckBox>
+        <angularCheckBox #CheckBox3 style='margin-left: 10px; float: left;'>
+            <span>Sports</span>
+        </angularCheckBox>
+    </div>
+    <div style='float: left; width: 400px; margin-top: 10px;'>
+        <angularCheckBox #CheckBox4 style='margin-left: 10px; float: left;'>
+            Health
+        </angularCheckBox>
+        <angularCheckBox #CheckBox5 style='margin-left: 10px; float: left;'>
+            <span>Finance</span>
+        </angularCheckBox>
+        <angularCheckBox #CheckBox6 style='margin-left: 10px; float: left;'>
+            <span>Travel</span>
+        </angularCheckBox>
+    </div>
+    <div style='float: left; width: 400px; margin-top: 10px;'>
+        <angularCheckBox #CheckBox7 style='margin-left: 10px; float: left;'>
+            Music
+        </angularCheckBox>
+        <angularCheckBox #CheckBox8 style='margin-left: 10px; float: left;'>
+            <span>Technology</span>
+        </angularCheckBox>
+        <angularCheckBox #CheckBox9 style='margin-left: 10px; float: left;'>
+            <span>Publishing</span>
+        </angularCheckBox>
+    </div>
+    <br />
+    <div style='float: left; width: 400px; margin-top: 10px;'>
+        <h3 style='margin-left: 15px;'>States</h3>
+        <angularCheckBox #CheckBox10 (onChange)="checkBox10OnChange($event)" style='margin-left: 10px; float: left;'>
+            <span>Checked</span>
+        </angularCheckBox>
+        <angularCheckBox #CheckBox11 (onChange)="checkBox11OnChange($event)" style='margin-left: 10px; float: left;'>
+            <span>Unchecked</span>
+        </angularCheckBox>
+    </div>
+    <div style='float: left; width: 400px; margin-top: 10px;'>
+        <angularCheckBox #CheckBox12 (onChange)="checkBox12OnChange($event)" style='margin-left: 10px; float: left;'>
+            <span>Indeterminate</span>
+        </angularCheckBox>
+        <angularCheckBox #CheckBox13 style='margin-left: 10px; float: left;'>
+            <span>Disabled</span>
+        </angularCheckBox>
+    </div>
+</div>

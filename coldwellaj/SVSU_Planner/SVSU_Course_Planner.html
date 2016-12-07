@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SVSU Course Planner</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="SVSU_Course_Planner.html">SVSU Course Planner</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="SVSU_Course_Planner.html">Home</a></li>
+        <li><a href="Files.html">Files</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Course Planner</h1>
+    <p>This program is designed to take a students major, 
+		and the courses that they have taken and show 
+		them which course they have to take and which of
+		those courses are and are not available WI/17.</p>
+  </div>
+</div>
+  
+<div class="container-fluid bg-3 text-center">
+  <h3>Please Select a major and then enter in all of the
+		courses you have taken separated by a space 
+		(USE CAPS LOCK).</h3><br>
+	<input onclick="loadCS();" type="radio" 
+		name="major" value="CS" > CS 
+		<input onclick="loadCIS();" type="radio" 
+		name="major" value="CIS">CIS 
+		<table border="1">
+		<col width="700">
+		<col width="700">
+		<tr>
+			<td>Courses taken: <br/>
+				<input type="text" id="T" size="40"/>
+			</td>
+			<td>Courses needed: <br/>
+				<p id ="N">
+				</p>
+			</td>
+		</tr>
+			<td>Courses available: <br/>
+				<select id = "id02"></select> <br/>
+
+			</td>
+			<td>Courses not available WI/17: <br/>
+				<p id ="NA">
+				</p>
+			</td>
+		<tr>
+		</tr>
+		</table>
+			<button onclick="showNeeded(A);">Update
+			 Courses Needed</button>
+  <div class="row">
+      <img src="CS Map.png" class="img-responsive" style="width:100%" alt="Image" id="course map">
+  </div>
+</div><br>
+
+<footer class="container-fluid text-center">
+  <p>Alex Coldwell</p>
+</footer>
+
+<!-- JS -->
+<script src="myScript.js"></script>
+
+</body>
+</html>

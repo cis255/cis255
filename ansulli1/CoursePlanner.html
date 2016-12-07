@@ -1,0 +1,178 @@
+<!doctype html>
+<!-- Course planner program for CIS255
+table:
+	Internal: All courses needed for student [A]
+	Upper left (courses taken) [T]
+	Upper right (courses needed) [A-T]
+	Internal: All SVSU CS/CIS courses [S]
+	lower left (courses available) [C]
+	lower right (courses not available) [S-C]
+-->
+<html>
+	<head>
+	    <style> 	
+		 
+		</style>
+
+		<title>Course Planner</title>
+		
+		<head>
+		
+		<!-- See: http://getbootstrap.com/css/ -->		
+		<meta name="viewport" content="width=device-width, initial-scale=1"><!-- VIEWPORT -->
+		<meta charset="utf-8" /><!-- CHARACTER ENCODING -->
+		<link rel="icon" href="../cardinal_logo.png" type="image/png" /><!-- FAVICON -->
+		<title>CIS 255</title><!-- TAB TITLE -->
+		
+		<!--BOOTSTRAP CDN LINKS
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	</head>
+
+    </head>
+	<body>
+	
+<div class="container">
+			<h1>Course Planner</h1>
+			<p>Pick Your Major</p>
+			<form>
+					<input type="button" onclick="cs();" value="CS" />
+					<input type="button" onclick="A();" value="CIS" />
+			</form>
+
+			
+ 
+				
+			<div class="row">
+				<div class="col-lg-6" id="Taken">
+					<form>
+						<h2>Courses Taken</h2>
+						<p>Enter all the courses you've taken (separate with a comma)</p>
+						<textarea id="T" rows="10" cols="50" > </textarea>
+					</form>
+				</div>
+				<div class="col-lg-6" id="Needed">
+					<h2>Courses Needed</h2>
+					<p>After entering the courses you need, click "Show Courses Needed"</p>
+					<form>
+						<textarea id="N"  rows="10" cols="50"></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6" id="Available">
+					<h2>Available Courses</h2>
+					<form>
+						
+						<select id="id02" ></select>
+					</form>
+				</div>
+				<div class="col-lg-6" id="unavailable">
+					<h2>Unavailable Courses</h2>
+					<form>
+						<textarea id="out3" rows="10" cols="50"></textarea>
+					</form>
+				</div>
+			</div>
+			
+			<button onclick="showNeeded(A);">Show Courses Needed</button>
+			
+		<div>
+		
+
+		<script>
+		//Create array and list of all courses needed for CIS Major
+		var A = ["CS 245", "MATH 120B", "COMM 105A", "RPW 304", "ACCT 213",
+		"ECON 221", "LAW 308", "MGT 321", "MKT 331", "PHIL 205A!", "PHIL 210B",
+		"CS 105", "CS 116", "CS 146", "CS 216", "CIS 255", "CIS 301", "CIS 311",
+		"CIS 333", "CIS 355", "CIS 366", "CIS 386", "CIS 386", "CIS 422", "CS 345",
+		"CIS 357", "CIS 371", "CIS 425", "CIS 486", "CIS 490"];
+		
+		//Courses for CS Major
+		var cs = ["CS 105", "MATH 300", "CS 116", "CS 216", "CS 245", "MATH 161",
+		"MATH 223", "COMM 105A", "RPW 304", "PHIL 205A!", "PHIL 210B", "CS 146",
+		"CS 316", "CS 331", "CS 401", "CS 411", "CS 421", "CS 446", "CS 451", "CS 461"
+		, "CS 471", "CIS 255", "CIS 355", "CIS 357", "CIS 311", "CS 345", "CS 403",
+		"CS 431", "CS 476", "CS 482", "CS 490"];
+
+
+			console.log(A);
+			A = A.sort();
+			console.log(A);
+			
+			//Make an array into one string
+			function stringifyExcept (A, n) {
+				var x = "";
+				for(var i = 0; i<A.length; i++) {
+					if (i != n) x = x + " " + A[i];
+				}
+				return x.trim();
+			}
+			
+			//Make an array into one string
+			function stringify (A) {
+				var x = "";
+				for(var i = 0; i<A.length; i++) {
+					x = x + " " + A[i];
+				}
+				return x.trim();
+			}
+			//Returns index number of e in A or -1 if not found
+			function isIn (A, e) {
+				for(var i = 0; i<A.length; i++) {
+					if (A[i] == e) return i;
+				}
+				return -1;
+			}
+			//Returns elements in array, A, that are not in array, T
+			function showNeeded(A) {
+				var T = document.getElementById("T").value;
+				T = new Array(T);
+				console.log(T);
+				var x = isIn(A, T[0]);
+				if (x == -1) {
+					document.getElementById("N").value = stringify(A);
+				}
+				else {
+					document.getElementById("N").value = stringifyExcept(A, x); 
+				}
+			}
+			
+		
+			//Creates new course elements
+			var xmlhttp = new XMLHttpRequest();
+			var url = "https://api.svsu.edu/courses?prefix=CS&term=17/WI";
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var myArr = JSON.parse(xmlhttp.responseText);
+					myFunction(myArr);
+				}
+			};
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+
+			function myFunction(arr) {
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor); 
+					document.getElementById("id02").appendChild(newP);
+					newP.appendChild(newText);
+				}
+			}
+
+		</script>	
+	</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!-- CIS-255 - Course Planner
+
+
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="Michael Sanchez">
+
+    <title>CIS 255 - Course Planner</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link href="custom.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+ 
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../menu.html">CIS-255</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programs <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="../progTED.html">TEDxSVSU</a></li>
+					<li><a href="../progPlanner.html">Class Planner</a></li>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">JavaScript Tests <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="../js_test01.html">Test 1: Data Types</a></li>
+					<li><a href="../js_test02.html">Test 2: Control Statements</a></li>
+					<li><a href="../js_test03.html">Test 3: Loops</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="../js_test07.html">Exercise 7: Functions</a></li>
+					<li><a href="../js_test08.html">Exercise 8: Array of Functions</a></li>
+					<li role="separator" class="divider"></li>
+					<li><a href="../js_test09.html">Exercise 9: JSON</a></li>
+					<li><a href="../js_test10.html">Exercise 10: Yahtzee</a></li>
+					<li><a href="../js_test11.html">Exercise 11: 2-D Array</a></li>
+				</ul>
+			</li>
+            <li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">In-Class <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="../inclass/jq01.html">Exercise 1</a></li>
+					<li><a href="../inclass/jq02.html">Exercise 2</a></li>
+				</ul>
+			</li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+	
+	<div class="container">
+	
+		<h1 class="page-header">Course Planner</h1>
+		
+		
+		<div id="" class="row"><!-- START FORM ROW -->
+		
+			<div class="col-md-6"><!-- TAKEN -->
+			
+				<div class="form-group">
+					<label for="comment">Taken</label>
+					<textarea class="form-control" rows="5" id="taken">cs116, cis255</textarea>
+				</div>
+				<button id="update" class="btn btn-large" disabled="true">Update</button>
+				<span id="selectDegree"> Please select a degree type</span>
+			
+			</div><!-- /col-md-6 -->
+		
+			<div class="col-md-6"><!-- NEEDED -->
+		
+				<div class="form-group">
+					<label for="comment">Needed</label>
+					<textarea class="form-control" rows="5" id="needed" readonly></textarea>
+					<label class="radio-label">Degree Type:  </label>
+					<label class="radio-inline"><input id="radio_cis" name="degreetype" type="radio">CIS</label>
+					<label class="radio-inline"><input id="radio_cs" name="degreetype" type="radio">CS</label>
+				</div>
+			
+			</div><!-- /col-md-6 -->
+			
+		</div> <!-- /row - END FORM ROW -->
+			
+		
+		<h4 class="page-header">Results</h4>
+		
+		<div class="row"><!-- START RESULTS ROW -->
+		
+		
+			<div class="col-md-6">
+				<label>Available</label>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+						  <th>Course</th>
+						  <th>Time</th>
+						  <th>Line #</th>
+						</tr>
+					</thead>
+					<tbody id="available"></tbody>
+				</table>
+			
+			</div><!-- /col-md-6 -->
+		
+			<div class="col-md-6">
+				<label>Not Available</label>
+				<table class="table">
+					<tbody id="notavailable"></tbody>
+				</table>
+			
+			</div><!-- /col-md-6 -->
+			
+		</div> <!-- /row - END RESTULS ROW -->
+		
+		
+		
+		<div class="row">
+		
+			<div class="col-md-6">
+				<p id="before"></p>
+				<p id="after"></p>
+			</div>
+		
+		</div><!-- row -->
+
+    </div><!-- container -->
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script>
+	
+		// CIS & CS - course arrays
+		var cisCourses = ["math103", "math120b", "cs105", "cs116", "cs146", "cs216", "cs245", "cis255", "cis301", "cis311", "cis333", "cis386", "cis355", "cis366", "cis422", "cis424"];
+		var csCourses = ["math103", "math140", "math120a", "math300", "cis255", "cis355", "cis357", "cs105", "cs146", "cs116", "cs245", "cs216", "cs411", "cs331", "cs316", "cs446", "cs401", "cs451", "cs461", "cs421", "cs471"];
+
+		// Other Course arrays
+		var degreeCourses, neededCourses;
+		var neededCoursesCheck;
+		
+		// These will contain all loaded JSON 'course' objects
+		var courseResults = new Array;
+		
+		
+		// Courses Taken - onchange
+		document.getElementById("taken").onkeyup = function () {
+			updateCoursesNeeded();
+		}
+		
+		// CIS Radio - onClick
+		document.getElementById("radio_cis").onclick = function () {
+			degreeCourses = cisCourses;
+			document.getElementById("update").disabled = false;
+			document.getElementById("selectDegree").innerHTML = "";
+			updateCoursesNeeded();
+		}
+		// CS Radio - onClick
+		document.getElementById("radio_cs").onclick = function () {
+			degreeCourses = csCourses;
+			document.getElementById("update").disabled = false;
+			document.getElementById("selectDegree").innerHTML = "";
+			updateCoursesNeeded();
+		}
+		
+		// Update Button - onClick
+		document.getElementById("update").onclick = function() {
+		
+			// Create checklist for classes that are available
+			neededCoursesCheck = new Array(neededCourses.length);
+		
+			// Output table rows for each available/needed section
+			document.getElementById("available").innerHTML = "";
+			for (var i = 0; i < courseResults.length; i++) {
+			
+				// Create course string
+				var courseString = courseResults[i].prefix.toLowerCase() + courseResults[i].courseNumber;
+			
+				// Check if neededCourses array contains each course result
+				if (neededCourses.indexOf(courseString) >= 0) {
+					// Check off course from needed
+					neededCoursesCheck[neededCourses.indexOf(courseString)] = true;
+				
+					// Start new HTML table row
+					var newRow = "<tr>";
+					
+					// Put together cell
+					var cell1 = "<td>" + courseResults[i].prefix + " - " + courseResults[i].courseNumber  + "</td>";
+					var cell2;
+					if (!courseResults[i].meetingTimes[0].days) {
+						cell2 = "<td>N/A</td>";
+					} else {
+						cell2 = "<td>[" + courseResults[i].meetingTimes[0].days + "] " + courseResults[i].meetingTimes[0].startTime + " - " + courseResults[i].meetingTimes[0].endTime + "</td>";
+					}
+					var cell3 = "<td>" + courseResults[i].lineNumber + "</td>";
+					
+					// Update available table
+					document.getElementById("available").innerHTML = document.getElementById("available").innerHTML + newRow.concat (cell1, cell2, cell3, "</tr>");
+				}
+			}
+			
+			
+			// Update 'Not Available'
+			document.getElementById("notavailable").innerHTML = "";
+			for (i = 0; i < neededCourses.length; i++) {
+				if (!neededCoursesCheck[i]) {
+					document.getElementById("notavailable").innerHTML = document.getElementById("notavailable").innerHTML + "<tr><td>" + neededCourses[i].toUpperCase() + "</td></tr>";
+				}
+			}
+		}
+		
+		// Updates courses needed with current courses minus courses taken
+		function updateCoursesNeeded () {
+		
+			// Get user input from 'taken'
+			var input = document.getElementById("taken").value;
+			
+			// Parse 'taken' input string into an array
+			var takenCourses = courseStringToArray(input);
+			
+			// Get array of needed courses
+			neededCourses = arrayDifference(degreeCourses, takenCourses);
+		
+			// Update courses 'needed' textarea
+			document.getElementById("needed").innerHTML = neededCourses;
+			
+		}
+		
+		// Convert a comma-separated string into and array
+		//	- returns: array of course strings
+		function courseStringToArray (cString) {
+			var cArray = new Array;
+			var c = cString.indexOf (",");
+			
+			// Loop - While "," is present in cString
+			while (c >= 0) {
+			
+				// Push course
+				cArray.push (cString.substr(0, c).toLowerCase());
+				
+				// Remove from input string
+				cString = cString.substr (c + 1, cString.length).trim ();
+				
+				// Look for next comma				
+				c = cString.indexOf(",");
+			}
+			
+			// Add last course
+			cArray.push (cString.toLowerCase());
+			
+			// Return alphabetically sorted course array
+			return cArray;
+		}
+		
+		// Returns the difference between a large and small array
+		//	- returns: large - small
+		function arrayDifference (large, small) {
+		
+			// Quick way to copy array by value!
+			var difference = large.slice(0);
+			
+			// Remove every courses in 'taken' from degreeCourses
+			for (var i = 0; i < small.length; i++) {
+				var index = difference.indexOf (small[i]);
+			
+				if (index >= 0) {
+					difference.splice (index, 1);
+				}
+			}
+		
+			return difference;
+		}
+		
+		
+		// CIS > course results
+		var cisReq = new XMLHttpRequest();
+		cisReq.onload = function () {
+			cisResults = JSON.parse(this.responseText);
+			for (var i = 0; i < cisResults.courses.length; i++) {
+				courseResults.push (cisResults.courses[i]);
+			}
+		}
+		cisReq.open("GET", "https://api.svsu.edu/courses?prefix=CIS&term=17\/WI");
+		cisReq.send();
+		
+		// CS > course results
+		var csReq = new XMLHttpRequest();
+		csReq.onload = function () {
+			var csResults = JSON.parse(this.responseText);
+			for (var i = 0; i < csResults.courses.length; i++) {
+				courseResults.push (csResults.courses[i]);
+			}
+		}
+		csReq.open("GET", "https://api.svsu.edu/courses?prefix=CS&term=17\/WI");
+		csReq.send();
+		
+		// MATH > course results
+		var mathReq = new XMLHttpRequest();
+		mathReq.onload = function () {
+			var mathResults = JSON.parse(this.responseText);
+			for (var i = 0; i < mathResults.courses.length; i++) {
+				courseResults.push (mathResults.courses[i]);
+			}
+		}
+		mathReq.open("GET", "https://api.svsu.edu/courses?prefix=MATH&term=17\/WI");
+		mathReq.send();
+		
+		
+		
+	</script>
+
+
+  </body>
+</html>

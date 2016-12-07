@@ -1,0 +1,117 @@
+<!doctype html>
+<!-- Course planner program for CIS255
+table:
+	Internal: All courses needed for student [A]
+	Upper left (courses taken) [T]
+	Upper right (courses needed) [A-T]
+	Internal: All SVSU CS/CIS courses [S]
+	lower left (courses available) [C]
+	lower right (courses not available) [S-C]
+-->
+<html>
+	<body>
+		<h1>Course Planner</h1>
+		<table border="1">
+			<tr>
+				<td>Courses Taken<br />
+					<input type="text" id="T" />
+				</td>
+				<td>Courses Needed<br />
+					<input type="text" id="N" />
+				</td>	
+			</tr>
+			<tr>
+				<td>Courses Available<br />
+					<select id="id02"></select>
+				</td>
+				<td>Courses Not Available<br />
+				</td>
+			</tr>
+			<button onclick="showNeeded(A);">Show Needed</button>
+		</table>
+		<script>
+			//Create array A, list of all courses needed for a CIS student
+			var A = ["CS 105","CS 116","CIS 255","CS 216","CIS 355"];
+			console.log(A);
+			//Sorting the array
+			A = A.sort();
+			console.log(A);
+			
+			//Make an array into one string
+			function stringifyExcept (A) {
+				var x = "";
+				for(var i=0; i<A.length; i++) {
+					if (i != n) x = x + " " + A[i];
+				}
+				return x.trim();
+			}
+			
+			//Make an array into one string
+			function stringify (A) {
+				var x = "";
+				for(var i=0; i<A.length; i++) {
+					x = x + " " + A[i];
+				}
+				return x.trim();
+			}
+			
+			//Returns index number of e in A or -1 if not found
+			function isIn (A, e) {
+				for(var i=0; i<A.length; i++) {
+				if (A[i] == e) return i;
+				}
+				return -1;
+			}
+			
+			//Returns elements in array, A , that are not in array, T
+			function showNeeded(A) {
+				var T = document.getElementById("T").value;
+				T = new Array(T);
+				console.log("T");
+				var x = isIn(A, T[0]);
+				if (x == -1) {
+					document.getElementById("N").value = stringify(A);
+				}
+				else {
+					document.getElementById("N").value = stringifyExcept(A, x);
+				}
+			}
+			
+
+			//For Finding Courses Available
+			<!-- javascript solution: creates new elements with attributes -->
+			var xmlhttp = new XMLHttpRequest();
+			var url = "https://api.svsu.edu/courses?prefix=CS&term=17\/WI";
+
+			xmlhttp.onreadystatechange = function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var myArr = JSON.parse(xmlhttp.responseText);
+					myFunction(myArr);
+				}
+			};
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+
+			function myFunction(arr) {
+				var out = "";
+				var i;
+				for(i = 0; i < arr.courses.length; i++) {
+					var newP = document.createElement("option");
+					newP.setAttribute("value", i);
+					var newText 
+						= document.createTextNode(arr.courses[i].prefix + " " 
+						+ arr.courses[i].courseNumber + " " 
+						+ arr.courses[i].term + " " 
+						+ arr.courses[i].meetingTimes[0].days + " " 
+						+ arr.courses[i].meetingTimes[0].startTime + " " 
+						+ arr.courses[i].meetingTimes[0].instructor); 
+					document.getElementById("id02").appendChild(newP);
+					newP.appendChild(newText);
+				}
+			}
+
+			
+			
+		</script>
+	</body>
+</html>

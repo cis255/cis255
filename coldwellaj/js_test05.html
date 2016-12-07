@@ -1,0 +1,91 @@
+
+<!doctype html>
+<!-- file: js_test05.html
+-->
+<html>
+	
+	<body>
+
+		<script>
+		
+			// build your own more elaborate functions
+			
+			// 1. write your own function
+			// 2. write your own function that accepts a function as a parameter and runs it. 
+			// 3. write your own IIFE
+			
+			function myFun (p1, p2, p3, p4) {
+				document.write("p1: " + p1);
+				document.write("<br />p2: " + p2);
+				document.write("<br />p3: " + p3);
+				document.write("<br />p4: " + p4);
+				return 1;
+			}
+			
+			myFun(); 
+			document.write("<hr />");
+			myFun(1,2,3,"fred"); 
+			document.write("<hr />");
+			myFun(1,2,3,"fred",5,6,7,8); 
+			document.write("<hr />");
+			
+			var f = function () {return "fff";};
+			document.write("<br />" + f);
+			document.write("<br />" + f());
+
+			document.write("<hr />");
+			myFun(f, f(), "ggggggg", 5);
+			document.write("<hr />");
+			myFun(myFun());
+			
+			// test out passing functions to functions
+			
+			// ...
+			
+			var zzz = function () {
+				return "George";
+			};
+			var greet = function(zippy) {
+				return "Hello, " + zippy();
+			}; 
+			
+			document.write("<hr />");
+			document.write(zzz);
+			document.write("<br />");
+			document.write(zzz());
+			
+			/*
+			console.log("here");
+			console.log(greet(name));
+						
+			console.log(sayGoodbye(greet()));
+			console.log(sayGoodbye2(greet));
+			console.log(sayGoodbye2(greet()));
+			
+						
+			console.log(sayGoodbye(greet()));
+			console.log(sayGoodbye2(greet));
+			console.log(sayGoodbye2(greet()));
+			*/
+			
+			// IIFE: Immediately Invoked Function Expression
+			
+			var greet2 = (function(zippy) {
+				return "<br />Hello, " + zippy;
+			})("Rapunzel"); 
+			console.log(greet2);
+			document.write(greet2);
+			
+		</script>
+		
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+

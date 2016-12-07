@@ -1,0 +1,60 @@
+<!doctype html>
+<!--file: js_test11.html
+-->
+<html>
+
+	<body>
+	
+		<p id="demo">Text goes here.</p>
+		
+		<div id="demo">
+			<button type="button" onclick="loadXMLDoc()">Change Content</button>
+		</div>
+		
+		<script>
+		
+			// e is a string that contains a JSON object
+			var e = '{"employees":[{"firstName":"John", "lastName":"Doe"}, {"firstName":"Anna", "lastName":"Smith"}, {"firstName":"Peter", "lastName":"Jones"}]}';
+			
+			// j is the JSON object contained in e
+			var j = JSON.parse(e);
+			
+			document.write(j.employees[0].firstName + " " + j.employees[0].lastName);
+			
+			url = 'https://api.svsu.edu/courses?prefix=CIS&courseNumber=255';
+			
+			function getTermAndInstructor(obj) {
+				// returns a string containing all terms and first instructors from a JSON object
+				str = "";
+				if(obj.courses.length == 0) return str;
+				for (var i = 0; i < obj.courses.length; i++) {
+					str = str + obj.courses[i].prefix + "-" + obj.courses[i].courseNumber + " " + obj.courses[i].term + " " + obj.courses[0].meetingTimes[0].instructor + "<br/>";
+				}
+				//document.write(obj.courses.length);
+				return str;
+			}
+			
+			function loadXMLDoc() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						var s1 = this.responseText;
+						var o1 = JSON.parse(s1);
+						var s2 = getTermAndInstructor(o1);
+						//document.getElementById("demo").innerHTML = this.responseText;
+						document.getElementById("demo").innerHTML = s2;
+					}
+				};
+				xhttp.open("GET", url, true);
+				xhttp.send();
+			}
+			
+			// Use the code above to create a 2d array of all the CS and CIS courseNumbers and prefixes and sort the array by courseNumber (not prefix)
+			
+		</script>
+		
+		
+		
+	</body>
+	
+</html>

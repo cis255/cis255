@@ -4,35 +4,27 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
+	<span><strong><font size="12"> Tempeture Conversion </font></strong></span><br />
+	<br /><br /><br />
 	
-	
-	
-	<p><strong><font size= "16">Tempature Conversion</font></strong></p>
-	
-	<p> <strong>Ferinheight to Celsius</strong></p>
-	
-		Ferinheight temp: <input type="text" id="ferinheight" />
-		<br />
-		Celsius temp: <span id="fTOc"> Not set</span>
-		
-	<p> <strong>Celsius to Ferinheight</strong></p>
-	
-		Celsius temp: <input type="text" id="celsius" />
-		<br />
-		Ferinheight temp: <span id="cTOf">Not set</span>
-	
-	<script>
-	
-		$("#ferinheight").keyup(function(){
-			document.getElementById("fTOc").innerHTML = (document.getElementById("ferinheight").value - 32) * 5/9;
-		});
-		
-		$("#celsius").keyup(function(){
-			document.getElementById("cTOf").innerHTML = (document.getElementById("celsius").value * 9/5) + 32;
-		});
-			
-	</script>
-	
-</body>
+	<strong>Input Fahrenheit Temp:</strong> <input type="text" id="fTemp"/><br />
+	<strong>Celcius Temp:</strong> <span id="fToc">Not Set</span>
+	<br /><br /><br />
+	<strong>Input Celcius Temp:</strong> <input type="text" id="cTemp"/>
+	<br />
+	<strong>Fahrenheit Temp:</strong> <span id="cTof">Not set</span>
 
+	<script>
+			$("#fTemp").keyup(function(){
+				document.getElementById("fToc").innerHTML = (document.getElementById("fTemp").value - 32) * 9/5;
+			});	
+				console.log(document.getElementById("fToc").innerHTML);
+
+			$("#cTemp").keyup(function(){
+				document.getElementById("cTof").innerHTML = (document.getElementById("cTemp").value * 9/5) + 32;
+			});
+				console.log(document.getElementById("cTof").innerHTML);
+
+	</script>
+</body>
 </html>

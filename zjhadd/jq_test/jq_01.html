@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+	<script>
+		// this code hides any paragraph, <p>, that is clicked
+		$(document).ready(function(){
+			$("#C, #F").keyup(function(){
+				document.getElementById("F").value = (9/5) * document.getElementById("C").value + 32});
+			
+		
+			//$("#F, #C").keyup(function(){
+			//	document.getElementById("C").value = (5/9) * document.getElementById("F").value - 32});
+			});
+		
+	</script>
+
+	Celsius: <input type="text" id="C"/>
+	<br/>
+	<br/>
+	Fahrenheit: <input type="text" id="F"/>
+	
+	
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<html>
+	<body>
+		<p id="zippy"></p>
+		<script>
+			// test loops
+			// 1. for loop to print hello, world 10 times
+			// 2. while loop to print sum digits of the number 1234567890 (use mod operator %)
+			// 3. do loop to print letters in the word "zippy" (string) one letter per line
+
+			// 1. for loop to print hello, world 10 times
+			for (var i=0; i<10; i++) {
+				document.write((i+1) + ". hello, world.<br />");
+			}
+			
+			x = 1234567890;
+			sum = 0;
+			while(x > 0){
+				sum += x % 10;
+				x = Math.floor(x/10);
+			}
+			document.write("<br/>" + sum + "<br/>");
+			
+			z = "Zippy";
+			var i = 0;
+			do{
+				document.write("<br/>"+z[i]);
+				i++;
+			}
+			while(i < 5);
+		</script>
+	</body>
+</html>
+

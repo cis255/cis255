@@ -1,0 +1,61 @@
+
+<!doctype html>
+<!-- file: js_test07.html -->
+<html>
+	
+	<body>
+		<label>Enter a number</label>
+		<input type="text" id="in01" onkeyup="isProvince();" />
+		<br />
+		
+		<p id="out01">Output goes here</p>
+
+		<script>
+		
+			// demonstrate error checking
+			
+			function testFun3() {
+				document.write ("test");
+			}
+			
+			// check if input is a number
+			function isNumber() {
+				var x = document.getElementById("in01").value;
+				if(!isNaN(x)) document.getElementById("out01").innerHTML = "Number";
+				else document.getElementById("out01").innerHTML = "Not a Number";
+				/*
+				try {
+					testFun();
+					}
+				catch (err){
+					alert("function does not exist: testFun()\n" + err);
+				}
+				try {
+					var x = -1; 
+					if (x < 0) throw "tooSmallError";
+					}
+				catch (err) {
+					alert (err + "was thrown"); 
+				}
+				*/
+			}
+	
+			// write a function to test whether or not the input is a legit province of CANADA. Output should be "Province" or "Not a Province"
+			
+			function inProvince() {
+			}
+
+			
+		</script>
+		
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+

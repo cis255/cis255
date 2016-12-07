@@ -1,0 +1,47 @@
+
+<!doctype html>
+<!-- filename: js_test01.html -->
+<html>
+	<body>
+		<p id="zippy"></p>
+
+		<script>
+		
+			/*
+			The purpose of this exercise is for you to demonstrate the ability to use all 5 primitive data types (excluding "Symbol" type) and two special characters ($ and _) used in variable names.
+			
+			Instructions:
+			
+			Create a link on your menu.html file to another HTML file (js_test01.html) and Submit in Canvas your link to js_test01.html for up to 1 point extra credit.
+			
+			js_test01.html should include internal javascript
+			that prints results of 5 primitive data types
+			and uses at least two special characters in variable names.
+			
+			Use the javascript functions...
+			...document.write(), or
+			...document.getElementById(), and
+			...typeof()
+			
+			A template for getting started follows:
+			
+			*/
+		
+			// datatype: number
+			var a = 5;
+			var b = "<br />datatype: number";
+			b = b + "<br />" + a;
+			b = b + "<br />" + typeof(a);
+			document.getElementById("zippy").innerHTML = b;
+			
+			// datatype: null
+			c = null;
+			document.write("<br />datatype: null");
+			document.write("<br />" + c);
+			document.write("<br />" + typeof(c));
+			
+			// datatype:
+			
+		</script>
+	</body>
+</html>
