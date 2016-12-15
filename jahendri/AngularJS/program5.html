@@ -1,0 +1,87 @@
+<html ng-app="app1" ng-init="initialize();">
+ <!-- Load Angular Library -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- Load the JS Module -->
+<script src="AngularJS/courses.js"></script>
+ 
+  <body>
+
+    <div ng-controller="ctrl1">
+	
+	    <p>Enter Course Prefix and Number:</p>
+	
+	    Prefix:
+	    <input type="text" ng-bind="inputPrefix" ng-model="p" /><br />
+		Number:
+        <input type="text" ng-bind="inputNumber" ng-model="c" /><br /><br />
+	
+	    <button ng-click="getTitleAndDescription()">Get Course Title and Description</button><br /><br />
+		
+		{{title}}<br />{{description}}
+		
+		
+		<br /><br /><br /><br /><br /><br />
+	
+      <span>Values:</span>
+
+      <!-- Define 2 elements that will be bound to the first and
+      second values in the scope using the ng-model directive. If
+      either value changes here it will change in the scope and
+      vice versa -->
+      <input type="text" ng-model="first" />
+      <input type="text" ng-model="second" />
+
+      <!-- Bind a click on this button to the function updateValue
+      using ng-click -->
+      <button ng-click="updateValue()">Sum</button>
+      <br><br>
+	  
+	  <!-- Displays the Scope value of calculation in the expression-->
+      {{calculation}}
+	  
+	  <button ng-click="updateTemp()">C2F</button>
+	  <span>Celsius:</span>
+	  <input type="text" ng-model="celsius" /><br />
+	 
+	  {{C2F}}
+	  
+	  <br />
+	  
+	  <span>Fahrenheit:</span>
+	  <input type="text" ng-model="fahrenheit" />
+	  
+	  <br><br>
+
+
+      <!-- You can perform calculations in expressions -->
+      <p>5 + 5 = {{5+5}}</p>
+
+      <!-- Expressions bind data to HTML as well -->
+      <p>Your first value is {{first}}</p>
+
+      <!-- You can do the same with ng-bind -->
+      <p>Your second value is
+        <span data-ng-bind="second"></span>
+      </p>
+
+      <!-- Strings can be built in expressions -->
+      <p>{{person.fName + " " + person.lName}} you entered {{first + " and " + second}}</p>
+
+      <!-- ng-repeat cycles through a collection -->
+      <ul>
+        <li ng-repeat = "capital in capitals">
+          {{ 'City: ' + capital.city + ', State: ' + capital.state}}
+        </li>
+      </ul>
+	  
+	  <ol>
+		<li ng-repeat="color in colors">
+			{{'Color:' + color.color}}
+		</li>
+	  </ol>
+
+    </div>
+
+    
+  </body>
+  </html>

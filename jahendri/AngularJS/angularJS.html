@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<!-- Load Angular Library -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<!-- Load the JS Module -->
+<script src="AngularJS/courses.js"></script>
+
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl"> 
+
+<p>Today's welcome message is:</p>
+
+
+
+<p>Enter Course Prefix and Number:</p>
+	
+	    Prefix:
+	    <input type="text" ng-bind="inputPrefix" ng-model="p" /><br />
+		Number:
+        <input type="text" ng-bind="inputNumber" ng-model="c" /><br /><br />
+	
+	    <button ng-click="myData()">Get Course Title and Description</button><br /><br />
+		
+		{{details.title}}<br />{{details.description}}
+		<p></p>
+		
+<p>{{details}}</p>
+<p>{{details.length}}</p>
+
+</div>
+
+<p>The $http service requests a page on the server, and the response should show courseNumber from API.</p>
+
+
+
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+  $http({
+    method : "GET",
+    url : "https://api.svsu.edu/courses?prefix=CIS&term=17/WI"
+  }).then(function mySucces(response) {
+      $scope.details = response.data;
+	  function getData($scope) {
+		for(var i=0; i < $scope.details.length; i++) {
+	    if($scope.details[i].prefix == $scope.p &&
+		   $scope.details[i].courseNumber == $scope.c) {
+		   $scope.title = $scope.courses[i].title;
+		   $scope.description = $scope.courses[i].description;
+		   arrayElement = i;
+		}}
+	}
+    }, function myError(response) {
+      $scope.details = response.statusText;
+  });
+  
+  
+  
+  
+  
+});
+</script>
+
+</body>
+</html>
